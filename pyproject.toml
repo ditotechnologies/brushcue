@@ -1,0 +1,19 @@
+[project]
+name = "brushcue"
+version = "0.0.3"
+description = "Python bindings for the Matisse graph computation system"
+requires-python = ">=3.11"
+dependencies = []
+license = { text = "Proprietary" }
+authors = [{ name = "Dito Technologies LLC" }]
+
+[project.urls]
+Homepage = "https://github.com/ditotechnologies/brushcue"
+
+[build-system]
+requires = ["maturin>=1.7,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+manifest-path = "../../rust/matisse/py/Cargo.toml"
+module-name = "brushcue._py"
