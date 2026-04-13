@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 548e83804f9f953d6b5dd52427338d8e72bcdc796bee49e841aea59011be26c1
+# hash: 8e16562ac8d32c746351fe85c26a9341b6782650ff50723087f2352d72898cb5
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -22,13 +22,12 @@ pip install brushcue
 import brushcue
 
 ctx = brushcue.Context()
-handle = brushcue.Handle()
 
 a = brushcue.int_constant(3)
 b = brushcue.int_constant(4)
 result = brushcue.int_add(a, b)
 
-value = result.execute(ctx, handle)
+value = result.execute(ctx)
 print(value.as_int())  # 7
 ```
 
@@ -36,7 +35,6 @@ print(value.as_int())  # 7
 
 - :class:`Context` — GPU/async execution context. Create one per process.
 - :class:`Graph` — A node in the computation graph.
-- :class:`Handle` — Cancellation and status token for :meth:`Graph.execute`.
 - :class:`Project` — A collection of graphs that can be serialized/deserialized.
 - :class:`Type` — The result of executing a graph node.
 """
@@ -44,9 +42,8 @@ print(value.as_int())  # 7
 from ._py import *  # noqa: F401, F403
 from .input_parsers import *
 
-
-def int_constant(value: int) -> Graph:
-    return int_constant_internal(value)
+def int_constant(value) -> Graph:
+    return int_constant_internal(int(value))
 
 def float_constant(value) -> Graph:
     return float_constant_internal(float(value))
@@ -56,6 +53,18 @@ def string_constant(value: str) -> Graph:
 
 def bool_constant(value: bool) -> Graph:
     return bool_constant_internal(value)
+
+def r_g_b_a_color_constant(r: float, g: float, b: float, a: float):
+    return r_g_b_a_color_constant_internal(r, g, b, a)
+
+def r_g_b_color_constant(r: float, g: float, b: float):
+    return r_g_b_color_constant_internal(r, g, b)
+
+def vector2i_constant(x: int, y: int) -> Graph:
+    return vector2i_constant_internal(x, y)
+
+def vector2f_constant(x: float, y: float) -> Graph:
+    return vector2f_constant_internal(x, y)
 
 
 def abs(number) -> Graph:
@@ -3061,7 +3070,7 @@ def xor(bool1, bool2) -> Graph:
 
 __all__ = [
     # Core classes
-    "Context", "Graph", "Handle", "Project", "Type",
+    "Context", "Graph", "Project", "Type",
     "TypeDefinition", "NodeDefinition", "NodeDefinitionInput", "ImageRecipe",
     # Constant functions
     "int_constant", "float_constant", "string_constant", "bool_constant",
