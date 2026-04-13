@@ -1,6 +1,6 @@
 [project]
 name = "brushcue"
-version = "0.0.12"
+version = "0.0.13"
 description = "Python API for the BrushCue media editing platform."
 readme = "README.md"
 requires-python = ">=3.11"
