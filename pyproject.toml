@@ -1,6 +1,6 @@
 [project]
 name = "brushcue"
-version = "0.0.3"
+version = "0.0.4"
 description = "Python bindings for the Matisse graph computation system"
 requires-python = ">=3.11"
 dependencies = []
