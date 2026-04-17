@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 8e16562ac8d32c746351fe85c26a9341b6782650ff50723087f2352d72898cb5
+# hash: da91df0484c8a7d4d1ba24f5ae0e1d17653eca5e7f6f5d4c5f64ba95ccf0333a
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -60,7 +60,7 @@ def r_g_b_a_color_constant(r: float, g: float, b: float, a: float):
 def r_g_b_color_constant(r: float, g: float, b: float):
     return r_g_b_color_constant_internal(r, g, b)
 
-def vector2i_constant(x: int, y: int) -> Graph:
+def vector_2i_constant(x: int, y: int) -> Graph:
     return vector2i_constant_internal(x, y)
 
 def vector2f_constant(x: float, y: float) -> Graph:
