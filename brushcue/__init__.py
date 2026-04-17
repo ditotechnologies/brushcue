@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: da91df0484c8a7d4d1ba24f5ae0e1d17653eca5e7f6f5d4c5f64ba95ccf0333a
+# hash: 23f0af99c7b36a4b7da05648f6b7c106c8b970da5f064f1a42d5a5f835dbf6a6
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -23,12 +23,14 @@ import brushcue
 
 ctx = brushcue.Context()
 
-a = brushcue.int_constant(3)
-b = brushcue.int_constant(4)
-result = brushcue.int_add(a, b)
+image = brushcue.load_composition("photo.png")
+grayscale = brushcue.composition_grayscale(image)
 
-value = result.execute(ctx)
-print(value.as_int())  # 7
+result = grayscale.execute(ctx)
+output_bytes = result.as_composition().to_image_bytes(ctx)
+
+with open("output.png", "wb") as f:
+    f.write(bytes(output_bytes))
 ```
 
 ## Core Types
@@ -41,6 +43,9 @@ print(value.as_int())  # 7
 
 from ._py import *  # noqa: F401, F403
 from .input_parsers import *
+
+def byte_list_constant(value) -> Graph:
+    return byte_list_constant_internal(value)
 
 def int_constant(value) -> Graph:
     return int_constant_internal(int(value))

@@ -1,6 +1,15 @@
 # Brushcue
 
-A Python API that lets you use the full power of the [BrushCue](https://www.brushcue.com/) website. You can edit images, create processing graphs and more.
+Brushcue is a GPU-accelerated image editing library for Python. Every operation is a composable graph node — adjust color and tone, apply filters and blurs, composite images with a full set of blend modes, transform and crop, run ML-powered segmentation, or write custom GPU shaders. Chain nodes together and call `.execute()` once to run the whole pipeline.
+
+### Examples of things you can make
+
+<table><tr>
+<td align="center"><img src="https://www.brushcue.com/tools/rgb-color-shift/animation.webp" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/pixelate/animation.webp" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/zoom-blur/animation.webp" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/camera-moving-distortion/animation.webp" width="180"></td>
+</tr></table>
 
 ## Install
 
@@ -12,7 +21,26 @@ pip install brushcue
 
 The full documentation is available [here](https://www.brushcue.com/docs/py).
 
+## Quickstart
+
+```python
+import brushcue
+
+ctx = brushcue.Context()
+
+image = brushcue.load_composition("photo.png")
+grayscale = brushcue.composition_grayscale(image)
+
+result = grayscale.execute(ctx)
+output_bytes = result.as_composition().to_image_bytes(ctx)
+
+with open("output.png", "wb") as f:
+    f.write(bytes(output_bytes))
+```
+
 ## Examples
+
+All the [BrushCue tools](https://www.brushcue.com/tools) are available as examples to learn how to use our API. 
 
 - [Add Frame](https://www.brushcue.com/docs/py/examples/add-frame)
 - [Blue Channel](https://www.brushcue.com/docs/py/examples/blue-channel)
@@ -21,6 +49,7 @@ The full documentation is available [here](https://www.brushcue.com/docs/py).
 - [Brightness Contrast Adjust](https://www.brushcue.com/docs/py/examples/brightness-contrast-adjust)
 - [Camera Moving Distortion](https://www.brushcue.com/docs/py/examples/camera-moving-distortion)
 - [Chroma Offset](https://www.brushcue.com/docs/py/examples/chroma-offset)
+- [Coachella Aesthetic](https://www.brushcue.com/docs/py/examples/coachella-aesthetic)
 - [Color Invert](https://www.brushcue.com/docs/py/examples/color-invert)
 - [Color Rectangle](https://www.brushcue.com/docs/py/examples/color-rectangle)
 - [Color Threshold](https://www.brushcue.com/docs/py/examples/color-threshold)
