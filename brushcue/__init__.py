@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 23f0af99c7b36a4b7da05648f6b7c106c8b970da5f064f1a42d5a5f835dbf6a6
+# hash: c85dac72b61fe97e74844da5ab37917f319ba60e4ffa438f18a16ffb82a2775a
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -843,6 +843,21 @@ def composition_flip_vertical(composition) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     return composition_flip_vertical_internal(composition_parsed)
+
+def composition_from_asset(asset_id) -> Graph:
+    """Composition from Asset
+
+    Creates a composition from an asset in your catalog.
+
+    Args:
+        asset id: Graph of Int
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    asset_id_parsed = parse_int_graph(asset_id)
+    return composition_from_asset_internal(asset_id_parsed)
 
 def composition_from_image(image) -> Graph:
     """Composition from Image
@@ -2682,6 +2697,25 @@ def transform2_translation(transform, translation) -> Graph:
     translation_parsed = parse_graph(translation)
     return transform2_translation_internal(transform_parsed, translation_parsed)
 
+def upload_byte_list(bytes, url, content_type) -> Graph:
+    """Upload Byte List
+
+    Given bytes and a URL. Performs a PUT request and uploads the bytes
+
+    Args:
+        bytes: Graph of ByteList
+        url: Graph of String
+        content type: Graph of String
+        
+
+    Returns:
+        Graph: A graph node producing a Void.
+    """
+    bytes_parsed = parse_graph(bytes)
+    url_parsed = parse_string_graph(url)
+    content_type_parsed = parse_string_graph(content_type)
+    return upload_byte_list_internal(bytes_parsed, url_parsed, content_type_parsed)
+
 def upload_file_path(path, url, content_type) -> Graph:
     """Upload File Path
 
@@ -3125,6 +3159,7 @@ __all__ = [
     "composition_face_landmarks",
     "composition_flip_horizontal",
     "composition_flip_vertical",
+    "composition_from_asset",
     "composition_from_image",
     "composition_gaussian_blur",
     "composition_gaussian_blur_with_ok_lab",
@@ -3236,6 +3271,7 @@ __all__ = [
     "transform2_scale",
     "transform2_to_list",
     "transform2_translation",
+    "upload_byte_list",
     "upload_file_path",
     "vector2_int_to_vector2_float",
     "vector2f_add",
