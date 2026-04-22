@@ -42,9 +42,22 @@ body_section = (
     '</section>'
 )
 
+GA_SNIPPET = (
+    '<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2HTJCGZ3W"></script>'
+    '<script>window.dataLayer=window.dataLayer||[];'
+    'function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-J2HTJCGZ3W");</script>'
+)
+
+for f in output_dir.glob('*.html'):
+    text = f.read_text()
+    if 'G-J2HTJCGZ3W' not in text:
+        f.write_text(text.replace('</head>', GA_SNIPPET + '</head>', 1))
+
 html = docs_html.read_text()
 html = html.replace('<h2>API Documentation</h2>', nav_section + '<h2>API Documentation</h2>', 1)
 html = html.replace('<input id="mod-brushcue-view-s', body_section + '<input id="mod-brushcue-view-s', 1)
+if 'G-J2HTJCGZ3W' not in html:
+    html = html.replace('</head>', GA_SNIPPET + '</head>', 1)
 docs_html.write_text(html)
 print(f'injected {len(files)} examples into {docs_html}')
 PYEOF
