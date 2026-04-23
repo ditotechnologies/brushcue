@@ -1,7 +1,7 @@
 [project]
-name = "brushcue"
+name = "brushcue-cpu"
 version = "0.1.4"
-description = "Python API for the BrushCue media editing platform."
+description = "Python API for the BrushCue media editing platform (CPU-only build)."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
@@ -21,4 +21,3 @@ build-backend = "maturin"
 [tool.maturin]
 manifest-path = "../../rust/matisse/py/Cargo.toml"
 module-name = "brushcue._py"
-features = ["wgpu_rendering"]

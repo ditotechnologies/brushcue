@@ -17,6 +17,12 @@ Brushcue is a GPU-accelerated image editing library for Python. Every operation 
 pip install brushcue
 ```
 
+If a GPU is not available on your system, a CPU-only build is also available. We recommend trying the standard `brushcue` package first — on many Linux environments, GPU emulation is supported and it will work without a physical GPU. If that is not an option, the CPU build can be used, though certain operations may fail without GPU support.
+
+```bash
+pip install brushcue-cpu
+```
+
 ## Documentation
 
 The full documentation is available [here](https://www.brushcue.com/docs/py).
