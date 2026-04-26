@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: c85dac72b61fe97e74844da5ab37917f319ba60e4ffa438f18a16ffb82a2775a
+# hash: acb4e652da2e5e7620952faf81eee7340d3d900a376dbe9ac511f1d8674ca1dd
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1352,6 +1352,23 @@ def composition_vignette(composition, radius, softness, strength) -> Graph:
     softness_parsed = parse_float_graph(softness)
     strength_parsed = parse_float_graph(strength)
     return composition_vignette_internal(composition_parsed, radius_parsed, softness_parsed, strength_parsed)
+
+def curve_evaluate(curve, input) -> Graph:
+    """Curve Evaluate
+
+    Evaluates a curve at a given input value.
+
+    Args:
+        curve: Graph of Curve
+        input: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Float.
+    """
+    curve_parsed = parse_graph(curve)
+    input_parsed = parse_float_graph(input)
+    return curve_evaluate_internal(curve_parsed, input_parsed)
 
 def curve_gamma(gamma) -> Graph:
     """Curve Gamma
@@ -3189,6 +3206,7 @@ __all__ = [
     "composition_to_ok_lab_hist",
     "composition_uniform_lightness",
     "composition_vignette",
+    "curve_evaluate",
     "curve_gamma",
     "curve_identity",
     "curve_pivoted_sigmoid",
