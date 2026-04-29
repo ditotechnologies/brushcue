@@ -1,5 +1,7 @@
 # Brushcue
 
+![PyPI - Version](https://img.shields.io/pypi/v/brushcue) 
+
 Brushcue is a GPU-accelerated image editing library for Python. Every operation is a composable graph node — adjust color and tone, apply filters and blurs, composite images with a full set of blend modes, transform and crop, run ML-powered segmentation, or write custom GPU shaders. Chain nodes together and call `.execute()` once to run the whole pipeline.
 
 ### Examples of things you can make
