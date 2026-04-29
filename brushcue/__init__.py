@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: acb4e652da2e5e7620952faf81eee7340d3d900a376dbe9ac511f1d8674ca1dd
+# hash: ef9b3032b01fb8ffb39b11323a5dd5ec164a237ea6d746f80db41d700b40f200
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -563,6 +563,25 @@ def composition_blend_subtract_with_ok_lab(foreground, background, foreground_tr
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
     return composition_blend_subtract_with_ok_lab_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+
+def composition_blend_with_factor(foreground, background, factor) -> Graph:
+    """Composition Blend with Factor
+
+    Blends the foreground and background compositions together using a factor. Internally, this modifies the alpha of the foreground by multiplying by the factor on the alpha component and then performing an alpha blend.
+
+    Args:
+        foreground: Graph of Composition
+        background: Graph of Composition
+        factor: Graph of Composition
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    foreground_parsed = parse_graph(foreground)
+    background_parsed = parse_graph(background)
+    factor_parsed = parse_graph(factor)
+    return composition_blend_with_factor_internal(foreground_parsed, background_parsed, factor_parsed)
 
 def composition_blend_with_mask(foreground, background, mask) -> Graph:
     """Composition Blend with Mask
@@ -1352,6 +1371,25 @@ def composition_vignette(composition, radius, softness, strength) -> Graph:
     softness_parsed = parse_float_graph(softness)
     strength_parsed = parse_float_graph(strength)
     return composition_vignette_internal(composition_parsed, radius_parsed, softness_parsed, strength_parsed)
+
+def composition_zoom_blur(composition, center, strength) -> Graph:
+    """Composition Zoom Blur
+
+    Performs a zoom blur on this composition
+
+    Args:
+        composition: Graph of Composition
+        center: Graph of Vector2f
+        strength: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    center_parsed = parse_graph(center)
+    strength_parsed = parse_float_graph(strength)
+    return composition_zoom_blur_internal(composition_parsed, center_parsed, strength_parsed)
 
 def curve_evaluate(curve, input) -> Graph:
     """Curve Evaluate
@@ -3160,6 +3198,7 @@ __all__ = [
     "composition_blend_multiply_with_ok_lab",
     "composition_blend_subtract",
     "composition_blend_subtract_with_ok_lab",
+    "composition_blend_with_factor",
     "composition_blend_with_mask",
     "composition_box_blur",
     "composition_box_blur_with_ok_lab",
@@ -3206,6 +3245,7 @@ __all__ = [
     "composition_to_ok_lab_hist",
     "composition_uniform_lightness",
     "composition_vignette",
+    "composition_zoom_blur",
     "curve_evaluate",
     "curve_gamma",
     "curve_identity",
