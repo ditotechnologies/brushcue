@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: fbe240c6ee97c406c371b5e2337f87a6dfb5e41725f727f04f90c694b2d8ad4b
+# hash: de45247698d3b7c180ec518db789dd1ac61c3c977c0822034bd3240644860e22
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1288,6 +1288,25 @@ def composition_segment_under_right_eye(composition) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     return composition_segment_under_right_eye_internal(composition_parsed)
+
+def composition_sharpen(composition, radius, strength) -> Graph:
+    """Composition Sharpen
+
+    Applies a sharpen filter to the composition.
+
+    Args:
+        composition: Graph of Composition
+        radius: Graph of Float
+        strength: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    radius_parsed = parse_float_graph(radius)
+    strength_parsed = parse_float_graph(strength)
+    return composition_sharpen_internal(composition_parsed, radius_parsed, strength_parsed)
 
 def composition_size(composition) -> Graph:
     """Composition Size
@@ -3257,6 +3276,7 @@ __all__ = [
     "composition_segment_mouth_lips_eyes_eyebrows",
     "composition_segment_person",
     "composition_segment_under_right_eye",
+    "composition_sharpen",
     "composition_size",
     "composition_sobel_edge_detection",
     "composition_target_white_kelvin",
