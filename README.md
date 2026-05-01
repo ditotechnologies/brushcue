@@ -51,6 +51,7 @@ with open("output.png", "wb") as f:
 All the [BrushCue tools](https://www.brushcue.com/tools) are available as examples to learn how to use our API. 
 
 - [Add Frame](https://www.brushcue.com/docs/py/examples/add-frame)
+- [Adjust Channels](https://www.brushcue.com/docs/py/examples/adjust-channels)
 - [Blue Channel](https://www.brushcue.com/docs/py/examples/blue-channel)
 - [Box Blur](https://www.brushcue.com/docs/py/examples/box-blur)
 - [Brightness Adjust](https://www.brushcue.com/docs/py/examples/brightness-adjust)
@@ -92,6 +93,7 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Scale By Factor](https://www.brushcue.com/docs/py/examples/scale-by-factor)
 - [Sepia](https://www.brushcue.com/docs/py/examples/sepia)
 - [Shadow Tint](https://www.brushcue.com/docs/py/examples/shadow-tint)
+- [Sharpen](https://www.brushcue.com/docs/py/examples/sharpen)
 - [Shredder](https://www.brushcue.com/docs/py/examples/shredder)
 - [Sobel Edge Detection](https://www.brushcue.com/docs/py/examples/sobel-edge-detection)
 - [Sparkle Vignette](https://www.brushcue.com/docs/py/examples/sparkle-vignette)
