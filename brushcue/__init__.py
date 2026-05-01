@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: ef9b3032b01fb8ffb39b11323a5dd5ec164a237ea6d746f80db41d700b40f200
+# hash: fbe240c6ee97c406c371b5e2337f87a6dfb5e41725f727f04f90c694b2d8ad4b
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -752,6 +752,23 @@ def composition_color_threshold(composition, threshold) -> Graph:
     composition_parsed = parse_graph(composition)
     threshold_parsed = parse_float_graph(threshold)
     return composition_color_threshold_internal(composition_parsed, threshold_parsed)
+
+def composition_contrast_adjustment(composition, contrast) -> Graph:
+    """Composition Contrast Adjustment
+
+    Adjusts the contrast of a Composition
+
+    Args:
+        composition: Graph of Composition
+        contrast: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    contrast_parsed = parse_float_graph(contrast)
+    return composition_contrast_adjustment_internal(composition_parsed, contrast_parsed)
 
 def composition_convolution(composition, kernel, kernel_width, kernel_height) -> Graph:
     """Composition Convolution
@@ -3209,6 +3226,7 @@ __all__ = [
     "composition_color_profile",
     "composition_color_rect",
     "composition_color_threshold",
+    "composition_contrast_adjustment",
     "composition_convolution",
     "composition_crop",
     "composition_custom_transformer_shader",
