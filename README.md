@@ -96,6 +96,7 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Sharpen](https://www.brushcue.com/docs/py/examples/sharpen)
 - [Shredder](https://www.brushcue.com/docs/py/examples/shredder)
 - [Sobel Edge Detection](https://www.brushcue.com/docs/py/examples/sobel-edge-detection)
+- [Solarize](https://www.brushcue.com/docs/py/examples/solarize)
 - [Sparkle Vignette](https://www.brushcue.com/docs/py/examples/sparkle-vignette)
 - [Swirl](https://www.brushcue.com/docs/py/examples/swirl)
 - [Vertical Mirror](https://www.brushcue.com/docs/py/examples/vertical-mirror)
