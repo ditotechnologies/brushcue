@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: de45247698d3b7c180ec518db789dd1ac61c3c977c0822034bd3240644860e22
+# hash: c12a6a5d4b961f2e7169ef3111df376046a04d61c4cf2a9904d6347723cfb51e
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -2652,7 +2652,7 @@ def sequence_to_mp4(sequence, frame_rate_numerator, frame_rate_denominator) -> G
         
 
     Returns:
-        Graph: A graph node producing a String.
+        Graph: A graph node producing a ByteList.
     """
     sequence_parsed = parse_graph(sequence)
     frame_rate_numerator_parsed = parse_int_graph(frame_rate_numerator)
