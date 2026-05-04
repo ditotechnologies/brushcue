@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: c12a6a5d4b961f2e7169ef3111df376046a04d61c4cf2a9904d6347723cfb51e
+# hash: 3f63a39f670b2007036713b435143e40c99fd696d5d5e72a66fe4ae98d84cef6
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1619,6 +1619,40 @@ def float_divide(float1, float2) -> Graph:
     float2_parsed = parse_float_graph(float2)
     return float_divide_internal(float1_parsed, float2_parsed)
 
+def float_equals(float_1, float_2) -> Graph:
+    """Float Equals
+
+    Checks if two floats are equal
+
+    Args:
+        First Float: Graph of Float
+        Second Float: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Bool.
+    """
+    float_1_parsed = parse_float_graph(float_1)
+    float_2_parsed = parse_float_graph(float_2)
+    return float_equals_internal(float_1_parsed, float_2_parsed)
+
+def float_greater_than(float_1, float_2) -> Graph:
+    """Float Greater Than
+
+    Checks if the first float is greater than the second float
+
+    Args:
+        First Float: Graph of Float
+        Second Float: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Bool.
+    """
+    float_1_parsed = parse_float_graph(float_1)
+    float_2_parsed = parse_float_graph(float_2)
+    return float_greater_than_internal(float_1_parsed, float_2_parsed)
+
 def float_if(bool, input_1, input_2) -> Graph:
     """Float If
 
@@ -1656,6 +1690,23 @@ def float_lerp(x, float1, float2) -> Graph:
     float1_parsed = parse_float_graph(float1)
     float2_parsed = parse_float_graph(float2)
     return float_lerp_internal(x_parsed, float1_parsed, float2_parsed)
+
+def float_less_than(float_1, float_2) -> Graph:
+    """Float Less Than
+
+    Checks if the first float is less than the second float
+
+    Args:
+        First Float: Graph of Float
+        Second Float: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Bool.
+    """
+    float_1_parsed = parse_float_graph(float_1)
+    float_2_parsed = parse_float_graph(float_2)
+    return float_less_than_internal(float_1_parsed, float_2_parsed)
 
 def float_max(float1, float2) -> Graph:
     """Float Max
@@ -3296,8 +3347,11 @@ __all__ = [
     "float_add_to_dictionary",
     "float_cos",
     "float_divide",
+    "float_equals",
+    "float_greater_than",
     "float_if",
     "float_lerp",
+    "float_less_than",
     "float_max",
     "float_min",
     "float_multiply",
