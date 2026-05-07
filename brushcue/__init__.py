@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 3f63a39f670b2007036713b435143e40c99fd696d5d5e72a66fe4ae98d84cef6
+# hash: 8eae4ef12e794ff7bceea6ab4912ba8606ac0cab116415f3068d9c503b38684e
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -204,7 +204,7 @@ def brush_solid(color, radius) -> Graph:
 def byte_list_from_u_r_l(url) -> Graph:
     """Byte List from URL
 
-    Given a URL. Performs a GET request and downloads the result as bytes
+    Given a URL. Performs a GET request and downloads the result as bytes.
 
     Args:
         url: Graph of String
@@ -1113,6 +1113,23 @@ def composition_perceptual_difference(composition, color) -> Graph:
     composition_parsed = parse_graph(composition)
     color_parsed = parse_graph(color)
     return composition_perceptual_difference_internal(composition_parsed, color_parsed)
+
+def composition_pixelate(composition, pixel_size) -> Graph:
+    """Composition Pixelate
+
+    Applies a pixelation effect to a composition.
+
+    Args:
+        composition: Graph of Composition
+        pixel size: Graph of Int
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    pixel_size_parsed = parse_int_graph(pixel_size)
+    return composition_pixelate_internal(composition_parsed, pixel_size_parsed)
 
 def composition_r_g_b_curve(composition, r_curve, g_curve, b_curve) -> Graph:
     """Composition RGB Curve
@@ -2175,6 +2192,23 @@ def ok_lab_color_from_components(l, a, b) -> Graph:
     a_parsed = parse_float_graph(a)
     b_parsed = parse_float_graph(b)
     return ok_lab_color_from_components_internal(l_parsed, a_parsed, b_parsed)
+
+def ok_lab_hist_lightness_quantile(hist, quantile) -> Graph:
+    """OkLab Histogram Lightness Quantile
+
+    Given an OkLab histogram and a quantile, returns the lightness value that corresponds to the quantile.
+
+    Args:
+        hist: Graph of OkLabHist
+        quantile: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Float.
+    """
+    hist_parsed = parse_graph(hist)
+    quantile_parsed = parse_float_graph(quantile)
+    return ok_lab_hist_lightness_quantile_internal(hist_parsed, quantile_parsed)
 
 def ok_lab_to_r_g_b(ok_lab, color_profile) -> Graph:
     """OkLab to RGB
@@ -3316,6 +3350,7 @@ __all__ = [
     "composition_painter",
     "composition_passthrough",
     "composition_perceptual_difference",
+    "composition_pixelate",
     "composition_r_g_b_curve",
     "composition_render_to_image",
     "composition_rotate180",
@@ -3381,6 +3416,7 @@ __all__ = [
     "not_",
     "null_value",
     "ok_lab_color_from_components",
+    "ok_lab_hist_lightness_quantile",
     "ok_lab_to_r_g_b",
     "or_",
     "painter_add_path_with_render_style",
