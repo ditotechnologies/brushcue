@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 8eae4ef12e794ff7bceea6ab4912ba8606ac0cab116415f3068d9c503b38684e
+# hash: 8d965c53b17cd783b0f76efb889b4cbaa8198fbdf9d6100263f60957baad0ec6
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1354,6 +1354,27 @@ def composition_sobel_edge_detection(composition) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     return composition_sobel_edge_detection_internal(composition_parsed)
+
+def composition_swirl(composition, center, radius, amount) -> Graph:
+    """Composition Swirl
+
+    Applies a swirl distortion to this composition
+
+    Args:
+        composition: Graph of Composition
+        center: Graph of Vector2f
+        radius: Graph of Float
+        amount: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    center_parsed = parse_graph(center)
+    radius_parsed = parse_float_graph(radius)
+    amount_parsed = parse_float_graph(amount)
+    return composition_swirl_internal(composition_parsed, center_parsed, radius_parsed, amount_parsed)
 
 def composition_target_white_kelvin(composition, kelvin) -> Graph:
     """Composition Target White Kelvin
@@ -2725,6 +2746,23 @@ def sequence_reverse(sequence) -> Graph:
     sequence_parsed = parse_graph(sequence)
     return sequence_reverse_internal(sequence_parsed)
 
+def sequence_to_gif(sequence, framerate) -> Graph:
+    """Sequence To GIF
+
+    Given a sequence of images, encodes them into an animated GIF returning the bytes of the file.
+
+    Args:
+        sequence: Graph of Sequence
+        framerate: Graph of Int
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    sequence_parsed = parse_graph(sequence)
+    framerate_parsed = parse_int_graph(framerate)
+    return sequence_to_gif_internal(sequence_parsed, framerate_parsed)
+
 def sequence_to_mp4(sequence, frame_rate_numerator, frame_rate_denominator) -> Graph:
     """Sequence To MP4
 
@@ -3365,6 +3403,7 @@ __all__ = [
     "composition_sharpen",
     "composition_size",
     "composition_sobel_edge_detection",
+    "composition_swirl",
     "composition_target_white_kelvin",
     "composition_to_ok_lab_hist",
     "composition_uniform_lightness",
@@ -3448,6 +3487,7 @@ __all__ = [
     "sequence_grayscale",
     "sequence_passthrough",
     "sequence_reverse",
+    "sequence_to_gif",
     "sequence_to_mp4",
     "sequence_trim_back",
     "sequence_trim_front",
