@@ -1,9 +1,9 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 8d965c53b17cd783b0f76efb889b4cbaa8198fbdf9d6100263f60957baad0ec6
+# hash: 6c2dba91c64469c3643cd0fa1e15ae2ce316d362019c13c5a7f6ee778d2afeef
 # generated from templates/py_brushcue_init.jinja
 
 """
-Brushcue — Python bindings for the Matisse graph computation system.
+Brushcue — Python bindings for the BrushCue image editing application.
 
 Every function in this module returns a :class:`Graph` node. Nodes are
 composable: pass the return value of one function as an argument to another
@@ -79,7 +79,7 @@ def abs(number) -> Graph:
 
     Args:
         number: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -95,7 +95,7 @@ def and_(bool1, bool2) -> Graph:
     Args:
         the first bool: Graph of Bool
         The second bool: Graph of Bool
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -113,7 +113,7 @@ def bool_add_to_dictionary(dictionary, key, value) -> Graph:
         dictionary: Graph of Dictionary
         key: Graph of String
         value: Graph of Bool
-        
+
 
     Returns:
         Graph: A graph node producing a Dictionary.
@@ -132,7 +132,7 @@ def bool_if(bool, input_1, input_2) -> Graph:
         bool: Graph of Bool
         input 1: Graph of Bool
         input 2: Graph of Bool
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -152,7 +152,7 @@ def bounds2f_from_x_y_width_height(x, y, width, height) -> Graph:
         y: Graph of Float
         width: Graph of Float
         height: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Bounds2f.
@@ -173,7 +173,7 @@ def bounds2i_from_x_y_width_height(x, y, width, height) -> Graph:
         y: Graph of Int
         width: Graph of Int
         height: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Bounds2i.
@@ -192,7 +192,7 @@ def brush_solid(color, radius) -> Graph:
     Args:
         color: Graph of RGBAColor
         radius: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Brush.
@@ -208,7 +208,7 @@ def byte_list_from_u_r_l(url) -> Graph:
 
     Args:
         url: Graph of String
-        
+
 
     Returns:
         Graph: A graph node producing a ByteList.
@@ -273,7 +273,7 @@ def composition_absolute_value(image) -> Graph:
 
     Args:
         image: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -289,7 +289,7 @@ def composition_bilinear_interpolation(composition, size) -> Graph:
     Args:
         composition: Graph of Composition
         size: Graph of Vector2i
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -307,7 +307,7 @@ def composition_blend_add(foreground, background, foreground_transform) -> Graph
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -326,7 +326,7 @@ def composition_blend_add_with_ok_lab(foreground, background, foreground_transfo
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -345,7 +345,7 @@ def composition_blend_alpha(foreground, background, foreground_transform) -> Gra
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -364,7 +364,7 @@ def composition_blend_alpha_with_ok_lab(foreground, background, foreground_trans
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -383,7 +383,7 @@ def composition_blend_divide(foreground, background, foreground_transform) -> Gr
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -402,7 +402,7 @@ def composition_blend_divide_with_ok_lab(foreground, background, foreground_tran
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -421,7 +421,7 @@ def composition_blend_max(foreground, background, foreground_transform) -> Graph
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -440,7 +440,7 @@ def composition_blend_max_with_ok_lab(foreground, background, foreground_transfo
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -459,7 +459,7 @@ def composition_blend_min(foreground, background, foreground_transform) -> Graph
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -478,7 +478,7 @@ def composition_blend_min_with_ok_lab(foreground, background, foreground_transfo
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -497,7 +497,7 @@ def composition_blend_multiply(foreground, background, foreground_transform) -> 
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -516,7 +516,7 @@ def composition_blend_multiply_with_ok_lab(foreground, background, foreground_tr
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -535,7 +535,7 @@ def composition_blend_subtract(foreground, background, foreground_transform) -> 
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -554,7 +554,7 @@ def composition_blend_subtract_with_ok_lab(foreground, background, foreground_tr
         foreground: Graph of Composition
         background: Graph of Composition
         foreground transform: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -573,7 +573,7 @@ def composition_blend_with_factor(foreground, background, factor) -> Graph:
         foreground: Graph of Composition
         background: Graph of Composition
         factor: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -592,7 +592,7 @@ def composition_blend_with_mask(foreground, background, mask) -> Graph:
         foreground: Graph of Composition
         background: Graph of Composition
         mask: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -610,7 +610,7 @@ def composition_box_blur(composition, dimension) -> Graph:
     Args:
         composition: Graph of Composition
         dimension: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -627,7 +627,7 @@ def composition_box_blur_with_ok_lab(composition, dimension) -> Graph:
     Args:
         composition: Graph of Composition
         dimension: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -644,7 +644,7 @@ def composition_brightness_adjust(composition, scale) -> Graph:
     Args:
         composition: Graph of Composition
         scale: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -661,7 +661,7 @@ def composition_chroma_offset(composition, offset) -> Graph:
     Args:
         composition: Graph of Composition
         offset: Graph of Vector2f
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -678,7 +678,7 @@ def composition_color_convert(composition, color_profile) -> Graph:
     Args:
         composition: Graph of Composition
         color profile: Graph of ColorProfile
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -694,7 +694,7 @@ def composition_color_invert(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -709,7 +709,7 @@ def composition_color_profile(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a ColorProfile.
@@ -726,7 +726,7 @@ def composition_color_rect(color, color_profile, size) -> Graph:
         color: Graph of RGBAColor
         color profile: Graph of ColorProfile
         size: Graph of Vector2i
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -744,7 +744,7 @@ def composition_color_threshold(composition, threshold) -> Graph:
     Args:
         composition: Graph of Composition
         threshold: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -761,7 +761,7 @@ def composition_contrast_adjustment(composition, contrast) -> Graph:
     Args:
         composition: Graph of Composition
         contrast: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -780,7 +780,7 @@ def composition_convolution(composition, kernel, kernel_width, kernel_height) ->
         kernel: Graph of FloatList
         kernel width: Graph of Int
         kernel height: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -799,7 +799,7 @@ def composition_crop(composition, rect) -> Graph:
     Args:
         composition: Graph of Composition
         rect: Graph of Bounds2i
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -821,7 +821,7 @@ def composition_custom_transformer_shader(composition, function_body, helpers, i
         output color profile: Graph of ColorProfile
         inputs: Graph of Dictionary
         needs sample capability: Graph of Bool
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -842,7 +842,7 @@ def composition_face_landmarks(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Point3fList.
@@ -857,7 +857,7 @@ def composition_flip_horizontal(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -872,7 +872,7 @@ def composition_flip_vertical(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -887,7 +887,7 @@ def composition_from_asset(asset_id) -> Graph:
 
     Args:
         asset id: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -902,7 +902,7 @@ def composition_from_image(image) -> Graph:
 
     Args:
         image: Graph of Image
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -918,7 +918,7 @@ def composition_gaussian_blur(composition, sigma) -> Graph:
     Args:
         composition: Graph of Composition
         sigma: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -935,7 +935,7 @@ def composition_gaussian_blur_with_ok_lab(composition, sigma) -> Graph:
     Args:
         composition: Graph of Composition
         sigma: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -951,7 +951,7 @@ def composition_grayscale(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -967,7 +967,7 @@ def composition_l_curve(composition, l_curve) -> Graph:
     Args:
         composition: Graph of Composition
         l curve: Graph of Curve
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -999,7 +999,7 @@ def composition_linear_transform(composition, entry_0_0, entry_0_1, entry_0_2, e
         entry 3,1: Graph of Float
         entry 3,2: Graph of Float
         entry 3,3: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1041,7 +1041,7 @@ def composition_morphological_max(composition, dimension) -> Graph:
     Args:
         composition: Graph of Composition
         dimension: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1058,7 +1058,7 @@ def composition_morphological_min(composition, dimension) -> Graph:
     Args:
         composition: Graph of Composition
         dimension: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1074,7 +1074,7 @@ def composition_painter(painter) -> Graph:
 
     Args:
         painter: Graph of Painter
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1089,7 +1089,7 @@ def composition_passthrough(value) -> Graph:
 
     Args:
         value: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1105,7 +1105,7 @@ def composition_perceptual_difference(composition, color) -> Graph:
     Args:
         composition: Graph of Composition
         color: Graph of OkLabColor
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1122,7 +1122,7 @@ def composition_pixelate(composition, pixel_size) -> Graph:
     Args:
         composition: Graph of Composition
         pixel size: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1141,7 +1141,7 @@ def composition_r_g_b_curve(composition, r_curve, g_curve, b_curve) -> Graph:
         r curve: Graph of Curve
         g curve: Graph of Curve
         b curve: Graph of Curve
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1159,7 +1159,7 @@ def composition_render_to_image(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Image.
@@ -1174,7 +1174,7 @@ def composition_rotate180(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1189,7 +1189,7 @@ def composition_rotate90_clockwise(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1204,7 +1204,7 @@ def composition_rotate90_counter_clockwise(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1220,7 +1220,7 @@ def composition_saturation_adjust(composition, scale) -> Graph:
     Args:
         composition: Graph of Composition
         scale: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1237,7 +1237,7 @@ def composition_scale_nearest_neighbor(composition, size) -> Graph:
     Args:
         composition: Graph of Composition
         size: Graph of Vector2i
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1253,7 +1253,7 @@ def composition_segment_facial_skin(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1268,7 +1268,7 @@ def composition_segment_mouth_lips_eyes_eyebrows(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1283,7 +1283,7 @@ def composition_segment_person(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1298,7 +1298,7 @@ def composition_segment_under_right_eye(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1315,7 +1315,7 @@ def composition_sharpen(composition, radius, strength) -> Graph:
         composition: Graph of Composition
         radius: Graph of Float
         strength: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1332,7 +1332,7 @@ def composition_size(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Vector2i.
@@ -1347,7 +1347,7 @@ def composition_sobel_edge_detection(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1365,7 +1365,7 @@ def composition_swirl(composition, center, radius, amount) -> Graph:
         center: Graph of Vector2f
         radius: Graph of Float
         amount: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1384,7 +1384,7 @@ def composition_target_white_kelvin(composition, kelvin) -> Graph:
     Args:
         composition: Graph of Composition
         kelvin: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1400,7 +1400,7 @@ def composition_to_ok_lab_hist(composition) -> Graph:
 
     Args:
         composition: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a OkLabHist.
@@ -1416,7 +1416,7 @@ def composition_uniform_lightness(composition, lightness) -> Graph:
     Args:
         composition: Graph of Composition
         lightness: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1435,7 +1435,7 @@ def composition_vignette(composition, radius, softness, strength) -> Graph:
         radius: Graph of Float
         softness: Graph of Float
         strength: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1455,7 +1455,7 @@ def composition_zoom_blur(composition, center, strength) -> Graph:
         composition: Graph of Composition
         center: Graph of Vector2f
         strength: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -1473,7 +1473,7 @@ def curve_evaluate(curve, input) -> Graph:
     Args:
         curve: Graph of Curve
         input: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1489,7 +1489,7 @@ def curve_gamma(gamma) -> Graph:
 
     Args:
         gamma: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Curve.
@@ -1515,7 +1515,7 @@ def curve_pivoted_sigmoid(pivot, slope) -> Graph:
     Args:
         pivot: Graph of Float
         slope: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Curve.
@@ -1534,7 +1534,7 @@ def curve_s_curve(pivot, slope, toe, shoulder) -> Graph:
         slope: Graph of Float
         toe: Graph of Float
         shoulder: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Curve.
@@ -1564,7 +1564,7 @@ def fill_custom(function_body, helpers, inputs) -> Graph:
         function body: Graph of String
         helpers: Graph of String
         inputs: Graph of Dictionary
-        
+
 
     Returns:
         Graph: A graph node producing a Fill.
@@ -1581,7 +1581,7 @@ def fill_solid(color) -> Graph:
 
     Args:
         color: Graph of RGBAColor
-        
+
 
     Returns:
         Graph: A graph node producing a Fill.
@@ -1597,7 +1597,7 @@ def float_add(float1, float2) -> Graph:
     Args:
         float1: Graph of Float
         float2: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1615,7 +1615,7 @@ def float_add_to_dictionary(dictionary, key, value) -> Graph:
         dictionary: Graph of Dictionary
         key: Graph of String
         value: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Dictionary.
@@ -1632,7 +1632,7 @@ def float_cos(angle) -> Graph:
 
     Args:
         Angle in radians: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1648,7 +1648,7 @@ def float_divide(float1, float2) -> Graph:
     Args:
         float1: Graph of Float
         float2: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1665,7 +1665,7 @@ def float_equals(float_1, float_2) -> Graph:
     Args:
         First Float: Graph of Float
         Second Float: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -1682,7 +1682,7 @@ def float_greater_than(float_1, float_2) -> Graph:
     Args:
         First Float: Graph of Float
         Second Float: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -1690,6 +1690,23 @@ def float_greater_than(float_1, float_2) -> Graph:
     float_1_parsed = parse_float_graph(float_1)
     float_2_parsed = parse_float_graph(float_2)
     return float_greater_than_internal(float_1_parsed, float_2_parsed)
+
+def float_greater_than_or_equal(float_1, float_2) -> Graph:
+    """Float Greater Than Or Equal
+
+    Checks if the first float is greater than or equal to the second float
+
+    Args:
+        First Float: Graph of Float
+        Second Float: Graph of Float
+
+
+    Returns:
+        Graph: A graph node producing a Bool.
+    """
+    float_1_parsed = parse_float_graph(float_1)
+    float_2_parsed = parse_float_graph(float_2)
+    return float_greater_than_or_equal_internal(float_1_parsed, float_2_parsed)
 
 def float_if(bool, input_1, input_2) -> Graph:
     """Float If
@@ -1700,7 +1717,7 @@ def float_if(bool, input_1, input_2) -> Graph:
         bool: Graph of Bool
         input 1: Graph of Float
         input 2: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1719,7 +1736,7 @@ def float_lerp(x, float1, float2) -> Graph:
         x: Graph of Float
         float1: Graph of Float
         float2: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1737,7 +1754,7 @@ def float_less_than(float_1, float_2) -> Graph:
     Args:
         First Float: Graph of Float
         Second Float: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -1745,6 +1762,23 @@ def float_less_than(float_1, float_2) -> Graph:
     float_1_parsed = parse_float_graph(float_1)
     float_2_parsed = parse_float_graph(float_2)
     return float_less_than_internal(float_1_parsed, float_2_parsed)
+
+def float_less_than_or_equal(float_1, float_2) -> Graph:
+    """Float Less Than Or Equal
+
+    Checks if the first float is less than or equal to the second float
+
+    Args:
+        First Float: Graph of Float
+        Second Float: Graph of Float
+
+
+    Returns:
+        Graph: A graph node producing a Bool.
+    """
+    float_1_parsed = parse_float_graph(float_1)
+    float_2_parsed = parse_float_graph(float_2)
+    return float_less_than_or_equal_internal(float_1_parsed, float_2_parsed)
 
 def float_max(float1, float2) -> Graph:
     """Float Max
@@ -1754,7 +1788,7 @@ def float_max(float1, float2) -> Graph:
     Args:
         float1: Graph of Float
         float2: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1771,7 +1805,7 @@ def float_min(float1, float2) -> Graph:
     Args:
         float1: Graph of Float
         float2: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1788,7 +1822,7 @@ def float_multiply(float1, float2) -> Graph:
     Args:
         float1: Graph of Float
         float2: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1804,7 +1838,7 @@ def float_passthrough(value) -> Graph:
 
     Args:
         value: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1820,7 +1854,7 @@ def float_pow(float1, float2) -> Graph:
     Args:
         float 1: Graph of Float
         float 2: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1836,7 +1870,7 @@ def float_round_to_int(float) -> Graph:
 
     Args:
         float: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Int.
@@ -1851,7 +1885,7 @@ def float_sin(angle) -> Graph:
 
     Args:
         Angle in radians: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1866,7 +1900,7 @@ def float_square_root(number) -> Graph:
 
     Args:
         Number: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1881,7 +1915,7 @@ def float_squared(number) -> Graph:
 
     Args:
         Number: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1897,7 +1931,7 @@ def float_subtract(float1, float2) -> Graph:
     Args:
         float1: Graph of Float
         float2: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -1913,7 +1947,7 @@ def image_from_byte_list(bytes) -> Graph:
 
     Args:
         bytes: Graph of ByteList
-        
+
 
     Returns:
         Graph: A graph node producing a Image.
@@ -1928,7 +1962,7 @@ def image_to_byte_list(image) -> Graph:
 
     Args:
         image: Graph of Image
-        
+
 
     Returns:
         Graph: A graph node producing a ByteList.
@@ -1943,7 +1977,7 @@ def int_abs(number) -> Graph:
 
     Args:
         number: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Int.
@@ -1959,7 +1993,7 @@ def int_add(int_1, int_2) -> Graph:
     Args:
         First Int: Graph of Int
         Second Int: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Int.
@@ -1977,7 +2011,7 @@ def int_add_to_dictionary(dictionary, key, value) -> Graph:
         dictionary: Graph of Dictionary
         key: Graph of String
         value: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Dictionary.
@@ -1995,7 +2029,7 @@ def int_equals(int_1, int_2) -> Graph:
     Args:
         First Int: Graph of Int
         Second Int: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -2012,7 +2046,7 @@ def int_greater_than(int_1, int_2) -> Graph:
     Args:
         First Int: Graph of Int
         Second Int: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -2020,6 +2054,23 @@ def int_greater_than(int_1, int_2) -> Graph:
     int_1_parsed = parse_int_graph(int_1)
     int_2_parsed = parse_int_graph(int_2)
     return int_greater_than_internal(int_1_parsed, int_2_parsed)
+
+def int_greater_than_or_equal(int_1, int_2) -> Graph:
+    """Int Greater Than Or Equal
+
+    Checks if the first int is greater than or equal to the second int
+
+    Args:
+        First Int: Graph of Int
+        Second Int: Graph of Int
+
+
+    Returns:
+        Graph: A graph node producing a Bool.
+    """
+    int_1_parsed = parse_int_graph(int_1)
+    int_2_parsed = parse_int_graph(int_2)
+    return int_greater_than_or_equal_internal(int_1_parsed, int_2_parsed)
 
 def int_if(bool, input_1, input_2) -> Graph:
     """Int If
@@ -2030,7 +2081,7 @@ def int_if(bool, input_1, input_2) -> Graph:
         bool: Graph of Bool
         input 1: Graph of Int
         input 2: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Int.
@@ -2048,7 +2099,7 @@ def int_less_than(int_1, int_2) -> Graph:
     Args:
         First Int: Graph of Int
         Second Int: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -2056,6 +2107,23 @@ def int_less_than(int_1, int_2) -> Graph:
     int_1_parsed = parse_int_graph(int_1)
     int_2_parsed = parse_int_graph(int_2)
     return int_less_than_internal(int_1_parsed, int_2_parsed)
+
+def int_less_than_or_equal(int_1, int_2) -> Graph:
+    """Int Less Than Or Equal
+
+    Checks if the first int is less than or equal to the second int
+
+    Args:
+        First Int: Graph of Int
+        Second Int: Graph of Int
+
+
+    Returns:
+        Graph: A graph node producing a Bool.
+    """
+    int_1_parsed = parse_int_graph(int_1)
+    int_2_parsed = parse_int_graph(int_2)
+    return int_less_than_or_equal_internal(int_1_parsed, int_2_parsed)
 
 def int_max(int1, int2) -> Graph:
     """Int Max
@@ -2065,7 +2133,7 @@ def int_max(int1, int2) -> Graph:
     Args:
         int1: Graph of Int
         int2: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Int.
@@ -2082,7 +2150,7 @@ def int_min(int1, int2) -> Graph:
     Args:
         int1: Graph of Int
         int2: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Int.
@@ -2099,7 +2167,7 @@ def int_multiply(int_1, int_2) -> Graph:
     Args:
         First Int: Graph of Int
         Second Int: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Int.
@@ -2115,7 +2183,7 @@ def int_passthrough(value) -> Graph:
 
     Args:
         value: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Int.
@@ -2131,7 +2199,7 @@ def int_subtract(int_1, int_2) -> Graph:
     Args:
         int 1: Graph of Int
         int 2: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Int.
@@ -2147,7 +2215,7 @@ def int_to_float(int) -> Graph:
 
     Args:
         int: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -2162,7 +2230,7 @@ def monet_network_download_u_r_l_from_asset_i_d(asset_id) -> Graph:
 
     Args:
         asset id: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a String.
@@ -2177,7 +2245,7 @@ def not_(bool) -> Graph:
 
     Args:
         Bool: Graph of Bool
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -2204,7 +2272,7 @@ def ok_lab_color_from_components(l, a, b) -> Graph:
         l: Graph of Float
         a: Graph of Float
         b: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a OkLabColor.
@@ -2222,7 +2290,7 @@ def ok_lab_hist_lightness_quantile(hist, quantile) -> Graph:
     Args:
         hist: Graph of OkLabHist
         quantile: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -2239,7 +2307,7 @@ def ok_lab_to_r_g_b(ok_lab, color_profile) -> Graph:
     Args:
         OkLab: Graph of OkLabColor
         color profile: Graph of ColorProfile
-        
+
 
     Returns:
         Graph: A graph node producing a RGBColor.
@@ -2256,7 +2324,7 @@ def or_(bool1, bool2) -> Graph:
     Args:
         bool1: Graph of Bool
         bool2: Graph of Bool
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -2276,7 +2344,7 @@ def painter_add_path_with_render_style(painter, path, render_style, instances, d
         render style: Graph of RenderStyle
         instances: Graph of Transform2List
         depth: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Painter.
@@ -2295,7 +2363,7 @@ def painter_new(color_profile) -> Graph:
 
     Args:
         color profile: Graph of ColorProfile
-        
+
 
     Returns:
         Graph: A graph node producing a Painter.
@@ -2313,7 +2381,7 @@ def path_add_rectangle(path, center, dimensions, rotation) -> Graph:
         center point of the rectangle: Graph of Point2f
         width and height of the rectangle: Graph of Vector2f
         rotation angle in radians: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Path.
@@ -2332,7 +2400,7 @@ def path_line_to_point(path, point) -> Graph:
     Args:
         path: Graph of Path
         point: Graph of Point2f
-        
+
 
     Returns:
         Graph: A graph node producing a Path.
@@ -2349,7 +2417,7 @@ def path_move_to_point(path, point) -> Graph:
     Args:
         path: Graph of Path
         point: Graph of Point2f
-        
+
 
     Returns:
         Graph: A graph node producing a Path.
@@ -2386,7 +2454,7 @@ def point2f_from_components(x, y) -> Graph:
     Args:
         x: Graph of Float
         y: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Point2f.
@@ -2404,7 +2472,7 @@ def r_g_b_a_color_add_to_dictionary(dictionary, key, value) -> Graph:
         dictionary: Graph of Dictionary
         key: Graph of String
         value: Graph of RGBAColor
-        
+
 
     Returns:
         Graph: A graph node producing a Dictionary.
@@ -2424,7 +2492,7 @@ def r_g_b_a_color_from_components(r, g, b, a) -> Graph:
         green: Graph of Float
         blue: Graph of Float
         alpha: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a RGBAColor.
@@ -2442,7 +2510,7 @@ def r_g_b_a_color_passthrough(value) -> Graph:
 
     Args:
         value: Graph of RGBAColor
-        
+
 
     Returns:
         Graph: A graph node producing a RGBAColor.
@@ -2459,7 +2527,7 @@ def r_g_b_color_add_to_dictionary(dictionary, key, value) -> Graph:
         dictionary: Graph of Dictionary
         key: Graph of String
         value: Graph of RGBColor
-        
+
 
     Returns:
         Graph: A graph node producing a Dictionary.
@@ -2478,7 +2546,7 @@ def r_g_b_color_from_components(r, g, b) -> Graph:
         red: Graph of Float
         green: Graph of Float
         blue: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a RGBColor.
@@ -2495,7 +2563,7 @@ def r_g_b_color_passthrough(value) -> Graph:
 
     Args:
         value: Graph of RGBColor
-        
+
 
     Returns:
         Graph: A graph node producing a RGBColor.
@@ -2511,7 +2579,7 @@ def r_g_b_to_ok_lab(rgb, color_profile) -> Graph:
     Args:
         RGB: Graph of RGBColor
         color profile: Graph of ColorProfile
-        
+
 
     Returns:
         Graph: A graph node producing a OkLabColor.
@@ -2528,7 +2596,7 @@ def render_style_brush_and_fill(brush, fill) -> Graph:
     Args:
         brush: Graph of Brush
         fill: Graph of Fill
-        
+
 
     Returns:
         Graph: A graph node producing a RenderStyle.
@@ -2544,7 +2612,7 @@ def render_style_brush_only(brush) -> Graph:
 
     Args:
         brush: Graph of Brush
-        
+
 
     Returns:
         Graph: A graph node producing a RenderStyle.
@@ -2559,7 +2627,7 @@ def render_style_fill_only(fill) -> Graph:
 
     Args:
         fill: Graph of Fill
-        
+
 
     Returns:
         Graph: A graph node producing a RenderStyle.
@@ -2575,7 +2643,7 @@ def sequence_adjust_speed(sequence, factor) -> Graph:
     Args:
         sequence: Graph of Sequence
         factor: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Sequence.
@@ -2583,23 +2651,6 @@ def sequence_adjust_speed(sequence, factor) -> Graph:
     sequence_parsed = parse_graph(sequence)
     factor_parsed = parse_float_graph(factor)
     return sequence_adjust_speed_internal(sequence_parsed, factor_parsed)
-
-def sequence_animated_web_p(sequence, framerate) -> Graph:
-    """Sequence to Animated WebP
-
-    Given a sequence of images, encodes them into an animated WebP returning the URL to the file.
-
-    Args:
-        sequence: Graph of Sequence
-        framerate: Graph of Int
-        
-
-    Returns:
-        Graph: A graph node producing a ByteList.
-    """
-    sequence_parsed = parse_graph(sequence)
-    framerate_parsed = parse_int_graph(framerate)
-    return sequence_animated_web_p_internal(sequence_parsed, framerate_parsed)
 
 def sequence_composition_at_time(sequence, time) -> Graph:
     """Sequence Composition at Time
@@ -2609,7 +2660,7 @@ def sequence_composition_at_time(sequence, time) -> Graph:
     Args:
         sequence: Graph of Sequence
         time: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Composition.
@@ -2626,7 +2677,7 @@ def sequence_concatenate(sequence_1, sequence_2) -> Graph:
     Args:
         sequence 1: Graph of Sequence
         sequence 2: Graph of Sequence
-        
+
 
     Returns:
         Graph: A graph node producing a Sequence.
@@ -2642,7 +2693,7 @@ def sequence_duration(sequence) -> Graph:
 
     Args:
         sequence: Graph of Sequence
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -2658,7 +2709,7 @@ def sequence_from_composition_and_duration(composition, duration) -> Graph:
     Args:
         composition: Graph of Composition
         duration: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Sequence.
@@ -2674,7 +2725,7 @@ def sequence_from_u_r_l(url) -> Graph:
 
     Args:
         url: Graph of String
-        
+
 
     Returns:
         Graph: A graph node producing a Sequence.
@@ -2691,7 +2742,7 @@ def sequence_graph(duration, time, frame) -> Graph:
         duration: Graph of Float
         time: Graph of Float
         frame: Graph of Composition
-        
+
 
     Returns:
         Graph: A graph node producing a Sequence.
@@ -2708,7 +2759,7 @@ def sequence_grayscale(sequence) -> Graph:
 
     Args:
         sequence: Graph of Sequence
-        
+
 
     Returns:
         Graph: A graph node producing a Sequence.
@@ -2723,7 +2774,7 @@ def sequence_passthrough(value) -> Graph:
 
     Args:
         value: Graph of Sequence
-        
+
 
     Returns:
         Graph: A graph node producing a Sequence.
@@ -2738,7 +2789,7 @@ def sequence_reverse(sequence) -> Graph:
 
     Args:
         sequence: Graph of Sequence
-        
+
 
     Returns:
         Graph: A graph node producing a Sequence.
@@ -2746,41 +2797,22 @@ def sequence_reverse(sequence) -> Graph:
     sequence_parsed = parse_graph(sequence)
     return sequence_reverse_internal(sequence_parsed)
 
-def sequence_to_gif(sequence, framerate) -> Graph:
-    """Sequence To GIF
-
-    Given a sequence of images, encodes them into an animated GIF returning the bytes of the file.
-
-    Args:
-        sequence: Graph of Sequence
-        framerate: Graph of Int
-        
-
-    Returns:
-        Graph: A graph node producing a ByteList.
-    """
-    sequence_parsed = parse_graph(sequence)
-    framerate_parsed = parse_int_graph(framerate)
-    return sequence_to_gif_internal(sequence_parsed, framerate_parsed)
-
-def sequence_to_mp4(sequence, frame_rate_numerator, frame_rate_denominator) -> Graph:
+def sequence_to_mp4(sequence, frame_rate) -> Graph:
     """Sequence To MP4
 
     Given a sequence. Converts it to MP4 return a local file to where that MP4 is stored.
 
     Args:
         sequence: Graph of Sequence
-        frame rate numerator: Graph of Int
-        frame rate denominator: Graph of Int
-        
+        frame rate: Graph of Int
+
 
     Returns:
         Graph: A graph node producing a ByteList.
     """
     sequence_parsed = parse_graph(sequence)
-    frame_rate_numerator_parsed = parse_int_graph(frame_rate_numerator)
-    frame_rate_denominator_parsed = parse_int_graph(frame_rate_denominator)
-    return sequence_to_mp4_internal(sequence_parsed, frame_rate_numerator_parsed, frame_rate_denominator_parsed)
+    frame_rate_parsed = parse_int_graph(frame_rate)
+    return sequence_to_mp4_internal(sequence_parsed, frame_rate_parsed)
 
 def sequence_trim_back(sequence, amount) -> Graph:
     """Sequence Trim Back
@@ -2790,7 +2822,7 @@ def sequence_trim_back(sequence, amount) -> Graph:
     Args:
         sequence: Graph of Sequence
         amount: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Sequence.
@@ -2807,7 +2839,7 @@ def sequence_trim_front(sequence, amount) -> Graph:
     Args:
         sequence: Graph of Sequence
         amount: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Sequence.
@@ -2825,7 +2857,7 @@ def string_if(bool, input_1, input_2) -> Graph:
         bool: Graph of Bool
         input 1: Graph of String
         input 2: Graph of String
-        
+
 
     Returns:
         Graph: A graph node producing a String.
@@ -2853,7 +2885,7 @@ def transform2_rotate(transform, angle) -> Graph:
     Args:
         transform: Graph of Transform2
         angle in radians: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Transform2.
@@ -2870,7 +2902,7 @@ def transform2_scale(transform, scale) -> Graph:
     Args:
         transform: Graph of Transform2
         scale: Graph of Vector2f
-        
+
 
     Returns:
         Graph: A graph node producing a Transform2.
@@ -2886,7 +2918,7 @@ def transform2_to_list(item) -> Graph:
 
     Args:
         item: Graph of Transform2
-        
+
 
     Returns:
         Graph: A graph node producing a Transform2List.
@@ -2902,7 +2934,7 @@ def transform2_translation(transform, translation) -> Graph:
     Args:
         transform: Graph of Transform2
         translation: Graph of Vector2f
-        
+
 
     Returns:
         Graph: A graph node producing a Transform2.
@@ -2920,7 +2952,7 @@ def upload_byte_list(bytes, url, content_type) -> Graph:
         bytes: Graph of ByteList
         url: Graph of String
         content type: Graph of String
-        
+
 
     Returns:
         Graph: A graph node producing a Void.
@@ -2939,7 +2971,7 @@ def upload_file_path(path, url, content_type) -> Graph:
         local file path to read: Graph of String
         url: Graph of String
         content type: Graph of String
-        
+
 
     Returns:
         Graph: A graph node producing a Void.
@@ -2956,7 +2988,7 @@ def vector2_int_to_vector2_float(vector) -> Graph:
 
     Args:
         vector: Graph of Vector2i
-        
+
 
     Returns:
         Graph: A graph node producing a Vector2f.
@@ -2972,7 +3004,7 @@ def vector2f_add(lhs, rhs) -> Graph:
     Args:
         The vector on the left hand side of the add: Graph of Vector2f
         The vector on the right hand side of the add: Graph of Vector2f
-        
+
 
     Returns:
         Graph: A graph node producing a Vector2f.
@@ -2990,7 +3022,7 @@ def vector2f_add_to_dictionary(dictionary, key, value) -> Graph:
         dictionary: Graph of Dictionary
         key: Graph of String
         value: Graph of Vector2f
-        
+
 
     Returns:
         Graph: A graph node producing a Dictionary.
@@ -3008,7 +3040,7 @@ def vector2f_from_components(x, y) -> Graph:
     Args:
         x: Graph of Float
         y: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Vector2f.
@@ -3024,7 +3056,7 @@ def vector2f_normalize(vector) -> Graph:
 
     Args:
         Vector: Graph of Vector2f
-        
+
 
     Returns:
         Graph: A graph node producing a Vector2f.
@@ -3039,7 +3071,7 @@ def vector2f_passthrough(value) -> Graph:
 
     Args:
         value: Graph of Vector2f
-        
+
 
     Returns:
         Graph: A graph node producing a Vector2f.
@@ -3055,7 +3087,7 @@ def vector2f_scalar_multiply(vector, scalar) -> Graph:
     Args:
         Vector: Graph of Vector2f
         Scalar: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Vector2f.
@@ -3071,7 +3103,7 @@ def vector2f_x(vector) -> Graph:
 
     Args:
         vector: Graph of Vector2f
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -3086,7 +3118,7 @@ def vector2f_y(vector) -> Graph:
 
     Args:
         vector: Graph of Vector2f
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -3102,7 +3134,7 @@ def vector2i_add(lhs, rhs) -> Graph:
     Args:
         The vector on the left hand side of the add: Graph of Vector2i
         The vector on the right hand side of the add: Graph of Vector2i
-        
+
 
     Returns:
         Graph: A graph node producing a Vector2i.
@@ -3120,7 +3152,7 @@ def vector2i_add_to_dictionary(dictionary, key, value) -> Graph:
         dictionary: Graph of Dictionary
         key: Graph of String
         value: Graph of Vector2i
-        
+
 
     Returns:
         Graph: A graph node producing a Dictionary.
@@ -3138,7 +3170,7 @@ def vector2i_from_components(x, y) -> Graph:
     Args:
         x: Graph of Int
         y: Graph of Int
-        
+
 
     Returns:
         Graph: A graph node producing a Vector2i.
@@ -3154,7 +3186,7 @@ def vector2i_passthrough(value) -> Graph:
 
     Args:
         value: Graph of Vector2i
-        
+
 
     Returns:
         Graph: A graph node producing a Vector2i.
@@ -3169,7 +3201,7 @@ def vector2i_to_vector2f(vector) -> Graph:
 
     Args:
         vector: Graph of Vector2i
-        
+
 
     Returns:
         Graph: A graph node producing a Vector2f.
@@ -3184,7 +3216,7 @@ def vector2i_x(vector) -> Graph:
 
     Args:
         vector: Graph of Vector2i
-        
+
 
     Returns:
         Graph: A graph node producing a Int.
@@ -3199,7 +3231,7 @@ def vector2i_y(vector) -> Graph:
 
     Args:
         vector: Graph of Vector2i
-        
+
 
     Returns:
         Graph: A graph node producing a Int.
@@ -3215,7 +3247,7 @@ def vector3f_add(lhs, rhs) -> Graph:
     Args:
         The vector on the left hand side of the add: Graph of Vector3f
         The vector on the right hand side of the add: Graph of Vector3f
-        
+
 
     Returns:
         Graph: A graph node producing a Vector3f.
@@ -3233,7 +3265,7 @@ def vector3f_from_components(x, y, z) -> Graph:
         x: Graph of Float
         y: Graph of Float
         z: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Vector3f.
@@ -3250,7 +3282,7 @@ def vector3f_normalize(vector) -> Graph:
 
     Args:
         Vector: Graph of Vector3f
-        
+
 
     Returns:
         Graph: A graph node producing a Vector3f.
@@ -3265,7 +3297,7 @@ def vector3f_x(vector) -> Graph:
 
     Args:
         vector: Graph of Vector3f
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -3280,7 +3312,7 @@ def vector3f_y(vector) -> Graph:
 
     Args:
         vector: Graph of Vector3f
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -3295,7 +3327,7 @@ def vector3f_z(vector) -> Graph:
 
     Args:
         vector: Graph of Vector3f
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -3311,7 +3343,7 @@ def xor(bool1, bool2) -> Graph:
     Args:
         the first bool: Graph of Bool
         The second bool: Graph of Bool
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -3423,9 +3455,11 @@ __all__ = [
     "float_divide",
     "float_equals",
     "float_greater_than",
+    "float_greater_than_or_equal",
     "float_if",
     "float_lerp",
     "float_less_than",
+    "float_less_than_or_equal",
     "float_max",
     "float_min",
     "float_multiply",
@@ -3443,8 +3477,10 @@ __all__ = [
     "int_add_to_dictionary",
     "int_equals",
     "int_greater_than",
+    "int_greater_than_or_equal",
     "int_if",
     "int_less_than",
+    "int_less_than_or_equal",
     "int_max",
     "int_min",
     "int_multiply",
@@ -3477,7 +3513,6 @@ __all__ = [
     "render_style_brush_only",
     "render_style_fill_only",
     "sequence_adjust_speed",
-    "sequence_animated_web_p",
     "sequence_composition_at_time",
     "sequence_concatenate",
     "sequence_duration",
@@ -3487,7 +3522,6 @@ __all__ = [
     "sequence_grayscale",
     "sequence_passthrough",
     "sequence_reverse",
-    "sequence_to_gif",
     "sequence_to_mp4",
     "sequence_trim_back",
     "sequence_trim_front",
