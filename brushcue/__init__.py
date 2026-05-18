@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 69aff837b56c17c3d60f7b6185e981263177dd7e305991cf56399b96dab530ce
+# hash: 6b48f6d978de937d5a15e68d2c86517bbc555b1bf2073121958ed20acfd84520
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1555,6 +1555,40 @@ def dictionary_create() -> Graph:
     """
     return dictionary_create_internal()
 
+def file_convert_m_p4_to_animated_web_p(mp4_byte, frame_rate) -> Graph:
+    """File Convert MP4 to GIF
+
+    Takes an MP4 file and converts it to a GIF file. Returns a local file path to the converted GIF.
+
+    Args:
+        mp4 bytes: Graph of ByteList
+        frame rate: Graph of Int
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    mp4_byte_parsed = parse_graph(mp4_byte)
+    frame_rate_parsed = parse_int_graph(frame_rate)
+    return file_convert_m_p4_to_animated_web_p_internal(mp4_byte_parsed, frame_rate_parsed)
+
+def file_convert_m_p4_to_gif(mp4_byte, frame_rate) -> Graph:
+    """File Convert MP4 to GIF
+
+    Takes an MP4 file and converts it to a GIF file. Returns a local file path to the converted GIF.
+
+    Args:
+        mp4 bytes: Graph of ByteList
+        frame rate: Graph of Int
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    mp4_byte_parsed = parse_graph(mp4_byte)
+    frame_rate_parsed = parse_int_graph(frame_rate)
+    return file_convert_m_p4_to_gif_internal(mp4_byte_parsed, frame_rate_parsed)
+
 def fill_custom(function_body, helpers, inputs) -> Graph:
     """Fill Custom
 
@@ -2332,6 +2366,31 @@ def or_(bool1, bool2) -> Graph:
     bool1_parsed = parse_bool_graph(bool1)
     bool2_parsed = parse_bool_graph(bool2)
     return or_internal(bool1_parsed, bool2_parsed)
+
+def painter_add_ellipse_with_render_style(painter, center, dimensions, rotation, render_style, instances) -> Graph:
+    """Painter Add Ellipse with Render Style
+
+    Adds an ellipse to the painter and draws it with the render style. Set some transforms on the ellipse as well.
+
+    Args:
+        painter: Graph of Painter
+        center point of the ellipse: Graph of Point2f
+        width (a) and height (b) of the ellipse: Graph of Vector2f
+        rotation angle in radians: Graph of Float
+        render style: Graph of RenderStyle
+        instances: Graph of Transform2List
+        
+
+    Returns:
+        Graph: A graph node producing a Painter.
+    """
+    painter_parsed = parse_graph(painter)
+    center_parsed = parse_graph(center)
+    dimensions_parsed = parse_graph(dimensions)
+    rotation_parsed = parse_float_graph(rotation)
+    render_style_parsed = parse_graph(render_style)
+    instances_parsed = parse_graph(instances)
+    return painter_add_ellipse_with_render_style_internal(painter_parsed, center_parsed, dimensions_parsed, rotation_parsed, render_style_parsed, instances_parsed)
 
 def painter_add_path_with_render_style(painter, path, render_style, instances) -> Graph:
     """Painter Add Path with Render Style
@@ -3468,6 +3527,8 @@ __all__ = [
     "curve_pivoted_sigmoid",
     "curve_s_curve",
     "dictionary_create",
+    "file_convert_m_p4_to_animated_web_p",
+    "file_convert_m_p4_to_gif",
     "fill_custom",
     "fill_solid",
     "float_add",
@@ -3515,6 +3576,7 @@ __all__ = [
     "ok_lab_hist_lightness_quantile",
     "ok_lab_to_r_g_b",
     "or_",
+    "painter_add_ellipse_with_render_style",
     "painter_add_path_with_render_style",
     "painter_add_rectangle_with_render_style",
     "painter_new",
