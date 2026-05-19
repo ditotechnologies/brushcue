@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 7d37a6a21c1aedfe0cb41a717de2d3d7165b978f71ddfd2cbbbf3cf482ed847c
+# hash: a42ba71a5008f037f7fb29e9a4df1aa994dfec66d7c95e1548fffc0ef2f610e2
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1267,21 +1267,6 @@ def composition_segment(composition, prompt, positive_points, negative_points) -
     negative_points_parsed = parse_graph(negative_points)
     return composition_segment_internal(composition_parsed, prompt_parsed, positive_points_parsed, negative_points_parsed)
 
-def composition_segment_facial_skin(composition) -> Graph:
-    """Composition Segment Facial Skin
-
-    Given an input image. Returns a mask that segments out the facial skin in the image.
-
-    Args:
-        composition: Graph of Composition
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    composition_parsed = parse_graph(composition)
-    return composition_segment_facial_skin_internal(composition_parsed)
-
 def composition_segment_mouth_lips_eyes_eyebrows(composition) -> Graph:
     """Composition Segment Mouth Lips Eyes Eyebrows
 
@@ -1296,21 +1281,6 @@ def composition_segment_mouth_lips_eyes_eyebrows(composition) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     return composition_segment_mouth_lips_eyes_eyebrows_internal(composition_parsed)
-
-def composition_segment_person(composition) -> Graph:
-    """Composition Segment Person
-
-    Given an input image. Returns a mask that segments out the person in the image.
-
-    Args:
-        composition: Graph of Composition
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    composition_parsed = parse_graph(composition)
-    return composition_segment_person_internal(composition_parsed)
 
 def composition_segment_under_right_eye(composition) -> Graph:
     """Composition Segment Under Right Eye
@@ -3654,9 +3624,7 @@ __all__ = [
     "composition_saturation_adjust",
     "composition_scale_nearest_neighbor",
     "composition_segment",
-    "composition_segment_facial_skin",
     "composition_segment_mouth_lips_eyes_eyebrows",
-    "composition_segment_person",
     "composition_segment_under_right_eye",
     "composition_sharpen",
     "composition_size",

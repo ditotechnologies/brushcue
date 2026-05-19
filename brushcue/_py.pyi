@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: b38509209c3f588ce26e6e13b28ba4dcff633b24923723dab8f6b61141c05879
+# hash: a53342d52309c86e6d5dacfa9749dbc0a60717818c9cb190fe45e6b82e948e22
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -230,11 +230,7 @@ def composition_scale_nearest_neighbor_internal(composition: Graph, size: Graph)
 
 def composition_segment_internal(composition: Graph, prompt: Graph, positive_points: Graph, negative_points: Graph) -> Graph: ...
 
-def composition_segment_facial_skin_internal(composition: Graph) -> Graph: ...
-
 def composition_segment_mouth_lips_eyes_eyebrows_internal(composition: Graph) -> Graph: ...
-
-def composition_segment_person_internal(composition: Graph) -> Graph: ...
 
 def composition_segment_under_right_eye_internal(composition: Graph) -> Graph: ...
 
