@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 6b48f6d978de937d5a15e68d2c86517bbc555b1bf2073121958ed20acfd84520
+# hash: 7d37a6a21c1aedfe0cb41a717de2d3d7165b978f71ddfd2cbbbf3cf482ed847c
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1246,6 +1246,27 @@ def composition_scale_nearest_neighbor(composition, size) -> Graph:
     size_parsed = parse_graph(size)
     return composition_scale_nearest_neighbor_internal(composition_parsed, size_parsed)
 
+def composition_segment(composition, prompt, positive_points, negative_points) -> Graph:
+    """Composition Segment
+
+    Segments objects in a composition using SAM3. Accepts a text prompt and lists of positive/negative click points.
+
+    Args:
+        Input composition to segment: Graph of Composition
+        Text prompt describing the object to segment (empty string for no text prompt): Graph of String
+        List of pixel coordinates marking foreground regions to include: Graph of Point2iList
+        List of pixel coordinates marking background regions to exclude: Graph of Point2iList
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    prompt_parsed = parse_string_graph(prompt)
+    positive_points_parsed = parse_graph(positive_points)
+    negative_points_parsed = parse_graph(negative_points)
+    return composition_segment_internal(composition_parsed, prompt_parsed, positive_points_parsed, negative_points_parsed)
+
 def composition_segment_facial_skin(composition) -> Graph:
     """Composition Segment Facial Skin
 
@@ -1555,39 +1576,163 @@ def dictionary_create() -> Graph:
     """
     return dictionary_create_internal()
 
-def file_convert_m_p4_to_animated_web_p(mp4_byte, frame_rate) -> Graph:
-    """File Convert MP4 to GIF
+def file_convert_image_to_bmp(image_bytes) -> Graph:
+    """File Convert Image to BMP
 
-    Takes an MP4 file and converts it to a GIF file. Returns a local file path to the converted GIF.
+    Converts any image format (JPEG, PNG, WebP, TIFF, HEIC, etc.) to BMP. Returns BMP bytes.
 
     Args:
-        mp4 bytes: Graph of ByteList
+        image bytes (any format): Graph of ByteList
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    image_bytes_parsed = parse_graph(image_bytes)
+    return file_convert_image_to_bmp_internal(image_bytes_parsed)
+
+def file_convert_image_to_heic(image_bytes, quality) -> Graph:
+    """File Convert Image to HEIC
+
+    Converts any image format (JPEG, PNG, WebP, TIFF, BMP, etc.) to HEIC. Returns HEIC bytes.
+
+    Args:
+        image bytes (any format): Graph of ByteList
+        HEIC quality (1-100): Graph of Int
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    image_bytes_parsed = parse_graph(image_bytes)
+    quality_parsed = parse_int_graph(quality)
+    return file_convert_image_to_heic_internal(image_bytes_parsed, quality_parsed)
+
+def file_convert_image_to_jpeg(image_bytes, quality) -> Graph:
+    """File Convert Image to JPEG
+
+    Converts any image format (PNG, WebP, TIFF, BMP, HEIC, etc.) to JPEG. Returns JPEG bytes.
+
+    Args:
+        image bytes (any format): Graph of ByteList
+        JPEG quality (1-100): Graph of Int
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    image_bytes_parsed = parse_graph(image_bytes)
+    quality_parsed = parse_int_graph(quality)
+    return file_convert_image_to_jpeg_internal(image_bytes_parsed, quality_parsed)
+
+def file_convert_image_to_png(image_bytes) -> Graph:
+    """File Convert Image to PNG
+
+    Converts any image format (JPEG, WebP, TIFF, BMP, HEIC, etc.) to PNG. Returns PNG bytes.
+
+    Args:
+        image bytes (any format): Graph of ByteList
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    image_bytes_parsed = parse_graph(image_bytes)
+    return file_convert_image_to_png_internal(image_bytes_parsed)
+
+def file_convert_image_to_tiff(image_bytes) -> Graph:
+    """File Convert Image to TIFF
+
+    Converts any image format (JPEG, PNG, WebP, BMP, HEIC, etc.) to TIFF. Returns TIFF bytes.
+
+    Args:
+        image bytes (any format): Graph of ByteList
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    image_bytes_parsed = parse_graph(image_bytes)
+    return file_convert_image_to_tiff_internal(image_bytes_parsed)
+
+def file_convert_image_to_web_p(image_bytes, quality) -> Graph:
+    """File Convert Image to WebP
+
+    Converts any image format (JPEG, PNG, TIFF, BMP, HEIC, etc.) to WebP. Returns WebP bytes.
+
+    Args:
+        image bytes (any format): Graph of ByteList
+        WebP quality (1-100): Graph of Int
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    image_bytes_parsed = parse_graph(image_bytes)
+    quality_parsed = parse_int_graph(quality)
+    return file_convert_image_to_web_p_internal(image_bytes_parsed, quality_parsed)
+
+def file_convert_video_to_animated_web_p(video_bytes) -> Graph:
+    """File Convert Video to Animated WebP
+
+    Converts any video format (MP4, MOV, WebM, AVI, MKV) to an animated WebP. Returns animated WebP bytes.
+
+    Args:
+        video bytes (any format): Graph of ByteList
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    video_bytes_parsed = parse_graph(video_bytes)
+    return file_convert_video_to_animated_web_p_internal(video_bytes_parsed)
+
+def file_convert_video_to_gif(video_bytes, frame_rate) -> Graph:
+    """File Convert Video to GIF
+
+    Converts any video format (MP4, MOV, WebM, AVI, MKV) to a GIF. Returns GIF bytes.
+
+    Args:
+        video bytes (any format): Graph of ByteList
         frame rate: Graph of Int
         
 
     Returns:
         Graph: A graph node producing a ByteList.
     """
-    mp4_byte_parsed = parse_graph(mp4_byte)
+    video_bytes_parsed = parse_graph(video_bytes)
     frame_rate_parsed = parse_int_graph(frame_rate)
-    return file_convert_m_p4_to_animated_web_p_internal(mp4_byte_parsed, frame_rate_parsed)
+    return file_convert_video_to_gif_internal(video_bytes_parsed, frame_rate_parsed)
 
-def file_convert_m_p4_to_gif(mp4_byte, frame_rate) -> Graph:
-    """File Convert MP4 to GIF
+def file_convert_video_to_m_p4(video_bytes) -> Graph:
+    """File Convert Video to MP4
 
-    Takes an MP4 file and converts it to a GIF file. Returns a local file path to the converted GIF.
+    Converts any video format (MOV, WebM, AVI, MKV) to MP4. Returns MP4 bytes.
 
     Args:
-        mp4 bytes: Graph of ByteList
-        frame rate: Graph of Int
+        video bytes (any format): Graph of ByteList
         
 
     Returns:
         Graph: A graph node producing a ByteList.
     """
-    mp4_byte_parsed = parse_graph(mp4_byte)
-    frame_rate_parsed = parse_int_graph(frame_rate)
-    return file_convert_m_p4_to_gif_internal(mp4_byte_parsed, frame_rate_parsed)
+    video_bytes_parsed = parse_graph(video_bytes)
+    return file_convert_video_to_m_p4_internal(video_bytes_parsed)
+
+def file_convert_video_to_web_m(video_bytes) -> Graph:
+    """File Convert Video to WebM
+
+    Converts any video format (MP4, MOV, AVI, MKV) to WebM. Returns WebM bytes.
+
+    Args:
+        video bytes (any format): Graph of ByteList
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    video_bytes_parsed = parse_graph(video_bytes)
+    return file_convert_video_to_web_m_internal(video_bytes_parsed)
 
 def fill_custom(function_body, helpers, inputs) -> Graph:
     """Fill Custom
@@ -3508,6 +3653,7 @@ __all__ = [
     "composition_rotate90_counter_clockwise",
     "composition_saturation_adjust",
     "composition_scale_nearest_neighbor",
+    "composition_segment",
     "composition_segment_facial_skin",
     "composition_segment_mouth_lips_eyes_eyebrows",
     "composition_segment_person",
@@ -3527,8 +3673,16 @@ __all__ = [
     "curve_pivoted_sigmoid",
     "curve_s_curve",
     "dictionary_create",
-    "file_convert_m_p4_to_animated_web_p",
-    "file_convert_m_p4_to_gif",
+    "file_convert_image_to_bmp",
+    "file_convert_image_to_heic",
+    "file_convert_image_to_jpeg",
+    "file_convert_image_to_png",
+    "file_convert_image_to_tiff",
+    "file_convert_image_to_web_p",
+    "file_convert_video_to_animated_web_p",
+    "file_convert_video_to_gif",
+    "file_convert_video_to_m_p4",
+    "file_convert_video_to_web_m",
     "fill_custom",
     "fill_solid",
     "float_add",
