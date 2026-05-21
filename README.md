@@ -7,10 +7,10 @@ Brushcue is a GPU-accelerated image editing library for Python. Every operation 
 ### Examples of things you can make
 
 <table><tr>
-<td align="center"><img src="https://www.brushcue.com/tools/rgb-color-shift/animation.webp" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/swirl/animation.webp" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/crt-monitor-filter/animation.webp" width="180"></td>
 <td align="center"><img src="https://www.brushcue.com/tools/pixelate/animation.webp" width="180"></td>
 <td align="center"><img src="https://www.brushcue.com/tools/zoom-blur/animation.webp" width="180"></td>
-<td align="center"><img src="https://www.brushcue.com/tools/camera-moving-distortion/animation.webp" width="180"></td>
 </tr></table>
 
 ## Install
@@ -66,6 +66,7 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Convert To BT 709](https://www.brushcue.com/docs/py/examples/convert-to-bt-709)
 - [Convert To Display P3](https://www.brushcue.com/docs/py/examples/convert-to-display-p3)
 - [Convert To sRGB](https://www.brushcue.com/docs/py/examples/convert-to-srgb)
+- [CRT Monitor Filter](https://www.brushcue.com/docs/py/examples/crt-monitor-filter)
 - [Darken](https://www.brushcue.com/docs/py/examples/darken)
 - [Desert Mirage Filter](https://www.brushcue.com/docs/py/examples/desert-mirage-filter)
 - [Duotone Effect](https://www.brushcue.com/docs/py/examples/duotone-effect)
@@ -79,8 +80,10 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Halftone](https://www.brushcue.com/docs/py/examples/halftone)
 - [High Contrast Grayscale](https://www.brushcue.com/docs/py/examples/high-contrast-grayscale)
 - [Horizontal Mirror](https://www.brushcue.com/docs/py/examples/horizontal-mirror)
+- [Image to Square with Blur](https://www.brushcue.com/docs/py/examples/image-to-square-with-blur)
 - [Image to Video](https://www.brushcue.com/docs/py/examples/image-to-video)
 - [Kaleidoscope](https://www.brushcue.com/docs/py/examples/kaleidoscope)
+- [Kaleidoscope Animation](https://www.brushcue.com/docs/py/examples/kaleidoscope-animation)
 - [Kelvin Tuner](https://www.brushcue.com/docs/py/examples/kelvin-tuner)
 - [Lighten](https://www.brushcue.com/docs/py/examples/lighten)
 - [Lightness Threshold](https://www.brushcue.com/docs/py/examples/lightness-threshold)
@@ -107,6 +110,7 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Sobel Edge Detection](https://www.brushcue.com/docs/py/examples/sobel-edge-detection)
 - [Solarize](https://www.brushcue.com/docs/py/examples/solarize)
 - [Sparkle Vignette](https://www.brushcue.com/docs/py/examples/sparkle-vignette)
+- [Spinning Reveal Animation](https://www.brushcue.com/docs/py/examples/spinning-reveal-animation)
 - [Swirl](https://www.brushcue.com/docs/py/examples/swirl)
 - [Vertical Mirror](https://www.brushcue.com/docs/py/examples/vertical-mirror)
 - [Vibrancy](https://www.brushcue.com/docs/py/examples/vibrancy)
