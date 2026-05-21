@@ -1,6 +1,6 @@
 [project]
 name = "brushcue-cpu"
-version = "1.0.2"
+version = "1.1.0"
 description = "Python API for the BrushCue media editing platform (CPU-only build)."
 readme = "README.md"
 requires-python = ">=3.11"

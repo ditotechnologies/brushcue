@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: a53342d52309c86e6d5dacfa9749dbc0a60717818c9cb190fe45e6b82e948e22
+# hash: 6746bd85b5d9ae353a3e3c9b19e34b8f34c7c86f31bbd2d5552c000bcb02cf57
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -195,6 +195,8 @@ def composition_gaussian_blur_internal(composition: Graph, sigma: Graph) -> Grap
 def composition_gaussian_blur_with_ok_lab_internal(composition: Graph, sigma: Graph) -> Graph: ...
 
 def composition_grayscale_internal(composition: Graph) -> Graph: ...
+
+def composition_if_internal(bool: Graph, input_1: Graph, input_2: Graph) -> Graph: ...
 
 def composition_l_curve_internal(composition: Graph, l_curve: Graph) -> Graph: ...
 

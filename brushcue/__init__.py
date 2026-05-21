@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: a42ba71a5008f037f7fb29e9a4df1aa994dfec66d7c95e1548fffc0ef2f610e2
+# hash: c8f7bdd717ecbccad2bf457c4b69a1e36383746a76bbc1a28c8bd453a510ed00
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -959,6 +959,25 @@ def composition_grayscale(composition) -> Graph:
     composition_parsed = parse_graph(composition)
     return composition_grayscale_internal(composition_parsed)
 
+def composition_if(bool, input_1, input_2) -> Graph:
+    """Composition If
+
+    If the boolean is true returns input 1, otherwise input 2. Type: Composition
+
+    Args:
+        bool: Graph of Bool
+        input 1: Graph of Composition
+        input 2: Graph of Composition
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    bool_parsed = parse_bool_graph(bool)
+    input_1_parsed = parse_graph(input_1)
+    input_2_parsed = parse_graph(input_2)
+    return composition_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
+
 def composition_l_curve(composition, l_curve) -> Graph:
     """Composition Lightness Curve
 
@@ -1252,10 +1271,10 @@ def composition_segment(composition, prompt, positive_points, negative_points) -
     Segments objects in a composition using SAM3. Accepts a text prompt and lists of positive/negative click points.
 
     Args:
-        Input composition to segment: Graph of Composition
-        Text prompt describing the object to segment (empty string for no text prompt): Graph of String
-        List of pixel coordinates marking foreground regions to include: Graph of Point2iList
-        List of pixel coordinates marking background regions to exclude: Graph of Point2iList
+        composition: Graph of Composition
+        prompt: Graph of String
+        positive points: Graph of Point2iList
+        negative points: Graph of Point2iList
         
 
     Returns:
@@ -3607,6 +3626,7 @@ __all__ = [
     "composition_gaussian_blur",
     "composition_gaussian_blur_with_ok_lab",
     "composition_grayscale",
+    "composition_if",
     "composition_l_curve",
     "composition_linear_transform",
     "composition_monet_women_with_parasol",
