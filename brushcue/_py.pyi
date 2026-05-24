@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 6746bd85b5d9ae353a3e3c9b19e34b8f34c7c86f31bbd2d5552c000bcb02cf57
+# hash: 533f2dce663e9944ad75388ae5bf10cd933341bcded560dbbff0e5427a0b3183
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -231,10 +231,6 @@ def composition_saturation_adjust_internal(composition: Graph, scale: Graph) -> 
 def composition_scale_nearest_neighbor_internal(composition: Graph, size: Graph) -> Graph: ...
 
 def composition_segment_internal(composition: Graph, prompt: Graph, positive_points: Graph, negative_points: Graph) -> Graph: ...
-
-def composition_segment_mouth_lips_eyes_eyebrows_internal(composition: Graph) -> Graph: ...
-
-def composition_segment_under_right_eye_internal(composition: Graph) -> Graph: ...
 
 def composition_sharpen_internal(composition: Graph, radius: Graph, strength: Graph) -> Graph: ...
 

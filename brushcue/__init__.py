@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: c8f7bdd717ecbccad2bf457c4b69a1e36383746a76bbc1a28c8bd453a510ed00
+# hash: 52bdc8228ece2b8f046798454ca29a23b04a4de764d4f217b778c742f944480d
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1285,36 +1285,6 @@ def composition_segment(composition, prompt, positive_points, negative_points) -
     positive_points_parsed = parse_graph(positive_points)
     negative_points_parsed = parse_graph(negative_points)
     return composition_segment_internal(composition_parsed, prompt_parsed, positive_points_parsed, negative_points_parsed)
-
-def composition_segment_mouth_lips_eyes_eyebrows(composition) -> Graph:
-    """Composition Segment Mouth Lips Eyes Eyebrows
-
-    Given an input image, returns a mask (all white) of the mouth, lips, eyes, and eyebrows area.
-
-    Args:
-        composition: Graph of Composition
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    composition_parsed = parse_graph(composition)
-    return composition_segment_mouth_lips_eyes_eyebrows_internal(composition_parsed)
-
-def composition_segment_under_right_eye(composition) -> Graph:
-    """Composition Segment Under Right Eye
-
-    Given an input image, returns a mask (all white) of the area under the right eye.
-
-    Args:
-        composition: Graph of Composition
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    composition_parsed = parse_graph(composition)
-    return composition_segment_under_right_eye_internal(composition_parsed)
 
 def composition_sharpen(composition, radius, strength) -> Graph:
     """Composition Sharpen
@@ -3644,8 +3614,6 @@ __all__ = [
     "composition_saturation_adjust",
     "composition_scale_nearest_neighbor",
     "composition_segment",
-    "composition_segment_mouth_lips_eyes_eyebrows",
-    "composition_segment_under_right_eye",
     "composition_sharpen",
     "composition_size",
     "composition_sobel_edge_detection",
