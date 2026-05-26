@@ -91,7 +91,6 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Liquify](https://www.brushcue.com/docs/py/examples/liquify)
 - [Median Filter](https://www.brushcue.com/docs/py/examples/median-filter)
 - [Oval](https://www.brushcue.com/docs/py/examples/oval)
-- [Person Segment](https://www.brushcue.com/docs/py/examples/person-segment)
 - [Pixelate](https://www.brushcue.com/docs/py/examples/pixelate)
 - [Pixelate Reveal Animation](https://www.brushcue.com/docs/py/examples/pixelate-reveal-animation)
 - [Red Channel](https://www.brushcue.com/docs/py/examples/red-channel)

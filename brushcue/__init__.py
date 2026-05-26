@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: fdadbf7b39174b9517100ec0c05f193ab4aebd2d77377b4570c8ab74f4c8d7ce
+# hash: f81000eabb09ab7d6415749db8acce3a75e5fc1f4c1706b15e4d58268f746432
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -374,44 +374,6 @@ def composition_blend_alpha_with_ok_lab(foreground, background, foreground_trans
     foreground_transform_parsed = parse_graph(foreground_transform)
     return composition_blend_alpha_with_ok_lab_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
-def composition_blend_divide(foreground, background, foreground_transform) -> Graph:
-    """Composition Blend Divide
-
-    Divides the background image by the foreground image using division blending.
-
-    Args:
-        foreground: Graph of Composition
-        background: Graph of Composition
-        foreground transform: Graph of Transform2
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    foreground_parsed = parse_graph(foreground)
-    background_parsed = parse_graph(background)
-    foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_divide_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
-
-def composition_blend_divide_with_ok_lab(foreground, background, foreground_transform) -> Graph:
-    """Composition Blend Divide with OkLab
-
-    Divides the background image by the foreground image using division blending in OkLab color space.
-
-    Args:
-        foreground: Graph of Composition
-        background: Graph of Composition
-        foreground transform: Graph of Transform2
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    foreground_parsed = parse_graph(foreground)
-    background_parsed = parse_graph(background)
-    foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_divide_with_ok_lab_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
-
 def composition_blend_max(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Max
 
@@ -582,25 +544,6 @@ def composition_blend_with_factor(foreground, background, factor) -> Graph:
     background_parsed = parse_graph(background)
     factor_parsed = parse_graph(factor)
     return composition_blend_with_factor_internal(foreground_parsed, background_parsed, factor_parsed)
-
-def composition_blend_with_mask(foreground, background, mask) -> Graph:
-    """Composition Blend with Mask
-
-    Given a mask. Blends between the foreground and background using the r component of the mask. 1 is foreground. 0 is background.
-
-    Args:
-        foreground: Graph of Composition
-        background: Graph of Composition
-        mask: Graph of Composition
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    foreground_parsed = parse_graph(foreground)
-    background_parsed = parse_graph(background)
-    mask_parsed = parse_graph(mask)
-    return composition_blend_with_mask_internal(foreground_parsed, background_parsed, mask_parsed)
 
 def composition_box_blur(composition, dimension) -> Graph:
     """Composition Box Blur
@@ -3584,8 +3527,6 @@ __all__ = [
     "composition_blend_add_with_ok_lab",
     "composition_blend_alpha",
     "composition_blend_alpha_with_ok_lab",
-    "composition_blend_divide",
-    "composition_blend_divide_with_ok_lab",
     "composition_blend_max",
     "composition_blend_max_with_ok_lab",
     "composition_blend_min",
@@ -3595,7 +3536,6 @@ __all__ = [
     "composition_blend_subtract",
     "composition_blend_subtract_with_ok_lab",
     "composition_blend_with_factor",
-    "composition_blend_with_mask",
     "composition_box_blur",
     "composition_box_blur_with_ok_lab",
     "composition_brightness_adjust",
