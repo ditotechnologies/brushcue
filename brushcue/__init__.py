@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 52bdc8228ece2b8f046798454ca29a23b04a4de764d4f217b778c742f944480d
+# hash: fdadbf7b39174b9517100ec0c05f193ab4aebd2d77377b4570c8ab74f4c8d7ce
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1230,6 +1230,27 @@ def composition_rotate90_counter_clockwise(composition) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     return composition_rotate90_counter_clockwise_internal(composition_parsed)
+
+def composition_s_a_m3_image(composition, prompt, positive_points, negative_points) -> Graph:
+    """Composition SAM3 Image
+
+    Runs the SAM3 model on an image
+
+    Args:
+        composition: Graph of Composition
+        prompt: Graph of String
+        positive points: Graph of Point2iList
+        negative points: Graph of Point2iList
+        
+
+    Returns:
+        Graph: A graph node producing a ByteList.
+    """
+    composition_parsed = parse_graph(composition)
+    prompt_parsed = parse_string_graph(prompt)
+    positive_points_parsed = parse_graph(positive_points)
+    negative_points_parsed = parse_graph(negative_points)
+    return composition_s_a_m3_image_internal(composition_parsed, prompt_parsed, positive_points_parsed, negative_points_parsed)
 
 def composition_saturation_adjust(composition, scale) -> Graph:
     """Composition Saturation Adjust
@@ -3611,6 +3632,7 @@ __all__ = [
     "composition_rotate180",
     "composition_rotate90_clockwise",
     "composition_rotate90_counter_clockwise",
+    "composition_s_a_m3_image",
     "composition_saturation_adjust",
     "composition_scale_nearest_neighbor",
     "composition_segment",
