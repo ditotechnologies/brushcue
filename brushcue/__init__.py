@@ -71,6 +71,9 @@ def vector_2i_constant(x: int, y: int) -> Graph:
 def vector2f_constant(x: float, y: float) -> Graph:
     return vector2f_constant_internal(x, y)
 
+def point_2i_list_constant(l: list) -> Graph:
+    return point2i_list_constant_internal(l)
+
 
 def abs(number) -> Graph:
     """Absolute Value
