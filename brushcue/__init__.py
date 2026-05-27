@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: f81000eabb09ab7d6415749db8acce3a75e5fc1f4c1706b15e4d58268f746432
+# hash: e96fe63fb7aed741ae4b298dd560b296cb4e873044cf41880c9fc67c58776ad9
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -777,21 +777,6 @@ def composition_custom_transformer_shader(composition, function_body, helpers, i
     inputs_parsed = parse_graph(inputs)
     needs_sample_capability_parsed = parse_bool_graph(needs_sample_capability)
     return composition_custom_transformer_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, input_color_profile_parsed, output_color_profile_parsed, inputs_parsed, needs_sample_capability_parsed)
-
-def composition_face_landmarks(composition) -> Graph:
-    """Composition Face Landmarks
-
-    Given an input image, returns the 468 3D face landmarks.
-
-    Args:
-        composition: Graph of Composition
-        
-
-    Returns:
-        Graph: A graph node producing a Point3fList.
-    """
-    composition_parsed = parse_graph(composition)
-    return composition_face_landmarks_internal(composition_parsed)
 
 def composition_flip_horizontal(composition) -> Graph:
     """Composition Flip Horizontal
@@ -3549,7 +3534,6 @@ __all__ = [
     "composition_convolution",
     "composition_crop",
     "composition_custom_transformer_shader",
-    "composition_face_landmarks",
     "composition_flip_horizontal",
     "composition_flip_vertical",
     "composition_from_asset",

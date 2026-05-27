@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: dd9671fd71b1b1e37ad7708bc543fe58981f27e29d58f18266354bf670d149ef
+# hash: 5f7d358eb6d3d90956e11d0dc079e347ae7f1d036ebc21c3cce3476ee02cafc0
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -173,8 +173,6 @@ def composition_convolution_internal(composition: Graph, kernel: Graph, kernel_w
 def composition_crop_internal(composition: Graph, rect: Graph) -> Graph: ...
 
 def composition_custom_transformer_shader_internal(composition: Graph, function_body: Graph, helpers: Graph, input_color_profile: Graph, output_color_profile: Graph, inputs: Graph, needs_sample_capability: Graph) -> Graph: ...
-
-def composition_face_landmarks_internal(composition: Graph) -> Graph: ...
 
 def composition_flip_horizontal_internal(composition: Graph) -> Graph: ...
 
