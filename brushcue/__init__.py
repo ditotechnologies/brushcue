@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: e96fe63fb7aed741ae4b298dd560b296cb4e873044cf41880c9fc67c58776ad9
+# hash: bdf923946a2963462e1d1e3a29f569c3d9ff803d016e55ae310401aca6f55761
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -70,9 +70,6 @@ def vector_2i_constant(x: int, y: int) -> Graph:
 
 def vector2f_constant(x: float, y: float) -> Graph:
     return vector2f_constant_internal(x, y)
-
-def point_2i_list_constant(l: list) -> Graph:
-    return point2i_list_constant_internal(l)
 
 
 def abs(number) -> Graph:
@@ -320,25 +317,6 @@ def composition_blend_add(foreground, background, foreground_transform) -> Graph
     foreground_transform_parsed = parse_graph(foreground_transform)
     return composition_blend_add_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
-def composition_blend_add_with_ok_lab(foreground, background, foreground_transform) -> Graph:
-    """Composition Blend Add with OkLab
-
-    Adds the foreground and background images together using additive blending in OkLab color space.
-
-    Args:
-        foreground: Graph of Composition
-        background: Graph of Composition
-        foreground transform: Graph of Transform2
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    foreground_parsed = parse_graph(foreground)
-    background_parsed = parse_graph(background)
-    foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_add_with_ok_lab_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
-
 def composition_blend_alpha(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Alpha
 
@@ -357,25 +335,6 @@ def composition_blend_alpha(foreground, background, foreground_transform) -> Gra
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
     return composition_blend_alpha_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
-
-def composition_blend_alpha_with_ok_lab(foreground, background, foreground_transform) -> Graph:
-    """Composition Blend Alpha with OkLab
-
-    Blends between the foreground and background using the alpha component of the foreground in OkLab color space. 1 is foreground. 0 is background.
-
-    Args:
-        foreground: Graph of Composition
-        background: Graph of Composition
-        foreground transform: Graph of Transform2
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    foreground_parsed = parse_graph(foreground)
-    background_parsed = parse_graph(background)
-    foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_alpha_with_ok_lab_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_blend_max(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Max
@@ -396,25 +355,6 @@ def composition_blend_max(foreground, background, foreground_transform) -> Graph
     foreground_transform_parsed = parse_graph(foreground_transform)
     return composition_blend_max_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
-def composition_blend_max_with_ok_lab(foreground, background, foreground_transform) -> Graph:
-    """Composition Blend Max with OkLab
-
-    Blends the foreground and background images using maximum value blending in OkLab color space.
-
-    Args:
-        foreground: Graph of Composition
-        background: Graph of Composition
-        foreground transform: Graph of Transform2
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    foreground_parsed = parse_graph(foreground)
-    background_parsed = parse_graph(background)
-    foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_max_with_ok_lab_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
-
 def composition_blend_min(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Min
 
@@ -433,25 +373,6 @@ def composition_blend_min(foreground, background, foreground_transform) -> Graph
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
     return composition_blend_min_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
-
-def composition_blend_min_with_ok_lab(foreground, background, foreground_transform) -> Graph:
-    """Composition Blend Min with OkLab
-
-    Blends the foreground and background images using minimum blending in OkLab color space, taking the minimum value for each pixel.
-
-    Args:
-        foreground: Graph of Composition
-        background: Graph of Composition
-        foreground transform: Graph of Transform2
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    foreground_parsed = parse_graph(foreground)
-    background_parsed = parse_graph(background)
-    foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_min_with_ok_lab_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_blend_multiply(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Multiply
@@ -472,10 +393,10 @@ def composition_blend_multiply(foreground, background, foreground_transform) -> 
     foreground_transform_parsed = parse_graph(foreground_transform)
     return composition_blend_multiply_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
-def composition_blend_multiply_with_ok_lab(foreground, background, foreground_transform) -> Graph:
-    """Composition Blend Multiply with OkLab
+def composition_blend_stencil(foreground, background, foreground_transform) -> Graph:
+    """Composition Blend Stencil
 
-    Multiplies the foreground and background images together using multiply blending in OkLab color space.
+    Blends the foreground and background images using stencil blending.
 
     Args:
         foreground: Graph of Composition
@@ -489,7 +410,7 @@ def composition_blend_multiply_with_ok_lab(foreground, background, foreground_tr
     foreground_parsed = parse_graph(foreground)
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_multiply_with_ok_lab_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+    return composition_blend_stencil_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_blend_subtract(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Subtract
@@ -509,25 +430,6 @@ def composition_blend_subtract(foreground, background, foreground_transform) -> 
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
     return composition_blend_subtract_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
-
-def composition_blend_subtract_with_ok_lab(foreground, background, foreground_transform) -> Graph:
-    """Composition Blend Subtract with OkLab
-
-    Subtracts the foreground image from the background image using subtractive blending in OkLab color space.
-
-    Args:
-        foreground: Graph of Composition
-        background: Graph of Composition
-        foreground transform: Graph of Transform2
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    foreground_parsed = parse_graph(foreground)
-    background_parsed = parse_graph(background)
-    foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_subtract_with_ok_lab_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_blend_with_factor(foreground, background, factor) -> Graph:
     """Composition Blend with Factor
@@ -3512,17 +3414,12 @@ __all__ = [
     "composition_absolute_value",
     "composition_bilinear_interpolation",
     "composition_blend_add",
-    "composition_blend_add_with_ok_lab",
     "composition_blend_alpha",
-    "composition_blend_alpha_with_ok_lab",
     "composition_blend_max",
-    "composition_blend_max_with_ok_lab",
     "composition_blend_min",
-    "composition_blend_min_with_ok_lab",
     "composition_blend_multiply",
-    "composition_blend_multiply_with_ok_lab",
+    "composition_blend_stencil",
     "composition_blend_subtract",
-    "composition_blend_subtract_with_ok_lab",
     "composition_blend_with_factor",
     "composition_box_blur",
     "composition_box_blur_with_ok_lab",
