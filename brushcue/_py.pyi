@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: c83bb11a27e245f98a9dfef59c127eeedc4014bfaab2515bd8c74560b553a2ea
+# hash: 91ec77f41954024d7592117b9d900eca1e7d5880df4df142643f53c40307178e
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -193,8 +193,6 @@ def composition_morphological_min_internal(composition: Graph, dimension: Graph)
 def composition_painter_internal(painter: Graph) -> Graph: ...
 
 def composition_passthrough_internal(value: Graph) -> Graph: ...
-
-def composition_perceptual_difference_internal(composition: Graph, color: Graph) -> Graph: ...
 
 def composition_pixelate_internal(composition: Graph, pixel_size: Graph) -> Graph: ...
 

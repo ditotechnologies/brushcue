@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: bdf923946a2963462e1d1e3a29f569c3d9ff803d016e55ae310401aca6f55761
+# hash: e5dcda28f4d107420189d650e6dabb270ef2bf6dde712980d9d8962d6c401ccb
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -396,7 +396,7 @@ def composition_blend_multiply(foreground, background, foreground_transform) -> 
 def composition_blend_stencil(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Stencil
 
-    Blends the foreground and background images using stencil blending.
+    Blends the foreground and background images using stencil blending. When the foreground is over the background, the foreground's alpha and the background's r, g and b are used.
 
     Args:
         foreground: Graph of Composition
@@ -948,23 +948,6 @@ def composition_passthrough(value) -> Graph:
     """
     value_parsed = parse_graph(value)
     return composition_passthrough_internal(value_parsed)
-
-def composition_perceptual_difference(composition, color) -> Graph:
-    """Composition Perceptual Difference
-
-    Calculates the difference for each pixel to the OkLab color specified. Each r, g, b and a component in the output is the difference.
-
-    Args:
-        composition: Graph of Composition
-        color: Graph of OkLabColor
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    composition_parsed = parse_graph(composition)
-    color_parsed = parse_graph(color)
-    return composition_perceptual_difference_internal(composition_parsed, color_parsed)
 
 def composition_pixelate(composition, pixel_size) -> Graph:
     """Composition Pixelate
@@ -3449,7 +3432,6 @@ __all__ = [
     "composition_morphological_min",
     "composition_painter",
     "composition_passthrough",
-    "composition_perceptual_difference",
     "composition_pixelate",
     "composition_r_g_b_curve",
     "composition_render_to_image",
