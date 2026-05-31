@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: e5dcda28f4d107420189d650e6dabb270ef2bf6dde712980d9d8962d6c401ccb
+# hash: 3ca090243436f2df954c3e6ec977e7b2f254c4b16fa5cade6ef908ad2a360131
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1224,23 +1224,6 @@ def composition_to_ok_lab_hist(composition) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     return composition_to_ok_lab_hist_internal(composition_parsed)
-
-def composition_uniform_lightness(composition, lightness) -> Graph:
-    """Composition Uniform Lightness
-
-    Sets a uniform lightness to the entire image by using OkLab and setting the lightness to a constant number.
-
-    Args:
-        composition: Graph of Composition
-        lightness: Graph of Float
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    composition_parsed = parse_graph(composition)
-    lightness_parsed = parse_float_graph(lightness)
-    return composition_uniform_lightness_internal(composition_parsed, lightness_parsed)
 
 def composition_vignette(composition, radius, softness, strength) -> Graph:
     """Composition Vignette
@@ -3448,7 +3431,6 @@ __all__ = [
     "composition_swirl",
     "composition_target_white_kelvin",
     "composition_to_ok_lab_hist",
-    "composition_uniform_lightness",
     "composition_vignette",
     "composition_zoom_blur",
     "curve_evaluate",

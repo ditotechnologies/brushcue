@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 91ec77f41954024d7592117b9d900eca1e7d5880df4df142643f53c40307178e
+# hash: 32a74b1106d2f467d3d4753e3f1cc4561eefec0f94c827d49c62138a7d1f05a7
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -225,8 +225,6 @@ def composition_swirl_internal(composition: Graph, center: Graph, radius: Graph,
 def composition_target_white_kelvin_internal(composition: Graph, kelvin: Graph) -> Graph: ...
 
 def composition_to_ok_lab_hist_internal(composition: Graph) -> Graph: ...
-
-def composition_uniform_lightness_internal(composition: Graph, lightness: Graph) -> Graph: ...
 
 def composition_vignette_internal(composition: Graph, radius: Graph, softness: Graph, strength: Graph) -> Graph: ...
 
