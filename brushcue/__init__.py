@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 3ca090243436f2df954c3e6ec977e7b2f254c4b16fa5cade6ef908ad2a360131
+# hash: 14f06b207d44f629abd8f34308550e5b85f8a7601526e8997a6e838a2dc0ecdd
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -467,23 +467,6 @@ def composition_box_blur(composition, dimension) -> Graph:
     dimension_parsed = parse_int_graph(dimension)
     return composition_box_blur_internal(composition_parsed, dimension_parsed)
 
-def composition_box_blur_with_ok_lab(composition, dimension) -> Graph:
-    """Composition Box Blur with OkLab
-
-    Applies a box blur to an image in OkLab color space. Dimension is the size. 1 corresponding to 3x3, 2 5x5 and so on.
-
-    Args:
-        composition: Graph of Composition
-        dimension: Graph of Int
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    composition_parsed = parse_graph(composition)
-    dimension_parsed = parse_int_graph(dimension)
-    return composition_box_blur_with_ok_lab_internal(composition_parsed, dimension_parsed)
-
 def composition_brightness_adjust(composition, scale) -> Graph:
     """Composition Brightness Adjust
 
@@ -759,23 +742,6 @@ def composition_gaussian_blur(composition, sigma) -> Graph:
     composition_parsed = parse_graph(composition)
     sigma_parsed = parse_float_graph(sigma)
     return composition_gaussian_blur_internal(composition_parsed, sigma_parsed)
-
-def composition_gaussian_blur_with_ok_lab(composition, sigma) -> Graph:
-    """Composition Gaussian Blur with OkLab
-
-    Applies a gaussian blur to an image in OkLab color space. Sigma controls the blur intensity.
-
-    Args:
-        composition: Graph of Composition
-        sigma: Graph of Float
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    composition_parsed = parse_graph(composition)
-    sigma_parsed = parse_float_graph(sigma)
-    return composition_gaussian_blur_with_ok_lab_internal(composition_parsed, sigma_parsed)
 
 def composition_grayscale(composition) -> Graph:
     """Composition Grayscale
@@ -3388,7 +3354,6 @@ __all__ = [
     "composition_blend_subtract",
     "composition_blend_with_factor",
     "composition_box_blur",
-    "composition_box_blur_with_ok_lab",
     "composition_brightness_adjust",
     "composition_chroma_offset",
     "composition_color_convert",
@@ -3405,7 +3370,6 @@ __all__ = [
     "composition_from_asset",
     "composition_from_image",
     "composition_gaussian_blur",
-    "composition_gaussian_blur_with_ok_lab",
     "composition_grayscale",
     "composition_if",
     "composition_l_curve",
