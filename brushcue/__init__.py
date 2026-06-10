@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 14f06b207d44f629abd8f34308550e5b85f8a7601526e8997a6e838a2dc0ecdd
+# hash: 7a12a04d46070188bd0ae23d18ce31e2630ad70c5a79e014f171677e3a5dddb2
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -43,6 +43,9 @@ with open("output.png", "wb") as f:
 
 from ._py import *  # noqa: F401, F403
 from .input_parsers import *
+
+def load_composition(value) -> Graph:
+    return parse_composition_graph(value)
 
 def byte_list_constant(value) -> Graph:
     return byte_list_constant_internal(value)
@@ -3328,6 +3331,7 @@ __all__ = [
     "Context", "Graph", "Project", "Type",
     "TypeDefinition", "NodeDefinition", "NodeDefinitionInput", "ImageRecipe",
     # Constant functions
+    "load_composition",
     "int_constant", "float_constant", "string_constant", "bool_constant",
     # Node functions
     "abs",
