@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 7a12a04d46070188bd0ae23d18ce31e2630ad70c5a79e014f171677e3a5dddb2
+# hash: ee02d210c1543fe80312211184b066379b4a6cdd3dc0b28ced1621e3721f2b7c
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -166,6 +166,66 @@ def bounds2f_from_x_y_width_height(x, y, width, height) -> Graph:
     height_parsed = parse_float_graph(height)
     return bounds2f_from_x_y_width_height_internal(x_parsed, y_parsed, width_parsed, height_parsed)
 
+def bounds2f_height(bounds) -> Graph:
+    """Bounds2f Height
+
+    Gets the height of the bounds.
+
+    Args:
+        bounds: Graph of Bounds2f
+        
+
+    Returns:
+        Graph: A graph node producing a Float.
+    """
+    bounds_parsed = parse_graph(bounds)
+    return bounds2f_height_internal(bounds_parsed)
+
+def bounds2f_min_x(bounds) -> Graph:
+    """Bounds2f Min X
+
+    Gets the minimum X coordinate (left edge) of the bounds.
+
+    Args:
+        bounds: Graph of Bounds2f
+        
+
+    Returns:
+        Graph: A graph node producing a Float.
+    """
+    bounds_parsed = parse_graph(bounds)
+    return bounds2f_min_x_internal(bounds_parsed)
+
+def bounds2f_min_y(bounds) -> Graph:
+    """Bounds2f Min Y
+
+    Gets the minimum Y coordinate (top edge) of the bounds.
+
+    Args:
+        bounds: Graph of Bounds2f
+        
+
+    Returns:
+        Graph: A graph node producing a Float.
+    """
+    bounds_parsed = parse_graph(bounds)
+    return bounds2f_min_y_internal(bounds_parsed)
+
+def bounds2f_width(bounds) -> Graph:
+    """Bounds2f Width
+
+    Gets the width of the bounds.
+
+    Args:
+        bounds: Graph of Bounds2f
+        
+
+    Returns:
+        Graph: A graph node producing a Float.
+    """
+    bounds_parsed = parse_graph(bounds)
+    return bounds2f_width_internal(bounds_parsed)
+
 def bounds2i_from_x_y_width_height(x, y, width, height) -> Graph:
     """Bounds 2D Int from X, Y, Width & Height
 
@@ -283,23 +343,6 @@ def composition_absolute_value(image) -> Graph:
     """
     image_parsed = parse_graph(image)
     return composition_absolute_value_internal(image_parsed)
-
-def composition_bilinear_interpolation(composition, size) -> Graph:
-    """Composition Scale Bilinear Interpolation
-
-    Uses the bilinear interpolation algorithm to scale an image recipe
-
-    Args:
-        composition: Graph of Composition
-        size: Graph of Vector2i
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    composition_parsed = parse_graph(composition)
-    size_parsed = parse_graph(size)
-    return composition_bilinear_interpolation_internal(composition_parsed, size_parsed)
 
 def composition_blend_add(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Add
@@ -434,24 +477,20 @@ def composition_blend_subtract(foreground, background, foreground_transform) -> 
     foreground_transform_parsed = parse_graph(foreground_transform)
     return composition_blend_subtract_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
-def composition_blend_with_factor(foreground, background, factor) -> Graph:
-    """Composition Blend with Factor
+def composition_bounds(composition) -> Graph:
+    """Composition Bounds
 
-    Blends the foreground and background compositions together using a factor. Internally, this modifies the alpha of the foreground by multiplying by the factor on the alpha component and then performing an alpha blend.
+    Computes the bounding box of a composition.
 
     Args:
-        foreground: Graph of Composition
-        background: Graph of Composition
-        factor: Graph of Composition
+        composition: Graph of Composition
         
 
     Returns:
-        Graph: A graph node producing a Composition.
+        Graph: A graph node producing a Bounds2f.
     """
-    foreground_parsed = parse_graph(foreground)
-    background_parsed = parse_graph(background)
-    factor_parsed = parse_graph(factor)
-    return composition_blend_with_factor_internal(foreground_parsed, background_parsed, factor_parsed)
+    composition_parsed = parse_graph(composition)
+    return composition_bounds_internal(composition_parsed)
 
 def composition_box_blur(composition, dimension) -> Graph:
     """Composition Box Blur
@@ -587,6 +626,31 @@ def composition_color_threshold(composition, threshold) -> Graph:
     threshold_parsed = parse_float_graph(threshold)
     return composition_color_threshold_internal(composition_parsed, threshold_parsed)
 
+def composition_color_transformer_shader(composition, function_body, helpers, input_color_profile, output_color_profile, inputs) -> Graph:
+    """Composition Color Transformer Shader
+
+    Defines a custom shader that takes an input color and then transforms that color to an output color.
+
+    Args:
+        composition: Graph of Composition
+        function body: Graph of String
+        helpers: Graph of String
+        input color profile: Graph of ColorProfile
+        output color profile: Graph of ColorProfile
+        inputs: Graph of Dictionary
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    function_body_parsed = parse_string_graph(function_body)
+    helpers_parsed = parse_string_graph(helpers)
+    input_color_profile_parsed = parse_graph(input_color_profile)
+    output_color_profile_parsed = parse_graph(output_color_profile)
+    inputs_parsed = parse_graph(inputs)
+    return composition_color_transformer_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, input_color_profile_parsed, output_color_profile_parsed, inputs_parsed)
+
 def composition_contrast_adjustment(composition, contrast) -> Graph:
     """Composition Contrast Adjustment
 
@@ -632,7 +696,7 @@ def composition_crop(composition, rect) -> Graph:
 
     Args:
         composition: Graph of Composition
-        rect: Graph of Bounds2i
+        rect: Graph of Bounds2f
         
 
     Returns:
@@ -642,32 +706,34 @@ def composition_crop(composition, rect) -> Graph:
     rect_parsed = parse_graph(rect)
     return composition_crop_internal(composition_parsed, rect_parsed)
 
-def composition_custom_transformer_shader(composition, function_body, helpers, input_color_profile, output_color_profile, inputs, needs_sample_capability) -> Graph:
-    """Composition Custom Transformer Shader
+def composition_film_grain(composition, grain_strength, fine_grain_frequency, fine_weight, medium_grain_frequency, medium_weight, high_grain_frequency, high_weight) -> Graph:
+    """Composition Film Grain
 
-    Given an input, runs a custom defined shader over that input.
+    adds multi-octave value-noise film grain in OkLabA - grain_strength controls the overall intensity, and the fine/medium/high frequency and weight pairs control the size and contribution of each grain octave.
 
     Args:
         composition: Graph of Composition
-        function body: Graph of String
-        helpers: Graph of String
-        input color profile: Graph of ColorProfile
-        output color profile: Graph of ColorProfile
-        inputs: Graph of Dictionary
-        needs sample capability: Graph of Bool
+        grain strength: Graph of Float
+        fine grain frequency: Graph of Float
+        fine weight: Graph of Float
+        medium grain frequency: Graph of Float
+        medium weight: Graph of Float
+        high grain frequency: Graph of Float
+        high weight: Graph of Float
         
 
     Returns:
         Graph: A graph node producing a Composition.
     """
     composition_parsed = parse_graph(composition)
-    function_body_parsed = parse_string_graph(function_body)
-    helpers_parsed = parse_string_graph(helpers)
-    input_color_profile_parsed = parse_graph(input_color_profile)
-    output_color_profile_parsed = parse_graph(output_color_profile)
-    inputs_parsed = parse_graph(inputs)
-    needs_sample_capability_parsed = parse_bool_graph(needs_sample_capability)
-    return composition_custom_transformer_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, input_color_profile_parsed, output_color_profile_parsed, inputs_parsed, needs_sample_capability_parsed)
+    grain_strength_parsed = parse_float_graph(grain_strength)
+    fine_grain_frequency_parsed = parse_float_graph(fine_grain_frequency)
+    fine_weight_parsed = parse_float_graph(fine_weight)
+    medium_grain_frequency_parsed = parse_float_graph(medium_grain_frequency)
+    medium_weight_parsed = parse_float_graph(medium_weight)
+    high_grain_frequency_parsed = parse_float_graph(high_grain_frequency)
+    high_weight_parsed = parse_float_graph(high_weight)
+    return composition_film_grain_internal(composition_parsed, grain_strength_parsed, fine_grain_frequency_parsed, fine_weight_parsed, medium_grain_frequency_parsed, medium_weight_parsed, high_grain_frequency_parsed, high_weight_parsed)
 
 def composition_flip_horizontal(composition) -> Graph:
     """Composition Flip Horizontal
@@ -761,6 +827,27 @@ def composition_grayscale(composition) -> Graph:
     composition_parsed = parse_graph(composition)
     return composition_grayscale_internal(composition_parsed)
 
+def composition_halftone(composition, pixel_size, foreground_color, background_color) -> Graph:
+    """Composition Halftone
+
+    Applies a halftone effect to a composition, tiling it into cells and painting a foreground-colored dot in each cell whose radius grows as the cell darkens, over a background color.
+
+    Args:
+        composition: Graph of Composition
+        pixel size: Graph of Int
+        foreground color: Graph of RGBAColor
+        background color: Graph of RGBAColor
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    pixel_size_parsed = parse_int_graph(pixel_size)
+    foreground_color_parsed = parse_graph(foreground_color)
+    background_color_parsed = parse_graph(background_color)
+    return composition_halftone_internal(composition_parsed, pixel_size_parsed, foreground_color_parsed, background_color_parsed)
+
 def composition_if(bool, input_1, input_2) -> Graph:
     """Composition If
 
@@ -780,6 +867,29 @@ def composition_if(bool, input_1, input_2) -> Graph:
     input_2_parsed = parse_graph(input_2)
     return composition_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
 
+def composition_kaleidoscope(composition, segments, rotation, warp, warp_frequency) -> Graph:
+    """Composition Kaleidoscope
+
+    Applies a kaleidoscope effect, folding the image into mirrored wedges around the center. segments controls the number of wedges, rotation spins the pattern, and warp/warp_frequency add a radial glass-like distortion.
+
+    Args:
+        composition: Graph of Composition
+        segments: Graph of Float
+        rotation: Graph of Float
+        warp: Graph of Float
+        warp frequency: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    segments_parsed = parse_float_graph(segments)
+    rotation_parsed = parse_float_graph(rotation)
+    warp_parsed = parse_float_graph(warp)
+    warp_frequency_parsed = parse_float_graph(warp_frequency)
+    return composition_kaleidoscope_internal(composition_parsed, segments_parsed, rotation_parsed, warp_parsed, warp_frequency_parsed)
+
 def composition_l_curve(composition, l_curve) -> Graph:
     """Composition Lightness Curve
 
@@ -796,6 +906,23 @@ def composition_l_curve(composition, l_curve) -> Graph:
     composition_parsed = parse_graph(composition)
     l_curve_parsed = parse_graph(l_curve)
     return composition_l_curve_internal(composition_parsed, l_curve_parsed)
+
+def composition_lightness_threshold(composition, threshold) -> Graph:
+    """Composition Lightness Threshold
+
+    Thresholds a Composition by OkLab lightness, producing an opaque white mask where lightness exceeds the threshold and transparent black elsewhere.
+
+    Args:
+        composition: Graph of Composition
+        threshold: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    threshold_parsed = parse_float_graph(threshold)
+    return composition_lightness_threshold_internal(composition_parsed, threshold_parsed)
 
 def composition_linear_transform(composition, entry_0_0, entry_0_1, entry_0_2, entry_0_3, entry_1_0, entry_1_1, entry_1_2, entry_1_3, entry_2_0, entry_2_1, entry_2_2, entry_2_3, entry_3_0, entry_3_1, entry_3_2, entry_3_3) -> Graph:
     """Composition RGBA Linear Transform
@@ -843,6 +970,42 @@ def composition_linear_transform(composition, entry_0_0, entry_0_1, entry_0_2, e
     entry_3_2_parsed = parse_float_graph(entry_3_2)
     entry_3_3_parsed = parse_float_graph(entry_3_3)
     return composition_linear_transform_internal(composition_parsed, entry_0_0_parsed, entry_0_1_parsed, entry_0_2_parsed, entry_0_3_parsed, entry_1_0_parsed, entry_1_1_parsed, entry_1_2_parsed, entry_1_3_parsed, entry_2_0_parsed, entry_2_1_parsed, entry_2_2_parsed, entry_2_3_parsed, entry_3_0_parsed, entry_3_1_parsed, entry_3_2_parsed, entry_3_3_parsed)
+
+def composition_liquify(composition, amplitude, frequency) -> Graph:
+    """Composition Liquify
+
+    Applies a sinusoidal liquify distortion to this composition, displacing pixels by a wave whose size is controlled by amplitude and whose density is controlled by frequency.
+
+    Args:
+        composition: Graph of Composition
+        amplitude: Graph of Float
+        frequency: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    amplitude_parsed = parse_float_graph(amplitude)
+    frequency_parsed = parse_float_graph(frequency)
+    return composition_liquify_internal(composition_parsed, amplitude_parsed, frequency_parsed)
+
+def composition_median(composition, kernel_size) -> Graph:
+    """Composition Median
+
+    Applies a per-channel median filter to a composition over a square window, reducing noise while preserving edges. kernel_size controls the window size (window width is 2*kernel_size-1).
+
+    Args:
+        composition: Graph of Composition
+        kernel size: Graph of Int
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    kernel_size_parsed = parse_int_graph(kernel_size)
+    return composition_median_internal(composition_parsed, kernel_size_parsed)
 
 def composition_monet_women_with_parasol() -> Graph:
     """Monet's Women with a Parasol
@@ -934,6 +1097,31 @@ def composition_pixelate(composition, pixel_size) -> Graph:
     composition_parsed = parse_graph(composition)
     pixel_size_parsed = parse_int_graph(pixel_size)
     return composition_pixelate_internal(composition_parsed, pixel_size_parsed)
+
+def composition_point_effect_shader(composition, function_body, helpers, effect_center_point, effect_radius, inputs) -> Graph:
+    """Composition Point Effect Shader
+
+    Runs a custom shader over a circular region around an effect center point.
+
+    Args:
+        composition: Graph of Composition
+        function body: Graph of String
+        helpers: Graph of String
+        effect center point: Graph of Point2f
+        effect radius: Graph of Float
+        inputs: Graph of Dictionary
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    function_body_parsed = parse_string_graph(function_body)
+    helpers_parsed = parse_string_graph(helpers)
+    effect_center_point_parsed = parse_graph(effect_center_point)
+    effect_radius_parsed = parse_float_graph(effect_radius)
+    inputs_parsed = parse_graph(inputs)
+    return composition_point_effect_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, effect_center_point_parsed, effect_radius_parsed, inputs_parsed)
 
 def composition_r_g_b_curve(composition, r_curve, g_curve, b_curve) -> Graph:
     """Composition RGB Curve
@@ -1054,23 +1242,6 @@ def composition_saturation_adjust(composition, scale) -> Graph:
     scale_parsed = parse_float_graph(scale)
     return composition_saturation_adjust_internal(composition_parsed, scale_parsed)
 
-def composition_scale_nearest_neighbor(composition, size) -> Graph:
-    """Composition Scale Nearest Neighbor
-
-    Uses the nearest neighbor algorithm to scale an image recipe
-
-    Args:
-        composition: Graph of Composition
-        size: Graph of Vector2i
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    composition_parsed = parse_graph(composition)
-    size_parsed = parse_graph(size)
-    return composition_scale_nearest_neighbor_internal(composition_parsed, size_parsed)
-
 def composition_segment(composition, prompt, positive_points, negative_points) -> Graph:
     """Composition Segment
 
@@ -1111,21 +1282,6 @@ def composition_sharpen(composition, radius, strength) -> Graph:
     strength_parsed = parse_float_graph(strength)
     return composition_sharpen_internal(composition_parsed, radius_parsed, strength_parsed)
 
-def composition_size(composition) -> Graph:
-    """Composition Size
-
-    Gets the resulting size of a Composition
-
-    Args:
-        composition: Graph of Composition
-        
-
-    Returns:
-        Graph: A graph node producing a Vector2i.
-    """
-    composition_parsed = parse_graph(composition)
-    return composition_size_internal(composition_parsed)
-
 def composition_sobel_edge_detection(composition) -> Graph:
     """Composition Sobel Edge Detection
 
@@ -1140,6 +1296,29 @@ def composition_sobel_edge_detection(composition) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     return composition_sobel_edge_detection_internal(composition_parsed)
+
+def composition_spacial_effect_shader(composition, function_body, helpers, max_displacement, inputs) -> Graph:
+    """Composition Spacial Effect Shader
+
+    Runs a custom shader over an input that can spatially displace pixels by up to a maximum displacement.
+
+    Args:
+        composition: Graph of Composition
+        function body: Graph of String
+        helpers: Graph of String
+        maximum distance a pixel may be displaced: Graph of Float
+        inputs: Graph of Dictionary
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    function_body_parsed = parse_string_graph(function_body)
+    helpers_parsed = parse_string_graph(helpers)
+    max_displacement_parsed = parse_float_graph(max_displacement)
+    inputs_parsed = parse_graph(inputs)
+    return composition_spacial_effect_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, max_displacement_parsed, inputs_parsed)
 
 def composition_swirl(composition, center, radius, amount) -> Graph:
     """Composition Swirl
@@ -1194,14 +1373,50 @@ def composition_to_ok_lab_hist(composition) -> Graph:
     composition_parsed = parse_graph(composition)
     return composition_to_ok_lab_hist_internal(composition_parsed)
 
-def composition_vignette(composition, radius, softness, strength) -> Graph:
-    """Composition Vignette
+def composition_transform(composition, transform) -> Graph:
+    """Composition Transform
 
-    darkens the outer edges - radius (0-1, measured relative to the image's smaller dimension) sets how far the bright center extends, Softness (typically 0.05-0.5) controls the width of the fade-out band, and Strength (0–1) defines how dark the edges become at maximum.
+    Applies a 2D transform to a Composition.
 
     Args:
         composition: Graph of Composition
-        radius: Graph of Float
+        transform: Graph of Transform2
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    transform_parsed = parse_graph(transform)
+    return composition_transform_internal(composition_parsed, transform_parsed)
+
+def composition_vibrance_adjustment(composition, strength) -> Graph:
+    """Composition Vibrance Adjustment
+
+    Adjusts the vibrance of an image by a given strength. Internally, boosts chroma in OkLab color space adaptively, applying more boost to less saturated colors.
+
+    Args:
+        composition: Graph of Composition
+        strength: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    strength_parsed = parse_float_graph(strength)
+    return composition_vibrance_adjustment_internal(composition_parsed, strength_parsed)
+
+def composition_vignette(composition, center, radius_x, radius_y, softness, strength) -> Graph:
+    """Composition Vignette
+
+    darkens the area outside an ellipse - center is the bright spot in pixel coordinates, radius_x and radius_y are the ellipse semi-axes in pixels where the falloff starts, softness is the width of the fade-out band in pixels, and strength (0-1) defines how dark the edges become at maximum.
+
+    Args:
+        composition: Graph of Composition
+        center: Graph of Vector2f
+        radius x: Graph of Float
+        radius y: Graph of Float
         softness: Graph of Float
         strength: Graph of Float
         
@@ -1210,12 +1425,14 @@ def composition_vignette(composition, radius, softness, strength) -> Graph:
         Graph: A graph node producing a Composition.
     """
     composition_parsed = parse_graph(composition)
-    radius_parsed = parse_float_graph(radius)
+    center_parsed = parse_graph(center)
+    radius_x_parsed = parse_float_graph(radius_x)
+    radius_y_parsed = parse_float_graph(radius_y)
     softness_parsed = parse_float_graph(softness)
     strength_parsed = parse_float_graph(strength)
-    return composition_vignette_internal(composition_parsed, radius_parsed, softness_parsed, strength_parsed)
+    return composition_vignette_internal(composition_parsed, center_parsed, radius_x_parsed, radius_y_parsed, softness_parsed, strength_parsed)
 
-def composition_zoom_blur(composition, center, strength) -> Graph:
+def composition_zoom_blur(composition, center, strength, falloff, effect_radius) -> Graph:
     """Composition Zoom Blur
 
     Performs a zoom blur on this composition
@@ -1224,6 +1441,8 @@ def composition_zoom_blur(composition, center, strength) -> Graph:
         composition: Graph of Composition
         center: Graph of Vector2f
         strength: Graph of Float
+        falloff: Graph of Float
+        effect radius: Graph of Float
         
 
     Returns:
@@ -1232,7 +1451,9 @@ def composition_zoom_blur(composition, center, strength) -> Graph:
     composition_parsed = parse_graph(composition)
     center_parsed = parse_graph(center)
     strength_parsed = parse_float_graph(strength)
-    return composition_zoom_blur_internal(composition_parsed, center_parsed, strength_parsed)
+    falloff_parsed = parse_float_graph(falloff)
+    effect_radius_parsed = parse_float_graph(effect_radius)
+    return composition_zoom_blur_internal(composition_parsed, center_parsed, strength_parsed, falloff_parsed, effect_radius_parsed)
 
 def curve_evaluate(curve, input) -> Graph:
     """Curve Evaluate
@@ -2400,6 +2621,23 @@ def pi() -> Graph:
     """
     return pi_internal()
 
+def point2f_distance(lhs, rhs) -> Graph:
+    """Point 2 Float Distance
+
+    The Euclidean distance between two Point 2 Floats.
+
+    Args:
+        The first point: Graph of Point2f
+        The second point: Graph of Point2f
+        
+
+    Returns:
+        Graph: A graph node producing a Float.
+    """
+    lhs_parsed = parse_graph(lhs)
+    rhs_parsed = parse_graph(rhs)
+    return point2f_distance_internal(lhs_parsed, rhs_parsed)
+
 def point2f_from_components(x, y) -> Graph:
     """Point 2 Float from Components
 
@@ -2416,6 +2654,40 @@ def point2f_from_components(x, y) -> Graph:
     x_parsed = parse_float_graph(x)
     y_parsed = parse_float_graph(y)
     return point2f_from_components_internal(x_parsed, y_parsed)
+
+def point2i_distance(lhs, rhs) -> Graph:
+    """Point 2 Int Distance
+
+    The Euclidean distance between two Point 2 Ints, returned as a Float.
+
+    Args:
+        The first point: Graph of Point2i
+        The second point: Graph of Point2i
+        
+
+    Returns:
+        Graph: A graph node producing a Float.
+    """
+    lhs_parsed = parse_graph(lhs)
+    rhs_parsed = parse_graph(rhs)
+    return point2i_distance_internal(lhs_parsed, rhs_parsed)
+
+def point2i_from_components(x, y) -> Graph:
+    """Point 2 Int from Components
+
+    Given an x and y creates a point
+
+    Args:
+        x: Graph of Int
+        y: Graph of Int
+        
+
+    Returns:
+        Graph: A graph node producing a Point2i.
+    """
+    x_parsed = parse_int_graph(x)
+    y_parsed = parse_int_graph(y)
+    return point2i_from_components_internal(x_parsed, y_parsed)
 
 def r_g_b_a_color_add_to_dictionary(dictionary, key, value) -> Graph:
     """RGBA Color Add To Dictionary
@@ -3339,6 +3611,10 @@ __all__ = [
     "bool_add_to_dictionary",
     "bool_if",
     "bounds2f_from_x_y_width_height",
+    "bounds2f_height",
+    "bounds2f_min_x",
+    "bounds2f_min_y",
+    "bounds2f_width",
     "bounds2i_from_x_y_width_height",
     "brush_solid",
     "byte_list_from_u_r_l",
@@ -3348,7 +3624,6 @@ __all__ = [
     "color_profile_p_n_g_s_r_g_b",
     "color_profile_s_r_g_b",
     "composition_absolute_value",
-    "composition_bilinear_interpolation",
     "composition_blend_add",
     "composition_blend_alpha",
     "composition_blend_max",
@@ -3356,7 +3631,7 @@ __all__ = [
     "composition_blend_multiply",
     "composition_blend_stencil",
     "composition_blend_subtract",
-    "composition_blend_with_factor",
+    "composition_bounds",
     "composition_box_blur",
     "composition_brightness_adjust",
     "composition_chroma_offset",
@@ -3365,25 +3640,32 @@ __all__ = [
     "composition_color_profile",
     "composition_color_rect",
     "composition_color_threshold",
+    "composition_color_transformer_shader",
     "composition_contrast_adjustment",
     "composition_convolution",
     "composition_crop",
-    "composition_custom_transformer_shader",
+    "composition_film_grain",
     "composition_flip_horizontal",
     "composition_flip_vertical",
     "composition_from_asset",
     "composition_from_image",
     "composition_gaussian_blur",
     "composition_grayscale",
+    "composition_halftone",
     "composition_if",
+    "composition_kaleidoscope",
     "composition_l_curve",
+    "composition_lightness_threshold",
     "composition_linear_transform",
+    "composition_liquify",
+    "composition_median",
     "composition_monet_women_with_parasol",
     "composition_morphological_max",
     "composition_morphological_min",
     "composition_painter",
     "composition_passthrough",
     "composition_pixelate",
+    "composition_point_effect_shader",
     "composition_r_g_b_curve",
     "composition_render_to_image",
     "composition_rotate180",
@@ -3391,14 +3673,15 @@ __all__ = [
     "composition_rotate90_counter_clockwise",
     "composition_s_a_m3_image",
     "composition_saturation_adjust",
-    "composition_scale_nearest_neighbor",
     "composition_segment",
     "composition_sharpen",
-    "composition_size",
     "composition_sobel_edge_detection",
+    "composition_spacial_effect_shader",
     "composition_swirl",
     "composition_target_white_kelvin",
     "composition_to_ok_lab_hist",
+    "composition_transform",
+    "composition_vibrance_adjustment",
     "composition_vignette",
     "composition_zoom_blur",
     "curve_evaluate",
@@ -3472,7 +3755,10 @@ __all__ = [
     "path_move_to_point",
     "path_new",
     "pi",
+    "point2f_distance",
     "point2f_from_components",
+    "point2i_distance",
+    "point2i_from_components",
     "r_g_b_a_color_add_to_dictionary",
     "r_g_b_a_color_from_components",
     "r_g_b_a_color_passthrough",
