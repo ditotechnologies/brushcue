@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: ee02d210c1543fe80312211184b066379b4a6cdd3dc0b28ced1621e3721f2b7c
+# hash: 419ce60258537814eb2b8f4f65010b553f504fbb3200778cc647cbd575d192a1
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1306,7 +1306,7 @@ def composition_spacial_effect_shader(composition, function_body, helpers, max_d
         composition: Graph of Composition
         function body: Graph of String
         helpers: Graph of String
-        maximum distance a pixel may be displaced: Graph of Float
+        max displacement: Graph of Float
         inputs: Graph of Dictionary
         
 
