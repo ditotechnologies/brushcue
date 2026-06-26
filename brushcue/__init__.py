@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 419ce60258537814eb2b8f4f65010b553f504fbb3200778cc647cbd575d192a1
+# hash: d9eda6e881217ab3265bb0405723c7170c029d790d62f808e3eb1f9c8d526b5a
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -41,38 +41,59 @@ with open("output.png", "wb") as f:
 - :class:`Type` — The result of executing a graph node.
 """
 
-from ._py import *  # noqa: F401, F403
-from .input_parsers import *
+from . import _py as _internal
+from ._py import (
+    Context,
+    Graph,
+    IDMapper,
+    ImageRecipe,
+    MovieRecipe,
+    NodeDefinition,
+    NodeDefinitionInput,
+    Project,
+    Type,
+    TypeDefinition,
+    all_tools,
+    mcp_prompt,
+)
+from .input_parsers import (
+    parse_bool_graph,
+    parse_composition_graph,
+    parse_float_graph,
+    parse_graph,
+    parse_int_graph,
+    parse_string_graph,
+)
 
 def load_composition(value) -> Graph:
     return parse_composition_graph(value)
 
 def byte_list_constant(value) -> Graph:
-    return byte_list_constant_internal(value)
+    return _internal.byte_list_constant_internal(value)
 
 def int_constant(value) -> Graph:
-    return int_constant_internal(int(value))
+    return _internal.int_constant_internal(int(value))
 
 def float_constant(value) -> Graph:
-    return float_constant_internal(float(value))
+    return _internal.float_constant_internal(float(value))
 
 def string_constant(value: str) -> Graph:
-    return string_constant_internal(value)
+    return _internal.string_constant_internal(value)
 
 def bool_constant(value: bool) -> Graph:
-    return bool_constant_internal(value)
+    return _internal.bool_constant_internal(value)
 
 def r_g_b_a_color_constant(r: float, g: float, b: float, a: float):
-    return r_g_b_a_color_constant_internal(r, g, b, a)
+    return _internal.r_g_b_a_color_constant_internal(r, g, b, a)
 
 def r_g_b_color_constant(r: float, g: float, b: float):
-    return r_g_b_color_constant_internal(r, g, b)
+    return _internal.r_g_b_color_constant_internal(r, g, b)
 
 def vector_2i_constant(x: int, y: int) -> Graph:
-    return vector2i_constant_internal(x, y)
+    return _internal.vector2i_constant_internal(x, y)
 
 def vector2f_constant(x: float, y: float) -> Graph:
-    return vector2f_constant_internal(x, y)
+    return _internal.vector2f_constant_internal(x, y)
 
 
 def abs(number) -> Graph:
@@ -88,7 +109,7 @@ def abs(number) -> Graph:
         Graph: A graph node producing a Float.
     """
     number_parsed = parse_float_graph(number)
-    return abs_internal(number_parsed)
+    return _internal.abs_internal(number_parsed)
 
 def and_(bool1, bool2) -> Graph:
     """And
@@ -105,7 +126,7 @@ def and_(bool1, bool2) -> Graph:
     """
     bool1_parsed = parse_bool_graph(bool1)
     bool2_parsed = parse_bool_graph(bool2)
-    return and_internal(bool1_parsed, bool2_parsed)
+    return _internal.and_internal(bool1_parsed, bool2_parsed)
 
 def bool_add_to_dictionary(dictionary, key, value) -> Graph:
     """Bool Add To Dictionary
@@ -124,7 +145,7 @@ def bool_add_to_dictionary(dictionary, key, value) -> Graph:
     dictionary_parsed = parse_graph(dictionary)
     key_parsed = parse_string_graph(key)
     value_parsed = parse_bool_graph(value)
-    return bool_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
+    return _internal.bool_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
 
 def bool_if(bool, input_1, input_2) -> Graph:
     """Bool If
@@ -143,7 +164,7 @@ def bool_if(bool, input_1, input_2) -> Graph:
     bool_parsed = parse_bool_graph(bool)
     input_1_parsed = parse_bool_graph(input_1)
     input_2_parsed = parse_bool_graph(input_2)
-    return bool_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
+    return _internal.bool_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
 
 def bounds2f_from_x_y_width_height(x, y, width, height) -> Graph:
     """Bounds 2D Float from X, Y, Width & Height
@@ -164,7 +185,7 @@ def bounds2f_from_x_y_width_height(x, y, width, height) -> Graph:
     y_parsed = parse_float_graph(y)
     width_parsed = parse_float_graph(width)
     height_parsed = parse_float_graph(height)
-    return bounds2f_from_x_y_width_height_internal(x_parsed, y_parsed, width_parsed, height_parsed)
+    return _internal.bounds2f_from_x_y_width_height_internal(x_parsed, y_parsed, width_parsed, height_parsed)
 
 def bounds2f_height(bounds) -> Graph:
     """Bounds2f Height
@@ -179,7 +200,7 @@ def bounds2f_height(bounds) -> Graph:
         Graph: A graph node producing a Float.
     """
     bounds_parsed = parse_graph(bounds)
-    return bounds2f_height_internal(bounds_parsed)
+    return _internal.bounds2f_height_internal(bounds_parsed)
 
 def bounds2f_min_x(bounds) -> Graph:
     """Bounds2f Min X
@@ -194,7 +215,7 @@ def bounds2f_min_x(bounds) -> Graph:
         Graph: A graph node producing a Float.
     """
     bounds_parsed = parse_graph(bounds)
-    return bounds2f_min_x_internal(bounds_parsed)
+    return _internal.bounds2f_min_x_internal(bounds_parsed)
 
 def bounds2f_min_y(bounds) -> Graph:
     """Bounds2f Min Y
@@ -209,7 +230,7 @@ def bounds2f_min_y(bounds) -> Graph:
         Graph: A graph node producing a Float.
     """
     bounds_parsed = parse_graph(bounds)
-    return bounds2f_min_y_internal(bounds_parsed)
+    return _internal.bounds2f_min_y_internal(bounds_parsed)
 
 def bounds2f_width(bounds) -> Graph:
     """Bounds2f Width
@@ -224,7 +245,7 @@ def bounds2f_width(bounds) -> Graph:
         Graph: A graph node producing a Float.
     """
     bounds_parsed = parse_graph(bounds)
-    return bounds2f_width_internal(bounds_parsed)
+    return _internal.bounds2f_width_internal(bounds_parsed)
 
 def bounds2i_from_x_y_width_height(x, y, width, height) -> Graph:
     """Bounds 2D Int from X, Y, Width & Height
@@ -245,7 +266,7 @@ def bounds2i_from_x_y_width_height(x, y, width, height) -> Graph:
     y_parsed = parse_int_graph(y)
     width_parsed = parse_int_graph(width)
     height_parsed = parse_int_graph(height)
-    return bounds2i_from_x_y_width_height_internal(x_parsed, y_parsed, width_parsed, height_parsed)
+    return _internal.bounds2i_from_x_y_width_height_internal(x_parsed, y_parsed, width_parsed, height_parsed)
 
 def brush_solid(color, radius) -> Graph:
     """Brush Solid
@@ -262,7 +283,7 @@ def brush_solid(color, radius) -> Graph:
     """
     color_parsed = parse_graph(color)
     radius_parsed = parse_float_graph(radius)
-    return brush_solid_internal(color_parsed, radius_parsed)
+    return _internal.brush_solid_internal(color_parsed, radius_parsed)
 
 def byte_list_from_u_r_l(url) -> Graph:
     """Byte List from URL
@@ -277,7 +298,7 @@ def byte_list_from_u_r_l(url) -> Graph:
         Graph: A graph node producing a ByteList.
     """
     url_parsed = parse_string_graph(url)
-    return byte_list_from_u_r_l_internal(url_parsed)
+    return _internal.byte_list_from_u_r_l_internal(url_parsed)
 
 def color_profile_b_t709() -> Graph:
     """Color Profile BT.709
@@ -287,7 +308,7 @@ def color_profile_b_t709() -> Graph:
     Returns:
         Graph: A graph node producing a ColorProfile.
     """
-    return color_profile_b_t709_internal()
+    return _internal.color_profile_b_t709_internal()
 
 def color_profile_ok_lab_a() -> Graph:
     """Color Profile OkLabA
@@ -297,7 +318,7 @@ def color_profile_ok_lab_a() -> Graph:
     Returns:
         Graph: A graph node producing a ColorProfile.
     """
-    return color_profile_ok_lab_a_internal()
+    return _internal.color_profile_ok_lab_a_internal()
 
 def color_profile_p3() -> Graph:
     """Color Profile P3
@@ -307,7 +328,7 @@ def color_profile_p3() -> Graph:
     Returns:
         Graph: A graph node producing a ColorProfile.
     """
-    return color_profile_p3_internal()
+    return _internal.color_profile_p3_internal()
 
 def color_profile_p_n_g_s_r_g_b() -> Graph:
     """Color Profile PNG sRGB
@@ -317,7 +338,7 @@ def color_profile_p_n_g_s_r_g_b() -> Graph:
     Returns:
         Graph: A graph node producing a ColorProfile.
     """
-    return color_profile_p_n_g_s_r_g_b_internal()
+    return _internal.color_profile_p_n_g_s_r_g_b_internal()
 
 def color_profile_s_r_g_b() -> Graph:
     """Color Profile sRGB
@@ -327,7 +348,7 @@ def color_profile_s_r_g_b() -> Graph:
     Returns:
         Graph: A graph node producing a ColorProfile.
     """
-    return color_profile_s_r_g_b_internal()
+    return _internal.color_profile_s_r_g_b_internal()
 
 def composition_absolute_value(image) -> Graph:
     """Composition Absolute Value
@@ -342,7 +363,7 @@ def composition_absolute_value(image) -> Graph:
         Graph: A graph node producing a Composition.
     """
     image_parsed = parse_graph(image)
-    return composition_absolute_value_internal(image_parsed)
+    return _internal.composition_absolute_value_internal(image_parsed)
 
 def composition_blend_add(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Add
@@ -361,7 +382,7 @@ def composition_blend_add(foreground, background, foreground_transform) -> Graph
     foreground_parsed = parse_graph(foreground)
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_add_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+    return _internal.composition_blend_add_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_blend_alpha(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Alpha
@@ -380,7 +401,7 @@ def composition_blend_alpha(foreground, background, foreground_transform) -> Gra
     foreground_parsed = parse_graph(foreground)
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_alpha_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+    return _internal.composition_blend_alpha_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_blend_max(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Max
@@ -399,7 +420,7 @@ def composition_blend_max(foreground, background, foreground_transform) -> Graph
     foreground_parsed = parse_graph(foreground)
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_max_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+    return _internal.composition_blend_max_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_blend_min(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Min
@@ -418,7 +439,7 @@ def composition_blend_min(foreground, background, foreground_transform) -> Graph
     foreground_parsed = parse_graph(foreground)
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_min_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+    return _internal.composition_blend_min_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_blend_multiply(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Multiply
@@ -437,7 +458,7 @@ def composition_blend_multiply(foreground, background, foreground_transform) -> 
     foreground_parsed = parse_graph(foreground)
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_multiply_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+    return _internal.composition_blend_multiply_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_blend_stencil(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Stencil
@@ -456,7 +477,7 @@ def composition_blend_stencil(foreground, background, foreground_transform) -> G
     foreground_parsed = parse_graph(foreground)
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_stencil_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+    return _internal.composition_blend_stencil_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_blend_subtract(foreground, background, foreground_transform) -> Graph:
     """Composition Blend Subtract
@@ -475,7 +496,7 @@ def composition_blend_subtract(foreground, background, foreground_transform) -> 
     foreground_parsed = parse_graph(foreground)
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
-    return composition_blend_subtract_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+    return _internal.composition_blend_subtract_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_bounds(composition) -> Graph:
     """Composition Bounds
@@ -490,7 +511,7 @@ def composition_bounds(composition) -> Graph:
         Graph: A graph node producing a Bounds2f.
     """
     composition_parsed = parse_graph(composition)
-    return composition_bounds_internal(composition_parsed)
+    return _internal.composition_bounds_internal(composition_parsed)
 
 def composition_box_blur(composition, dimension) -> Graph:
     """Composition Box Blur
@@ -507,7 +528,7 @@ def composition_box_blur(composition, dimension) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     dimension_parsed = parse_int_graph(dimension)
-    return composition_box_blur_internal(composition_parsed, dimension_parsed)
+    return _internal.composition_box_blur_internal(composition_parsed, dimension_parsed)
 
 def composition_brightness_adjust(composition, scale) -> Graph:
     """Composition Brightness Adjust
@@ -524,7 +545,7 @@ def composition_brightness_adjust(composition, scale) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     scale_parsed = parse_float_graph(scale)
-    return composition_brightness_adjust_internal(composition_parsed, scale_parsed)
+    return _internal.composition_brightness_adjust_internal(composition_parsed, scale_parsed)
 
 def composition_chroma_offset(composition, offset) -> Graph:
     """Composition Chroma Offset
@@ -541,7 +562,7 @@ def composition_chroma_offset(composition, offset) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     offset_parsed = parse_graph(offset)
-    return composition_chroma_offset_internal(composition_parsed, offset_parsed)
+    return _internal.composition_chroma_offset_internal(composition_parsed, offset_parsed)
 
 def composition_color_convert(composition, color_profile) -> Graph:
     """Composition Color Convert
@@ -558,7 +579,7 @@ def composition_color_convert(composition, color_profile) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     color_profile_parsed = parse_graph(color_profile)
-    return composition_color_convert_internal(composition_parsed, color_profile_parsed)
+    return _internal.composition_color_convert_internal(composition_parsed, color_profile_parsed)
 
 def composition_color_invert(composition) -> Graph:
     """Composition Color Invert
@@ -573,7 +594,7 @@ def composition_color_invert(composition) -> Graph:
         Graph: A graph node producing a Composition.
     """
     composition_parsed = parse_graph(composition)
-    return composition_color_invert_internal(composition_parsed)
+    return _internal.composition_color_invert_internal(composition_parsed)
 
 def composition_color_profile(composition) -> Graph:
     """Composition Color Profile
@@ -588,7 +609,7 @@ def composition_color_profile(composition) -> Graph:
         Graph: A graph node producing a ColorProfile.
     """
     composition_parsed = parse_graph(composition)
-    return composition_color_profile_internal(composition_parsed)
+    return _internal.composition_color_profile_internal(composition_parsed)
 
 def composition_color_rect(color, color_profile, size) -> Graph:
     """Composition Color Rect
@@ -607,7 +628,7 @@ def composition_color_rect(color, color_profile, size) -> Graph:
     color_parsed = parse_graph(color)
     color_profile_parsed = parse_graph(color_profile)
     size_parsed = parse_graph(size)
-    return composition_color_rect_internal(color_parsed, color_profile_parsed, size_parsed)
+    return _internal.composition_color_rect_internal(color_parsed, color_profile_parsed, size_parsed)
 
 def composition_color_threshold(composition, threshold) -> Graph:
     """Composition Color Threshold
@@ -624,7 +645,7 @@ def composition_color_threshold(composition, threshold) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     threshold_parsed = parse_float_graph(threshold)
-    return composition_color_threshold_internal(composition_parsed, threshold_parsed)
+    return _internal.composition_color_threshold_internal(composition_parsed, threshold_parsed)
 
 def composition_color_transformer_shader(composition, function_body, helpers, input_color_profile, output_color_profile, inputs) -> Graph:
     """Composition Color Transformer Shader
@@ -649,7 +670,7 @@ def composition_color_transformer_shader(composition, function_body, helpers, in
     input_color_profile_parsed = parse_graph(input_color_profile)
     output_color_profile_parsed = parse_graph(output_color_profile)
     inputs_parsed = parse_graph(inputs)
-    return composition_color_transformer_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, input_color_profile_parsed, output_color_profile_parsed, inputs_parsed)
+    return _internal.composition_color_transformer_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, input_color_profile_parsed, output_color_profile_parsed, inputs_parsed)
 
 def composition_contrast_adjustment(composition, contrast) -> Graph:
     """Composition Contrast Adjustment
@@ -666,7 +687,7 @@ def composition_contrast_adjustment(composition, contrast) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     contrast_parsed = parse_float_graph(contrast)
-    return composition_contrast_adjustment_internal(composition_parsed, contrast_parsed)
+    return _internal.composition_contrast_adjustment_internal(composition_parsed, contrast_parsed)
 
 def composition_convolution(composition, kernel, kernel_width, kernel_height) -> Graph:
     """Composition Convolution
@@ -687,7 +708,7 @@ def composition_convolution(composition, kernel, kernel_width, kernel_height) ->
     kernel_parsed = parse_graph(kernel)
     kernel_width_parsed = parse_int_graph(kernel_width)
     kernel_height_parsed = parse_int_graph(kernel_height)
-    return composition_convolution_internal(composition_parsed, kernel_parsed, kernel_width_parsed, kernel_height_parsed)
+    return _internal.composition_convolution_internal(composition_parsed, kernel_parsed, kernel_width_parsed, kernel_height_parsed)
 
 def composition_crop(composition, rect) -> Graph:
     """Composition Crop
@@ -704,7 +725,7 @@ def composition_crop(composition, rect) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     rect_parsed = parse_graph(rect)
-    return composition_crop_internal(composition_parsed, rect_parsed)
+    return _internal.composition_crop_internal(composition_parsed, rect_parsed)
 
 def composition_film_grain(composition, grain_strength, fine_grain_frequency, fine_weight, medium_grain_frequency, medium_weight, high_grain_frequency, high_weight) -> Graph:
     """Composition Film Grain
@@ -733,7 +754,7 @@ def composition_film_grain(composition, grain_strength, fine_grain_frequency, fi
     medium_weight_parsed = parse_float_graph(medium_weight)
     high_grain_frequency_parsed = parse_float_graph(high_grain_frequency)
     high_weight_parsed = parse_float_graph(high_weight)
-    return composition_film_grain_internal(composition_parsed, grain_strength_parsed, fine_grain_frequency_parsed, fine_weight_parsed, medium_grain_frequency_parsed, medium_weight_parsed, high_grain_frequency_parsed, high_weight_parsed)
+    return _internal.composition_film_grain_internal(composition_parsed, grain_strength_parsed, fine_grain_frequency_parsed, fine_weight_parsed, medium_grain_frequency_parsed, medium_weight_parsed, high_grain_frequency_parsed, high_weight_parsed)
 
 def composition_flip_horizontal(composition) -> Graph:
     """Composition Flip Horizontal
@@ -748,7 +769,7 @@ def composition_flip_horizontal(composition) -> Graph:
         Graph: A graph node producing a Composition.
     """
     composition_parsed = parse_graph(composition)
-    return composition_flip_horizontal_internal(composition_parsed)
+    return _internal.composition_flip_horizontal_internal(composition_parsed)
 
 def composition_flip_vertical(composition) -> Graph:
     """Composition Flip Vertical
@@ -763,7 +784,7 @@ def composition_flip_vertical(composition) -> Graph:
         Graph: A graph node producing a Composition.
     """
     composition_parsed = parse_graph(composition)
-    return composition_flip_vertical_internal(composition_parsed)
+    return _internal.composition_flip_vertical_internal(composition_parsed)
 
 def composition_from_asset(asset_id) -> Graph:
     """Composition from Asset
@@ -778,7 +799,7 @@ def composition_from_asset(asset_id) -> Graph:
         Graph: A graph node producing a Composition.
     """
     asset_id_parsed = parse_int_graph(asset_id)
-    return composition_from_asset_internal(asset_id_parsed)
+    return _internal.composition_from_asset_internal(asset_id_parsed)
 
 def composition_from_image(image) -> Graph:
     """Composition from Image
@@ -793,7 +814,7 @@ def composition_from_image(image) -> Graph:
         Graph: A graph node producing a Composition.
     """
     image_parsed = parse_graph(image)
-    return composition_from_image_internal(image_parsed)
+    return _internal.composition_from_image_internal(image_parsed)
 
 def composition_gaussian_blur(composition, sigma) -> Graph:
     """Composition Gaussian Blur
@@ -810,7 +831,7 @@ def composition_gaussian_blur(composition, sigma) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     sigma_parsed = parse_float_graph(sigma)
-    return composition_gaussian_blur_internal(composition_parsed, sigma_parsed)
+    return _internal.composition_gaussian_blur_internal(composition_parsed, sigma_parsed)
 
 def composition_grayscale(composition) -> Graph:
     """Composition Grayscale
@@ -825,7 +846,7 @@ def composition_grayscale(composition) -> Graph:
         Graph: A graph node producing a Composition.
     """
     composition_parsed = parse_graph(composition)
-    return composition_grayscale_internal(composition_parsed)
+    return _internal.composition_grayscale_internal(composition_parsed)
 
 def composition_halftone(composition, pixel_size, foreground_color, background_color) -> Graph:
     """Composition Halftone
@@ -846,7 +867,7 @@ def composition_halftone(composition, pixel_size, foreground_color, background_c
     pixel_size_parsed = parse_int_graph(pixel_size)
     foreground_color_parsed = parse_graph(foreground_color)
     background_color_parsed = parse_graph(background_color)
-    return composition_halftone_internal(composition_parsed, pixel_size_parsed, foreground_color_parsed, background_color_parsed)
+    return _internal.composition_halftone_internal(composition_parsed, pixel_size_parsed, foreground_color_parsed, background_color_parsed)
 
 def composition_if(bool, input_1, input_2) -> Graph:
     """Composition If
@@ -865,7 +886,7 @@ def composition_if(bool, input_1, input_2) -> Graph:
     bool_parsed = parse_bool_graph(bool)
     input_1_parsed = parse_graph(input_1)
     input_2_parsed = parse_graph(input_2)
-    return composition_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
+    return _internal.composition_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
 
 def composition_kaleidoscope(composition, segments, rotation, warp, warp_frequency) -> Graph:
     """Composition Kaleidoscope
@@ -888,7 +909,7 @@ def composition_kaleidoscope(composition, segments, rotation, warp, warp_frequen
     rotation_parsed = parse_float_graph(rotation)
     warp_parsed = parse_float_graph(warp)
     warp_frequency_parsed = parse_float_graph(warp_frequency)
-    return composition_kaleidoscope_internal(composition_parsed, segments_parsed, rotation_parsed, warp_parsed, warp_frequency_parsed)
+    return _internal.composition_kaleidoscope_internal(composition_parsed, segments_parsed, rotation_parsed, warp_parsed, warp_frequency_parsed)
 
 def composition_l_curve(composition, l_curve) -> Graph:
     """Composition Lightness Curve
@@ -905,7 +926,7 @@ def composition_l_curve(composition, l_curve) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     l_curve_parsed = parse_graph(l_curve)
-    return composition_l_curve_internal(composition_parsed, l_curve_parsed)
+    return _internal.composition_l_curve_internal(composition_parsed, l_curve_parsed)
 
 def composition_lightness_threshold(composition, threshold) -> Graph:
     """Composition Lightness Threshold
@@ -922,7 +943,7 @@ def composition_lightness_threshold(composition, threshold) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     threshold_parsed = parse_float_graph(threshold)
-    return composition_lightness_threshold_internal(composition_parsed, threshold_parsed)
+    return _internal.composition_lightness_threshold_internal(composition_parsed, threshold_parsed)
 
 def composition_linear_transform(composition, entry_0_0, entry_0_1, entry_0_2, entry_0_3, entry_1_0, entry_1_1, entry_1_2, entry_1_3, entry_2_0, entry_2_1, entry_2_2, entry_2_3, entry_3_0, entry_3_1, entry_3_2, entry_3_3) -> Graph:
     """Composition RGBA Linear Transform
@@ -969,7 +990,7 @@ def composition_linear_transform(composition, entry_0_0, entry_0_1, entry_0_2, e
     entry_3_1_parsed = parse_float_graph(entry_3_1)
     entry_3_2_parsed = parse_float_graph(entry_3_2)
     entry_3_3_parsed = parse_float_graph(entry_3_3)
-    return composition_linear_transform_internal(composition_parsed, entry_0_0_parsed, entry_0_1_parsed, entry_0_2_parsed, entry_0_3_parsed, entry_1_0_parsed, entry_1_1_parsed, entry_1_2_parsed, entry_1_3_parsed, entry_2_0_parsed, entry_2_1_parsed, entry_2_2_parsed, entry_2_3_parsed, entry_3_0_parsed, entry_3_1_parsed, entry_3_2_parsed, entry_3_3_parsed)
+    return _internal.composition_linear_transform_internal(composition_parsed, entry_0_0_parsed, entry_0_1_parsed, entry_0_2_parsed, entry_0_3_parsed, entry_1_0_parsed, entry_1_1_parsed, entry_1_2_parsed, entry_1_3_parsed, entry_2_0_parsed, entry_2_1_parsed, entry_2_2_parsed, entry_2_3_parsed, entry_3_0_parsed, entry_3_1_parsed, entry_3_2_parsed, entry_3_3_parsed)
 
 def composition_liquify(composition, amplitude, frequency) -> Graph:
     """Composition Liquify
@@ -988,7 +1009,7 @@ def composition_liquify(composition, amplitude, frequency) -> Graph:
     composition_parsed = parse_graph(composition)
     amplitude_parsed = parse_float_graph(amplitude)
     frequency_parsed = parse_float_graph(frequency)
-    return composition_liquify_internal(composition_parsed, amplitude_parsed, frequency_parsed)
+    return _internal.composition_liquify_internal(composition_parsed, amplitude_parsed, frequency_parsed)
 
 def composition_median(composition, kernel_size) -> Graph:
     """Composition Median
@@ -1005,7 +1026,7 @@ def composition_median(composition, kernel_size) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     kernel_size_parsed = parse_int_graph(kernel_size)
-    return composition_median_internal(composition_parsed, kernel_size_parsed)
+    return _internal.composition_median_internal(composition_parsed, kernel_size_parsed)
 
 def composition_monet_women_with_parasol() -> Graph:
     """Monet's Women with a Parasol
@@ -1015,7 +1036,7 @@ def composition_monet_women_with_parasol() -> Graph:
     Returns:
         Graph: A graph node producing a Composition.
     """
-    return composition_monet_women_with_parasol_internal()
+    return _internal.composition_monet_women_with_parasol_internal()
 
 def composition_morphological_max(composition, dimension) -> Graph:
     """Composition Morphological Max
@@ -1032,7 +1053,7 @@ def composition_morphological_max(composition, dimension) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     dimension_parsed = parse_int_graph(dimension)
-    return composition_morphological_max_internal(composition_parsed, dimension_parsed)
+    return _internal.composition_morphological_max_internal(composition_parsed, dimension_parsed)
 
 def composition_morphological_min(composition, dimension) -> Graph:
     """Composition Morphological Min
@@ -1049,7 +1070,7 @@ def composition_morphological_min(composition, dimension) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     dimension_parsed = parse_int_graph(dimension)
-    return composition_morphological_min_internal(composition_parsed, dimension_parsed)
+    return _internal.composition_morphological_min_internal(composition_parsed, dimension_parsed)
 
 def composition_painter(painter) -> Graph:
     """Composition Painter
@@ -1064,7 +1085,7 @@ def composition_painter(painter) -> Graph:
         Graph: A graph node producing a Composition.
     """
     painter_parsed = parse_graph(painter)
-    return composition_painter_internal(painter_parsed)
+    return _internal.composition_painter_internal(painter_parsed)
 
 def composition_passthrough(value) -> Graph:
     """Composition Passthrough
@@ -1079,7 +1100,7 @@ def composition_passthrough(value) -> Graph:
         Graph: A graph node producing a Composition.
     """
     value_parsed = parse_graph(value)
-    return composition_passthrough_internal(value_parsed)
+    return _internal.composition_passthrough_internal(value_parsed)
 
 def composition_pixelate(composition, pixel_size) -> Graph:
     """Composition Pixelate
@@ -1096,7 +1117,7 @@ def composition_pixelate(composition, pixel_size) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     pixel_size_parsed = parse_int_graph(pixel_size)
-    return composition_pixelate_internal(composition_parsed, pixel_size_parsed)
+    return _internal.composition_pixelate_internal(composition_parsed, pixel_size_parsed)
 
 def composition_point_effect_shader(composition, function_body, helpers, effect_center_point, effect_radius, inputs) -> Graph:
     """Composition Point Effect Shader
@@ -1121,7 +1142,7 @@ def composition_point_effect_shader(composition, function_body, helpers, effect_
     effect_center_point_parsed = parse_graph(effect_center_point)
     effect_radius_parsed = parse_float_graph(effect_radius)
     inputs_parsed = parse_graph(inputs)
-    return composition_point_effect_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, effect_center_point_parsed, effect_radius_parsed, inputs_parsed)
+    return _internal.composition_point_effect_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, effect_center_point_parsed, effect_radius_parsed, inputs_parsed)
 
 def composition_r_g_b_curve(composition, r_curve, g_curve, b_curve) -> Graph:
     """Composition RGB Curve
@@ -1142,7 +1163,7 @@ def composition_r_g_b_curve(composition, r_curve, g_curve, b_curve) -> Graph:
     r_curve_parsed = parse_graph(r_curve)
     g_curve_parsed = parse_graph(g_curve)
     b_curve_parsed = parse_graph(b_curve)
-    return composition_r_g_b_curve_internal(composition_parsed, r_curve_parsed, g_curve_parsed, b_curve_parsed)
+    return _internal.composition_r_g_b_curve_internal(composition_parsed, r_curve_parsed, g_curve_parsed, b_curve_parsed)
 
 def composition_render_to_image(composition) -> Graph:
     """Composition Render to Image
@@ -1157,7 +1178,7 @@ def composition_render_to_image(composition) -> Graph:
         Graph: A graph node producing a Image.
     """
     composition_parsed = parse_graph(composition)
-    return composition_render_to_image_internal(composition_parsed)
+    return _internal.composition_render_to_image_internal(composition_parsed)
 
 def composition_rotate180(composition) -> Graph:
     """Composition Rotate 180
@@ -1172,7 +1193,7 @@ def composition_rotate180(composition) -> Graph:
         Graph: A graph node producing a Composition.
     """
     composition_parsed = parse_graph(composition)
-    return composition_rotate180_internal(composition_parsed)
+    return _internal.composition_rotate180_internal(composition_parsed)
 
 def composition_rotate90_clockwise(composition) -> Graph:
     """Composition Rotate 90 Clockwise
@@ -1187,7 +1208,7 @@ def composition_rotate90_clockwise(composition) -> Graph:
         Graph: A graph node producing a Composition.
     """
     composition_parsed = parse_graph(composition)
-    return composition_rotate90_clockwise_internal(composition_parsed)
+    return _internal.composition_rotate90_clockwise_internal(composition_parsed)
 
 def composition_rotate90_counter_clockwise(composition) -> Graph:
     """Composition Rotate 90 Counter Clockwise
@@ -1202,7 +1223,7 @@ def composition_rotate90_counter_clockwise(composition) -> Graph:
         Graph: A graph node producing a Composition.
     """
     composition_parsed = parse_graph(composition)
-    return composition_rotate90_counter_clockwise_internal(composition_parsed)
+    return _internal.composition_rotate90_counter_clockwise_internal(composition_parsed)
 
 def composition_s_a_m3_image(composition, prompt, positive_points, negative_points) -> Graph:
     """Composition SAM3 Image
@@ -1223,7 +1244,7 @@ def composition_s_a_m3_image(composition, prompt, positive_points, negative_poin
     prompt_parsed = parse_string_graph(prompt)
     positive_points_parsed = parse_graph(positive_points)
     negative_points_parsed = parse_graph(negative_points)
-    return composition_s_a_m3_image_internal(composition_parsed, prompt_parsed, positive_points_parsed, negative_points_parsed)
+    return _internal.composition_s_a_m3_image_internal(composition_parsed, prompt_parsed, positive_points_parsed, negative_points_parsed)
 
 def composition_saturation_adjust(composition, scale) -> Graph:
     """Composition Saturation Adjust
@@ -1240,7 +1261,7 @@ def composition_saturation_adjust(composition, scale) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     scale_parsed = parse_float_graph(scale)
-    return composition_saturation_adjust_internal(composition_parsed, scale_parsed)
+    return _internal.composition_saturation_adjust_internal(composition_parsed, scale_parsed)
 
 def composition_segment(composition, prompt, positive_points, negative_points) -> Graph:
     """Composition Segment
@@ -1261,7 +1282,7 @@ def composition_segment(composition, prompt, positive_points, negative_points) -
     prompt_parsed = parse_string_graph(prompt)
     positive_points_parsed = parse_graph(positive_points)
     negative_points_parsed = parse_graph(negative_points)
-    return composition_segment_internal(composition_parsed, prompt_parsed, positive_points_parsed, negative_points_parsed)
+    return _internal.composition_segment_internal(composition_parsed, prompt_parsed, positive_points_parsed, negative_points_parsed)
 
 def composition_sharpen(composition, radius, strength) -> Graph:
     """Composition Sharpen
@@ -1280,7 +1301,7 @@ def composition_sharpen(composition, radius, strength) -> Graph:
     composition_parsed = parse_graph(composition)
     radius_parsed = parse_float_graph(radius)
     strength_parsed = parse_float_graph(strength)
-    return composition_sharpen_internal(composition_parsed, radius_parsed, strength_parsed)
+    return _internal.composition_sharpen_internal(composition_parsed, radius_parsed, strength_parsed)
 
 def composition_sobel_edge_detection(composition) -> Graph:
     """Composition Sobel Edge Detection
@@ -1295,7 +1316,7 @@ def composition_sobel_edge_detection(composition) -> Graph:
         Graph: A graph node producing a Composition.
     """
     composition_parsed = parse_graph(composition)
-    return composition_sobel_edge_detection_internal(composition_parsed)
+    return _internal.composition_sobel_edge_detection_internal(composition_parsed)
 
 def composition_spacial_effect_shader(composition, function_body, helpers, max_displacement, inputs) -> Graph:
     """Composition Spacial Effect Shader
@@ -1318,7 +1339,7 @@ def composition_spacial_effect_shader(composition, function_body, helpers, max_d
     helpers_parsed = parse_string_graph(helpers)
     max_displacement_parsed = parse_float_graph(max_displacement)
     inputs_parsed = parse_graph(inputs)
-    return composition_spacial_effect_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, max_displacement_parsed, inputs_parsed)
+    return _internal.composition_spacial_effect_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, max_displacement_parsed, inputs_parsed)
 
 def composition_swirl(composition, center, radius, amount) -> Graph:
     """Composition Swirl
@@ -1339,7 +1360,7 @@ def composition_swirl(composition, center, radius, amount) -> Graph:
     center_parsed = parse_graph(center)
     radius_parsed = parse_float_graph(radius)
     amount_parsed = parse_float_graph(amount)
-    return composition_swirl_internal(composition_parsed, center_parsed, radius_parsed, amount_parsed)
+    return _internal.composition_swirl_internal(composition_parsed, center_parsed, radius_parsed, amount_parsed)
 
 def composition_target_white_kelvin(composition, kelvin) -> Graph:
     """Composition Target White Kelvin
@@ -1356,7 +1377,7 @@ def composition_target_white_kelvin(composition, kelvin) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     kelvin_parsed = parse_float_graph(kelvin)
-    return composition_target_white_kelvin_internal(composition_parsed, kelvin_parsed)
+    return _internal.composition_target_white_kelvin_internal(composition_parsed, kelvin_parsed)
 
 def composition_to_ok_lab_hist(composition) -> Graph:
     """Composition to OkLab Histogram
@@ -1371,7 +1392,7 @@ def composition_to_ok_lab_hist(composition) -> Graph:
         Graph: A graph node producing a OkLabHist.
     """
     composition_parsed = parse_graph(composition)
-    return composition_to_ok_lab_hist_internal(composition_parsed)
+    return _internal.composition_to_ok_lab_hist_internal(composition_parsed)
 
 def composition_transform(composition, transform) -> Graph:
     """Composition Transform
@@ -1388,7 +1409,7 @@ def composition_transform(composition, transform) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     transform_parsed = parse_graph(transform)
-    return composition_transform_internal(composition_parsed, transform_parsed)
+    return _internal.composition_transform_internal(composition_parsed, transform_parsed)
 
 def composition_vibrance_adjustment(composition, strength) -> Graph:
     """Composition Vibrance Adjustment
@@ -1405,7 +1426,7 @@ def composition_vibrance_adjustment(composition, strength) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     strength_parsed = parse_float_graph(strength)
-    return composition_vibrance_adjustment_internal(composition_parsed, strength_parsed)
+    return _internal.composition_vibrance_adjustment_internal(composition_parsed, strength_parsed)
 
 def composition_vignette(composition, center, radius_x, radius_y, softness, strength) -> Graph:
     """Composition Vignette
@@ -1430,7 +1451,7 @@ def composition_vignette(composition, center, radius_x, radius_y, softness, stre
     radius_y_parsed = parse_float_graph(radius_y)
     softness_parsed = parse_float_graph(softness)
     strength_parsed = parse_float_graph(strength)
-    return composition_vignette_internal(composition_parsed, center_parsed, radius_x_parsed, radius_y_parsed, softness_parsed, strength_parsed)
+    return _internal.composition_vignette_internal(composition_parsed, center_parsed, radius_x_parsed, radius_y_parsed, softness_parsed, strength_parsed)
 
 def composition_zoom_blur(composition, center, strength, falloff, effect_radius) -> Graph:
     """Composition Zoom Blur
@@ -1453,7 +1474,7 @@ def composition_zoom_blur(composition, center, strength, falloff, effect_radius)
     strength_parsed = parse_float_graph(strength)
     falloff_parsed = parse_float_graph(falloff)
     effect_radius_parsed = parse_float_graph(effect_radius)
-    return composition_zoom_blur_internal(composition_parsed, center_parsed, strength_parsed, falloff_parsed, effect_radius_parsed)
+    return _internal.composition_zoom_blur_internal(composition_parsed, center_parsed, strength_parsed, falloff_parsed, effect_radius_parsed)
 
 def curve_evaluate(curve, input) -> Graph:
     """Curve Evaluate
@@ -1470,7 +1491,7 @@ def curve_evaluate(curve, input) -> Graph:
     """
     curve_parsed = parse_graph(curve)
     input_parsed = parse_float_graph(input)
-    return curve_evaluate_internal(curve_parsed, input_parsed)
+    return _internal.curve_evaluate_internal(curve_parsed, input_parsed)
 
 def curve_gamma(gamma) -> Graph:
     """Curve Gamma
@@ -1485,7 +1506,7 @@ def curve_gamma(gamma) -> Graph:
         Graph: A graph node producing a Curve.
     """
     gamma_parsed = parse_float_graph(gamma)
-    return curve_gamma_internal(gamma_parsed)
+    return _internal.curve_gamma_internal(gamma_parsed)
 
 def curve_identity() -> Graph:
     """Curve Identity
@@ -1495,7 +1516,7 @@ def curve_identity() -> Graph:
     Returns:
         Graph: A graph node producing a Curve.
     """
-    return curve_identity_internal()
+    return _internal.curve_identity_internal()
 
 def curve_pivoted_sigmoid(pivot, slope) -> Graph:
     """Curve Pivoted Sigmoid
@@ -1512,7 +1533,7 @@ def curve_pivoted_sigmoid(pivot, slope) -> Graph:
     """
     pivot_parsed = parse_float_graph(pivot)
     slope_parsed = parse_float_graph(slope)
-    return curve_pivoted_sigmoid_internal(pivot_parsed, slope_parsed)
+    return _internal.curve_pivoted_sigmoid_internal(pivot_parsed, slope_parsed)
 
 def curve_s_curve(pivot, slope, toe, shoulder) -> Graph:
     """Curve S
@@ -1533,7 +1554,7 @@ def curve_s_curve(pivot, slope, toe, shoulder) -> Graph:
     slope_parsed = parse_float_graph(slope)
     toe_parsed = parse_float_graph(toe)
     shoulder_parsed = parse_float_graph(shoulder)
-    return curve_s_curve_internal(pivot_parsed, slope_parsed, toe_parsed, shoulder_parsed)
+    return _internal.curve_s_curve_internal(pivot_parsed, slope_parsed, toe_parsed, shoulder_parsed)
 
 def dictionary_create() -> Graph:
     """Dictionary Create
@@ -1543,7 +1564,7 @@ def dictionary_create() -> Graph:
     Returns:
         Graph: A graph node producing a Dictionary.
     """
-    return dictionary_create_internal()
+    return _internal.dictionary_create_internal()
 
 def file_convert_image_to_bmp(image_bytes) -> Graph:
     """File Convert Image to BMP
@@ -1558,7 +1579,7 @@ def file_convert_image_to_bmp(image_bytes) -> Graph:
         Graph: A graph node producing a ByteList.
     """
     image_bytes_parsed = parse_graph(image_bytes)
-    return file_convert_image_to_bmp_internal(image_bytes_parsed)
+    return _internal.file_convert_image_to_bmp_internal(image_bytes_parsed)
 
 def file_convert_image_to_heic(image_bytes, quality) -> Graph:
     """File Convert Image to HEIC
@@ -1575,7 +1596,7 @@ def file_convert_image_to_heic(image_bytes, quality) -> Graph:
     """
     image_bytes_parsed = parse_graph(image_bytes)
     quality_parsed = parse_int_graph(quality)
-    return file_convert_image_to_heic_internal(image_bytes_parsed, quality_parsed)
+    return _internal.file_convert_image_to_heic_internal(image_bytes_parsed, quality_parsed)
 
 def file_convert_image_to_jpeg(image_bytes, quality) -> Graph:
     """File Convert Image to JPEG
@@ -1592,7 +1613,7 @@ def file_convert_image_to_jpeg(image_bytes, quality) -> Graph:
     """
     image_bytes_parsed = parse_graph(image_bytes)
     quality_parsed = parse_int_graph(quality)
-    return file_convert_image_to_jpeg_internal(image_bytes_parsed, quality_parsed)
+    return _internal.file_convert_image_to_jpeg_internal(image_bytes_parsed, quality_parsed)
 
 def file_convert_image_to_png(image_bytes) -> Graph:
     """File Convert Image to PNG
@@ -1607,7 +1628,7 @@ def file_convert_image_to_png(image_bytes) -> Graph:
         Graph: A graph node producing a ByteList.
     """
     image_bytes_parsed = parse_graph(image_bytes)
-    return file_convert_image_to_png_internal(image_bytes_parsed)
+    return _internal.file_convert_image_to_png_internal(image_bytes_parsed)
 
 def file_convert_image_to_tiff(image_bytes) -> Graph:
     """File Convert Image to TIFF
@@ -1622,7 +1643,7 @@ def file_convert_image_to_tiff(image_bytes) -> Graph:
         Graph: A graph node producing a ByteList.
     """
     image_bytes_parsed = parse_graph(image_bytes)
-    return file_convert_image_to_tiff_internal(image_bytes_parsed)
+    return _internal.file_convert_image_to_tiff_internal(image_bytes_parsed)
 
 def file_convert_image_to_web_p(image_bytes, quality) -> Graph:
     """File Convert Image to WebP
@@ -1639,7 +1660,7 @@ def file_convert_image_to_web_p(image_bytes, quality) -> Graph:
     """
     image_bytes_parsed = parse_graph(image_bytes)
     quality_parsed = parse_int_graph(quality)
-    return file_convert_image_to_web_p_internal(image_bytes_parsed, quality_parsed)
+    return _internal.file_convert_image_to_web_p_internal(image_bytes_parsed, quality_parsed)
 
 def file_convert_video_to_animated_web_p(video_bytes) -> Graph:
     """File Convert Video to Animated WebP
@@ -1654,7 +1675,7 @@ def file_convert_video_to_animated_web_p(video_bytes) -> Graph:
         Graph: A graph node producing a ByteList.
     """
     video_bytes_parsed = parse_graph(video_bytes)
-    return file_convert_video_to_animated_web_p_internal(video_bytes_parsed)
+    return _internal.file_convert_video_to_animated_web_p_internal(video_bytes_parsed)
 
 def file_convert_video_to_gif(video_bytes, frame_rate) -> Graph:
     """File Convert Video to GIF
@@ -1671,7 +1692,7 @@ def file_convert_video_to_gif(video_bytes, frame_rate) -> Graph:
     """
     video_bytes_parsed = parse_graph(video_bytes)
     frame_rate_parsed = parse_int_graph(frame_rate)
-    return file_convert_video_to_gif_internal(video_bytes_parsed, frame_rate_parsed)
+    return _internal.file_convert_video_to_gif_internal(video_bytes_parsed, frame_rate_parsed)
 
 def file_convert_video_to_m_p4(video_bytes) -> Graph:
     """File Convert Video to MP4
@@ -1686,7 +1707,7 @@ def file_convert_video_to_m_p4(video_bytes) -> Graph:
         Graph: A graph node producing a ByteList.
     """
     video_bytes_parsed = parse_graph(video_bytes)
-    return file_convert_video_to_m_p4_internal(video_bytes_parsed)
+    return _internal.file_convert_video_to_m_p4_internal(video_bytes_parsed)
 
 def file_convert_video_to_web_m(video_bytes) -> Graph:
     """File Convert Video to WebM
@@ -1701,7 +1722,7 @@ def file_convert_video_to_web_m(video_bytes) -> Graph:
         Graph: A graph node producing a ByteList.
     """
     video_bytes_parsed = parse_graph(video_bytes)
-    return file_convert_video_to_web_m_internal(video_bytes_parsed)
+    return _internal.file_convert_video_to_web_m_internal(video_bytes_parsed)
 
 def fill_custom(function_body, helpers, inputs) -> Graph:
     """Fill Custom
@@ -1720,7 +1741,7 @@ def fill_custom(function_body, helpers, inputs) -> Graph:
     function_body_parsed = parse_string_graph(function_body)
     helpers_parsed = parse_string_graph(helpers)
     inputs_parsed = parse_graph(inputs)
-    return fill_custom_internal(function_body_parsed, helpers_parsed, inputs_parsed)
+    return _internal.fill_custom_internal(function_body_parsed, helpers_parsed, inputs_parsed)
 
 def fill_solid(color) -> Graph:
     """Fill Solid
@@ -1735,7 +1756,7 @@ def fill_solid(color) -> Graph:
         Graph: A graph node producing a Fill.
     """
     color_parsed = parse_graph(color)
-    return fill_solid_internal(color_parsed)
+    return _internal.fill_solid_internal(color_parsed)
 
 def float_add(float1, float2) -> Graph:
     """Float Add
@@ -1752,7 +1773,7 @@ def float_add(float1, float2) -> Graph:
     """
     float1_parsed = parse_float_graph(float1)
     float2_parsed = parse_float_graph(float2)
-    return float_add_internal(float1_parsed, float2_parsed)
+    return _internal.float_add_internal(float1_parsed, float2_parsed)
 
 def float_add_to_dictionary(dictionary, key, value) -> Graph:
     """Float Add To Dictionary
@@ -1771,7 +1792,7 @@ def float_add_to_dictionary(dictionary, key, value) -> Graph:
     dictionary_parsed = parse_graph(dictionary)
     key_parsed = parse_string_graph(key)
     value_parsed = parse_float_graph(value)
-    return float_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
+    return _internal.float_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
 
 def float_cos(angle) -> Graph:
     """Float Cosine
@@ -1786,7 +1807,7 @@ def float_cos(angle) -> Graph:
         Graph: A graph node producing a Float.
     """
     angle_parsed = parse_float_graph(angle)
-    return float_cos_internal(angle_parsed)
+    return _internal.float_cos_internal(angle_parsed)
 
 def float_divide(float1, float2) -> Graph:
     """Float Divide
@@ -1803,7 +1824,7 @@ def float_divide(float1, float2) -> Graph:
     """
     float1_parsed = parse_float_graph(float1)
     float2_parsed = parse_float_graph(float2)
-    return float_divide_internal(float1_parsed, float2_parsed)
+    return _internal.float_divide_internal(float1_parsed, float2_parsed)
 
 def float_equals(float_1, float_2) -> Graph:
     """Float Equals
@@ -1820,7 +1841,7 @@ def float_equals(float_1, float_2) -> Graph:
     """
     float_1_parsed = parse_float_graph(float_1)
     float_2_parsed = parse_float_graph(float_2)
-    return float_equals_internal(float_1_parsed, float_2_parsed)
+    return _internal.float_equals_internal(float_1_parsed, float_2_parsed)
 
 def float_greater_than(float_1, float_2) -> Graph:
     """Float Greater Than
@@ -1837,7 +1858,7 @@ def float_greater_than(float_1, float_2) -> Graph:
     """
     float_1_parsed = parse_float_graph(float_1)
     float_2_parsed = parse_float_graph(float_2)
-    return float_greater_than_internal(float_1_parsed, float_2_parsed)
+    return _internal.float_greater_than_internal(float_1_parsed, float_2_parsed)
 
 def float_greater_than_or_equal(float_1, float_2) -> Graph:
     """Float Greater Than Or Equal
@@ -1854,7 +1875,7 @@ def float_greater_than_or_equal(float_1, float_2) -> Graph:
     """
     float_1_parsed = parse_float_graph(float_1)
     float_2_parsed = parse_float_graph(float_2)
-    return float_greater_than_or_equal_internal(float_1_parsed, float_2_parsed)
+    return _internal.float_greater_than_or_equal_internal(float_1_parsed, float_2_parsed)
 
 def float_if(bool, input_1, input_2) -> Graph:
     """Float If
@@ -1873,7 +1894,7 @@ def float_if(bool, input_1, input_2) -> Graph:
     bool_parsed = parse_bool_graph(bool)
     input_1_parsed = parse_float_graph(input_1)
     input_2_parsed = parse_float_graph(input_2)
-    return float_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
+    return _internal.float_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
 
 def float_lerp(x, float1, float2) -> Graph:
     """Float Lerp
@@ -1892,7 +1913,7 @@ def float_lerp(x, float1, float2) -> Graph:
     x_parsed = parse_float_graph(x)
     float1_parsed = parse_float_graph(float1)
     float2_parsed = parse_float_graph(float2)
-    return float_lerp_internal(x_parsed, float1_parsed, float2_parsed)
+    return _internal.float_lerp_internal(x_parsed, float1_parsed, float2_parsed)
 
 def float_less_than(float_1, float_2) -> Graph:
     """Float Less Than
@@ -1909,7 +1930,7 @@ def float_less_than(float_1, float_2) -> Graph:
     """
     float_1_parsed = parse_float_graph(float_1)
     float_2_parsed = parse_float_graph(float_2)
-    return float_less_than_internal(float_1_parsed, float_2_parsed)
+    return _internal.float_less_than_internal(float_1_parsed, float_2_parsed)
 
 def float_less_than_or_equal(float_1, float_2) -> Graph:
     """Float Less Than Or Equal
@@ -1926,7 +1947,7 @@ def float_less_than_or_equal(float_1, float_2) -> Graph:
     """
     float_1_parsed = parse_float_graph(float_1)
     float_2_parsed = parse_float_graph(float_2)
-    return float_less_than_or_equal_internal(float_1_parsed, float_2_parsed)
+    return _internal.float_less_than_or_equal_internal(float_1_parsed, float_2_parsed)
 
 def float_max(float1, float2) -> Graph:
     """Float Max
@@ -1943,7 +1964,7 @@ def float_max(float1, float2) -> Graph:
     """
     float1_parsed = parse_float_graph(float1)
     float2_parsed = parse_float_graph(float2)
-    return float_max_internal(float1_parsed, float2_parsed)
+    return _internal.float_max_internal(float1_parsed, float2_parsed)
 
 def float_min(float1, float2) -> Graph:
     """Float Min
@@ -1960,7 +1981,7 @@ def float_min(float1, float2) -> Graph:
     """
     float1_parsed = parse_float_graph(float1)
     float2_parsed = parse_float_graph(float2)
-    return float_min_internal(float1_parsed, float2_parsed)
+    return _internal.float_min_internal(float1_parsed, float2_parsed)
 
 def float_multiply(float1, float2) -> Graph:
     """Float Multiply
@@ -1977,7 +1998,7 @@ def float_multiply(float1, float2) -> Graph:
     """
     float1_parsed = parse_float_graph(float1)
     float2_parsed = parse_float_graph(float2)
-    return float_multiply_internal(float1_parsed, float2_parsed)
+    return _internal.float_multiply_internal(float1_parsed, float2_parsed)
 
 def float_passthrough(value) -> Graph:
     """Float Passthrough
@@ -1992,7 +2013,7 @@ def float_passthrough(value) -> Graph:
         Graph: A graph node producing a Float.
     """
     value_parsed = parse_float_graph(value)
-    return float_passthrough_internal(value_parsed)
+    return _internal.float_passthrough_internal(value_parsed)
 
 def float_pow(float1, float2) -> Graph:
     """Float Power
@@ -2009,7 +2030,7 @@ def float_pow(float1, float2) -> Graph:
     """
     float1_parsed = parse_float_graph(float1)
     float2_parsed = parse_float_graph(float2)
-    return float_pow_internal(float1_parsed, float2_parsed)
+    return _internal.float_pow_internal(float1_parsed, float2_parsed)
 
 def float_round_to_int(float) -> Graph:
     """Float Round to Int
@@ -2024,7 +2045,7 @@ def float_round_to_int(float) -> Graph:
         Graph: A graph node producing a Int.
     """
     float_parsed = parse_float_graph(float)
-    return float_round_to_int_internal(float_parsed)
+    return _internal.float_round_to_int_internal(float_parsed)
 
 def float_sin(angle) -> Graph:
     """Float Sine
@@ -2039,7 +2060,7 @@ def float_sin(angle) -> Graph:
         Graph: A graph node producing a Float.
     """
     angle_parsed = parse_float_graph(angle)
-    return float_sin_internal(angle_parsed)
+    return _internal.float_sin_internal(angle_parsed)
 
 def float_square_root(number) -> Graph:
     """Float Square Root
@@ -2054,7 +2075,7 @@ def float_square_root(number) -> Graph:
         Graph: A graph node producing a Float.
     """
     number_parsed = parse_float_graph(number)
-    return float_square_root_internal(number_parsed)
+    return _internal.float_square_root_internal(number_parsed)
 
 def float_squared(number) -> Graph:
     """Float Squared
@@ -2069,7 +2090,7 @@ def float_squared(number) -> Graph:
         Graph: A graph node producing a Float.
     """
     number_parsed = parse_float_graph(number)
-    return float_squared_internal(number_parsed)
+    return _internal.float_squared_internal(number_parsed)
 
 def float_subtract(float1, float2) -> Graph:
     """Float Subtract
@@ -2086,7 +2107,7 @@ def float_subtract(float1, float2) -> Graph:
     """
     float1_parsed = parse_float_graph(float1)
     float2_parsed = parse_float_graph(float2)
-    return float_subtract_internal(float1_parsed, float2_parsed)
+    return _internal.float_subtract_internal(float1_parsed, float2_parsed)
 
 def image_from_byte_list(bytes) -> Graph:
     """Image from Bytes
@@ -2101,7 +2122,7 @@ def image_from_byte_list(bytes) -> Graph:
         Graph: A graph node producing a Image.
     """
     bytes_parsed = parse_graph(bytes)
-    return image_from_byte_list_internal(bytes_parsed)
+    return _internal.image_from_byte_list_internal(bytes_parsed)
 
 def image_to_byte_list(image) -> Graph:
     """Image to Byte List
@@ -2116,7 +2137,7 @@ def image_to_byte_list(image) -> Graph:
         Graph: A graph node producing a ByteList.
     """
     image_parsed = parse_graph(image)
-    return image_to_byte_list_internal(image_parsed)
+    return _internal.image_to_byte_list_internal(image_parsed)
 
 def int_abs(number) -> Graph:
     """Int Absolute Value
@@ -2131,7 +2152,7 @@ def int_abs(number) -> Graph:
         Graph: A graph node producing a Int.
     """
     number_parsed = parse_int_graph(number)
-    return int_abs_internal(number_parsed)
+    return _internal.int_abs_internal(number_parsed)
 
 def int_add(int_1, int_2) -> Graph:
     """Int Add
@@ -2148,7 +2169,7 @@ def int_add(int_1, int_2) -> Graph:
     """
     int_1_parsed = parse_int_graph(int_1)
     int_2_parsed = parse_int_graph(int_2)
-    return int_add_internal(int_1_parsed, int_2_parsed)
+    return _internal.int_add_internal(int_1_parsed, int_2_parsed)
 
 def int_add_to_dictionary(dictionary, key, value) -> Graph:
     """Int Add To Dictionary
@@ -2167,7 +2188,7 @@ def int_add_to_dictionary(dictionary, key, value) -> Graph:
     dictionary_parsed = parse_graph(dictionary)
     key_parsed = parse_string_graph(key)
     value_parsed = parse_int_graph(value)
-    return int_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
+    return _internal.int_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
 
 def int_equals(int_1, int_2) -> Graph:
     """Int Equals
@@ -2184,7 +2205,7 @@ def int_equals(int_1, int_2) -> Graph:
     """
     int_1_parsed = parse_int_graph(int_1)
     int_2_parsed = parse_int_graph(int_2)
-    return int_equals_internal(int_1_parsed, int_2_parsed)
+    return _internal.int_equals_internal(int_1_parsed, int_2_parsed)
 
 def int_greater_than(int_1, int_2) -> Graph:
     """Int Greater Than
@@ -2201,7 +2222,7 @@ def int_greater_than(int_1, int_2) -> Graph:
     """
     int_1_parsed = parse_int_graph(int_1)
     int_2_parsed = parse_int_graph(int_2)
-    return int_greater_than_internal(int_1_parsed, int_2_parsed)
+    return _internal.int_greater_than_internal(int_1_parsed, int_2_parsed)
 
 def int_greater_than_or_equal(int_1, int_2) -> Graph:
     """Int Greater Than Or Equal
@@ -2218,7 +2239,7 @@ def int_greater_than_or_equal(int_1, int_2) -> Graph:
     """
     int_1_parsed = parse_int_graph(int_1)
     int_2_parsed = parse_int_graph(int_2)
-    return int_greater_than_or_equal_internal(int_1_parsed, int_2_parsed)
+    return _internal.int_greater_than_or_equal_internal(int_1_parsed, int_2_parsed)
 
 def int_if(bool, input_1, input_2) -> Graph:
     """Int If
@@ -2237,7 +2258,7 @@ def int_if(bool, input_1, input_2) -> Graph:
     bool_parsed = parse_bool_graph(bool)
     input_1_parsed = parse_int_graph(input_1)
     input_2_parsed = parse_int_graph(input_2)
-    return int_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
+    return _internal.int_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
 
 def int_less_than(int_1, int_2) -> Graph:
     """Int Less Than
@@ -2254,7 +2275,7 @@ def int_less_than(int_1, int_2) -> Graph:
     """
     int_1_parsed = parse_int_graph(int_1)
     int_2_parsed = parse_int_graph(int_2)
-    return int_less_than_internal(int_1_parsed, int_2_parsed)
+    return _internal.int_less_than_internal(int_1_parsed, int_2_parsed)
 
 def int_less_than_or_equal(int_1, int_2) -> Graph:
     """Int Less Than Or Equal
@@ -2271,7 +2292,7 @@ def int_less_than_or_equal(int_1, int_2) -> Graph:
     """
     int_1_parsed = parse_int_graph(int_1)
     int_2_parsed = parse_int_graph(int_2)
-    return int_less_than_or_equal_internal(int_1_parsed, int_2_parsed)
+    return _internal.int_less_than_or_equal_internal(int_1_parsed, int_2_parsed)
 
 def int_max(int1, int2) -> Graph:
     """Int Max
@@ -2288,7 +2309,7 @@ def int_max(int1, int2) -> Graph:
     """
     int1_parsed = parse_int_graph(int1)
     int2_parsed = parse_int_graph(int2)
-    return int_max_internal(int1_parsed, int2_parsed)
+    return _internal.int_max_internal(int1_parsed, int2_parsed)
 
 def int_min(int1, int2) -> Graph:
     """Int Min
@@ -2305,7 +2326,7 @@ def int_min(int1, int2) -> Graph:
     """
     int1_parsed = parse_int_graph(int1)
     int2_parsed = parse_int_graph(int2)
-    return int_min_internal(int1_parsed, int2_parsed)
+    return _internal.int_min_internal(int1_parsed, int2_parsed)
 
 def int_multiply(int_1, int_2) -> Graph:
     """Int Multiply
@@ -2322,7 +2343,7 @@ def int_multiply(int_1, int_2) -> Graph:
     """
     int_1_parsed = parse_int_graph(int_1)
     int_2_parsed = parse_int_graph(int_2)
-    return int_multiply_internal(int_1_parsed, int_2_parsed)
+    return _internal.int_multiply_internal(int_1_parsed, int_2_parsed)
 
 def int_passthrough(value) -> Graph:
     """Int Passthrough
@@ -2337,7 +2358,7 @@ def int_passthrough(value) -> Graph:
         Graph: A graph node producing a Int.
     """
     value_parsed = parse_int_graph(value)
-    return int_passthrough_internal(value_parsed)
+    return _internal.int_passthrough_internal(value_parsed)
 
 def int_subtract(int_1, int_2) -> Graph:
     """Int Subtract
@@ -2354,7 +2375,7 @@ def int_subtract(int_1, int_2) -> Graph:
     """
     int_1_parsed = parse_int_graph(int_1)
     int_2_parsed = parse_int_graph(int_2)
-    return int_subtract_internal(int_1_parsed, int_2_parsed)
+    return _internal.int_subtract_internal(int_1_parsed, int_2_parsed)
 
 def int_to_float(int) -> Graph:
     """Int To Float
@@ -2369,7 +2390,7 @@ def int_to_float(int) -> Graph:
         Graph: A graph node producing a Float.
     """
     int_parsed = parse_int_graph(int)
-    return int_to_float_internal(int_parsed)
+    return _internal.int_to_float_internal(int_parsed)
 
 def monet_network_download_u_r_l_from_asset_i_d(asset_id) -> Graph:
     """Monet Network Download URL from Asset ID
@@ -2384,7 +2405,7 @@ def monet_network_download_u_r_l_from_asset_i_d(asset_id) -> Graph:
         Graph: A graph node producing a String.
     """
     asset_id_parsed = parse_int_graph(asset_id)
-    return monet_network_download_u_r_l_from_asset_i_d_internal(asset_id_parsed)
+    return _internal.monet_network_download_u_r_l_from_asset_i_d_internal(asset_id_parsed)
 
 def not_(bool) -> Graph:
     """Not
@@ -2399,7 +2420,7 @@ def not_(bool) -> Graph:
         Graph: A graph node producing a Bool.
     """
     bool_parsed = parse_bool_graph(bool)
-    return not_internal(bool_parsed)
+    return _internal.not_internal(bool_parsed)
 
 def null_value() -> Graph:
     """Null Value
@@ -2409,7 +2430,7 @@ def null_value() -> Graph:
     Returns:
         Graph: A graph node producing a Null.
     """
-    return null_value_internal()
+    return _internal.null_value_internal()
 
 def ok_lab_color_from_components(l, a, b) -> Graph:
     """OkLab Color from Components
@@ -2428,7 +2449,7 @@ def ok_lab_color_from_components(l, a, b) -> Graph:
     l_parsed = parse_float_graph(l)
     a_parsed = parse_float_graph(a)
     b_parsed = parse_float_graph(b)
-    return ok_lab_color_from_components_internal(l_parsed, a_parsed, b_parsed)
+    return _internal.ok_lab_color_from_components_internal(l_parsed, a_parsed, b_parsed)
 
 def ok_lab_hist_lightness_quantile(hist, quantile) -> Graph:
     """OkLab Histogram Lightness Quantile
@@ -2445,7 +2466,7 @@ def ok_lab_hist_lightness_quantile(hist, quantile) -> Graph:
     """
     hist_parsed = parse_graph(hist)
     quantile_parsed = parse_float_graph(quantile)
-    return ok_lab_hist_lightness_quantile_internal(hist_parsed, quantile_parsed)
+    return _internal.ok_lab_hist_lightness_quantile_internal(hist_parsed, quantile_parsed)
 
 def ok_lab_to_r_g_b(ok_lab, color_profile) -> Graph:
     """OkLab to RGB
@@ -2462,7 +2483,7 @@ def ok_lab_to_r_g_b(ok_lab, color_profile) -> Graph:
     """
     ok_lab_parsed = parse_graph(ok_lab)
     color_profile_parsed = parse_graph(color_profile)
-    return ok_lab_to_r_g_b_internal(ok_lab_parsed, color_profile_parsed)
+    return _internal.ok_lab_to_r_g_b_internal(ok_lab_parsed, color_profile_parsed)
 
 def or_(bool1, bool2) -> Graph:
     """Or
@@ -2479,7 +2500,7 @@ def or_(bool1, bool2) -> Graph:
     """
     bool1_parsed = parse_bool_graph(bool1)
     bool2_parsed = parse_bool_graph(bool2)
-    return or_internal(bool1_parsed, bool2_parsed)
+    return _internal.or_internal(bool1_parsed, bool2_parsed)
 
 def painter_add_ellipse_with_render_style(painter, center, dimensions, rotation, render_style, instances) -> Graph:
     """Painter Add Ellipse with Render Style
@@ -2504,7 +2525,7 @@ def painter_add_ellipse_with_render_style(painter, center, dimensions, rotation,
     rotation_parsed = parse_float_graph(rotation)
     render_style_parsed = parse_graph(render_style)
     instances_parsed = parse_graph(instances)
-    return painter_add_ellipse_with_render_style_internal(painter_parsed, center_parsed, dimensions_parsed, rotation_parsed, render_style_parsed, instances_parsed)
+    return _internal.painter_add_ellipse_with_render_style_internal(painter_parsed, center_parsed, dimensions_parsed, rotation_parsed, render_style_parsed, instances_parsed)
 
 def painter_add_path_with_render_style(painter, path, render_style, instances) -> Graph:
     """Painter Add Path with Render Style
@@ -2525,7 +2546,7 @@ def painter_add_path_with_render_style(painter, path, render_style, instances) -
     path_parsed = parse_graph(path)
     render_style_parsed = parse_graph(render_style)
     instances_parsed = parse_graph(instances)
-    return painter_add_path_with_render_style_internal(painter_parsed, path_parsed, render_style_parsed, instances_parsed)
+    return _internal.painter_add_path_with_render_style_internal(painter_parsed, path_parsed, render_style_parsed, instances_parsed)
 
 def painter_add_rectangle_with_render_style(painter, center, dimensions, rotation, render_style, instances) -> Graph:
     """Painter Add Rectangle with Render Style
@@ -2550,7 +2571,7 @@ def painter_add_rectangle_with_render_style(painter, center, dimensions, rotatio
     rotation_parsed = parse_float_graph(rotation)
     render_style_parsed = parse_graph(render_style)
     instances_parsed = parse_graph(instances)
-    return painter_add_rectangle_with_render_style_internal(painter_parsed, center_parsed, dimensions_parsed, rotation_parsed, render_style_parsed, instances_parsed)
+    return _internal.painter_add_rectangle_with_render_style_internal(painter_parsed, center_parsed, dimensions_parsed, rotation_parsed, render_style_parsed, instances_parsed)
 
 def painter_new(color_profile) -> Graph:
     """Painter New
@@ -2565,7 +2586,7 @@ def painter_new(color_profile) -> Graph:
         Graph: A graph node producing a Painter.
     """
     color_profile_parsed = parse_graph(color_profile)
-    return painter_new_internal(color_profile_parsed)
+    return _internal.painter_new_internal(color_profile_parsed)
 
 def path_line_to_point(path, point) -> Graph:
     """Path Line to Point
@@ -2582,7 +2603,7 @@ def path_line_to_point(path, point) -> Graph:
     """
     path_parsed = parse_graph(path)
     point_parsed = parse_graph(point)
-    return path_line_to_point_internal(path_parsed, point_parsed)
+    return _internal.path_line_to_point_internal(path_parsed, point_parsed)
 
 def path_move_to_point(path, point) -> Graph:
     """Path Move to Point
@@ -2599,7 +2620,7 @@ def path_move_to_point(path, point) -> Graph:
     """
     path_parsed = parse_graph(path)
     point_parsed = parse_graph(point)
-    return path_move_to_point_internal(path_parsed, point_parsed)
+    return _internal.path_move_to_point_internal(path_parsed, point_parsed)
 
 def path_new() -> Graph:
     """Path New
@@ -2609,7 +2630,7 @@ def path_new() -> Graph:
     Returns:
         Graph: A graph node producing a Path.
     """
-    return path_new_internal()
+    return _internal.path_new_internal()
 
 def pi() -> Graph:
     """Pi
@@ -2619,7 +2640,7 @@ def pi() -> Graph:
     Returns:
         Graph: A graph node producing a Float.
     """
-    return pi_internal()
+    return _internal.pi_internal()
 
 def point2f_distance(lhs, rhs) -> Graph:
     """Point 2 Float Distance
@@ -2636,7 +2657,7 @@ def point2f_distance(lhs, rhs) -> Graph:
     """
     lhs_parsed = parse_graph(lhs)
     rhs_parsed = parse_graph(rhs)
-    return point2f_distance_internal(lhs_parsed, rhs_parsed)
+    return _internal.point2f_distance_internal(lhs_parsed, rhs_parsed)
 
 def point2f_from_components(x, y) -> Graph:
     """Point 2 Float from Components
@@ -2653,7 +2674,7 @@ def point2f_from_components(x, y) -> Graph:
     """
     x_parsed = parse_float_graph(x)
     y_parsed = parse_float_graph(y)
-    return point2f_from_components_internal(x_parsed, y_parsed)
+    return _internal.point2f_from_components_internal(x_parsed, y_parsed)
 
 def point2i_distance(lhs, rhs) -> Graph:
     """Point 2 Int Distance
@@ -2670,7 +2691,7 @@ def point2i_distance(lhs, rhs) -> Graph:
     """
     lhs_parsed = parse_graph(lhs)
     rhs_parsed = parse_graph(rhs)
-    return point2i_distance_internal(lhs_parsed, rhs_parsed)
+    return _internal.point2i_distance_internal(lhs_parsed, rhs_parsed)
 
 def point2i_from_components(x, y) -> Graph:
     """Point 2 Int from Components
@@ -2687,7 +2708,7 @@ def point2i_from_components(x, y) -> Graph:
     """
     x_parsed = parse_int_graph(x)
     y_parsed = parse_int_graph(y)
-    return point2i_from_components_internal(x_parsed, y_parsed)
+    return _internal.point2i_from_components_internal(x_parsed, y_parsed)
 
 def r_g_b_a_color_add_to_dictionary(dictionary, key, value) -> Graph:
     """RGBA Color Add To Dictionary
@@ -2706,7 +2727,7 @@ def r_g_b_a_color_add_to_dictionary(dictionary, key, value) -> Graph:
     dictionary_parsed = parse_graph(dictionary)
     key_parsed = parse_string_graph(key)
     value_parsed = parse_graph(value)
-    return r_g_b_a_color_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
+    return _internal.r_g_b_a_color_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
 
 def r_g_b_a_color_from_components(r, g, b, a) -> Graph:
     """RGBA Color from Components
@@ -2727,7 +2748,7 @@ def r_g_b_a_color_from_components(r, g, b, a) -> Graph:
     g_parsed = parse_float_graph(g)
     b_parsed = parse_float_graph(b)
     a_parsed = parse_float_graph(a)
-    return r_g_b_a_color_from_components_internal(r_parsed, g_parsed, b_parsed, a_parsed)
+    return _internal.r_g_b_a_color_from_components_internal(r_parsed, g_parsed, b_parsed, a_parsed)
 
 def r_g_b_a_color_passthrough(value) -> Graph:
     """RGBA Color Passthrough
@@ -2742,7 +2763,7 @@ def r_g_b_a_color_passthrough(value) -> Graph:
         Graph: A graph node producing a RGBAColor.
     """
     value_parsed = parse_graph(value)
-    return r_g_b_a_color_passthrough_internal(value_parsed)
+    return _internal.r_g_b_a_color_passthrough_internal(value_parsed)
 
 def r_g_b_color_add_to_dictionary(dictionary, key, value) -> Graph:
     """RGB Color Add To Dictionary
@@ -2761,7 +2782,7 @@ def r_g_b_color_add_to_dictionary(dictionary, key, value) -> Graph:
     dictionary_parsed = parse_graph(dictionary)
     key_parsed = parse_string_graph(key)
     value_parsed = parse_graph(value)
-    return r_g_b_color_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
+    return _internal.r_g_b_color_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
 
 def r_g_b_color_from_components(r, g, b) -> Graph:
     """RGB Color from Components
@@ -2780,7 +2801,7 @@ def r_g_b_color_from_components(r, g, b) -> Graph:
     r_parsed = parse_float_graph(r)
     g_parsed = parse_float_graph(g)
     b_parsed = parse_float_graph(b)
-    return r_g_b_color_from_components_internal(r_parsed, g_parsed, b_parsed)
+    return _internal.r_g_b_color_from_components_internal(r_parsed, g_parsed, b_parsed)
 
 def r_g_b_color_passthrough(value) -> Graph:
     """RGB Color Passthrough
@@ -2795,7 +2816,7 @@ def r_g_b_color_passthrough(value) -> Graph:
         Graph: A graph node producing a RGBColor.
     """
     value_parsed = parse_graph(value)
-    return r_g_b_color_passthrough_internal(value_parsed)
+    return _internal.r_g_b_color_passthrough_internal(value_parsed)
 
 def r_g_b_to_ok_lab(rgb, color_profile) -> Graph:
     """RGB to OkLab
@@ -2812,7 +2833,7 @@ def r_g_b_to_ok_lab(rgb, color_profile) -> Graph:
     """
     rgb_parsed = parse_graph(rgb)
     color_profile_parsed = parse_graph(color_profile)
-    return r_g_b_to_ok_lab_internal(rgb_parsed, color_profile_parsed)
+    return _internal.r_g_b_to_ok_lab_internal(rgb_parsed, color_profile_parsed)
 
 def render_style_brush_and_fill(brush, fill) -> Graph:
     """Render Style Brush and Fill
@@ -2829,7 +2850,7 @@ def render_style_brush_and_fill(brush, fill) -> Graph:
     """
     brush_parsed = parse_graph(brush)
     fill_parsed = parse_graph(fill)
-    return render_style_brush_and_fill_internal(brush_parsed, fill_parsed)
+    return _internal.render_style_brush_and_fill_internal(brush_parsed, fill_parsed)
 
 def render_style_brush_only(brush) -> Graph:
     """Render Style Brush Only
@@ -2844,7 +2865,7 @@ def render_style_brush_only(brush) -> Graph:
         Graph: A graph node producing a RenderStyle.
     """
     brush_parsed = parse_graph(brush)
-    return render_style_brush_only_internal(brush_parsed)
+    return _internal.render_style_brush_only_internal(brush_parsed)
 
 def render_style_fill_only(fill) -> Graph:
     """Render Style Fill Only
@@ -2859,7 +2880,7 @@ def render_style_fill_only(fill) -> Graph:
         Graph: A graph node producing a RenderStyle.
     """
     fill_parsed = parse_graph(fill)
-    return render_style_fill_only_internal(fill_parsed)
+    return _internal.render_style_fill_only_internal(fill_parsed)
 
 def sequence_adjust_speed(sequence, factor) -> Graph:
     """Sequence Adjust Speed
@@ -2876,7 +2897,7 @@ def sequence_adjust_speed(sequence, factor) -> Graph:
     """
     sequence_parsed = parse_graph(sequence)
     factor_parsed = parse_float_graph(factor)
-    return sequence_adjust_speed_internal(sequence_parsed, factor_parsed)
+    return _internal.sequence_adjust_speed_internal(sequence_parsed, factor_parsed)
 
 def sequence_composition_at_time(sequence, time) -> Graph:
     """Sequence Composition at Time
@@ -2893,7 +2914,7 @@ def sequence_composition_at_time(sequence, time) -> Graph:
     """
     sequence_parsed = parse_graph(sequence)
     time_parsed = parse_float_graph(time)
-    return sequence_composition_at_time_internal(sequence_parsed, time_parsed)
+    return _internal.sequence_composition_at_time_internal(sequence_parsed, time_parsed)
 
 def sequence_concatenate(sequence_1, sequence_2) -> Graph:
     """Sequence Concatenate
@@ -2910,7 +2931,7 @@ def sequence_concatenate(sequence_1, sequence_2) -> Graph:
     """
     sequence_1_parsed = parse_graph(sequence_1)
     sequence_2_parsed = parse_graph(sequence_2)
-    return sequence_concatenate_internal(sequence_1_parsed, sequence_2_parsed)
+    return _internal.sequence_concatenate_internal(sequence_1_parsed, sequence_2_parsed)
 
 def sequence_duration(sequence) -> Graph:
     """Sequence Duration
@@ -2925,7 +2946,7 @@ def sequence_duration(sequence) -> Graph:
         Graph: A graph node producing a Float.
     """
     sequence_parsed = parse_graph(sequence)
-    return sequence_duration_internal(sequence_parsed)
+    return _internal.sequence_duration_internal(sequence_parsed)
 
 def sequence_from_composition_and_duration(composition, duration) -> Graph:
     """Sequence from Composition and Duration
@@ -2942,7 +2963,7 @@ def sequence_from_composition_and_duration(composition, duration) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     duration_parsed = parse_float_graph(duration)
-    return sequence_from_composition_and_duration_internal(composition_parsed, duration_parsed)
+    return _internal.sequence_from_composition_and_duration_internal(composition_parsed, duration_parsed)
 
 def sequence_from_u_r_l(url) -> Graph:
     """Sequence from URL
@@ -2957,7 +2978,7 @@ def sequence_from_u_r_l(url) -> Graph:
         Graph: A graph node producing a Sequence.
     """
     url_parsed = parse_string_graph(url)
-    return sequence_from_u_r_l_internal(url_parsed)
+    return _internal.sequence_from_u_r_l_internal(url_parsed)
 
 def sequence_graph(duration, time, frame) -> Graph:
     """Sequence Graph
@@ -2976,7 +2997,7 @@ def sequence_graph(duration, time, frame) -> Graph:
     duration_parsed = parse_float_graph(duration)
     time_parsed = parse_float_graph(time)
     frame_parsed = parse_graph(frame)
-    return sequence_graph_internal(duration_parsed, time_parsed, frame_parsed)
+    return _internal.sequence_graph_internal(duration_parsed, time_parsed, frame_parsed)
 
 def sequence_grayscale(sequence) -> Graph:
     """Sequence Grayscale
@@ -2991,7 +3012,7 @@ def sequence_grayscale(sequence) -> Graph:
         Graph: A graph node producing a Sequence.
     """
     sequence_parsed = parse_graph(sequence)
-    return sequence_grayscale_internal(sequence_parsed)
+    return _internal.sequence_grayscale_internal(sequence_parsed)
 
 def sequence_passthrough(value) -> Graph:
     """Sequence Passthrough
@@ -3006,7 +3027,7 @@ def sequence_passthrough(value) -> Graph:
         Graph: A graph node producing a Sequence.
     """
     value_parsed = parse_graph(value)
-    return sequence_passthrough_internal(value_parsed)
+    return _internal.sequence_passthrough_internal(value_parsed)
 
 def sequence_reverse(sequence) -> Graph:
     """Sequence Reverse
@@ -3021,7 +3042,7 @@ def sequence_reverse(sequence) -> Graph:
         Graph: A graph node producing a Sequence.
     """
     sequence_parsed = parse_graph(sequence)
-    return sequence_reverse_internal(sequence_parsed)
+    return _internal.sequence_reverse_internal(sequence_parsed)
 
 def sequence_to_mp4(sequence, frame_rate) -> Graph:
     """Sequence To MP4
@@ -3038,7 +3059,7 @@ def sequence_to_mp4(sequence, frame_rate) -> Graph:
     """
     sequence_parsed = parse_graph(sequence)
     frame_rate_parsed = parse_int_graph(frame_rate)
-    return sequence_to_mp4_internal(sequence_parsed, frame_rate_parsed)
+    return _internal.sequence_to_mp4_internal(sequence_parsed, frame_rate_parsed)
 
 def sequence_trim_back(sequence, amount) -> Graph:
     """Sequence Trim Back
@@ -3055,7 +3076,7 @@ def sequence_trim_back(sequence, amount) -> Graph:
     """
     sequence_parsed = parse_graph(sequence)
     amount_parsed = parse_float_graph(amount)
-    return sequence_trim_back_internal(sequence_parsed, amount_parsed)
+    return _internal.sequence_trim_back_internal(sequence_parsed, amount_parsed)
 
 def sequence_trim_front(sequence, amount) -> Graph:
     """Sequence Trim Front
@@ -3072,7 +3093,7 @@ def sequence_trim_front(sequence, amount) -> Graph:
     """
     sequence_parsed = parse_graph(sequence)
     amount_parsed = parse_float_graph(amount)
-    return sequence_trim_front_internal(sequence_parsed, amount_parsed)
+    return _internal.sequence_trim_front_internal(sequence_parsed, amount_parsed)
 
 def string_if(bool, input_1, input_2) -> Graph:
     """String If
@@ -3091,7 +3112,7 @@ def string_if(bool, input_1, input_2) -> Graph:
     bool_parsed = parse_bool_graph(bool)
     input_1_parsed = parse_string_graph(input_1)
     input_2_parsed = parse_string_graph(input_2)
-    return string_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
+    return _internal.string_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
 
 def transform2_identity() -> Graph:
     """Transform 2D Identity
@@ -3101,7 +3122,7 @@ def transform2_identity() -> Graph:
     Returns:
         Graph: A graph node producing a Transform2.
     """
-    return transform2_identity_internal()
+    return _internal.transform2_identity_internal()
 
 def transform2_if(bool, input_1, input_2) -> Graph:
     """Transform 2D If
@@ -3120,7 +3141,7 @@ def transform2_if(bool, input_1, input_2) -> Graph:
     bool_parsed = parse_bool_graph(bool)
     input_1_parsed = parse_graph(input_1)
     input_2_parsed = parse_graph(input_2)
-    return transform2_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
+    return _internal.transform2_if_internal(bool_parsed, input_1_parsed, input_2_parsed)
 
 def transform2_rotate(transform, angle) -> Graph:
     """Transform 2D Rotate
@@ -3137,7 +3158,7 @@ def transform2_rotate(transform, angle) -> Graph:
     """
     transform_parsed = parse_graph(transform)
     angle_parsed = parse_float_graph(angle)
-    return transform2_rotate_internal(transform_parsed, angle_parsed)
+    return _internal.transform2_rotate_internal(transform_parsed, angle_parsed)
 
 def transform2_scale(transform, scale) -> Graph:
     """Transform 2D Scale
@@ -3154,7 +3175,7 @@ def transform2_scale(transform, scale) -> Graph:
     """
     transform_parsed = parse_graph(transform)
     scale_parsed = parse_graph(scale)
-    return transform2_scale_internal(transform_parsed, scale_parsed)
+    return _internal.transform2_scale_internal(transform_parsed, scale_parsed)
 
 def transform2_to_list(item) -> Graph:
     """Transform 2D to List
@@ -3169,7 +3190,7 @@ def transform2_to_list(item) -> Graph:
         Graph: A graph node producing a Transform2List.
     """
     item_parsed = parse_graph(item)
-    return transform2_to_list_internal(item_parsed)
+    return _internal.transform2_to_list_internal(item_parsed)
 
 def transform2_translation(transform, translation) -> Graph:
     """Transform 2D Translation
@@ -3186,7 +3207,7 @@ def transform2_translation(transform, translation) -> Graph:
     """
     transform_parsed = parse_graph(transform)
     translation_parsed = parse_graph(translation)
-    return transform2_translation_internal(transform_parsed, translation_parsed)
+    return _internal.transform2_translation_internal(transform_parsed, translation_parsed)
 
 def upload_byte_list(bytes, url, content_type) -> Graph:
     """Upload Byte List
@@ -3205,7 +3226,7 @@ def upload_byte_list(bytes, url, content_type) -> Graph:
     bytes_parsed = parse_graph(bytes)
     url_parsed = parse_string_graph(url)
     content_type_parsed = parse_string_graph(content_type)
-    return upload_byte_list_internal(bytes_parsed, url_parsed, content_type_parsed)
+    return _internal.upload_byte_list_internal(bytes_parsed, url_parsed, content_type_parsed)
 
 def upload_file_path(path, url, content_type) -> Graph:
     """Upload File Path
@@ -3224,7 +3245,7 @@ def upload_file_path(path, url, content_type) -> Graph:
     path_parsed = parse_string_graph(path)
     url_parsed = parse_string_graph(url)
     content_type_parsed = parse_string_graph(content_type)
-    return upload_file_path_internal(path_parsed, url_parsed, content_type_parsed)
+    return _internal.upload_file_path_internal(path_parsed, url_parsed, content_type_parsed)
 
 def vector2_int_to_vector2_float(vector) -> Graph:
     """Vector 2 Int to Vector 2 Float
@@ -3239,7 +3260,7 @@ def vector2_int_to_vector2_float(vector) -> Graph:
         Graph: A graph node producing a Vector2f.
     """
     vector_parsed = parse_graph(vector)
-    return vector2_int_to_vector2_float_internal(vector_parsed)
+    return _internal.vector2_int_to_vector2_float_internal(vector_parsed)
 
 def vector2f_add(lhs, rhs) -> Graph:
     """Vector 2 Float Add
@@ -3256,7 +3277,7 @@ def vector2f_add(lhs, rhs) -> Graph:
     """
     lhs_parsed = parse_graph(lhs)
     rhs_parsed = parse_graph(rhs)
-    return vector2f_add_internal(lhs_parsed, rhs_parsed)
+    return _internal.vector2f_add_internal(lhs_parsed, rhs_parsed)
 
 def vector2f_add_to_dictionary(dictionary, key, value) -> Graph:
     """Vector 2 Float Add To Dictionary
@@ -3275,7 +3296,7 @@ def vector2f_add_to_dictionary(dictionary, key, value) -> Graph:
     dictionary_parsed = parse_graph(dictionary)
     key_parsed = parse_string_graph(key)
     value_parsed = parse_graph(value)
-    return vector2f_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
+    return _internal.vector2f_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
 
 def vector2f_from_components(x, y) -> Graph:
     """Vector 2 Float from Components
@@ -3292,7 +3313,7 @@ def vector2f_from_components(x, y) -> Graph:
     """
     x_parsed = parse_float_graph(x)
     y_parsed = parse_float_graph(y)
-    return vector2f_from_components_internal(x_parsed, y_parsed)
+    return _internal.vector2f_from_components_internal(x_parsed, y_parsed)
 
 def vector2f_normalize(vector) -> Graph:
     """Vector 2 Float Normalize
@@ -3307,7 +3328,7 @@ def vector2f_normalize(vector) -> Graph:
         Graph: A graph node producing a Vector2f.
     """
     vector_parsed = parse_graph(vector)
-    return vector2f_normalize_internal(vector_parsed)
+    return _internal.vector2f_normalize_internal(vector_parsed)
 
 def vector2f_passthrough(value) -> Graph:
     """Vector 2 Float Passthrough
@@ -3322,7 +3343,7 @@ def vector2f_passthrough(value) -> Graph:
         Graph: A graph node producing a Vector2f.
     """
     value_parsed = parse_graph(value)
-    return vector2f_passthrough_internal(value_parsed)
+    return _internal.vector2f_passthrough_internal(value_parsed)
 
 def vector2f_scalar_multiply(vector, scalar) -> Graph:
     """Vector 2 Float Scalar Multiply
@@ -3339,7 +3360,7 @@ def vector2f_scalar_multiply(vector, scalar) -> Graph:
     """
     vector_parsed = parse_graph(vector)
     scalar_parsed = parse_float_graph(scalar)
-    return vector2f_scalar_multiply_internal(vector_parsed, scalar_parsed)
+    return _internal.vector2f_scalar_multiply_internal(vector_parsed, scalar_parsed)
 
 def vector2f_x(vector) -> Graph:
     """Vector 2 Float get X
@@ -3354,7 +3375,7 @@ def vector2f_x(vector) -> Graph:
         Graph: A graph node producing a Float.
     """
     vector_parsed = parse_graph(vector)
-    return vector2f_x_internal(vector_parsed)
+    return _internal.vector2f_x_internal(vector_parsed)
 
 def vector2f_y(vector) -> Graph:
     """Vector 2 Float get Y
@@ -3369,7 +3390,7 @@ def vector2f_y(vector) -> Graph:
         Graph: A graph node producing a Float.
     """
     vector_parsed = parse_graph(vector)
-    return vector2f_y_internal(vector_parsed)
+    return _internal.vector2f_y_internal(vector_parsed)
 
 def vector2i_add(lhs, rhs) -> Graph:
     """Vector 2 Int Add
@@ -3386,7 +3407,7 @@ def vector2i_add(lhs, rhs) -> Graph:
     """
     lhs_parsed = parse_graph(lhs)
     rhs_parsed = parse_graph(rhs)
-    return vector2i_add_internal(lhs_parsed, rhs_parsed)
+    return _internal.vector2i_add_internal(lhs_parsed, rhs_parsed)
 
 def vector2i_add_to_dictionary(dictionary, key, value) -> Graph:
     """Vector 2 Int Add To Dictionary
@@ -3405,7 +3426,7 @@ def vector2i_add_to_dictionary(dictionary, key, value) -> Graph:
     dictionary_parsed = parse_graph(dictionary)
     key_parsed = parse_string_graph(key)
     value_parsed = parse_graph(value)
-    return vector2i_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
+    return _internal.vector2i_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
 
 def vector2i_from_components(x, y) -> Graph:
     """Vector 2 Int from Components
@@ -3422,7 +3443,7 @@ def vector2i_from_components(x, y) -> Graph:
     """
     x_parsed = parse_int_graph(x)
     y_parsed = parse_int_graph(y)
-    return vector2i_from_components_internal(x_parsed, y_parsed)
+    return _internal.vector2i_from_components_internal(x_parsed, y_parsed)
 
 def vector2i_passthrough(value) -> Graph:
     """Vector 2 Int Passthrough
@@ -3437,7 +3458,7 @@ def vector2i_passthrough(value) -> Graph:
         Graph: A graph node producing a Vector2i.
     """
     value_parsed = parse_graph(value)
-    return vector2i_passthrough_internal(value_parsed)
+    return _internal.vector2i_passthrough_internal(value_parsed)
 
 def vector2i_to_vector2f(vector) -> Graph:
     """Vector 2 Int to Vector 2 Float
@@ -3452,7 +3473,7 @@ def vector2i_to_vector2f(vector) -> Graph:
         Graph: A graph node producing a Vector2f.
     """
     vector_parsed = parse_graph(vector)
-    return vector2i_to_vector2f_internal(vector_parsed)
+    return _internal.vector2i_to_vector2f_internal(vector_parsed)
 
 def vector2i_x(vector) -> Graph:
     """Vector 2 Int get X
@@ -3467,7 +3488,7 @@ def vector2i_x(vector) -> Graph:
         Graph: A graph node producing a Int.
     """
     vector_parsed = parse_graph(vector)
-    return vector2i_x_internal(vector_parsed)
+    return _internal.vector2i_x_internal(vector_parsed)
 
 def vector2i_y(vector) -> Graph:
     """Vector 2 Int get Y
@@ -3482,7 +3503,7 @@ def vector2i_y(vector) -> Graph:
         Graph: A graph node producing a Int.
     """
     vector_parsed = parse_graph(vector)
-    return vector2i_y_internal(vector_parsed)
+    return _internal.vector2i_y_internal(vector_parsed)
 
 def vector3f_add(lhs, rhs) -> Graph:
     """Vector 3 Float Add
@@ -3499,7 +3520,7 @@ def vector3f_add(lhs, rhs) -> Graph:
     """
     lhs_parsed = parse_graph(lhs)
     rhs_parsed = parse_graph(rhs)
-    return vector3f_add_internal(lhs_parsed, rhs_parsed)
+    return _internal.vector3f_add_internal(lhs_parsed, rhs_parsed)
 
 def vector3f_from_components(x, y, z) -> Graph:
     """Vector 3 Float from Components
@@ -3518,7 +3539,7 @@ def vector3f_from_components(x, y, z) -> Graph:
     x_parsed = parse_float_graph(x)
     y_parsed = parse_float_graph(y)
     z_parsed = parse_float_graph(z)
-    return vector3f_from_components_internal(x_parsed, y_parsed, z_parsed)
+    return _internal.vector3f_from_components_internal(x_parsed, y_parsed, z_parsed)
 
 def vector3f_normalize(vector) -> Graph:
     """Vector 3 Normalize
@@ -3533,7 +3554,7 @@ def vector3f_normalize(vector) -> Graph:
         Graph: A graph node producing a Vector3f.
     """
     vector_parsed = parse_graph(vector)
-    return vector3f_normalize_internal(vector_parsed)
+    return _internal.vector3f_normalize_internal(vector_parsed)
 
 def vector3f_x(vector) -> Graph:
     """Vector 3D Float X
@@ -3548,7 +3569,7 @@ def vector3f_x(vector) -> Graph:
         Graph: A graph node producing a Float.
     """
     vector_parsed = parse_graph(vector)
-    return vector3f_x_internal(vector_parsed)
+    return _internal.vector3f_x_internal(vector_parsed)
 
 def vector3f_y(vector) -> Graph:
     """Vector 3D Y Float
@@ -3563,7 +3584,7 @@ def vector3f_y(vector) -> Graph:
         Graph: A graph node producing a Float.
     """
     vector_parsed = parse_graph(vector)
-    return vector3f_y_internal(vector_parsed)
+    return _internal.vector3f_y_internal(vector_parsed)
 
 def vector3f_z(vector) -> Graph:
     """Vector 3D Float Z
@@ -3578,7 +3599,7 @@ def vector3f_z(vector) -> Graph:
         Graph: A graph node producing a Float.
     """
     vector_parsed = parse_graph(vector)
-    return vector3f_z_internal(vector_parsed)
+    return _internal.vector3f_z_internal(vector_parsed)
 
 def xor(bool1, bool2) -> Graph:
     """Exclusive Or
@@ -3595,7 +3616,7 @@ def xor(bool1, bool2) -> Graph:
     """
     bool1_parsed = parse_bool_graph(bool1)
     bool2_parsed = parse_bool_graph(bool2)
-    return xor_internal(bool1_parsed, bool2_parsed)
+    return _internal.xor_internal(bool1_parsed, bool2_parsed)
 
 
 __all__ = [
