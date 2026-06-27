@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: d9eda6e881217ab3265bb0405723c7170c029d790d62f808e3eb1f9c8d526b5a
+# hash: 62b9a6586140cc83f45dcacad3a01a7e357233dfb7c8143e957c7744603a9a2f
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -70,6 +70,9 @@ def load_composition(value) -> Graph:
 
 def byte_list_constant(value) -> Graph:
     return _internal.byte_list_constant_internal(value)
+
+def point2i_list_constant(value) -> Graph:
+    return _internal.point2i_list_constant_internal(value)
 
 def int_constant(value) -> Graph:
     return _internal.int_constant_internal(int(value))
@@ -3626,6 +3629,7 @@ __all__ = [
     # Constant functions
     "load_composition",
     "int_constant", "float_constant", "string_constant", "bool_constant",
+    "byte_list_constant", "point2i_list_constant",
     # Node functions
     "abs",
     "and_",
