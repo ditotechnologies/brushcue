@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 62b9a6586140cc83f45dcacad3a01a7e357233dfb7c8143e957c7744603a9a2f
+# hash: 95588003c8f4e18e655980409e5ed7ea3c6cc3c816957fd713a475ab3488352b
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1265,6 +1265,29 @@ def composition_saturation_adjust(composition, scale) -> Graph:
     composition_parsed = parse_graph(composition)
     scale_parsed = parse_float_graph(scale)
     return _internal.composition_saturation_adjust_internal(composition_parsed, scale_parsed)
+
+def composition_scanlines(composition, size, beam_power, line_offset, intensity) -> Graph:
+    """Composition Scanlines
+
+    Applies a CRT-style scanline effect, darkening the composition in horizontal bands whose spacing is set by size, sharpness by beam power, vertical phase by line offset, and overall strength by intensity.
+
+    Args:
+        composition: Graph of Composition
+        size: Graph of Float
+        beam power: Graph of Float
+        line offset: Graph of Float
+        intensity: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    size_parsed = parse_float_graph(size)
+    beam_power_parsed = parse_float_graph(beam_power)
+    line_offset_parsed = parse_float_graph(line_offset)
+    intensity_parsed = parse_float_graph(intensity)
+    return _internal.composition_scanlines_internal(composition_parsed, size_parsed, beam_power_parsed, line_offset_parsed, intensity_parsed)
 
 def composition_segment(composition, prompt, positive_points, negative_points) -> Graph:
     """Composition Segment
@@ -3698,6 +3721,7 @@ __all__ = [
     "composition_rotate90_counter_clockwise",
     "composition_s_a_m3_image",
     "composition_saturation_adjust",
+    "composition_scanlines",
     "composition_segment",
     "composition_sharpen",
     "composition_sobel_edge_detection",

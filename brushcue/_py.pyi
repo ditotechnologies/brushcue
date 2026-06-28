@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 531ec11916a8dbbd7457279a930eb16a9b3a052913e52fd8d690df715b786089
+# hash: a049989b395a7ca4500f8112020f6491107165bced6c699fb594029ff00c1eb2
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -226,6 +226,8 @@ def composition_rotate90_counter_clockwise_internal(composition: Graph) -> Graph
 def composition_s_a_m3_image_internal(composition: Graph, prompt: Graph, positive_points: Graph, negative_points: Graph) -> Graph: ...
 
 def composition_saturation_adjust_internal(composition: Graph, scale: Graph) -> Graph: ...
+
+def composition_scanlines_internal(composition: Graph, size: Graph, beam_power: Graph, line_offset: Graph, intensity: Graph) -> Graph: ...
 
 def composition_segment_internal(composition: Graph, prompt: Graph, positive_points: Graph, negative_points: Graph) -> Graph: ...
 
