@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 95588003c8f4e18e655980409e5ed7ea3c6cc3c816957fd713a475ab3488352b
+# hash: d48fc57d2288a1239534fde20e6d12ec63762f20ed2ed97628f2140d385bb239
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -500,6 +500,27 @@ def composition_blend_subtract(foreground, background, foreground_transform) -> 
     background_parsed = parse_graph(background)
     foreground_transform_parsed = parse_graph(foreground_transform)
     return _internal.composition_blend_subtract_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+
+def composition_bloom(composition, threshold, sigma, intensity) -> Graph:
+    """Composition Bloom
+
+    Adds a soft bloom glow by blurring the image's bright areas and additively blending them back over the original. Threshold selects bright areas (OkLab lightness), sigma controls glow spread, intensity scales the glow strength.
+
+    Args:
+        composition: Graph of Composition
+        threshold: Graph of Float
+        sigma: Graph of Float
+        intensity: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    threshold_parsed = parse_float_graph(threshold)
+    sigma_parsed = parse_float_graph(sigma)
+    intensity_parsed = parse_float_graph(intensity)
+    return _internal.composition_bloom_internal(composition_parsed, threshold_parsed, sigma_parsed, intensity_parsed)
 
 def composition_bounds(composition) -> Graph:
     """Composition Bounds
@@ -1074,6 +1095,23 @@ def composition_morphological_min(composition, dimension) -> Graph:
     composition_parsed = parse_graph(composition)
     dimension_parsed = parse_int_graph(dimension)
     return _internal.composition_morphological_min_internal(composition_parsed, dimension_parsed)
+
+def composition_opacity_scale(composition, scale) -> Graph:
+    """Composition Opacity Scale
+
+    Changes the opacity of an image by multiplying it by a scalar.
+
+    Args:
+        composition: Graph of Composition
+        scale: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    scale_parsed = parse_float_graph(scale)
+    return _internal.composition_opacity_scale_internal(composition_parsed, scale_parsed)
 
 def composition_painter(painter) -> Graph:
     """Composition Painter
@@ -3679,6 +3717,7 @@ __all__ = [
     "composition_blend_multiply",
     "composition_blend_stencil",
     "composition_blend_subtract",
+    "composition_bloom",
     "composition_bounds",
     "composition_box_blur",
     "composition_brightness_adjust",
@@ -3710,6 +3749,7 @@ __all__ = [
     "composition_monet_women_with_parasol",
     "composition_morphological_max",
     "composition_morphological_min",
+    "composition_opacity_scale",
     "composition_painter",
     "composition_passthrough",
     "composition_pixelate",
