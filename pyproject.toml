@@ -22,3 +22,12 @@ build-backend = "maturin"
 manifest-path = "../../rust/matisse/py/Cargo.toml"
 module-name = "brushcue._py"
 features = []
+
+[dependency-groups]
+examples = [
+    "jupyterlab",
+    "ipykernel",
+    "matplotlib",
+    "pillow",
+    "numpy"
+]
