@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: d48fc57d2288a1239534fde20e6d12ec63762f20ed2ed97628f2140d385bb239
+# hash: d2dc746a61de9c9267590e14a2238107f0f9599457c07c1a4a1fe22dbc5980ef
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -352,6 +352,16 @@ def color_profile_s_r_g_b() -> Graph:
         Graph: A graph node producing a ColorProfile.
     """
     return _internal.color_profile_s_r_g_b_internal()
+
+def color_profile_x_y_z() -> Graph:
+    """Color Profile XYZ
+
+    Creates an XYZ Color Profile
+
+    Returns:
+        Graph: A graph node producing a ColorProfile.
+    """
+    return _internal.color_profile_x_y_z_internal()
 
 def composition_absolute_value(image) -> Graph:
     """Composition Absolute Value
@@ -3709,6 +3719,7 @@ __all__ = [
     "color_profile_p3",
     "color_profile_p_n_g_s_r_g_b",
     "color_profile_s_r_g_b",
+    "color_profile_x_y_z",
     "composition_absolute_value",
     "composition_blend_add",
     "composition_blend_alpha",
