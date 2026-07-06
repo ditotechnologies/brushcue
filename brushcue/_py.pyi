@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: e6cf073153e193ec36bb19eda2881545c25abd376b6ea8ff17739047043861f7
+# hash: 090b86848c1603a874210b11fee039232873ebd343579f509b1887c2f55f14d2
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -163,8 +163,6 @@ def composition_color_convert_internal(composition: Graph, color_profile: Graph)
 def composition_color_invert_internal(composition: Graph) -> Graph: ...
 
 def composition_color_profile_internal(composition: Graph) -> Graph: ...
-
-def composition_color_rect_internal(color: Graph, color_profile: Graph, size: Graph) -> Graph: ...
 
 def composition_color_threshold_internal(composition: Graph, threshold: Graph) -> Graph: ...
 

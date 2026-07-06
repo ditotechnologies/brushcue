@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 204dad7c12dae5af0ae03973e4cc382a0ec723a65e69797306977932fd8753e5
+# hash: 122b5a289f0841a5eb47fca0fbdb7fb786f813d1e23033d4a2f2cb9e6ed6f7bc
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -654,25 +654,6 @@ def composition_color_profile(composition) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     return _internal.composition_color_profile_internal(composition_parsed)
-
-def composition_color_rect(color, color_profile, size) -> Graph:
-    """Composition Color Rect
-
-    Given a color and it's color proile. Creates a rectangle Composition of that color.
-
-    Args:
-        color: Graph of RGBAColor
-        color profile: Graph of ColorProfile
-        size: Graph of Vector2i
-        
-
-    Returns:
-        Graph: A graph node producing a Composition.
-    """
-    color_parsed = parse_graph(color)
-    color_profile_parsed = parse_graph(color_profile)
-    size_parsed = parse_graph(size)
-    return _internal.composition_color_rect_internal(color_parsed, color_profile_parsed, size_parsed)
 
 def composition_color_threshold(composition, threshold) -> Graph:
     """Composition Color Threshold
@@ -3747,7 +3728,6 @@ __all__ = [
     "composition_color_convert",
     "composition_color_invert",
     "composition_color_profile",
-    "composition_color_rect",
     "composition_color_threshold",
     "composition_color_transformer_shader",
     "composition_contrast_adjustment",
