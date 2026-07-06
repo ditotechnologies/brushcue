@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: d2dc746a61de9c9267590e14a2238107f0f9599457c07c1a4a1fe22dbc5980ef
+# hash: 204dad7c12dae5af0ae03973e4cc382a0ec723a65e69797306977932fd8753e5
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -352,6 +352,16 @@ def color_profile_s_r_g_b() -> Graph:
         Graph: A graph node producing a ColorProfile.
     """
     return _internal.color_profile_s_r_g_b_internal()
+
+def color_profile_s_r_g_b_linear() -> Graph:
+    """Color Profile Linear sRGB
+
+    Creates a linear sRGB Color Profile
+
+    Returns:
+        Graph: A graph node producing a ColorProfile.
+    """
+    return _internal.color_profile_s_r_g_b_linear_internal()
 
 def color_profile_x_y_z() -> Graph:
     """Color Profile XYZ
@@ -3719,6 +3729,7 @@ __all__ = [
     "color_profile_p3",
     "color_profile_p_n_g_s_r_g_b",
     "color_profile_s_r_g_b",
+    "color_profile_s_r_g_b_linear",
     "color_profile_x_y_z",
     "composition_absolute_value",
     "composition_blend_add",

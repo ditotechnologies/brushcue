@@ -40,3 +40,12 @@ def test_load_composition_from_file_grayscale():
         assert len(data_bytes) > 0
     finally:
         os.unlink(path)
+
+
+def test_rgba_color_result_as_tuple():
+    ctx = brushcue.Context()
+    result = brushcue.r_g_b_a_color_constant(0.1, 0.2, 0.3, 0.4).execute(ctx)
+    assert all(
+        abs(actual - expected) < 0.000001
+        for actual, expected in zip(result.as_rgba_color(), (0.1, 0.2, 0.3, 0.4))
+    )
