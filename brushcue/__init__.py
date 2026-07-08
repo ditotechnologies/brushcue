@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 122b5a289f0841a5eb47fca0fbdb7fb786f813d1e23033d4a2f2cb9e6ed6f7bc
+# hash: bc958a28148f0dc91c7b2b8ff48c44345b65f81d61617dc329aeddf5954160fe
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -396,7 +396,7 @@ def composition_blend_add(foreground, background, foreground_transform) -> Graph
     Args:
         foreground: Graph of Composition
         background: Graph of Composition
-        foreground transform: Graph of Transform2
+        transform: Graph of Transform2
         
 
     Returns:
@@ -415,7 +415,7 @@ def composition_blend_alpha(foreground, background, foreground_transform) -> Gra
     Args:
         foreground: Graph of Composition
         background: Graph of Composition
-        foreground transform: Graph of Transform2
+        transform: Graph of Transform2
         
 
     Returns:
@@ -434,7 +434,7 @@ def composition_blend_max(foreground, background, foreground_transform) -> Graph
     Args:
         foreground: Graph of Composition
         background: Graph of Composition
-        foreground transform: Graph of Transform2
+        transform: Graph of Transform2
         
 
     Returns:
@@ -453,7 +453,7 @@ def composition_blend_min(foreground, background, foreground_transform) -> Graph
     Args:
         foreground: Graph of Composition
         background: Graph of Composition
-        foreground transform: Graph of Transform2
+        transform: Graph of Transform2
         
 
     Returns:
@@ -472,7 +472,7 @@ def composition_blend_multiply(foreground, background, foreground_transform) -> 
     Args:
         foreground: Graph of Composition
         background: Graph of Composition
-        foreground transform: Graph of Transform2
+        transform: Graph of Transform2
         
 
     Returns:
@@ -491,7 +491,7 @@ def composition_blend_stencil(foreground, background, foreground_transform) -> G
     Args:
         foreground: Graph of Composition
         background: Graph of Composition
-        foreground transform: Graph of Transform2
+        transform: Graph of Transform2
         
 
     Returns:
@@ -510,7 +510,7 @@ def composition_blend_subtract(foreground, background, foreground_transform) -> 
     Args:
         foreground: Graph of Composition
         background: Graph of Composition
-        foreground transform: Graph of Transform2
+        transform: Graph of Transform2
         
 
     Returns:
