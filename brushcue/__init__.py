@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: bc958a28148f0dc91c7b2b8ff48c44345b65f81d61617dc329aeddf5954160fe
+# hash: da27c46e3503aeeded8fa28c5b9a40e0bd13ef2f0acdb22802f284aeef360f15
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1096,6 +1096,21 @@ def composition_morphological_min(composition, dimension) -> Graph:
     composition_parsed = parse_graph(composition)
     dimension_parsed = parse_int_graph(dimension)
     return _internal.composition_morphological_min_internal(composition_parsed, dimension_parsed)
+
+def composition_negative(composition) -> Graph:
+    """Composition Negative
+
+    Creates the effect of a negative image by subracting from each component of the image.
+
+    Args:
+        composition: Graph of Composition
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    return _internal.composition_negative_internal(composition_parsed)
 
 def composition_opacity_scale(composition, scale) -> Graph:
     """Composition Opacity Scale
@@ -3751,6 +3766,7 @@ __all__ = [
     "composition_monet_women_with_parasol",
     "composition_morphological_max",
     "composition_morphological_min",
+    "composition_negative",
     "composition_opacity_scale",
     "composition_painter",
     "composition_passthrough",
