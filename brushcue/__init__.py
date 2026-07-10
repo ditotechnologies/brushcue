@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: da27c46e3503aeeded8fa28c5b9a40e0bd13ef2f0acdb22802f284aeef360f15
+# hash: c63cfed187749bb4091af4b25fd8318994edb96ccdb896a52b8b00c530b47dfc
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -2668,6 +2668,42 @@ def painter_new(color_profile) -> Graph:
     color_profile_parsed = parse_graph(color_profile)
     return _internal.painter_new_internal(color_profile_parsed)
 
+def path_cardinal_cubic_to_point(path, point, tension) -> Graph:
+    """Path Cardinal Cubic to Point
+
+    Moves the path from it's current point to another with a Cardinal Cubic spline.
+
+    Args:
+        path: Graph of Path
+        point: Graph of Point2f
+        tension: Graph of Float
+        
+
+    Returns:
+        Graph: A graph node producing a Path.
+    """
+    path_parsed = parse_graph(path)
+    point_parsed = parse_graph(point)
+    tension_parsed = parse_float_graph(tension)
+    return _internal.path_cardinal_cubic_to_point_internal(path_parsed, point_parsed, tension_parsed)
+
+def path_catmull_rom_to_point(path, point) -> Graph:
+    """Path Catmull-Rom to Point
+
+    Moves the path from it's current point to another with a Catmull-Rom spline.
+
+    Args:
+        path: Graph of Path
+        point: Graph of Point2f
+        
+
+    Returns:
+        Graph: A graph node producing a Path.
+    """
+    path_parsed = parse_graph(path)
+    point_parsed = parse_graph(point)
+    return _internal.path_catmull_rom_to_point_internal(path_parsed, point_parsed)
+
 def path_line_to_point(path, point) -> Graph:
     """Path Line to Point
 
@@ -3858,6 +3894,8 @@ __all__ = [
     "painter_add_path_with_render_style",
     "painter_add_rectangle_with_render_style",
     "painter_new",
+    "path_cardinal_cubic_to_point",
+    "path_catmull_rom_to_point",
     "path_line_to_point",
     "path_move_to_point",
     "path_new",

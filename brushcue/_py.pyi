@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: e40bb0428a551a74388eb90528195e38a4ca530060fbeffe27bfc9d916592b37
+# hash: 335b05736deb9bcec05ac59ccbe0e373f0e1937d96d9fb5a7354a40fb179ad83
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -393,6 +393,10 @@ def painter_add_path_with_render_style_internal(painter: Graph, path: Graph, ren
 def painter_add_rectangle_with_render_style_internal(painter: Graph, center: Graph, dimensions: Graph, rotation: Graph, render_style: Graph, instances: Graph) -> Graph: ...
 
 def painter_new_internal(color_profile: Graph) -> Graph: ...
+
+def path_cardinal_cubic_to_point_internal(path: Graph, point: Graph, tension: Graph) -> Graph: ...
+
+def path_catmull_rom_to_point_internal(path: Graph, point: Graph) -> Graph: ...
 
 def path_line_to_point_internal(path: Graph, point: Graph) -> Graph: ...
 
