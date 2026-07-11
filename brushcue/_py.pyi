@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 335b05736deb9bcec05ac59ccbe0e373f0e1937d96d9fb5a7354a40fb179ad83
+# hash: 23d2bd2f4b0808f53ab61c6a130411616ab16da36be4e27e2f4acb5a93a91e2e
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -211,6 +211,8 @@ def composition_morphological_max_internal(composition: Graph, dimension: Graph)
 def composition_morphological_min_internal(composition: Graph, dimension: Graph) -> Graph: ...
 
 def composition_negative_internal(composition: Graph) -> Graph: ...
+
+def composition_nonlinear_r_g_b_blend_alpha_internal(foreground: Graph, background: Graph, foreground_transform: Graph) -> Graph: ...
 
 def composition_opacity_scale_internal(composition: Graph, scale: Graph) -> Graph: ...
 

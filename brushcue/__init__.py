@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: c63cfed187749bb4091af4b25fd8318994edb96ccdb896a52b8b00c530b47dfc
+# hash: fc0610271ec737c7579dc6d744743b0d3697b5d90a9e1a524db4ff2a5e8e3d07
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -628,7 +628,7 @@ def composition_color_convert(composition, color_profile) -> Graph:
 def composition_color_invert(composition) -> Graph:
     """Composition Color Invert
 
-    Applies a color invert operation to a Composition. Taking 1 and subtracting each RGB operation against it.
+    Applies a color invert operation to a composition. Taking 1 and subtracting each RGB operation against it. Works in linear color.
 
     Args:
         composition: Graph of Composition
@@ -1111,6 +1111,25 @@ def composition_negative(composition) -> Graph:
     """
     composition_parsed = parse_graph(composition)
     return _internal.composition_negative_internal(composition_parsed)
+
+def composition_nonlinear_r_g_b_blend_alpha(foreground, background, foreground_transform) -> Graph:
+    """Composition Nonlinear RGB Blend Alpha
+
+    A specialized version of CompositionBlendAlpha. Blends in a non-linear RGB.
+
+    Args:
+        foreground: Graph of Composition
+        background: Graph of Composition
+        transform: Graph of Transform2
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    foreground_parsed = parse_graph(foreground)
+    background_parsed = parse_graph(background)
+    foreground_transform_parsed = parse_graph(foreground_transform)
+    return _internal.composition_nonlinear_r_g_b_blend_alpha_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
 
 def composition_opacity_scale(composition, scale) -> Graph:
     """Composition Opacity Scale
@@ -3803,6 +3822,7 @@ __all__ = [
     "composition_morphological_max",
     "composition_morphological_min",
     "composition_negative",
+    "composition_nonlinear_r_g_b_blend_alpha",
     "composition_opacity_scale",
     "composition_painter",
     "composition_passthrough",
