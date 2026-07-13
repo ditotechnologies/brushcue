@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: fc0610271ec737c7579dc6d744743b0d3697b5d90a9e1a524db4ff2a5e8e3d07
+# hash: 0062b5eeb4dbf1e2b8dc1d9a7ccd5d7106335e0ac8297b31a6f63c0a460671bb
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -43,6 +43,7 @@ with open("output.png", "wb") as f:
 
 from . import _py as _internal
 from ._py import (
+    Bounds,
     Context,
     Graph,
     IDMapper,
@@ -3757,7 +3758,7 @@ def xor(bool1, bool2) -> Graph:
 __all__ = [
     # Core classes
     "Context", "Graph", "Project", "Type",
-    "TypeDefinition", "NodeDefinition", "NodeDefinitionInput", "ImageRecipe",
+    "TypeDefinition", "NodeDefinition", "NodeDefinitionInput", "ImageRecipe", "Bounds",
     # Constant functions
     "load_composition",
     "int_constant", "float_constant", "string_constant", "bool_constant",
