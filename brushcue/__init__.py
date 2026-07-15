@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 0062b5eeb4dbf1e2b8dc1d9a7ccd5d7106335e0ac8297b31a6f63c0a460671bb
+# hash: 3733873252ea832301da66f29c48969b639a2e0d6ba376b7be82d327a62419e2
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -303,6 +303,16 @@ def byte_list_from_u_r_l(url) -> Graph:
     """
     url_parsed = parse_string_graph(url)
     return _internal.byte_list_from_u_r_l_internal(url_parsed)
+
+def color_profile_a_c_e_scg() -> Graph:
+    """Color Profile ACEScg
+
+    Creates an ACEScg Color Profile
+
+    Returns:
+        Graph: A graph node producing a ColorProfile.
+    """
+    return _internal.color_profile_a_c_e_scg_internal()
 
 def color_profile_b_t709() -> Graph:
     """Color Profile BT.709
@@ -3776,6 +3786,7 @@ __all__ = [
     "bounds2i_from_x_y_width_height",
     "brush_solid",
     "byte_list_from_u_r_l",
+    "color_profile_a_c_e_scg",
     "color_profile_b_t709",
     "color_profile_ok_lab_a",
     "color_profile_p3",

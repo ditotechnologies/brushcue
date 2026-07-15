@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 6f678ac57bf00c1e22b0bfce80b4941ffa6ac7296c024f19de0af0b32493ebd0
+# hash: d0b0683b00019725292ed240186796d562996ba7da15901438e6e05fd8af3e5b
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -124,6 +124,8 @@ def bounds2i_from_x_y_width_height_internal(x: Graph, y: Graph, width: Graph, he
 def brush_solid_internal(color: Graph, radius: Graph) -> Graph: ...
 
 def byte_list_from_u_r_l_internal(url: Graph) -> Graph: ...
+
+def color_profile_a_c_e_scg_internal() -> Graph: ...
 
 def color_profile_b_t709_internal() -> Graph: ...
 
