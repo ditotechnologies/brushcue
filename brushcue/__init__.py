@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 3733873252ea832301da66f29c48969b639a2e0d6ba376b7be82d327a62419e2
+# hash: d93576b15806610a79b65b5224c31c36e66ac2ff4b333d6307f022b365a84598
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -2856,6 +2856,211 @@ def point2i_from_components(x, y) -> Graph:
     y_parsed = parse_int_graph(y)
     return _internal.point2i_from_components_internal(x_parsed, y_parsed)
 
+def profiled_color_brightness_adjust(profiled_color, offset) -> Graph:
+    """Profiled Color Brightness Adjust
+
+    Adjusts a profiled color's lightness in OkLab.
+
+    Args:
+        profiled color: Graph of ProfiledColor
+        lightness offset: Graph of Float
+
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    profiled_color_parsed = parse_graph(profiled_color)
+    offset_parsed = parse_float_graph(offset)
+    return _internal.profiled_color_brightness_adjust_internal(profiled_color_parsed, offset_parsed)
+
+def profiled_color_chroma_offset(profiled_color, offset) -> Graph:
+    """Profiled Color Chroma Offset
+
+    Applies an offset to the a and b chroma components of a profiled color in OkLab.
+
+    Args:
+        profiled color: Graph of ProfiledColor
+        chroma offset: Graph of Vector2f
+
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    profiled_color_parsed = parse_graph(profiled_color)
+    offset_parsed = parse_graph(offset)
+    return _internal.profiled_color_chroma_offset_internal(profiled_color_parsed, offset_parsed)
+
+def profiled_color_from_ok_lab_a(ok_lab_a) -> Graph:
+    """Profiled Color from OkLab with Alpha
+
+    Creates a profiled color from OkLab channels and alpha.
+
+    Args:
+        OkLab color with alpha: Graph of OkLabA
+
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    ok_lab_a_parsed = parse_graph(ok_lab_a)
+    return _internal.profiled_color_from_ok_lab_a_internal(ok_lab_a_parsed)
+
+def profiled_color_from_rgba_aces_cg(rgba) -> Graph:
+    """Profiled Color from RGBA ACEScg
+
+    Creates a profiled color from linear ACEScg RGBA channels.
+
+    Args:
+        linear ACEScg color: Graph of RGBAColor
+
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    rgba_parsed = parse_graph(rgba)
+    return _internal.profiled_color_from_rgba_aces_cg_internal(rgba_parsed)
+
+def profiled_color_from_rgba_srgb(rgba) -> Graph:
+    """Profiled Color from RGBA sRGB
+
+    Creates a profiled color from encoded sRGB RGBA channels.
+
+    Args:
+        encoded sRGB color: Graph of RGBAColor
+
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    rgba_parsed = parse_graph(rgba)
+    return _internal.profiled_color_from_rgba_srgb_internal(rgba_parsed)
+
+def profiled_color_from_xyz_a(xyza) -> Graph:
+    """Profiled Color from XYZ with Alpha
+
+    Creates a profiled color from XYZ channels and alpha.
+
+    Args:
+        XYZ color with alpha: Graph of XYZA
+
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    xyza_parsed = parse_graph(xyza)
+    return _internal.profiled_color_from_xyz_a_internal(xyza_parsed)
+
+def profiled_color_grayscale(profiled_color) -> Graph:
+    """Profiled Color Grayscale
+
+    Removes chroma from a profiled color.
+
+    Args:
+        profiled color: Graph of ProfiledColor
+
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    profiled_color_parsed = parse_graph(profiled_color)
+    return _internal.profiled_color_grayscale_internal(profiled_color_parsed)
+
+def profiled_color_lightness_curve(profiled_color, l_curve) -> Graph:
+    """Profiled Color Lightness Curve
+
+    Applies a curve to the L component of a profiled color in OkLab.
+
+    Args:
+        profiled color: Graph of ProfiledColor
+        lightness curve: Graph of Curve
+
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    profiled_color_parsed = parse_graph(profiled_color)
+    l_curve_parsed = parse_graph(l_curve)
+    return _internal.profiled_color_lightness_curve_internal(profiled_color_parsed, l_curve_parsed)
+
+def profiled_color_saturation_adjust(profiled_color, scale) -> Graph:
+    """Profiled Color Saturation Adjust
+
+    Scales the chroma components of a profiled color in OkLab.
+
+    Args:
+        profiled color: Graph of ProfiledColor
+        saturation scale: Graph of Float
+
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    profiled_color_parsed = parse_graph(profiled_color)
+    scale_parsed = parse_float_graph(scale)
+    return _internal.profiled_color_saturation_adjust_internal(profiled_color_parsed, scale_parsed)
+
+def profiled_color_target_white(profiled_color, target_white) -> Graph:
+    """Profiled Color Target White
+
+    Adapts a profiled color to the specified XYZ white point.
+
+    Args:
+        profiled color: Graph of ProfiledColor
+        target white point: Graph of XYZ
+
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    profiled_color_parsed = parse_graph(profiled_color)
+    target_white_parsed = parse_graph(target_white)
+    return _internal.profiled_color_target_white_internal(profiled_color_parsed, target_white_parsed)
+
+def profiled_color_to_ok_lab_a(profiled_color) -> Graph:
+    """Profiled Color to OkLab with Alpha
+
+    Converts a profiled color to OkLab channels with alpha.
+
+    Args:
+        profiled color: Graph of ProfiledColor
+
+
+    Returns:
+        Graph: A graph node producing a OkLabA.
+    """
+    profiled_color_parsed = parse_graph(profiled_color)
+    return _internal.profiled_color_to_ok_lab_a_internal(profiled_color_parsed)
+
+def profiled_color_to_rgb_encoded_with_in_color_profile(profiled_color) -> Graph:
+    """Profiled Color to Encoded RGB in Input Color Profile
+
+    Converts a profiled color to encoded RGB channels in its input color profile. The input color profile must be RGB.
+
+    Args:
+        profiled color: Graph of ProfiledColor
+
+
+    Returns:
+        Graph: A graph node producing a RGBAColor.
+    """
+    profiled_color_parsed = parse_graph(profiled_color)
+    return _internal.profiled_color_to_rgb_encoded_with_in_color_profile_internal(profiled_color_parsed)
+
+def profiled_color_to_xyz_a(profiled_color) -> Graph:
+    """Profiled Color to XYZ with Alpha
+
+    Converts a profiled color to XYZ channels with alpha.
+
+    Args:
+        profiled color: Graph of ProfiledColor
+
+
+    Returns:
+        Graph: A graph node producing a XYZA.
+    """
+    profiled_color_parsed = parse_graph(profiled_color)
+    return _internal.profiled_color_to_xyz_a_internal(profiled_color_parsed)
+
 def r_g_b_a_color_add_to_dictionary(dictionary, key, value) -> Graph:
     """RGBA Color Add To Dictionary
 
@@ -3936,6 +4141,19 @@ __all__ = [
     "point2f_from_components",
     "point2i_distance",
     "point2i_from_components",
+    "profiled_color_brightness_adjust",
+    "profiled_color_chroma_offset",
+    "profiled_color_from_ok_lab_a",
+    "profiled_color_from_rgba_aces_cg",
+    "profiled_color_from_rgba_srgb",
+    "profiled_color_from_xyz_a",
+    "profiled_color_grayscale",
+    "profiled_color_lightness_curve",
+    "profiled_color_saturation_adjust",
+    "profiled_color_target_white",
+    "profiled_color_to_ok_lab_a",
+    "profiled_color_to_rgb_encoded_with_in_color_profile",
+    "profiled_color_to_xyz_a",
     "r_g_b_a_color_add_to_dictionary",
     "r_g_b_a_color_from_components",
     "r_g_b_a_color_passthrough",
