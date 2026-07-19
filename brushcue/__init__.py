@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: d93576b15806610a79b65b5224c31c36e66ac2ff4b333d6307f022b365a84598
+# hash: cbe22b95cb0b8f41c33652a88d0ce4d87a93c75fa92cefaa0da8a56a6285658d
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -87,12 +87,6 @@ def string_constant(value: str) -> Graph:
 def bool_constant(value: bool) -> Graph:
     return _internal.bool_constant_internal(value)
 
-def r_g_b_a_color_constant(r: float, g: float, b: float, a: float):
-    return _internal.r_g_b_a_color_constant_internal(r, g, b, a)
-
-def r_g_b_color_constant(r: float, g: float, b: float):
-    return _internal.r_g_b_color_constant_internal(r, g, b)
-
 def vector_2i_constant(x: int, y: int) -> Graph:
     return _internal.vector2i_constant_internal(x, y)
 
@@ -107,7 +101,7 @@ def abs(number) -> Graph:
 
     Args:
         number: Graph of Float
-        
+
 
     Returns:
         Graph: A graph node producing a Float.
@@ -123,7 +117,7 @@ def and_(bool1, bool2) -> Graph:
     Args:
         the first bool: Graph of Bool
         The second bool: Graph of Bool
-        
+
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -278,7 +272,7 @@ def brush_solid(color, radius) -> Graph:
     Creates a brush with a color and radius. Will stroke with the solid color.
 
     Args:
-        color: Graph of RGBAColor
+        color: Graph of ProfiledColor
         radius: Graph of Float
         
 
@@ -383,6 +377,98 @@ def color_profile_x_y_z() -> Graph:
         Graph: A graph node producing a ColorProfile.
     """
     return _internal.color_profile_x_y_z_internal()
+
+def color_representation_a_c_e_scg() -> Graph:
+    """Color Representation ACEScg
+
+    Creates a Color Representation using the ACEScg Color Profile with linear light, straight alpha pixel values.
+
+    Returns:
+        Graph: A graph node producing a ColorRepresentation.
+    """
+    return _internal.color_representation_a_c_e_scg_internal()
+
+def color_representation_from_color_profile_and_pixel_encoding(color_profile, pixel_encoding) -> Graph:
+    """Color Representation From Color Profile And Pixel Encoding
+
+    Creates a Color Representation by pairing a Color Profile with a Pixel Encoding.
+
+    Args:
+        color profile: Graph of ColorProfile
+        pixel encoding: Graph of PixelEncoding
+
+
+    Returns:
+        Graph: A graph node producing a ColorRepresentation.
+    """
+    color_profile_parsed = parse_graph(color_profile)
+    pixel_encoding_parsed = parse_graph(pixel_encoding)
+    return _internal.color_representation_from_color_profile_and_pixel_encoding_internal(color_profile_parsed, pixel_encoding_parsed)
+
+def color_representation_ok_lab_a() -> Graph:
+    """Color Representation OkLabA
+
+    Creates a Color Representation using the OkLabA Color Profile with encoded pixel values.
+
+    Returns:
+        Graph: A graph node producing a ColorRepresentation.
+    """
+    return _internal.color_representation_ok_lab_a_internal()
+
+def color_representation_profile(color_representation) -> Graph:
+    """Color Profile of a Color Representation
+
+    Given a color representation. Extracts the color profile of that color representation
+
+    Args:
+        color representation: Graph of ColorRepresentation
+
+
+    Returns:
+        Graph: A graph node producing a ColorProfile.
+    """
+    color_representation_parsed = parse_graph(color_representation)
+    return _internal.color_representation_profile_internal(color_representation_parsed)
+
+def color_representation_r_g_b_b_t2020() -> Graph:
+    """Color Representation BT.2020
+
+    Creates a Color Representation using the BT.2020 Color Profile with gamma-encoded pixel values.
+
+    Returns:
+        Graph: A graph node producing a ColorRepresentation.
+    """
+    return _internal.color_representation_r_g_b_b_t2020_internal()
+
+def color_representation_s_r_g_b() -> Graph:
+    """Color Representation sRGB
+
+    Creates a Color Representation using the sRGB Color Profile with gamma-encoded pixel values.
+
+    Returns:
+        Graph: A graph node producing a ColorRepresentation.
+    """
+    return _internal.color_representation_s_r_g_b_internal()
+
+def color_representation_s_r_g_b_linear() -> Graph:
+    """Color Representation Linear sRGB
+
+    Creates a Color Representation using the linear sRGB Color Profile with linear light, straight alpha pixel values.
+
+    Returns:
+        Graph: A graph node producing a ColorRepresentation.
+    """
+    return _internal.color_representation_s_r_g_b_linear_internal()
+
+def color_representation_x_y_z_a() -> Graph:
+    """Color Representation XYZA
+
+    Creates a Color Representation using the XYZA Color Profile with linear light, straight alpha pixel values.
+
+    Returns:
+        Graph: A graph node producing a ColorRepresentation.
+    """
+    return _internal.color_representation_x_y_z_a_internal()
 
 def composition_absolute_value(image) -> Graph:
     """Composition Absolute Value
@@ -651,20 +737,20 @@ def composition_color_invert(composition) -> Graph:
     composition_parsed = parse_graph(composition)
     return _internal.composition_color_invert_internal(composition_parsed)
 
-def composition_color_profile(composition) -> Graph:
-    """Composition Color Profile
+def composition_color_representation(composition) -> Graph:
+    """Composition Color Representation
 
-    Gets the color profile associated with a Composition
+    Gets the color representation associated with a Composition
 
     Args:
         composition: Graph of Composition
         
 
     Returns:
-        Graph: A graph node producing a ColorProfile.
+        Graph: A graph node producing a ColorRepresentation.
     """
     composition_parsed = parse_graph(composition)
-    return _internal.composition_color_profile_internal(composition_parsed)
+    return _internal.composition_color_representation_internal(composition_parsed)
 
 def composition_color_threshold(composition, threshold) -> Graph:
     """Composition Color Threshold
@@ -683,7 +769,7 @@ def composition_color_threshold(composition, threshold) -> Graph:
     threshold_parsed = parse_float_graph(threshold)
     return _internal.composition_color_threshold_internal(composition_parsed, threshold_parsed)
 
-def composition_color_transformer_shader(composition, function_body, helpers, input_color_profile, output_color_profile, inputs) -> Graph:
+def composition_color_transformer_shader(composition, function_body, helpers, input_color_representation, output_color_representation, inputs) -> Graph:
     """Composition Color Transformer Shader
 
     Defines a custom shader that takes an input color and then transforms that color to an output color.
@@ -692,8 +778,8 @@ def composition_color_transformer_shader(composition, function_body, helpers, in
         composition: Graph of Composition
         function body: Graph of String
         helpers: Graph of String
-        input color profile: Graph of ColorProfile
-        output color profile: Graph of ColorProfile
+        input color representation: Graph of ColorRepresentation
+        output color representation: Graph of ColorRepresentation
         inputs: Graph of Dictionary
         
 
@@ -703,10 +789,10 @@ def composition_color_transformer_shader(composition, function_body, helpers, in
     composition_parsed = parse_graph(composition)
     function_body_parsed = parse_string_graph(function_body)
     helpers_parsed = parse_string_graph(helpers)
-    input_color_profile_parsed = parse_graph(input_color_profile)
-    output_color_profile_parsed = parse_graph(output_color_profile)
+    input_color_representation_parsed = parse_graph(input_color_representation)
+    output_color_representation_parsed = parse_graph(output_color_representation)
     inputs_parsed = parse_graph(inputs)
-    return _internal.composition_color_transformer_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, input_color_profile_parsed, output_color_profile_parsed, inputs_parsed)
+    return _internal.composition_color_transformer_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, input_color_representation_parsed, output_color_representation_parsed, inputs_parsed)
 
 def composition_contrast_adjustment(composition, contrast) -> Graph:
     """Composition Contrast Adjustment
@@ -762,6 +848,27 @@ def composition_crop(composition, rect) -> Graph:
     composition_parsed = parse_graph(composition)
     rect_parsed = parse_graph(rect)
     return _internal.composition_crop_internal(composition_parsed, rect_parsed)
+
+def composition_duotone(composition, threshold, color_1, color_2) -> Graph:
+    """Composition Duotone
+
+    Creates a duotone effect. Colors below the threshold will be color 1, colors above will be color 2.
+
+    Args:
+        composition: Graph of Composition
+        threshold: Graph of Float
+        color 1: Graph of ProfiledColor
+        color 2: Graph of ProfiledColor
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    threshold_parsed = parse_float_graph(threshold)
+    color_1_parsed = parse_graph(color_1)
+    color_2_parsed = parse_graph(color_2)
+    return _internal.composition_duotone_internal(composition_parsed, threshold_parsed, color_1_parsed, color_2_parsed)
 
 def composition_film_grain(composition, grain_strength, fine_grain_frequency, fine_weight, medium_grain_frequency, medium_weight, high_grain_frequency, high_weight) -> Graph:
     """Composition Film Grain
@@ -892,8 +999,8 @@ def composition_halftone(composition, pixel_size, foreground_color, background_c
     Args:
         composition: Graph of Composition
         pixel size: Graph of Int
-        foreground color: Graph of RGBAColor
-        background color: Graph of RGBAColor
+        foreground color: Graph of ProfiledColor
+        background color: Graph of ProfiledColor
         
 
     Returns:
@@ -1206,7 +1313,7 @@ def composition_pixelate(composition, pixel_size) -> Graph:
     pixel_size_parsed = parse_int_graph(pixel_size)
     return _internal.composition_pixelate_internal(composition_parsed, pixel_size_parsed)
 
-def composition_point_effect_shader(composition, function_body, helpers, effect_center_point, effect_radius, inputs) -> Graph:
+def composition_point_effect_shader(composition, function_body, helpers, effect_center_point, effect_radius, inputs, working_color_representation) -> Graph:
     """Composition Point Effect Shader
 
     Runs a custom shader over a circular region around an effect center point.
@@ -1218,6 +1325,7 @@ def composition_point_effect_shader(composition, function_body, helpers, effect_
         effect center point: Graph of Point2f
         effect radius: Graph of Float
         inputs: Graph of Dictionary
+        working color representation: Graph of ColorRepresentation
         
 
     Returns:
@@ -1229,7 +1337,8 @@ def composition_point_effect_shader(composition, function_body, helpers, effect_
     effect_center_point_parsed = parse_graph(effect_center_point)
     effect_radius_parsed = parse_float_graph(effect_radius)
     inputs_parsed = parse_graph(inputs)
-    return _internal.composition_point_effect_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, effect_center_point_parsed, effect_radius_parsed, inputs_parsed)
+    working_color_representation_parsed = parse_graph(working_color_representation)
+    return _internal.composition_point_effect_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, effect_center_point_parsed, effect_radius_parsed, inputs_parsed, working_color_representation_parsed)
 
 def composition_r_g_b_curve(composition, r_curve, g_curve, b_curve) -> Graph:
     """Composition RGB Curve
@@ -1428,7 +1537,7 @@ def composition_sobel_edge_detection(composition) -> Graph:
     composition_parsed = parse_graph(composition)
     return _internal.composition_sobel_edge_detection_internal(composition_parsed)
 
-def composition_spacial_effect_shader(composition, function_body, helpers, max_displacement, inputs) -> Graph:
+def composition_spacial_effect_shader(composition, function_body, helpers, max_displacement, inputs, working_color_representation) -> Graph:
     """Composition Spacial Effect Shader
 
     Runs a custom shader over an input that can spatially displace pixels by up to a maximum displacement.
@@ -1439,6 +1548,7 @@ def composition_spacial_effect_shader(composition, function_body, helpers, max_d
         helpers: Graph of String
         max displacement: Graph of Float
         inputs: Graph of Dictionary
+        working color representation: Graph of ColorRepresentation
         
 
     Returns:
@@ -1449,7 +1559,8 @@ def composition_spacial_effect_shader(composition, function_body, helpers, max_d
     helpers_parsed = parse_string_graph(helpers)
     max_displacement_parsed = parse_float_graph(max_displacement)
     inputs_parsed = parse_graph(inputs)
-    return _internal.composition_spacial_effect_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, max_displacement_parsed, inputs_parsed)
+    working_color_representation_parsed = parse_graph(working_color_representation)
+    return _internal.composition_spacial_effect_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, max_displacement_parsed, inputs_parsed, working_color_representation_parsed)
 
 def composition_swirl(composition, center, radius, amount) -> Graph:
     """Composition Swirl
@@ -1859,7 +1970,7 @@ def fill_solid(color) -> Graph:
     Creates a fill with a solid color.
 
     Args:
-        color: Graph of RGBAColor
+        color: Graph of ProfiledColor
         
 
     Returns:
@@ -2578,23 +2689,6 @@ def ok_lab_hist_lightness_quantile(hist, quantile) -> Graph:
     quantile_parsed = parse_float_graph(quantile)
     return _internal.ok_lab_hist_lightness_quantile_internal(hist_parsed, quantile_parsed)
 
-def ok_lab_to_r_g_b(ok_lab, color_profile) -> Graph:
-    """OkLab to RGB
-
-    Converts an OkLab color to an RGB color
-
-    Args:
-        OkLab: Graph of OkLabColor
-        color profile: Graph of ColorProfile
-        
-
-    Returns:
-        Graph: A graph node producing a RGBColor.
-    """
-    ok_lab_parsed = parse_graph(ok_lab)
-    color_profile_parsed = parse_graph(color_profile)
-    return _internal.ok_lab_to_r_g_b_internal(ok_lab_parsed, color_profile_parsed)
-
 def or_(bool1, bool2) -> Graph:
     """Or
 
@@ -2683,20 +2777,15 @@ def painter_add_rectangle_with_render_style(painter, center, dimensions, rotatio
     instances_parsed = parse_graph(instances)
     return _internal.painter_add_rectangle_with_render_style_internal(painter_parsed, center_parsed, dimensions_parsed, rotation_parsed, render_style_parsed, instances_parsed)
 
-def painter_new(color_profile) -> Graph:
+def painter_new() -> Graph:
     """Painter New
 
     Creates a new painter.
 
-    Args:
-        color profile: Graph of ColorProfile
-        
-
     Returns:
         Graph: A graph node producing a Painter.
     """
-    color_profile_parsed = parse_graph(color_profile)
-    return _internal.painter_new_internal(color_profile_parsed)
+    return _internal.painter_new_internal()
 
 def path_cardinal_cubic_to_point(path, point, tension) -> Graph:
     """Path Cardinal Cubic to Point
@@ -2788,6 +2877,36 @@ def pi() -> Graph:
     """
     return _internal.pi_internal()
 
+def pixel_encoding_encoded() -> Graph:
+    """Pixel Encoding Encoded
+
+    Creates a Pixel Encoding representing gamma or other non-linear encoded values.
+
+    Returns:
+        Graph: A graph node producing a PixelEncoding.
+    """
+    return _internal.pixel_encoding_encoded_internal()
+
+def pixel_encoding_linear() -> Graph:
+    """Pixel Encoding Linear
+
+    Creates a Pixel Encoding representing linear light, straight alpha values.
+
+    Returns:
+        Graph: A graph node producing a PixelEncoding.
+    """
+    return _internal.pixel_encoding_linear_internal()
+
+def pixel_encoding_premultiplied_alpha() -> Graph:
+    """Pixel Encoding Premultiplied Alpha
+
+    Creates a Pixel Encoding representing linear light, premultiplied alpha values.
+
+    Returns:
+        Graph: A graph node producing a PixelEncoding.
+    """
+    return _internal.pixel_encoding_premultiplied_alpha_internal()
+
 def point2f_distance(lhs, rhs) -> Graph:
     """Point 2 Float Distance
 
@@ -2856,6 +2975,25 @@ def point2i_from_components(x, y) -> Graph:
     y_parsed = parse_int_graph(y)
     return _internal.point2i_from_components_internal(x_parsed, y_parsed)
 
+def profiled_color_add_to_dictionary(dictionary, key, value) -> Graph:
+    """Profiled Color Add To Dictionary
+
+    Adds a Profiled Color to a Dictionary
+
+    Args:
+        dictionary: Graph of Dictionary
+        key: Graph of String
+        value: Graph of ProfiledColor
+        
+
+    Returns:
+        Graph: A graph node producing a Dictionary.
+    """
+    dictionary_parsed = parse_graph(dictionary)
+    key_parsed = parse_string_graph(key)
+    value_parsed = parse_graph(value)
+    return _internal.profiled_color_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
+
 def profiled_color_brightness_adjust(profiled_color, offset) -> Graph:
     """Profiled Color Brightness Adjust
 
@@ -2864,7 +3002,7 @@ def profiled_color_brightness_adjust(profiled_color, offset) -> Graph:
     Args:
         profiled color: Graph of ProfiledColor
         lightness offset: Graph of Float
-
+        
 
     Returns:
         Graph: A graph node producing a ProfiledColor.
@@ -2881,7 +3019,7 @@ def profiled_color_chroma_offset(profiled_color, offset) -> Graph:
     Args:
         profiled color: Graph of ProfiledColor
         chroma offset: Graph of Vector2f
-
+        
 
     Returns:
         Graph: A graph node producing a ProfiledColor.
@@ -2897,7 +3035,7 @@ def profiled_color_from_ok_lab_a(ok_lab_a) -> Graph:
 
     Args:
         OkLab color with alpha: Graph of OkLabA
-
+        
 
     Returns:
         Graph: A graph node producing a ProfiledColor.
@@ -2912,7 +3050,7 @@ def profiled_color_from_rgba_aces_cg(rgba) -> Graph:
 
     Args:
         linear ACEScg color: Graph of RGBAColor
-
+        
 
     Returns:
         Graph: A graph node producing a ProfiledColor.
@@ -2927,7 +3065,7 @@ def profiled_color_from_rgba_srgb(rgba) -> Graph:
 
     Args:
         encoded sRGB color: Graph of RGBAColor
-
+        
 
     Returns:
         Graph: A graph node producing a ProfiledColor.
@@ -2942,7 +3080,7 @@ def profiled_color_from_xyz_a(xyza) -> Graph:
 
     Args:
         XYZ color with alpha: Graph of XYZA
-
+        
 
     Returns:
         Graph: A graph node producing a ProfiledColor.
@@ -2957,7 +3095,7 @@ def profiled_color_grayscale(profiled_color) -> Graph:
 
     Args:
         profiled color: Graph of ProfiledColor
-
+        
 
     Returns:
         Graph: A graph node producing a ProfiledColor.
@@ -2973,7 +3111,7 @@ def profiled_color_lightness_curve(profiled_color, l_curve) -> Graph:
     Args:
         profiled color: Graph of ProfiledColor
         lightness curve: Graph of Curve
-
+        
 
     Returns:
         Graph: A graph node producing a ProfiledColor.
@@ -2990,7 +3128,7 @@ def profiled_color_saturation_adjust(profiled_color, scale) -> Graph:
     Args:
         profiled color: Graph of ProfiledColor
         saturation scale: Graph of Float
-
+        
 
     Returns:
         Graph: A graph node producing a ProfiledColor.
@@ -3007,7 +3145,7 @@ def profiled_color_target_white(profiled_color, target_white) -> Graph:
     Args:
         profiled color: Graph of ProfiledColor
         target white point: Graph of XYZ
-
+        
 
     Returns:
         Graph: A graph node producing a ProfiledColor.
@@ -3023,7 +3161,7 @@ def profiled_color_to_ok_lab_a(profiled_color) -> Graph:
 
     Args:
         profiled color: Graph of ProfiledColor
-
+        
 
     Returns:
         Graph: A graph node producing a OkLabA.
@@ -3038,7 +3176,7 @@ def profiled_color_to_rgb_encoded_with_in_color_profile(profiled_color) -> Graph
 
     Args:
         profiled color: Graph of ProfiledColor
-
+        
 
     Returns:
         Graph: A graph node producing a RGBAColor.
@@ -3053,32 +3191,13 @@ def profiled_color_to_xyz_a(profiled_color) -> Graph:
 
     Args:
         profiled color: Graph of ProfiledColor
-
+        
 
     Returns:
         Graph: A graph node producing a XYZA.
     """
     profiled_color_parsed = parse_graph(profiled_color)
     return _internal.profiled_color_to_xyz_a_internal(profiled_color_parsed)
-
-def r_g_b_a_color_add_to_dictionary(dictionary, key, value) -> Graph:
-    """RGBA Color Add To Dictionary
-
-    Adds a RGBA Color to a Dictionary
-
-    Args:
-        dictionary: Graph of Dictionary
-        key: Graph of String
-        value: Graph of RGBAColor
-        
-
-    Returns:
-        Graph: A graph node producing a Dictionary.
-    """
-    dictionary_parsed = parse_graph(dictionary)
-    key_parsed = parse_string_graph(key)
-    value_parsed = parse_graph(value)
-    return _internal.r_g_b_a_color_add_to_dictionary_internal(dictionary_parsed, key_parsed, value_parsed)
 
 def r_g_b_a_color_from_components(r, g, b, a) -> Graph:
     """RGBA Color from Components
@@ -3999,6 +4118,14 @@ __all__ = [
     "color_profile_s_r_g_b",
     "color_profile_s_r_g_b_linear",
     "color_profile_x_y_z",
+    "color_representation_a_c_e_scg",
+    "color_representation_from_color_profile_and_pixel_encoding",
+    "color_representation_ok_lab_a",
+    "color_representation_profile",
+    "color_representation_r_g_b_b_t2020",
+    "color_representation_s_r_g_b",
+    "color_representation_s_r_g_b_linear",
+    "color_representation_x_y_z_a",
     "composition_absolute_value",
     "composition_blend_add",
     "composition_blend_alpha",
@@ -4014,12 +4141,13 @@ __all__ = [
     "composition_chroma_offset",
     "composition_color_convert",
     "composition_color_invert",
-    "composition_color_profile",
+    "composition_color_representation",
     "composition_color_threshold",
     "composition_color_transformer_shader",
     "composition_contrast_adjustment",
     "composition_convolution",
     "composition_crop",
+    "composition_duotone",
     "composition_film_grain",
     "composition_flip_horizontal",
     "composition_flip_vertical",
@@ -4125,7 +4253,6 @@ __all__ = [
     "null_value",
     "ok_lab_color_from_components",
     "ok_lab_hist_lightness_quantile",
-    "ok_lab_to_r_g_b",
     "or_",
     "painter_add_ellipse_with_render_style",
     "painter_add_path_with_render_style",
@@ -4137,10 +4264,14 @@ __all__ = [
     "path_move_to_point",
     "path_new",
     "pi",
+    "pixel_encoding_encoded",
+    "pixel_encoding_linear",
+    "pixel_encoding_premultiplied_alpha",
     "point2f_distance",
     "point2f_from_components",
     "point2i_distance",
     "point2i_from_components",
+    "profiled_color_add_to_dictionary",
     "profiled_color_brightness_adjust",
     "profiled_color_chroma_offset",
     "profiled_color_from_ok_lab_a",
@@ -4154,7 +4285,6 @@ __all__ = [
     "profiled_color_to_ok_lab_a",
     "profiled_color_to_rgb_encoded_with_in_color_profile",
     "profiled_color_to_xyz_a",
-    "r_g_b_a_color_add_to_dictionary",
     "r_g_b_a_color_from_components",
     "r_g_b_a_color_passthrough",
     "r_g_b_color_add_to_dictionary",

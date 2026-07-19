@@ -84,6 +84,7 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Linear Transform](https://www.brushcue.com/docs/py/examples/linear-transform)
 - [Liquify](https://www.brushcue.com/docs/py/examples/liquify)
 - [Median Filter](https://www.brushcue.com/docs/py/examples/median-filter)
+- [Negative Filter](https://www.brushcue.com/docs/py/examples/negative-filter)
 - [Oval](https://www.brushcue.com/docs/py/examples/oval)
 - [Pixelate](https://www.brushcue.com/docs/py/examples/pixelate)
 - [Pixelate Reveal Animation](https://www.brushcue.com/docs/py/examples/pixelate-reveal-animation)
