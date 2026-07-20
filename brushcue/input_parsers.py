@@ -1,3 +1,5 @@
+import os
+
 from ._py import Graph, byte_list_constant_internal, image_from_byte_list_internal, composition_from_image_internal, int_constant_internal, float_constant_internal, string_constant_internal, bool_constant_internal
 
 def parse_composition_graph(x) -> Graph:
@@ -35,10 +37,10 @@ def parse_float_graph(x) -> Graph:
 def parse_string_graph(x) -> Graph:
     if isinstance(x, Graph):
         return x
-    elif isinstance(x, str):
-        return string_constant_internal(x)
+    elif isinstance(x, (str, os.PathLike)):
+        return string_constant_internal(os.fspath(x))
     else:
-        raise TypeError(f"Expected Graph or str, got {type(x)}")
+        raise TypeError(f"Expected Graph, str or os.PathLike, got {type(x)}")
 
 def parse_bool_graph(x) -> Graph:
     if isinstance(x, Graph):
