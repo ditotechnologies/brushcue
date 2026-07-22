@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 98f689bd09302a6bdb191b44d039a6b25c922cd53813dcff1453f7480b3558b2
+# hash: c2c6e93ccd770e6f474a26357d3e5601585b314d493be15f948aa97a81e388c8
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -244,6 +244,10 @@ def composition_nonlinear_r_g_b_blend_alpha_internal(foreground: Graph, backgrou
 def composition_opacity_scale_internal(composition: Graph, scale: Graph) -> Graph: ...
 
 def composition_painter_internal(painter: Graph) -> Graph: ...
+
+def composition_palette_internal(composition: Graph, size: Graph) -> Graph: ...
+
+def composition_palette_reduction_internal(composition: Graph, palette: Graph) -> Graph: ...
 
 def composition_passthrough_internal(value: Graph) -> Graph: ...
 

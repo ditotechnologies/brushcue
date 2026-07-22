@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: cbe22b95cb0b8f41c33652a88d0ce4d87a93c75fa92cefaa0da8a56a6285658d
+# hash: 1b6f7870882c540f8a035e8baf177eb3df3bf1d9eef16b1bd56403320722f5e4
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -101,7 +101,7 @@ def abs(number) -> Graph:
 
     Args:
         number: Graph of Float
-
+        
 
     Returns:
         Graph: A graph node producing a Float.
@@ -117,7 +117,7 @@ def and_(bool1, bool2) -> Graph:
     Args:
         the first bool: Graph of Bool
         The second bool: Graph of Bool
-
+        
 
     Returns:
         Graph: A graph node producing a Bool.
@@ -396,7 +396,7 @@ def color_representation_from_color_profile_and_pixel_encoding(color_profile, pi
     Args:
         color profile: Graph of ColorProfile
         pixel encoding: Graph of PixelEncoding
-
+        
 
     Returns:
         Graph: A graph node producing a ColorRepresentation.
@@ -422,7 +422,7 @@ def color_representation_profile(color_representation) -> Graph:
 
     Args:
         color representation: Graph of ColorRepresentation
-
+        
 
     Returns:
         Graph: A graph node producing a ColorProfile.
@@ -1280,6 +1280,40 @@ def composition_painter(painter) -> Graph:
     """
     painter_parsed = parse_graph(painter)
     return _internal.composition_painter_internal(painter_parsed)
+
+def composition_palette(composition, size) -> Graph:
+    """Composition Palette
+
+    Generates a palette of the most dominant colors of a composition.
+
+    Args:
+        composition: Graph of Composition
+        number of colors in the palette: Graph of Int
+        
+
+    Returns:
+        Graph: A graph node producing a ProfiledColorList.
+    """
+    composition_parsed = parse_graph(composition)
+    size_parsed = parse_int_graph(size)
+    return _internal.composition_palette_internal(composition_parsed, size_parsed)
+
+def composition_palette_reduction(composition, palette) -> Graph:
+    """Composition Palette Reduction
+
+    Reduces the number of colors in a composition to a specified palette.
+
+    Args:
+        composition: Graph of Composition
+        palette: Graph of ProfiledColorList
+        
+
+    Returns:
+        Graph: A graph node producing a Composition.
+    """
+    composition_parsed = parse_graph(composition)
+    palette_parsed = parse_graph(palette)
+    return _internal.composition_palette_reduction_internal(composition_parsed, palette_parsed)
 
 def composition_passthrough(value) -> Graph:
     """Composition Passthrough
@@ -4170,6 +4204,8 @@ __all__ = [
     "composition_nonlinear_r_g_b_blend_alpha",
     "composition_opacity_scale",
     "composition_painter",
+    "composition_palette",
+    "composition_palette_reduction",
     "composition_passthrough",
     "composition_pixelate",
     "composition_point_effect_shader",
