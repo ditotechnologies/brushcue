@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 1b6f7870882c540f8a035e8baf177eb3df3bf1d9eef16b1bd56403320722f5e4
+# hash: e13a5d2cd9baafa1b062103c96d6eb53d5e551bb8a9356015e71a46b30b0ba80
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -1154,6 +1154,21 @@ def composition_liquify(composition, amplitude, frequency) -> Graph:
     frequency_parsed = parse_float_graph(frequency)
     return _internal.composition_liquify_internal(composition_parsed, amplitude_parsed, frequency_parsed)
 
+def composition_max_color(composition) -> Graph:
+    """Composition Max Color
+
+    Computes the maximum color in a composition. Works by finding the maximum L, a and b and alpha components of an OkLabA color.
+
+    Args:
+        composition: Graph of Composition
+        
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    composition_parsed = parse_graph(composition)
+    return _internal.composition_max_color_internal(composition_parsed)
+
 def composition_median(composition, kernel_size) -> Graph:
     """Composition Median
 
@@ -1170,6 +1185,36 @@ def composition_median(composition, kernel_size) -> Graph:
     composition_parsed = parse_graph(composition)
     kernel_size_parsed = parse_int_graph(kernel_size)
     return _internal.composition_median_internal(composition_parsed, kernel_size_parsed)
+
+def composition_min_color(composition) -> Graph:
+    """Composition Min Color
+
+    Computes the minimum color in a composition. Works by finding the minimum L, a and b and alpha components of an OkLabA color.
+
+    Args:
+        composition: Graph of Composition
+        
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    composition_parsed = parse_graph(composition)
+    return _internal.composition_min_color_internal(composition_parsed)
+
+def composition_min_max_colors(composition) -> Graph:
+    """Composition Min Max Colors
+
+    Computes the minimum and maximum colors in a composition. Works by finding the minimum and maximum L, a and b and alpha components of an OkLabA color.
+
+    Args:
+        composition: Graph of Composition
+        
+
+    Returns:
+        Graph: A graph node producing a ProfiledColorList.
+    """
+    composition_parsed = parse_graph(composition)
+    return _internal.composition_min_max_colors_internal(composition_parsed)
 
 def composition_monet_women_with_parasol() -> Graph:
     """Monet's Women with a Parasol
@@ -4196,7 +4241,10 @@ __all__ = [
     "composition_lightness_threshold",
     "composition_linear_transform",
     "composition_liquify",
+    "composition_max_color",
     "composition_median",
+    "composition_min_color",
+    "composition_min_max_colors",
     "composition_monet_women_with_parasol",
     "composition_morphological_max",
     "composition_morphological_min",

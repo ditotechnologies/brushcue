@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: c2c6e93ccd770e6f474a26357d3e5601585b314d493be15f948aa97a81e388c8
+# hash: 764a24830b4fdaf19e3b647fc6578389fdb8786cd7701fcdb468bfc11fbd0d51
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -229,7 +229,13 @@ def composition_linear_transform_internal(composition: Graph, entry_0_0: Graph, 
 
 def composition_liquify_internal(composition: Graph, amplitude: Graph, frequency: Graph) -> Graph: ...
 
+def composition_max_color_internal(composition: Graph) -> Graph: ...
+
 def composition_median_internal(composition: Graph, kernel_size: Graph) -> Graph: ...
+
+def composition_min_color_internal(composition: Graph) -> Graph: ...
+
+def composition_min_max_colors_internal(composition: Graph) -> Graph: ...
 
 def composition_monet_women_with_parasol_internal() -> Graph: ...
 
