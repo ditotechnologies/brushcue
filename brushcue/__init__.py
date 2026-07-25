@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: e13a5d2cd9baafa1b062103c96d6eb53d5e551bb8a9356015e71a46b30b0ba80
+# hash: d44b48384db655798ef61d47322c7e85f76c5971b362e1db14bd71d9bfccb69b
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -2594,6 +2594,21 @@ def int_less_than_or_equal(int_1, int_2) -> Graph:
     int_2_parsed = parse_int_graph(int_2)
     return _internal.int_less_than_or_equal_internal(int_1_parsed, int_2_parsed)
 
+def int_list_first(list) -> Graph:
+    """Int List First
+
+    First Item of Int List
+
+    Args:
+        list: Graph of IntList
+        
+
+    Returns:
+        Graph: A graph node producing a Int.
+    """
+    list_parsed = parse_graph(list)
+    return _internal.int_list_first_internal(list_parsed)
+
 def int_max(int1, int2) -> Graph:
     """Int Max
 
@@ -3198,6 +3213,21 @@ def profiled_color_lightness_curve(profiled_color, l_curve) -> Graph:
     profiled_color_parsed = parse_graph(profiled_color)
     l_curve_parsed = parse_graph(l_curve)
     return _internal.profiled_color_lightness_curve_internal(profiled_color_parsed, l_curve_parsed)
+
+def profiled_color_list_first(list) -> Graph:
+    """Profiled Color List First
+
+    First Item of Profiled Color List
+
+    Args:
+        list: Graph of ProfiledColorList
+        
+
+    Returns:
+        Graph: A graph node producing a ProfiledColor.
+    """
+    list_parsed = parse_graph(list)
+    return _internal.profiled_color_list_first_internal(list_parsed)
 
 def profiled_color_saturation_adjust(profiled_color, scale) -> Graph:
     """Profiled Color Saturation Adjust
@@ -4326,6 +4356,7 @@ __all__ = [
     "int_if",
     "int_less_than",
     "int_less_than_or_equal",
+    "int_list_first",
     "int_max",
     "int_min",
     "int_multiply",
@@ -4364,6 +4395,7 @@ __all__ = [
     "profiled_color_from_xyz_a",
     "profiled_color_grayscale",
     "profiled_color_lightness_curve",
+    "profiled_color_list_first",
     "profiled_color_saturation_adjust",
     "profiled_color_target_white",
     "profiled_color_to_ok_lab_a",
