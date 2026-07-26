@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: d44b48384db655798ef61d47322c7e85f76c5971b362e1db14bd71d9bfccb69b
+# hash: c959c2fd52addd3b642b9ee3c631dd894dbb40b3f83e4c1fa62473fa1aae09d0
 # generated from templates/py_brushcue_init.jinja
 
 """
@@ -793,6 +793,21 @@ def composition_color_transformer_shader(composition, function_body, helpers, in
     output_color_representation_parsed = parse_graph(output_color_representation)
     inputs_parsed = parse_graph(inputs)
     return _internal.composition_color_transformer_shader_internal(composition_parsed, function_body_parsed, helpers_parsed, input_color_representation_parsed, output_color_representation_parsed, inputs_parsed)
+
+def composition_connected_component_boxes(composition) -> Graph:
+    """Composition Connected Component Boxes
+
+    Finds boxes with a r alpha channel value greater than 0.5 in the image. Recommended to use a binary image for this.
+
+    Args:
+        composition: Graph of Composition
+        
+
+    Returns:
+        Graph: A graph node producing a Bounds2iList.
+    """
+    composition_parsed = parse_graph(composition)
+    return _internal.composition_connected_component_boxes_internal(composition_parsed)
 
 def composition_contrast_adjustment(composition, contrast) -> Graph:
     """Composition Contrast Adjustment
@@ -4253,6 +4268,7 @@ __all__ = [
     "composition_color_representation",
     "composition_color_threshold",
     "composition_color_transformer_shader",
+    "composition_connected_component_boxes",
     "composition_contrast_adjustment",
     "composition_convolution",
     "composition_crop",
