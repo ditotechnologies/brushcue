@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: b6f81827c5b8d6432d01c3b7cd6439980cdebc216899f8b9f06d53c7a3c53068
+# hash: bbe5328d7e9fa61ee4e1776491e671e08a19091b2670e081dcce49cf98684ccb
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -44,6 +44,12 @@ class Bounds:
     width: float
     height: float
 
+class Bounds2i:
+    x: int
+    y: int
+    width: int
+    height: int
+
 class Type:
     def type_definition(self) -> TypeDefinition: ...
     def type_name(self) -> str: ...
@@ -61,6 +67,8 @@ class Type:
     def as_vector2f(self) -> tuple[float, float]: ...
     def as_rgba_color(self) -> tuple[float, float, float, float]: ...
     def as_bounds2f(self) -> Bounds: ...
+    def as_bounds2i(self) -> Bounds2i: ...
+    def as_bounds2i_list(self) -> list[Bounds2i]: ...
 
 class Graph:
     def persistent_id(self) -> int: ...
