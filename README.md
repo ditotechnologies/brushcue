@@ -30,22 +30,23 @@ import brushcue
 
 ctx = brushcue.Context()
 
-image = brushcue.load_composition("photo.png")
-grayscale = brushcue.composition_grayscale(image)
+image = brushcue.Composition.load("photo.png")
+grayscale = image.grayscale()
 
-result = grayscale.execute(ctx)
-output_bytes = result.as_composition().to_image_bytes(ctx)
+composition = grayscale.execute(ctx)
+output_bytes = composition.to_image_bytes(ctx)
 
 with open("output.png", "wb") as f:
-    f.write(bytes(output_bytes))
+    f.write(output_bytes)
 ```
 
 ## Examples
 
 All the [BrushCue tools](https://www.brushcue.com/tools) are available as examples to learn how to use our API. 
 
-- [Add Frame](https://www.brushcue.com/docs/py/examples/add-frame)
 - [Adjust Channels](https://www.brushcue.com/docs/py/examples/adjust-channels)
+- [Black and White Negative Filter](https://www.brushcue.com/docs/py/examples/black-and-white-negative-filter)
+- [Bloom](https://www.brushcue.com/docs/py/examples/bloom)
 - [Blue Channel](https://www.brushcue.com/docs/py/examples/blue-channel)
 - [Box Blur](https://www.brushcue.com/docs/py/examples/box-blur)
 - [Brightness Adjust](https://www.brushcue.com/docs/py/examples/brightness-adjust)
@@ -55,6 +56,7 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Coachella Aesthetic](https://www.brushcue.com/docs/py/examples/coachella-aesthetic)
 - [Color Invert](https://www.brushcue.com/docs/py/examples/color-invert)
 - [Color Rectangle](https://www.brushcue.com/docs/py/examples/color-rectangle)
+- [Color Reducer](https://www.brushcue.com/docs/py/examples/color-reducer)
 - [Color Threshold](https://www.brushcue.com/docs/py/examples/color-threshold)
 - [Contrast Adjust](https://www.brushcue.com/docs/py/examples/contrast-adjust)
 - [Convert to BT.709](https://www.brushcue.com/docs/py/examples/convert-to-bt-709)
@@ -85,7 +87,7 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Liquify](https://www.brushcue.com/docs/py/examples/liquify)
 - [Median Filter](https://www.brushcue.com/docs/py/examples/median-filter)
 - [Negative Filter](https://www.brushcue.com/docs/py/examples/negative-filter)
-- [Oval](https://www.brushcue.com/docs/py/examples/oval)
+- [Opacity Scale](https://www.brushcue.com/docs/py/examples/opacity-scale)
 - [Pixelate](https://www.brushcue.com/docs/py/examples/pixelate)
 - [Pixelate Reveal Animation](https://www.brushcue.com/docs/py/examples/pixelate-reveal-animation)
 - [Red Channel](https://www.brushcue.com/docs/py/examples/red-channel)
