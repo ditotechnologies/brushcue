@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 53c7c439f582c4ba52a65344c6a5230b53dbbf829ce6d796e17216a83f8c62a7
+# hash: 5ede1db42cfcabc08a2b7458c1a1b35b03f9932f93916e66a27564684ecfbd1c
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -107,19 +107,6 @@ class ColorRepresentation(_GraphWrapper):
             Graph: A graph node producing a ColorRepresentation.
         """
         result = _internal.color_representation_s_r_g_b_internal()
-
-        return ColorRepresentation(result)
-
-    @staticmethod
-    def srgb_linear() -> ColorRepresentation:
-        """Color Representation Linear sRGB
-
-        Creates a Color Representation using the linear sRGB Color Profile with linear light, straight alpha pixel values.
-    
-        Returns:
-            Graph: A graph node producing a ColorRepresentation.
-        """
-        result = _internal.color_representation_s_r_g_b_linear_internal()
 
         return ColorRepresentation(result)
 

@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 7b6a659db9c34c4671c6cee56f0238fdf35394b8c1057973b0314cbd137a779d
+# hash: e0fc2d14822f3f8fb0ad3bc16a69e001c12a552d010da7779731eb0ff08111ea
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -28,15 +28,33 @@ class ProfiledColor(_GraphWrapper):
         return self._inner.execute(context)
 
 
+    @staticmethod
+    def blackbody(kelvin) -> ProfiledColor:
+        """Profiled Color Blackbody
+
+        Creates a profiled color that is the color of a blackbody emitter at a given kelvin.
+
+        Args:
+            kelvin: Graph of Float
+
+
+        Returns:
+            Graph: A graph node producing a ProfiledColor.
+        """
+        kelvin_parsed = input_parsers.parse_float_graph(kelvin)
+        result = _internal.profiled_color_blackbody_internal(kelvin_parsed)
+
+        return ProfiledColor(result)
+
     def brightness_adjust(self, offset) -> ProfiledColor:
         """Profiled Color Brightness Adjust
 
         Adjusts a profiled color's lightness in OkLab.
-    
+
         Args:
             offset: Graph of Float
-            
-    
+
+
         Returns:
             Graph: A graph node producing a ProfiledColor.
         """
@@ -50,11 +68,11 @@ class ProfiledColor(_GraphWrapper):
         """Profiled Color Chroma Offset
 
         Applies an offset to the a and b chroma components of a profiled color in OkLab.
-    
+
         Args:
             offset: Graph of Vector2f
-            
-    
+
+
         Returns:
             Graph: A graph node producing a ProfiledColor.
         """
@@ -69,11 +87,11 @@ class ProfiledColor(_GraphWrapper):
         """Profiled Color from OkLab with Alpha
 
         Creates a profiled color from OkLab channels and alpha.
-    
+
         Args:
             ok_lab_a: Graph of OkLabA
-            
-    
+
+
         Returns:
             Graph: A graph node producing a ProfiledColor.
         """
@@ -87,11 +105,11 @@ class ProfiledColor(_GraphWrapper):
         """Profiled Color from RGBA ACEScg
 
         Creates a profiled color from linear ACEScg RGBA channels.
-    
+
         Args:
             rgba: Graph of RGBAColor
-            
-    
+
+
         Returns:
             Graph: A graph node producing a ProfiledColor.
         """
@@ -105,11 +123,11 @@ class ProfiledColor(_GraphWrapper):
         """Profiled Color from RGBA sRGB
 
         Creates a profiled color from encoded sRGB RGBA channels.
-    
+
         Args:
             rgba: Graph of RGBAColor
-            
-    
+
+
         Returns:
             Graph: A graph node producing a ProfiledColor.
         """
@@ -119,15 +137,33 @@ class ProfiledColor(_GraphWrapper):
         return ProfiledColor(result)
 
     @staticmethod
+    def from_rgba_srgb_linear(rgba) -> ProfiledColor:
+        """Profiled Color from RGBA linear sRGB
+
+        Creates a profiled color from linear sRGB RGBA channels.
+
+        Args:
+            rgba: Graph of RGBAColor
+
+
+        Returns:
+            Graph: A graph node producing a ProfiledColor.
+        """
+        rgba_parsed = input_parsers.parse_graph(rgba)
+        result = _internal.profiled_color_from_rgba_srgb_linear_internal(rgba_parsed)
+
+        return ProfiledColor(result)
+
+    @staticmethod
     def from_xyz_a(xyza) -> ProfiledColor:
         """Profiled Color from XYZ with Alpha
 
         Creates a profiled color from XYZ channels and alpha.
-    
+
         Args:
             xyza: Graph of XYZA
-            
-    
+
+
         Returns:
             Graph: A graph node producing a ProfiledColor.
         """
@@ -140,7 +176,7 @@ class ProfiledColor(_GraphWrapper):
         """Profiled Color Grayscale
 
         Removes chroma from a profiled color.
-    
+
         Returns:
             Graph: A graph node producing a ProfiledColor.
         """
@@ -153,11 +189,11 @@ class ProfiledColor(_GraphWrapper):
         """Profiled Color Lightness Curve
 
         Applies a curve to the L component of a profiled color in OkLab.
-    
+
         Args:
             l_curve: Graph of Curve
-            
-    
+
+
         Returns:
             Graph: A graph node producing a ProfiledColor.
         """
@@ -171,11 +207,11 @@ class ProfiledColor(_GraphWrapper):
         """Profiled Color Saturation Adjust
 
         Scales the chroma components of a profiled color in OkLab.
-    
+
         Args:
             scale: Graph of Float
-            
-    
+
+
         Returns:
             Graph: A graph node producing a ProfiledColor.
         """
@@ -189,11 +225,11 @@ class ProfiledColor(_GraphWrapper):
         """Profiled Color Target White
 
         Adapts a profiled color to the specified XYZ white point.
-    
+
         Args:
             target_white: Graph of XYZ
-            
-    
+
+
         Returns:
             Graph: A graph node producing a ProfiledColor.
         """
@@ -207,7 +243,7 @@ class ProfiledColor(_GraphWrapper):
         """Profiled Color to OkLab with Alpha
 
         Converts a profiled color to OkLab channels with alpha.
-    
+
         Returns:
             Graph: A graph node producing a OkLabA.
         """
@@ -217,16 +253,21 @@ class ProfiledColor(_GraphWrapper):
         from .ok_lab_a import OkLabA
         return OkLabA(result)
 
-    def to_rgb_encoded_with_in_color_profile(self) -> r_g_b_a_color.RGBAColor:
-        """Profiled Color to Encoded RGB in Input Color Profile
+    def to_rgb_encoded_with_color_profile(self, color_profile) -> r_g_b_a_color.RGBAColor:
+        """Profiled Color to Encoded RGB with Color Profile
 
-        Converts a profiled color to encoded RGB channels in its input color profile. The input color profile must be RGB.
-    
+        Converts a profiled color to encoded RGB channels using the specified RGB color profile.
+
+        Args:
+            color_profile: Graph of ColorProfile
+
+
         Returns:
             Graph: A graph node producing a RGBAColor.
         """
         profiled_color_parsed = input_parsers.parse_graph(self)
-        result = _internal.profiled_color_to_rgb_encoded_with_in_color_profile_internal(profiled_color_parsed)
+        color_profile_parsed = input_parsers.parse_graph(color_profile)
+        result = _internal.profiled_color_to_rgb_encoded_with_color_profile_internal(profiled_color_parsed, color_profile_parsed)
 
         from .r_g_b_a_color import RGBAColor
         return RGBAColor(result)
@@ -235,7 +276,7 @@ class ProfiledColor(_GraphWrapper):
         """Profiled Color to XYZ with Alpha
 
         Converts a profiled color to XYZ channels with alpha.
-    
+
         Returns:
             Graph: A graph node producing a XYZA.
         """
@@ -244,4 +285,3 @@ class ProfiledColor(_GraphWrapper):
 
         from .x_y_z_a import XYZA
         return XYZA(result)
-

@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 9bc444dd39b0a3776c9c94a2430291ef28f2252dc2fe0608307bf1840da2a5c0
+# hash: 3c969a0a41917c9fc05254243cead9aab330b057ce3aa3edd1be197f4c80b6e6
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -94,19 +94,6 @@ class ColorProfile(_GraphWrapper):
             Graph: A graph node producing a ColorProfile.
         """
         result = _internal.color_profile_s_r_g_b_internal()
-
-        return ColorProfile(result)
-
-    @staticmethod
-    def srgb_linear() -> ColorProfile:
-        """Color Profile Linear sRGB
-
-        Creates a linear sRGB Color Profile
-    
-        Returns:
-            Graph: A graph node producing a ColorProfile.
-        """
-        result = _internal.color_profile_s_r_g_b_linear_internal()
 
         return ColorProfile(result)
 
