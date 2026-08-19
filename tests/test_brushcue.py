@@ -51,3 +51,32 @@ def test_rgba_color_result_as_tuple():
         abs(actual - expected) < 0.000001
         for actual, expected in zip(result, (0.1, 0.2, 0.3, 0.4))
     )
+
+
+def test_profiled_color_to_ok_lab_a_result_as_tuple():
+    ctx = brushcue.Context()
+    profiled_color = brushcue.ProfiledColor.from_rgba_srgb(
+        brushcue.RGBAColor.from_components(1.0, 0.0, 0.0, 0.4)
+    )
+
+    result = profiled_color.to_ok_lab_a().execute(ctx)
+
+    assert len(result) == 4
+    assert all(isinstance(component, float) for component in result)
+    assert abs(result[3] - 0.4) < 0.000001
+
+
+def test_profiled_color_to_rgb_linear_with_color_profile():
+    ctx = brushcue.Context()
+    profiled_color = brushcue.ProfiledColor.from_rgba_srgb(
+        brushcue.RGBAColor.from_components(0.5, 0.0, 1.0, 0.4)
+    )
+
+    result = profiled_color.to_rgb_linear_with_color_profile(
+        brushcue.ColorProfile.srgb()
+    ).execute(ctx)
+
+    assert abs(result[0] - 0.21404114) < 0.00001
+    assert abs(result[1]) < 0.000001
+    assert abs(result[2] - 1.0) < 0.000001
+    assert abs(result[3] - 0.4) < 0.000001

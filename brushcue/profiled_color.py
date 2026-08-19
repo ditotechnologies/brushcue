@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: e0fc2d14822f3f8fb0ad3bc16a69e001c12a552d010da7779731eb0ff08111ea
+# hash: 3af29ba9cbd1acafd37c9707670b98007ea930f9d66d42a7dc910cf761134820
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -79,6 +79,24 @@ class ProfiledColor(_GraphWrapper):
         profiled_color_parsed = input_parsers.parse_graph(self)
         offset_parsed = input_parsers.parse_graph(offset)
         result = _internal.profiled_color_chroma_offset_internal(profiled_color_parsed, offset_parsed)
+
+        return ProfiledColor(result)
+
+    def exposure_adjust(self, steps) -> ProfiledColor:
+        """Profiled Color Exposure Adjust
+
+        Updates a profiled color's exposure by multiplying linear RGB values by 2^steps.
+
+        Args:
+            steps: Graph of Float
+
+
+        Returns:
+            Graph: A graph node producing a ProfiledColor.
+        """
+        profiled_color_parsed = input_parsers.parse_graph(self)
+        steps_parsed = input_parsers.parse_float_graph(steps)
+        result = _internal.profiled_color_exposure_adjust_internal(profiled_color_parsed, steps_parsed)
 
         return ProfiledColor(result)
 
@@ -268,6 +286,25 @@ class ProfiledColor(_GraphWrapper):
         profiled_color_parsed = input_parsers.parse_graph(self)
         color_profile_parsed = input_parsers.parse_graph(color_profile)
         result = _internal.profiled_color_to_rgb_encoded_with_color_profile_internal(profiled_color_parsed, color_profile_parsed)
+
+        from .r_g_b_a_color import RGBAColor
+        return RGBAColor(result)
+
+    def to_rgb_linear_with_color_profile(self, color_profile) -> r_g_b_a_color.RGBAColor:
+        """Profiled Color to Linear RGB with Color Profile
+
+        Converts a profiled color to linear RGB channels using the specified RGB color profile.
+
+        Args:
+            color_profile: Graph of ColorProfile
+
+
+        Returns:
+            Graph: A graph node producing a RGBAColor.
+        """
+        profiled_color_parsed = input_parsers.parse_graph(self)
+        color_profile_parsed = input_parsers.parse_graph(color_profile)
+        result = _internal.profiled_color_to_rgb_linear_with_color_profile_internal(profiled_color_parsed, color_profile_parsed)
 
         from .r_g_b_a_color import RGBAColor
         return RGBAColor(result)
