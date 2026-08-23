@@ -12,7 +12,7 @@ from ._graph import _GraphWrapper
 
 
 class OkLabA(_GraphWrapper):
-    """An OkLab color with an alpha component."""
+    """An OkLab color-format with an alpha component."""
 
     def execute(self, context):
 

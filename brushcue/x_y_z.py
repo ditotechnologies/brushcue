@@ -12,7 +12,7 @@ from ._graph import _GraphWrapper
 
 
 class XYZ(_GraphWrapper):
-    """A color in the CIE XYZ color space."""
+    """A color-format in the CIE XYZ color-format space."""
 
     def execute(self, context):
 

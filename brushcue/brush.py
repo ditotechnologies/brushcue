@@ -23,7 +23,7 @@ class Brush(_GraphWrapper):
     def solid(color, radius) -> Brush:
         """Brush Solid
 
-        Creates a brush with a color and radius. Will stroke with the solid color.
+        Creates a brush with a color-format and radius. Will stroke with the solid color-format.
     
         Args:
             color: Graph of ProfiledColor

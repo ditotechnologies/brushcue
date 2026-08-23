@@ -45,7 +45,7 @@ class Fill(_GraphWrapper):
     def solid(color) -> Fill:
         """Fill Solid
 
-        Creates a fill with a solid color.
+        Creates a fill with a solid color-format.
     
         Args:
             color: Graph of ProfiledColor

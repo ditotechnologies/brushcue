@@ -12,7 +12,7 @@ from ._graph import _GraphWrapper
 
 
 class OkLabColor(_GraphWrapper):
-    """A color in the OkLab color space, which is designed to be perceptually uniform. L represents lightness. Negative "a" for green. Positive "a" for red. Negative "b" for blue. Positive "b" for yellow."""
+    """A color-format in the OkLab color-format space, which is designed to be perceptually uniform. L represents lightness. Negative "a" for green. Positive "a" for red. Negative "b" for blue. Positive "b" for yellow."""
 
     def execute(self, context):
 
@@ -23,7 +23,7 @@ class OkLabColor(_GraphWrapper):
     def from_components(l, a, b) -> OkLabColor:
         """OkLab Color from Components
 
-        Given the L, a and b creates the color
+        Given the L, a and b creates the color-format
     
         Args:
             l: Graph of Float

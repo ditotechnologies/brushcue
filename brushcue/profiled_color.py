@@ -21,7 +21,7 @@ if TYPE_CHECKING:
 
 
 class ProfiledColor(_GraphWrapper):
-    """A color with an associated color representation."""
+    """A color-format with an associated color-format representation."""
 
     def execute(self, context):
 
@@ -32,7 +32,7 @@ class ProfiledColor(_GraphWrapper):
     def blackbody(kelvin) -> ProfiledColor:
         """Profiled Color Blackbody
 
-        Creates a profiled color that is the color of a blackbody emitter at a given kelvin.
+        Creates a profiled color-format that is the color-format of a blackbody emitter at a given kelvin.
 
         Args:
             kelvin: Graph of Float
@@ -49,7 +49,7 @@ class ProfiledColor(_GraphWrapper):
     def brightness_adjust(self, offset) -> ProfiledColor:
         """Profiled Color Brightness Adjust
 
-        Adjusts a profiled color's lightness in OkLab.
+        Adjusts a profiled color-format's lightness in OkLab.
 
         Args:
             offset: Graph of Float
@@ -67,7 +67,7 @@ class ProfiledColor(_GraphWrapper):
     def chroma_offset(self, offset) -> ProfiledColor:
         """Profiled Color Chroma Offset
 
-        Applies an offset to the a and b chroma components of a profiled color in OkLab.
+        Applies an offset to the a and b chroma components of a profiled color-format in OkLab.
 
         Args:
             offset: Graph of Vector2f
@@ -85,7 +85,7 @@ class ProfiledColor(_GraphWrapper):
     def exposure_adjust(self, steps) -> ProfiledColor:
         """Profiled Color Exposure Adjust
 
-        Updates a profiled color's exposure by multiplying linear RGB values by 2^steps.
+        Updates a profiled color-format's exposure by multiplying linear RGB values by 2^steps.
 
         Args:
             steps: Graph of Float
@@ -104,7 +104,7 @@ class ProfiledColor(_GraphWrapper):
     def from_ok_lab_a(ok_lab_a) -> ProfiledColor:
         """Profiled Color from OkLab with Alpha
 
-        Creates a profiled color from OkLab channels and alpha.
+        Creates a profiled color-format from OkLab channels and alpha.
 
         Args:
             ok_lab_a: Graph of OkLabA
@@ -122,7 +122,7 @@ class ProfiledColor(_GraphWrapper):
     def from_rgba_aces_cg(rgba) -> ProfiledColor:
         """Profiled Color from RGBA ACEScg
 
-        Creates a profiled color from linear ACEScg RGBA channels.
+        Creates a profiled color-format from linear ACEScg RGBA channels.
 
         Args:
             rgba: Graph of RGBAColor
@@ -140,7 +140,7 @@ class ProfiledColor(_GraphWrapper):
     def from_rgba_srgb(rgba) -> ProfiledColor:
         """Profiled Color from RGBA sRGB
 
-        Creates a profiled color from encoded sRGB RGBA channels.
+        Creates a profiled color-format from encoded sRGB RGBA channels.
 
         Args:
             rgba: Graph of RGBAColor
@@ -158,7 +158,7 @@ class ProfiledColor(_GraphWrapper):
     def from_rgba_srgb_linear(rgba) -> ProfiledColor:
         """Profiled Color from RGBA linear sRGB
 
-        Creates a profiled color from linear sRGB RGBA channels.
+        Creates a profiled color-format from linear sRGB RGBA channels.
 
         Args:
             rgba: Graph of RGBAColor
@@ -176,7 +176,7 @@ class ProfiledColor(_GraphWrapper):
     def from_xyz_a(xyza) -> ProfiledColor:
         """Profiled Color from XYZ with Alpha
 
-        Creates a profiled color from XYZ channels and alpha.
+        Creates a profiled color-format from XYZ channels and alpha.
 
         Args:
             xyza: Graph of XYZA
@@ -193,7 +193,7 @@ class ProfiledColor(_GraphWrapper):
     def grayscale(self) -> ProfiledColor:
         """Profiled Color Grayscale
 
-        Removes chroma from a profiled color.
+        Removes chroma from a profiled color-format.
 
         Returns:
             Graph: A graph node producing a ProfiledColor.
@@ -206,7 +206,7 @@ class ProfiledColor(_GraphWrapper):
     def lightness_curve(self, l_curve) -> ProfiledColor:
         """Profiled Color Lightness Curve
 
-        Applies a curve to the L component of a profiled color in OkLab.
+        Applies a curve to the L component of a profiled color-format in OkLab.
 
         Args:
             l_curve: Graph of Curve
@@ -224,7 +224,7 @@ class ProfiledColor(_GraphWrapper):
     def saturation_adjust(self, scale) -> ProfiledColor:
         """Profiled Color Saturation Adjust
 
-        Scales the chroma components of a profiled color in OkLab.
+        Scales the chroma components of a profiled color-format in OkLab.
 
         Args:
             scale: Graph of Float
@@ -242,7 +242,7 @@ class ProfiledColor(_GraphWrapper):
     def target_white(self, target_white) -> ProfiledColor:
         """Profiled Color Target White
 
-        Adapts a profiled color to the specified XYZ white point.
+        Adapts a profiled color-format to the specified XYZ white point.
 
         Args:
             target_white: Graph of XYZ
@@ -260,7 +260,7 @@ class ProfiledColor(_GraphWrapper):
     def to_ok_lab_a(self) -> ok_lab_a.OkLabA:
         """Profiled Color to OkLab with Alpha
 
-        Converts a profiled color to OkLab channels with alpha.
+        Converts a profiled color-format to OkLab channels with alpha.
 
         Returns:
             Graph: A graph node producing a OkLabA.
@@ -274,7 +274,7 @@ class ProfiledColor(_GraphWrapper):
     def to_rgb_encoded_with_color_profile(self, color_profile) -> r_g_b_a_color.RGBAColor:
         """Profiled Color to Encoded RGB with Color Profile
 
-        Converts a profiled color to encoded RGB channels using the specified RGB color profile.
+        Converts a profiled color-format to encoded RGB channels using the specified RGB color-format profile.
 
         Args:
             color_profile: Graph of ColorProfile
@@ -293,7 +293,7 @@ class ProfiledColor(_GraphWrapper):
     def to_rgb_linear_with_color_profile(self, color_profile) -> r_g_b_a_color.RGBAColor:
         """Profiled Color to Linear RGB with Color Profile
 
-        Converts a profiled color to linear RGB channels using the specified RGB color profile.
+        Converts a profiled color-format to linear RGB channels using the specified RGB color-format profile.
 
         Args:
             color_profile: Graph of ColorProfile
@@ -312,7 +312,7 @@ class ProfiledColor(_GraphWrapper):
     def to_xyz_a(self) -> x_y_z_a.XYZA:
         """Profiled Color to XYZ with Alpha
 
-        Converts a profiled color to XYZ channels with alpha.
+        Converts a profiled color-format to XYZ channels with alpha.
 
         Returns:
             Graph: A graph node producing a XYZA.

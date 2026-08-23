@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 
 
 class OkLabHist(_GraphWrapper):
-    """A histogram in various dimensions over the OkLab color space."""
+    """A histogram in various dimensions over the OkLab color-format space."""
 
     def execute(self, context):
 

@@ -12,7 +12,7 @@ from ._graph import _GraphWrapper
 
 
 class XYZA(_GraphWrapper):
-    """A CIE XYZ color with an alpha component."""
+    """A CIE XYZ color-format with an alpha component."""
 
     def execute(self, context):
 

@@ -49,7 +49,7 @@ class ColorProfile(_GraphWrapper):
     def ok_lab_a() -> ColorProfile:
         """Color Profile OkLabA
 
-        Creates an OkLabA color profile. OkLab with also an alpha component.
+        Creates an OkLabA color-format profile. OkLab with also an alpha component.
     
         Returns:
             Graph: A graph node producing a ColorProfile.
@@ -75,7 +75,7 @@ class ColorProfile(_GraphWrapper):
     def png_srgb() -> ColorProfile:
         """Color Profile PNG sRGB
 
-        Creates a color profile that is the same one as PNG sRGB.
+        Creates a color-format profile that is the same one as PNG sRGB.
     
         Returns:
             Graph: A graph node producing a ColorProfile.

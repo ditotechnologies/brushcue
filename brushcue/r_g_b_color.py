@@ -12,7 +12,7 @@ from ._graph import _GraphWrapper
 
 
 class RGBColor(_GraphWrapper):
-    """A color with a red, green and blue component"""
+    """A color-format with a red, green and blue component"""
 
     def execute(self, context):
 
@@ -23,7 +23,7 @@ class RGBColor(_GraphWrapper):
     def from_components(r, g, b) -> RGBColor:
         """RGB Color from Components
 
-        Given the r, g and b creates the color
+        Given the r, g and b creates the color-format
     
         Args:
             r: Graph of Float

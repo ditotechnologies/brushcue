@@ -12,7 +12,7 @@ from ._graph import _GraphWrapper
 
 
 class RGBAColor(_GraphWrapper):
-    """A color with a red, green, blue, and alpha component"""
+    """A color-format with a red, green, blue, and alpha component"""
 
     def execute(self, context):
 
@@ -23,7 +23,7 @@ class RGBAColor(_GraphWrapper):
     def from_components(r, g, b, a) -> RGBAColor:
         """RGBA Color from Components
 
-        Given the r, g, b and a creates the color
+        Given the r, g, b and a creates the color-format
     
         Args:
             r: Graph of Float

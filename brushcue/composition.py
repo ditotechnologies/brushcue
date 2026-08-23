@@ -289,7 +289,7 @@ class Composition(_GraphWrapper):
     def color_convert(self, color_profile) -> Composition:
         """Composition Color Convert
 
-        Converts a Composition from one color space to another.
+        Converts a Composition from one color-format space to another.
     
         Args:
             color_profile: Graph of ColorProfile
@@ -307,7 +307,7 @@ class Composition(_GraphWrapper):
     def color_invert(self) -> Composition:
         """Composition Color Invert
 
-        Applies a color invert operation to a composition. Taking 1 and subtracting each RGB operation against it. Works in linear color.
+        Applies a color-format invert operation to a composition. Taking 1 and subtracting each RGB operation against it. Works in linear color-format.
     
         Returns:
             Graph: A graph node producing a Composition.
@@ -320,7 +320,7 @@ class Composition(_GraphWrapper):
     def color_representation(self) -> color_representation.ColorRepresentation:
         """Composition Color Representation
 
-        Gets the color representation associated with a Composition
+        Gets the color-format representation associated with a Composition
     
         Returns:
             Graph: A graph node producing a ColorRepresentation.
@@ -334,7 +334,7 @@ class Composition(_GraphWrapper):
     def color_threshold(self, threshold) -> Composition:
         """Composition Color Threshold
 
-        Applies a color threshold to a Composition
+        Applies a color-format threshold to a Composition
     
         Args:
             threshold: Graph of Float
@@ -352,7 +352,7 @@ class Composition(_GraphWrapper):
     def color_transformer_shader(self, function_body, helpers, input_color_representation, output_color_representation, inputs) -> Composition:
         """Composition Color Transformer Shader
 
-        Defines a custom shader that takes an input color and then transforms that color to an output color.
+        Defines a custom shader that takes an input color-format and then transforms that color-format to an output color-format.
     
         Args:
             function_body: Graph of String
@@ -450,7 +450,7 @@ class Composition(_GraphWrapper):
     def duotone(self, threshold, color_1, color_2) -> Composition:
         """Composition Duotone
 
-        Creates a duotone effect. Colors below the threshold will be color 1, colors above will be color 2.
+        Creates a duotone effect. Colors below the threshold will be color-format 1, colors above will be color-format 2.
     
         Args:
             threshold: Graph of Float
@@ -595,7 +595,7 @@ class Composition(_GraphWrapper):
     def halftone(self, pixel_size, foreground_color, background_color) -> Composition:
         """Composition Halftone
 
-        Applies a halftone effect to a composition, tiling it into cells and painting a foreground-colored dot in each cell whose radius grows as the cell darkens, over a background color.
+        Applies a halftone effect to a composition, tiling it into cells and painting a foreground-colored dot in each cell whose radius grows as the cell darkens, over a background color-format.
     
         Args:
             pixel_size: Graph of Int
@@ -663,7 +663,7 @@ class Composition(_GraphWrapper):
     def l_curve(self, l_curve) -> Composition:
         """Composition Lightness Curve
 
-        Applies a curve to the L component in an OkLab color. Adjusting the lightness of the image.
+        Applies a curve to the L component in an OkLab color-format. Adjusting the lightness of the image.
     
         Args:
             l_curve: Graph of Curve
@@ -699,7 +699,7 @@ class Composition(_GraphWrapper):
     def linear_transform(self, entry_0_0, entry_0_1, entry_0_2, entry_0_3, entry_1_0, entry_1_1, entry_1_2, entry_1_3, entry_2_0, entry_2_1, entry_2_2, entry_2_3, entry_3_0, entry_3_1, entry_3_2, entry_3_3) -> Composition:
         """Composition RGBA Linear Transform
 
-        Applies a linear transform to a Composition's RGBA values. Before application, will convert to a linear version of the color profile and will convert to an RGB profile if needed.
+        Applies a linear transform to a Composition's RGBA values. Before application, will convert to a linear version of the color-format profile and will convert to an RGB profile if needed.
     
         Args:
             entry_0_0: Graph of Float
@@ -767,7 +767,7 @@ class Composition(_GraphWrapper):
     def max_color(self) -> profiled_color.ProfiledColor:
         """Composition Max Color
 
-        Computes the maximum color in a composition. Works by finding the maximum L, a and b and alpha components of an OkLabA color.
+        Computes the maximum color-format in a composition. Works by finding the maximum L, a and b and alpha components of an OkLabA color-format.
     
         Returns:
             Graph: A graph node producing a ProfiledColor.
@@ -799,7 +799,7 @@ class Composition(_GraphWrapper):
     def min_color(self) -> profiled_color.ProfiledColor:
         """Composition Min Color
 
-        Computes the minimum color in a composition. Works by finding the minimum L, a and b and alpha components of an OkLabA color.
+        Computes the minimum color-format in a composition. Works by finding the minimum L, a and b and alpha components of an OkLabA color-format.
     
         Returns:
             Graph: A graph node producing a ProfiledColor.
@@ -813,7 +813,7 @@ class Composition(_GraphWrapper):
     def min_max_colors(self) -> profiled_color_list.ProfiledColorList:
         """Composition Min Max Colors
 
-        Computes the minimum and maximum colors in a composition. Works by finding the minimum and maximum L, a and b and alpha components of an OkLabA color.
+        Computes the minimum and maximum colors in a composition. Works by finding the minimum and maximum L, a and b and alpha components of an OkLabA color-format.
     
         Returns:
             Graph: A graph node producing a ProfiledColorList.
@@ -1139,7 +1139,7 @@ class Composition(_GraphWrapper):
     def saturation_adjust(self, scale) -> Composition:
         """Composition Saturation Adjust
 
-        Adjusts the saturation of an image by a given factor. Internally, scales the chroma components in OkLab color space.
+        Adjusts the saturation of an image by a given factor. Internally, scales the chroma components in OkLab color-format space.
     
         Args:
             scale: Graph of Float
@@ -1334,7 +1334,7 @@ class Composition(_GraphWrapper):
     def vibrance_adjustment(self, strength) -> Composition:
         """Composition Vibrance Adjustment
 
-        Adjusts the vibrance of an image by a given strength. Internally, boosts chroma in OkLab color space adaptively, applying more boost to less saturated colors.
+        Adjusts the vibrance of an image by a given strength. Internally, boosts chroma in OkLab color-format space adaptively, applying more boost to less saturated colors.
     
         Args:
             strength: Graph of Float
