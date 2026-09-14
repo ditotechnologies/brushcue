@@ -1,21 +1,18 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: f023b8bcb746f6359523a27feb1397caf118476beb447c81940a98b3d4b7653e
+# hash: 25981bf9a76a659411b462ab35f2c7c1dbeaf56899fcbd8d51870763a575ad08
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
-from . import _py as _internal, input_parsers
-from ._graph import _GraphWrapper
+from .list import List
 
 
-
-class FloatList(_GraphWrapper):
+class FloatList(List):
     """List of Floats"""
 
+    def __init__(self, inner, resolved_type=None):
+        from .float import Float
+        super().__init__(inner, Float if resolved_type is None else resolved_type)
+
     def execute(self, context):
-
         return self._inner.execute(context).as_float_list()
-
-

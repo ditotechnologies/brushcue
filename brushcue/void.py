@@ -1,21 +1,14 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 927aee3be54605af804315c9e0e855ed3d1185c657d9dd38fa02af7de8c89101
+# hash: 86650ab5251543b2e528175bbf8d832b0be86208f57acf761168e6e5b29b34cc
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
-from . import _py as _internal, input_parsers
-from ._graph import _GraphWrapper
+from .object import Object
 
 
-
-class Void(_GraphWrapper):
+class Void(Object):
     """The absence of a value"""
 
     def execute(self, context):
-
         return self._inner.execute(context)
-
-

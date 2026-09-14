@@ -1,21 +1,18 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 8b4ef8cca9355564fb4ffca87ac7827d50b6c04cc6e5e17baa3724f66633a0d3
+# hash: f5e2f528c1049be15950a1183a7572e6267ccfd1bdc7ee3c7fd617b6327b35d9
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
-from . import _py as _internal, input_parsers
-from ._graph import _GraphWrapper
+from .list import List
 
 
-
-class Bounds2iList(_GraphWrapper):
+class Bounds2iList(List):
     """List of Bounds 2D Ints"""
 
+    def __init__(self, inner, resolved_type=None):
+        from .bounds2i import Bounds2i
+        super().__init__(inner, Bounds2i if resolved_type is None else resolved_type)
+
     def execute(self, context):
-
         return self._inner.execute(context)
-
-

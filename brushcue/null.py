@@ -1,21 +1,14 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: be75f93921a50c8ffe457832ef886367117c06df2b12c601efcf7ae67008d1be
+# hash: 247c4d43f8034972ad8ec898a164835c684b390b72d52a72cc5d1db886bf718b
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
-from . import _py as _internal, input_parsers
-from ._graph import _GraphWrapper
+from .object import Object
 
 
-
-class Null(_GraphWrapper):
+class Null(Object):
     """An unconnected input"""
 
     def execute(self, context):
-
         return self._inner.execute(context)
-
-

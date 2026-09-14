@@ -1,21 +1,18 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 0390aec689f4e8e7c5b4258f00a03623bff8d2b854ca932ef6286a95ac9c28d4
+# hash: ebcefe7b135fb0bbd8a7f964c720e2462a3c7f49bac67a8a37694275391f3588
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
-from . import _py as _internal, input_parsers
-from ._graph import _GraphWrapper
+from .list import List
 
 
-
-class Transform2List(_GraphWrapper):
+class Transform2List(List):
     """List of Transform 2Ds"""
 
+    def __init__(self, inner, resolved_type=None):
+        from .transform2 import Transform2
+        super().__init__(inner, Transform2 if resolved_type is None else resolved_type)
+
     def execute(self, context):
-
         return self._inner.execute(context)
-
-

@@ -4,6 +4,26 @@ import tempfile
 import brushcue
 
 
+def test_typed_input_uses_requested_python_graph_type():
+    int_definition = brushcue.TypeDefinition.from_name("Int")
+
+    input_graph = brushcue.Object.input(int_definition)
+
+    assert isinstance(input_graph, brushcue.Int)
+    assert int_definition.name == "Int"
+    assert brushcue.TypeDefinition.from_id(int_definition.type_id).name == "Int"
+
+
+def test_composition_input_can_build_composition_nodes():
+    composition_definition = brushcue.TypeDefinition.from_name("Composition")
+
+    input_graph = brushcue.Object.input(composition_definition)
+    flipped = input_graph.flip_horizontal()
+
+    assert isinstance(input_graph, brushcue.Composition)
+    assert isinstance(flipped, brushcue.Composition)
+
+
 def test_monet_women_with_parasol_grayscale():
     ctx = brushcue.Context()
     image = brushcue.Composition.monet_women_with_parasol()
@@ -51,6 +71,19 @@ def test_rgba_color_result_as_tuple():
         abs(actual - expected) < 0.000001
         for actual, expected in zip(result, (0.1, 0.2, 0.3, 0.4))
     )
+
+
+def test_lmsa_color_result_as_tuple():
+    ctx = brushcue.Context()
+    profiled_color = brushcue.ProfiledColor.from_rgba_srgb(
+        brushcue.RGBAColor.from_components(0.1, 0.2, 0.3, 0.4)
+    )
+
+    result = profiled_color.to_lmsa().execute(ctx)
+
+    assert len(result) == 4
+    assert all(isinstance(component, float) for component in result)
+    assert abs(result[3] - 0.4) < 0.000001
 
 
 def test_profiled_color_to_ok_lab_a_result_as_tuple():

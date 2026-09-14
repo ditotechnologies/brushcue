@@ -1,56 +1,18 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 54f69da2079bad7d4038c8c6957703742284de303468c8e07890cb8ee86c2a0a
+# hash: ee38f04587993d7bf0a9a1f51fa57f70367fecf65c957b1b066256a4238160de
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
-from . import _py as _internal, input_parsers
-from ._graph import _GraphWrapper
+from .list import List
 
 
-if TYPE_CHECKING:
-
-    from . import point2f
-
-    from . import point2f_stream
-
-
-
-class Point2fList(_GraphWrapper):
+class Point2fList(List):
     """List of Point 2 Floats"""
 
-    def execute(self, context):
-
-        return self._inner.execute(context)
-
-
-    def first(self) -> point2f.Point2f:
-        """Point 2 Float List First
-
-        First Item of Point 2 Float List
-    
-        Returns:
-            Graph: A graph node producing a Point2f.
-        """
-        list_parsed = input_parsers.parse_graph(self)
-        result = _internal.point2f_list_first_internal(list_parsed)
-
+    def __init__(self, inner, resolved_type=None):
         from .point2f import Point2f
-        return Point2f(result)
+        super().__init__(inner, Point2f if resolved_type is None else resolved_type)
 
-    def to_stream(self) -> point2f_stream.Point2fStream:
-        """Point 2 Float List to Stream
-
-        Converts Point 2 Float list to a stream
-    
-        Returns:
-            Graph: A graph node producing a Point2fStream.
-        """
-        list_parsed = input_parsers.parse_graph(self)
-        result = _internal.point2f_list_to_stream_internal(list_parsed)
-
-        from .point2f_stream import Point2fStream
-        return Point2fStream(result)
-
+    def execute(self, context):
+        return self._inner.execute(context)

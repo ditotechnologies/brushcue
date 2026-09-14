@@ -1,21 +1,14 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 9f046bca0ff6f397459c16465bb120a802dc04b7fe6db87bcb4ec56e12ffb460
+# hash: 724bb1393d59f945829e1e3b1be8fcdf856a77fd0184d0d349d595ffab47f37d
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
-from . import _py as _internal, input_parsers
-from ._graph import _GraphWrapper
+from .object import Object
 
 
-
-class XYZ(_GraphWrapper):
+class XYZ(Object):
     """A color-format in the CIE XYZ color-format space."""
 
     def execute(self, context):
-
         return self._inner.execute(context)
-
-
