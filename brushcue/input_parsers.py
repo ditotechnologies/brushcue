@@ -55,6 +55,16 @@ def parse_bool_graph(x) -> _py.Graph:
         raise TypeError(f"Expected Graph or bool, got {type(x)}")
 
 def parse_graph(x) -> _py.Graph:
+    """Parses an input of unknown type, turning plain Python values into constant graphs."""
+    # bool is a subclass of int, so it has to be checked first.
+    if isinstance(x, bool):
+        return bool_constant_internal(x)
+    elif isinstance(x, int):
+        return int_constant_internal(x)
+    elif isinstance(x, float):
+        return float_constant_internal(x)
+    elif isinstance(x, str):
+        return string_constant_internal(x)
     return unwrap_graph(x)
 
 

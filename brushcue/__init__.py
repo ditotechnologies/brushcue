@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: b32c3a2eb2fc5e2b1306610a060d9a8d9831dbb3edc9a49486ceef47a857b880
+# hash: 9683b5e920c2c36326077a6ff7034842c3a85b76f724213222b010a7c91e41b2
 # generated from templates/py_brushcue_init.jinja
 
 from __future__ import annotations
@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from . import _py as _internal
 from ._graph import Project
+from .fn import brushcue_fn
 from ._py import (
     Bounds,
     Context,
@@ -157,7 +158,7 @@ from ._operators import setup_operators
 setup_operators()
 
 __all__ = [
-    "Context", "Project", "ImageRecipe", "MovieRecipe", "Bounds", "TypeDefinition",
+    "Context", "Project", "brushcue_fn", "ImageRecipe", "MovieRecipe", "Bounds", "TypeDefinition",
 
     "float_list_empty",
 
@@ -170,7 +171,6 @@ __all__ = [
     "point2i_list_empty",
 
     "string_list_empty",
-
 
     "Bool",
 
@@ -269,5 +269,4 @@ __all__ = [
     "List",
 
     "Object",
-
 ]

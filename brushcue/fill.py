@@ -38,7 +38,7 @@ class Fill(Object):
     def solid(color) -> Fill:
         """Fill Solid
 
-        Creates a fill with a solid color-format.
+        Creates a fill with a solid color.
 
         Args:
             color: Graph of ProfiledColor

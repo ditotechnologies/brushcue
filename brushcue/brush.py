@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 7c30a70b82b7adf2f9698d5f4f2a813963cf0b4d4f0d620f8321c46df85a0e37
+# hash: eee61e5042d9a6d1d7f2d36f361cacc078da78022d5535c1c47f7574df561089
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -15,10 +15,32 @@ class Brush(Object):
         return self._inner.execute(context)
 
     @staticmethod
+    def custom(function_body, helpers, inputs, radius) -> Brush:
+        """Brush Custom
+
+        Creates a brush with a custom shader.
+
+        Args:
+            function_body: Graph of String
+            helpers: Graph of String
+            inputs: Graph of Dictionary
+            radius: Graph of Float
+
+        Returns:
+            Graph: A graph node producing a Brush.
+        """
+        function_body_parsed = input_parsers.parse_string_graph(function_body)
+        helpers_parsed = input_parsers.parse_string_graph(helpers)
+        inputs_parsed = input_parsers.parse_graph(inputs)
+        radius_parsed = input_parsers.parse_float_graph(radius)
+        result = _internal.brush_custom_internal(function_body_parsed, helpers_parsed, inputs_parsed, radius_parsed)
+        return Brush(result)
+
+    @staticmethod
     def solid(color, radius) -> Brush:
         """Brush Solid
 
-        Creates a brush with a color-format and radius. Will stroke with the solid color-format.
+        Creates a brush with a color and radius. Will stroke with the solid color.
 
         Args:
             color: Graph of ProfiledColor

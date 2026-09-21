@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 3128d6461c9f05c083d8dbc5df56001fdd116968e6be8a0a11588f8cf1ccf517
+# hash: f78b954de8710bd2cc14263f52e684846fb2960f391866f8c5fe09f5e6d38ae5
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -22,29 +22,33 @@ class AnyGraph(_GraphWrapper):
         return self._inner.execute(context)
 
     @staticmethod
-    def if_(condition, then: _IfOutputT, otherwise: _IfOutputT) -> _IfOutputT:
+    def if_(condition, fn) -> _IfOutputT:
         """If
 
         Selects one of two equally typed graph branches.
 
         Args:
             condition: Graph of Bool
-            then: Graph of Any
-            otherwise: Graph of Any
+            fn: The function associated with this node.
 
         Returns:
             Graph: A graph node producing a Any.
         """
         condition_parsed = input_parsers.parse_bool_graph(condition)
-        then_parsed = input_parsers.parse_graph(then)
-        otherwise_parsed = input_parsers.parse_graph(otherwise)
+        if not hasattr(fn, "__brushcue_make_graph__"):
+            raise TypeError("fn must be annotated with @brushcue_fn")
+        dispatched_graphs = fn.__brushcue_make_graph__([
+            _internal.TypeDefinition.from_name("Any")
+            ])
         input_parsers.ensure_same_graph_type(
             then,
             otherwise
             )
-        result = _internal.if_internal(condition_parsed, then_parsed, otherwise_parsed)
+        result = _internal.if_internal(condition_parsed, *dispatched_graphs
+            )
+
         return input_parsers.resolve_output_graph(
             result,
-            then,
+            fn.__brushcue_output_graph__,
             "Any",
         )

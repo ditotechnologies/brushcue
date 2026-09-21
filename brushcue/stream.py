@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: d694c0d49307404a4aec574c595d908fa2b2983a15e5940fa07a3c752c01751d
+# hash: d63f184239c1f1329ec246c9e4d5fa19828313c82ed6515ea90fc641ec2a894b
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -14,6 +14,7 @@ if TYPE_CHECKING:
     from . import list
 
 _StreamItemT = TypeVar("_StreamItemT", bound="Object")
+_StreamFoldOutputT = TypeVar("_StreamFoldOutputT", bound="Object")
 _StreamMapOutputT = TypeVar("_StreamMapOutputT", bound="Object")
 
 
@@ -23,7 +24,7 @@ class Stream(AnyGraph, Generic[_StreamItemT]):
     def execute(self, context):
         return self._inner.execute(context)
 
-    def collect(self) -> list.List[_StreamItemT]:
+    def collect(self) -> list.List:
         """Stream Collect
 
         Collects a stream into a list
@@ -39,22 +40,26 @@ class Stream(AnyGraph, Generic[_StreamItemT]):
             "List",
         )
 
-    def filter(self, item, output) -> Stream[_StreamItemT]:
+    def filter(self, fn) -> Stream[_StreamItemT]:
         """Stream Filter
 
         Performs a filter operation over a stream
 
         Args:
-            item: Graph of Object
-            output: Graph of Bool
+            fn: The function associated with this node.
 
         Returns:
             Graph: A graph node producing a Stream.
         """
         stream_parsed = input_parsers.parse_graph(self)
-        item_parsed = input_parsers.parse_graph(item)
-        output_parsed = input_parsers.parse_bool_graph(output)
-        result = _internal.stream_filter_internal(stream_parsed, item_parsed, output_parsed)
+        if not hasattr(fn, "__brushcue_make_graph__"):
+            raise TypeError("fn must be annotated with @brushcue_fn")
+        dispatched_graphs = fn.__brushcue_make_graph__([
+            _internal.TypeDefinition.from_name(self._resolved_type.__name__)
+            ])
+        result = _internal.stream_filter_internal(stream_parsed, *dispatched_graphs
+            )
+
         return input_parsers.resolve_output_graph(
             result,
             self,
@@ -77,24 +82,57 @@ class Stream(AnyGraph, Generic[_StreamItemT]):
             "Object",
         )
 
-    def map(self, item, output: _StreamMapOutputT) -> Stream[_StreamMapOutputT]:
+    def fold(self, initial_accumulator: _StreamFoldOutputT, fn) -> _StreamFoldOutputT:
+        """Stream Fold
+
+        Folds the elements of a stream into an accumulator
+
+        Args:
+            initial_accumulator: Graph of Object
+            fn: The function associated with this node.
+
+        Returns:
+            Graph: A graph node producing a Object.
+        """
+        stream_parsed = input_parsers.parse_graph(self)
+        initial_accumulator_parsed = input_parsers.parse_graph(initial_accumulator)
+        if not hasattr(fn, "__brushcue_make_graph__"):
+            raise TypeError("fn must be annotated with @brushcue_fn")
+        dispatched_graphs = fn.__brushcue_make_graph__([
+            _internal.TypeDefinition.from_name("Object"),
+            _internal.TypeDefinition.from_name(self._resolved_type.__name__)
+            ])
+        result = _internal.stream_fold_internal(stream_parsed, initial_accumulator_parsed, *dispatched_graphs
+            )
+
+        return input_parsers.resolve_output_graph(
+            result,
+            initial_accumulator,
+            "Object",
+        )
+
+    def map(self, fn) -> Stream[_StreamMapOutputT]:
         """Stream Map
 
         Performs a map operation over a stream
 
         Args:
-            item: Graph of Object
-            output: Graph of Object
+            fn: The function associated with this node.
 
         Returns:
             Graph: A graph node producing a Stream.
         """
         stream_parsed = input_parsers.parse_graph(self)
-        item_parsed = input_parsers.parse_graph(item)
-        output_parsed = input_parsers.parse_graph(output)
-        result = _internal.stream_map_internal(stream_parsed, item_parsed, output_parsed)
+        if not hasattr(fn, "__brushcue_make_graph__"):
+            raise TypeError("fn must be annotated with @brushcue_fn")
+        dispatched_graphs = fn.__brushcue_make_graph__([
+            _internal.TypeDefinition.from_name(self._resolved_type.__name__)
+            ])
+        result = _internal.stream_map_internal(stream_parsed, *dispatched_graphs
+            )
+
         return input_parsers.resolve_output_graph(
             result,
-            output,
+            fn.__brushcue_output_graph__,
             "Stream",
         )

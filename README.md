@@ -7,10 +7,10 @@ BrushCue is a GPU-accelerated image editing library for Python. Every operation 
 ### Examples of things you can make
 
 <table><tr>
-<td align="center"><img src="https://www.brushcue.com/tools/swirl/animation.webp" width="180"></td>
-<td align="center"><img src="https://www.brushcue.com/tools/crt-monitor-filter/animation.webp" width="180"></td>
-<td align="center"><img src="https://www.brushcue.com/tools/pixelate/animation.webp" width="180"></td>
-<td align="center"><img src="https://www.brushcue.com/tools/zoom-blur/animation.webp" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/swirl/animation.mp4" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/color-reducer/animation.webp" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/pixelate/animation.mp4" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/glitch-filter-animation/animation.mp4" width="180"></td>
 </tr></table>
 
 ## Install
@@ -44,6 +44,7 @@ with open("output.png", "wb") as f:
 
 All the [BrushCue tools](https://www.brushcue.com/tools) are available as examples to learn how to use our API. 
 
+- [Add Frame](https://www.brushcue.com/docs/py/examples/add-frame)
 - [Adjust Channels](https://www.brushcue.com/docs/py/examples/adjust-channels)
 - [Black and White Negative Filter](https://www.brushcue.com/docs/py/examples/black-and-white-negative-filter)
 - [Bloom](https://www.brushcue.com/docs/py/examples/bloom)
@@ -53,6 +54,7 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Brightness Contrast Adjust](https://www.brushcue.com/docs/py/examples/brightness-contrast-adjust)
 - [Camera Moving Distortion](https://www.brushcue.com/docs/py/examples/camera-moving-distortion)
 - [Chroma Offset](https://www.brushcue.com/docs/py/examples/chroma-offset)
+- [Circle Crop](https://www.brushcue.com/docs/py/examples/circle-crop)
 - [Coachella Aesthetic](https://www.brushcue.com/docs/py/examples/coachella-aesthetic)
 - [Color Invert](https://www.brushcue.com/docs/py/examples/color-invert)
 - [Color Rectangle](https://www.brushcue.com/docs/py/examples/color-rectangle)

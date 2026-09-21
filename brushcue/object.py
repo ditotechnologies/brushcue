@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: f2387d4ffc46e4480c296014e4d7ec34b2d0fae18917512067b0c7e0201669da
+# hash: f5e89f0e2e932da0e04fcf9e0a4f7a9afdc03204c850770a19ce43347573520c
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -26,7 +26,7 @@ class Object(AnyGraph):
         result = _internal.input_internal(output_type)
         return input_parsers.wrap_graph_for_type_definition(result, output_type)
 
-    def to_list(self) -> list.List[Self]:
+    def to_list(self) -> list.List:
         """Object to List
 
         Converts an object to a list
@@ -42,7 +42,7 @@ class Object(AnyGraph):
             "List",
         )
 
-    def to_stream(self) -> stream.Stream[Self]:
+    def to_stream(self) -> stream.Stream:
         """Object to Stream
 
         Converts an object to a stream

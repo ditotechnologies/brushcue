@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: f71b7e6fdb4f75b932eda7bcc6200f62b89fcb7395f4bd212d5785f3e864d3c1
+# hash: a7da429ad62048fc064ff9bc1878d3b2d07d812e01a4a04cb79472830d20d626
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -10,6 +10,7 @@ from . import _py as _internal, input_parsers
 from .object import Object
 
 if TYPE_CHECKING:
+    from . import string
     from . import void
 
 
@@ -34,6 +35,23 @@ class Bytes(Object):
         url_parsed = input_parsers.parse_string_graph(url)
         result = _internal.bytes_from_u_r_l_internal(url_parsed)
         return Bytes(result)
+
+    def save_to_path(self, path) -> string.String:
+        """Bytes Save to Path
+
+        Writes a byte list to a specified file path on disk. Returns the path that was written to.
+
+        Args:
+            path: Graph of String
+
+        Returns:
+            Graph: A graph node producing a String.
+        """
+        bytes_parsed = input_parsers.parse_graph(self)
+        path_parsed = input_parsers.parse_string_graph(path)
+        result = _internal.bytes_save_to_path_internal(bytes_parsed, path_parsed)
+        from .string import String
+        return String(result)
 
     def file_convert_image_to_bmp(self) -> Bytes:
         """File Convert Image to BMP

@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 
 class XYZA(Object):
-    """A CIE XYZ color-format with an alpha component."""
+    """A CIE XYZ color with an alpha component."""
 
     def execute(self, context):
         return self._inner.execute(context)

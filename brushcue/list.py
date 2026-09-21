@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: bf905b40a2e6df2f3a6c1f3d1f63866c5882fb7a0feb5a138b73f11f3e81552f
+# hash: b1ffd3e88ce4c1032bc5f03876af5a476d69e389d7e028fcab2edfbf2b399ddc
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -58,7 +58,7 @@ class List(AnyGraph, Generic[_ListItemT]):
             "Object",
         )
 
-    def to_stream(self) -> stream.Stream[_ListItemT]:
+    def to_stream(self) -> stream.Stream:
         """List to Stream
 
         Converts a list to a stream

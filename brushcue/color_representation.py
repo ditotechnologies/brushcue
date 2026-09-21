@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 
 class ColorRepresentation(Object):
-    """A color-format profile paired with a pixel encoding, describing how to interpret raw pixel values."""
+    """A color profile paired with a pixel encoding, describing how to interpret raw pixel values."""
 
     def execute(self, context):
         return self._inner.execute(context)
@@ -64,7 +64,7 @@ class ColorRepresentation(Object):
     def profile(self) -> color_profile.ColorProfile:
         """Color Profile of a Color Representation
 
-        Given a color-format representation. Extracts the color-format profile of that color-format representation
+        Given a color representation. Extracts the color profile of that color representation
 
         Returns:
             Graph: A graph node producing a ColorProfile.

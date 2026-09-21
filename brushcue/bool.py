@@ -1,11 +1,16 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: b3fc5ae76ea339f9fcaaf00064360e5da3b2353edc5f88254159049aeab1ce21
+# hash: aff8e8b2b8a0a87efc20fa64aaa3613ee09be98f12dfd8fe741659b15d374962
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from . import _py as _internal, input_parsers
 from .object import Object
+
+if TYPE_CHECKING:
+    import builtins
 
 
 class Bool(Object):
@@ -13,6 +18,17 @@ class Bool(Object):
 
     def execute(self, context):
         return self._inner.execute(context).as_bool()
+
+    if TYPE_CHECKING:
+        # Implemented at runtime via monkeypatching in `_operators.py`; declared
+        # here only so static type checkers recognize these operators.
+        def __and__(self, other: Bool | builtins.bool) -> Bool: ...
+        def __rand__(self, other: Bool | builtins.bool) -> Bool: ...
+        def __or__(self, other: Bool | builtins.bool) -> Bool: ...
+        def __ror__(self, other: Bool | builtins.bool) -> Bool: ...
+        def __xor__(self, other: Bool | builtins.bool) -> Bool: ...
+        def __rxor__(self, other: Bool | builtins.bool) -> Bool: ...
+        def __invert__(self) -> Bool: ...
 
     def and_(self, bool2) -> Bool:
         """And

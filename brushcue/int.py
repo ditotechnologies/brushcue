@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 680f88fc2d63c365cd98a1e4b7ea0286938498e16334e52b75a471b1397107b5
+# hash: 37def403115027efbb3c453622b86d7cc5f6c49a1c9a37f84f6e0e3ddc9a0970
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -10,8 +10,10 @@ from . import _py as _internal, input_parsers
 from .object import Object
 
 if TYPE_CHECKING:
+    import builtins
     from . import bool
     from . import float
+    from . import int_list
 
 
 class Int(Object):
@@ -19,6 +21,21 @@ class Int(Object):
 
     def execute(self, context):
         return self._inner.execute(context).as_int()
+
+    if TYPE_CHECKING:
+        # Implemented at runtime via monkeypatching in `_operators.py`; declared
+        # here only so static type checkers recognize these operators.
+        def __add__(self, other: Int | builtins.int) -> Int: ...
+        def __radd__(self, other: Int | builtins.int) -> Int: ...
+        def __sub__(self, other: Int | builtins.int) -> Int: ...
+        def __rsub__(self, other: Int | builtins.int) -> Int: ...
+        def __mul__(self, other: Int | builtins.int) -> Int: ...
+        def __rmul__(self, other: Int | builtins.int) -> Int: ...
+        def __gt__(self, other: Int | builtins.int) -> bool.Bool: ...
+        def __ge__(self, other: Int | builtins.int) -> bool.Bool: ...
+        def __lt__(self, other: Int | builtins.int) -> bool.Bool: ...
+        def __le__(self, other: Int | builtins.int) -> bool.Bool: ...
+        def __eq__(self, other: builtins.object) -> bool.Bool: ...  # type: ignore[override]
 
     def abs(self) -> Int:
         """Int Absolute Value
@@ -180,6 +197,23 @@ class Int(Object):
         int_2_parsed = input_parsers.parse_int_graph(int_2)
         result = _internal.int_multiply_internal(int_1_parsed, int_2_parsed)
         return Int(result)
+
+    def range(self, max) -> int_list.IntList:
+        """Int Range
+
+        Generates a list from the minimum to the maximum inclusive
+
+        Args:
+            max: Graph of Int
+
+        Returns:
+            Graph: A graph node producing a IntList.
+        """
+        min_parsed = input_parsers.parse_int_graph(self)
+        max_parsed = input_parsers.parse_int_graph(max)
+        result = _internal.int_range_internal(min_parsed, max_parsed)
+        from .int_list import IntList
+        return IntList(result)
 
     def subtract(self, int_2) -> Int:
         """Int Subtract

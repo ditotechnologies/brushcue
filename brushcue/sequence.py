@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: cdfb60debe783f01096a1515bf2bbbc5050910b7828f7655f3b2c6f4579c61a9
+# hash: dbd8846e662736d80f80451945a6ee24a0e564e52a773e3089caf9224c81df4c
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -118,35 +118,27 @@ class Sequence(Object):
         return Sequence(result)
 
     @staticmethod
-    def graph(duration, time, frame) -> Sequence:
+    def graph(duration, fn) -> Sequence:
         """Sequence Graph
 
         Creates a sequence that runs the graph to get the duration and the frame for each time.
 
         Args:
             duration: Graph of Float
-            time: Graph of Float
-            frame: Graph of Composition
+            fn: The function associated with this node.
 
         Returns:
             Graph: A graph node producing a Sequence.
         """
         duration_parsed = input_parsers.parse_float_graph(duration)
-        time_parsed = input_parsers.parse_float_graph(time)
-        frame_parsed = input_parsers.parse_graph(frame)
-        result = _internal.sequence_graph_internal(duration_parsed, time_parsed, frame_parsed)
-        return Sequence(result)
+        if not hasattr(fn, "__brushcue_make_graph__"):
+            raise TypeError("fn must be annotated with @brushcue_fn")
+        dispatched_graphs = fn.__brushcue_make_graph__([
+            _internal.TypeDefinition.from_name("Float")
+            ])
+        result = _internal.sequence_graph_internal(duration_parsed, *dispatched_graphs
+            )
 
-    def grayscale(self) -> Sequence:
-        """Sequence Grayscale
-
-        Creates a sequence that converts the video to grayscale
-
-        Returns:
-            Graph: A graph node producing a Sequence.
-        """
-        sequence_parsed = input_parsers.parse_graph(self)
-        result = _internal.sequence_grayscale_internal(sequence_parsed)
         return Sequence(result)
 
     def reverse(self) -> Sequence:

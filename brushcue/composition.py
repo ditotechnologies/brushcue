@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: a1c17ea1cb69e3ced0412a5671cfb69e78ff5aa52395f038bacc645a26a2d7e6
+# hash: 63e97db14dd5fd9f4160bc24e201c927557222d15d4f3e2b435e1c4938844597
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -219,7 +219,7 @@ class Composition(Object):
     def brightness_adjust(self, scale) -> Composition:
         """Composition Brightness Adjust
 
-        Adjusts the brightness of an image by a given factor. Internally, works by modifying the L component of OkLab by multiplying it by the scale.
+        Adjusts an image's brightness by offsetting the L component in OkLab. A scale of 0 leaves brightness unchanged, positive values brighten, and negative values darken.
 
         Args:
             scale: Graph of Float

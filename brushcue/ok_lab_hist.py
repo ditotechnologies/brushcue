@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 
 class OkLabHist(Object):
-    """A histogram in various dimensions over the OkLab color-format space."""
+    """A histogram in various dimensions over the OkLab color space."""
 
     def execute(self, context):
         return self._inner.execute(context)

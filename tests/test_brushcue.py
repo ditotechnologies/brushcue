@@ -2,6 +2,7 @@ import os
 import tempfile
 
 import brushcue
+from brushcue.fn import brushcue_fn
 
 
 def test_typed_input_uses_requested_python_graph_type():
@@ -113,3 +114,30 @@ def test_profiled_color_to_rgb_linear_with_color_profile():
     assert abs(result[1]) < 0.000001
     assert abs(result[2] - 1.0) < 0.000001
     assert abs(result[3] - 0.4) < 0.000001
+
+
+def test_brushcue_fn_builds_and_executes_a_sequence_graph():
+    @brushcue_fn
+    def frame_at_time(time):
+        assert isinstance(time, brushcue.Float)
+        return brushcue.Composition.monet_women_with_parasol().grayscale()
+
+    ctx = brushcue.Context()
+    sequence = brushcue.Sequence.graph(1.0, frame_at_time)
+
+    result = sequence.composition_at_time(0.5).execute(ctx).to_image_bytes(ctx)
+
+    assert len(result) > 0
+
+
+def test_brushcue_fn_builds_a_stream_map_graph():
+    @brushcue_fn
+    def identity(item):
+        assert isinstance(item, brushcue.Int)
+        return item
+
+    int_list = brushcue.Object.input(brushcue.TypeDefinition.from_name("IntList"))
+
+    mapped = int_list.to_stream().map(identity)
+
+    assert isinstance(mapped, brushcue.Stream)

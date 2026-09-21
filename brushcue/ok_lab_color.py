@@ -9,7 +9,7 @@ from .object import Object
 
 
 class OkLabColor(Object):
-    """A color-format in the OkLab color-format space, which is designed to be perceptually uniform. L represents lightness. Negative "a" for green. Positive "a" for red. Negative "b" for blue. Positive "b" for yellow."""
+    """A color in the OkLab color space, which is designed to be perceptually uniform. L represents lightness. Negative "a" for green. Positive "a" for red. Negative "b" for blue. Positive "b" for yellow."""
 
     def execute(self, context):
         return self._inner.execute(context)
@@ -18,7 +18,7 @@ class OkLabColor(Object):
     def from_components(l, a, b) -> OkLabColor:
         """OkLab Color from Components
 
-        Given the L, a and b creates the color-format
+        Given the L, a and b creates the color
 
         Args:
             l: Graph of Float
