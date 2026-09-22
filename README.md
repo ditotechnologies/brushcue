@@ -7,10 +7,10 @@ BrushCue is a GPU-accelerated image editing library for Python. Every operation 
 ### Examples of things you can make
 
 <table><tr>
-<td align="center"><img src="https://www.brushcue.com/tools/swirl/animation.mp4" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/swirl/animation.webp" width="180"></td>
 <td align="center"><img src="https://www.brushcue.com/tools/color-reducer/animation.webp" width="180"></td>
-<td align="center"><img src="https://www.brushcue.com/tools/pixelate/animation.mp4" width="180"></td>
-<td align="center"><img src="https://www.brushcue.com/tools/glitch-filter-animation/animation.mp4" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/pixelate/animation.webp" width="180"></td>
+<td align="center"><img src="https://www.brushcue.com/tools/glitch-filter-animation/animation.webp" width="180"></td>
 </tr></table>
 
 ## Install
