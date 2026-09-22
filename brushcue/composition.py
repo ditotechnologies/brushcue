@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 63e97db14dd5fd9f4160bc24e201c927557222d15d4f3e2b435e1c4938844597
+# hash: 1fe2a9cf2b003de7354865a821a4125867fed71df529d61158aac34d6d014060
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -480,6 +480,30 @@ class Composition(Object):
         """
         composition_parsed = input_parsers.parse_graph(self)
         result = _internal.composition_flip_vertical_internal(composition_parsed)
+        return Composition(result)
+
+    @staticmethod
+    def freeform_shader(function_body, helpers, bounds, working_color_representation, inputs) -> Composition:
+        """Composition Freeform Shader
+
+        Given a bounds and a shader, allows you to generate an image.
+
+        Args:
+            function_body: Graph of String
+            helpers: Graph of String
+            bounds: Graph of Bounds2f
+            working_color_representation: Graph of ColorRepresentation
+            inputs: Graph of Dictionary
+
+        Returns:
+            Graph: A graph node producing a Composition.
+        """
+        function_body_parsed = input_parsers.parse_string_graph(function_body)
+        helpers_parsed = input_parsers.parse_string_graph(helpers)
+        bounds_parsed = input_parsers.parse_graph(bounds)
+        working_color_representation_parsed = input_parsers.parse_graph(working_color_representation)
+        inputs_parsed = input_parsers.parse_graph(inputs)
+        result = _internal.composition_freeform_shader_internal(function_body_parsed, helpers_parsed, bounds_parsed, working_color_representation_parsed, inputs_parsed)
         return Composition(result)
 
     @staticmethod

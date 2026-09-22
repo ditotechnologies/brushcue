@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: c5c2beb48020505009e8931194182bc6f62844ad1798179aba354f370ee11996
+# hash: 1ac1e1ea2eeae175325dfd494fa4449358073cb226d340973028d36758521bac
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -193,6 +193,8 @@ def composition_film_grain_internal(composition: Graph, grain_strength: Graph, f
 def composition_flip_horizontal_internal(composition: Graph) -> Graph: ...
 
 def composition_flip_vertical_internal(composition: Graph) -> Graph: ...
+
+def composition_freeform_shader_internal(function_body: Graph, helpers: Graph, bounds: Graph, working_color_representation: Graph, inputs: Graph) -> Graph: ...
 
 def composition_from_image_internal(image: Graph) -> Graph: ...
 
