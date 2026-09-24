@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: b20b310c0dfc7398f4f1a4ce2e1a70ace8fb7f06d6eb118414795ad6a53e5076
+# hash: f1164f02b059e593d2ee602a16591ce28921e5571a802dd0a885c5a8bd942744
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -164,6 +164,22 @@ class ProfiledColor(Object):
         """
         rgba_parsed = input_parsers.parse_graph(rgba)
         result = _internal.profiled_color_from_rgba_srgb_linear_internal(rgba_parsed)
+        return ProfiledColor(result)
+
+    @staticmethod
+    def from_srgb_hex(hex) -> ProfiledColor:
+        """Profiled Color from sRGB Hex
+
+        Creates a profiled color from an encoded sRGB hex string (#RGB, #RGBA, #RRGGBB, or #RRGGBBAA).
+
+        Args:
+            hex: Graph of String
+
+        Returns:
+            Graph: A graph node producing a ProfiledColor.
+        """
+        hex_parsed = input_parsers.parse_string_graph(hex)
+        result = _internal.profiled_color_from_srgb_hex_internal(hex_parsed)
         return ProfiledColor(result)
 
     @staticmethod
