@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: b1ffd3e88ce4c1032bc5f03876af5a476d69e389d7e028fcab2edfbf2b399ddc
+# hash: ab779d3f56c8bd1cf4896ac403587cb98f80d80bb579191d29584905be648939
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -52,6 +52,26 @@ class List(AnyGraph, Generic[_ListItemT]):
         """
         list_parsed = input_parsers.parse_graph(self)
         result = _internal.list_first_internal(list_parsed)
+        return input_parsers.resolve_output_graph(
+            result,
+            self,
+            "Object",
+        )
+
+    def get(self, index) -> _ListItemT:
+        """List Get
+
+        Fetches the element of the list at a given index.
+
+        Args:
+            index: Graph of Int
+
+        Returns:
+            Graph: A graph node producing a Object.
+        """
+        list_parsed = input_parsers.parse_graph(self)
+        index_parsed = input_parsers.parse_int_graph(index)
+        result = _internal.list_get_internal(list_parsed, index_parsed)
         return input_parsers.resolve_output_graph(
             result,
             self,

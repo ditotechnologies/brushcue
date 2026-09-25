@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: f1164f02b059e593d2ee602a16591ce28921e5571a802dd0a885c5a8bd942744
+# hash: 0fe849d641c78af77a209c04bd3e36ed4fd960da5d6642062c645a5a9ffbc1bf
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -132,6 +132,22 @@ class ProfiledColor(Object):
         """
         rgba_parsed = input_parsers.parse_graph(rgba)
         result = _internal.profiled_color_from_rgba_aces_cg_internal(rgba_parsed)
+        return ProfiledColor(result)
+
+    @staticmethod
+    def from_rgba_p3(rgba) -> ProfiledColor:
+        """Profiled Color from RGBA P3
+
+        Creates a profiled color from encoded Display P3 RGBA channels.
+
+        Args:
+            rgba: Graph of RGBAColor
+
+        Returns:
+            Graph: A graph node producing a ProfiledColor.
+        """
+        rgba_parsed = input_parsers.parse_graph(rgba)
+        result = _internal.profiled_color_from_rgba_p3_internal(rgba_parsed)
         return ProfiledColor(result)
 
     @staticmethod
