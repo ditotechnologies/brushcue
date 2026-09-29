@@ -112,4 +112,5 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Vibrancy](https://www.brushcue.com/docs/py/examples/vibrancy)
 - [Vignette](https://www.brushcue.com/docs/py/examples/vignette)
 - [Warmth Adjust](https://www.brushcue.com/docs/py/examples/warmth-adjust)
+- [Whiten Image](https://www.brushcue.com/docs/py/examples/whiten-image)
 - [Zoom Blur](https://www.brushcue.com/docs/py/examples/zoom-blur)
