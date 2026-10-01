@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: ab779d3f56c8bd1cf4896ac403587cb98f80d80bb579191d29584905be648939
+# hash: 6bc1fbc43bad1d571d9cf3f6bfbcfc2d2c127926ce5223847990454575b75aee
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -11,6 +11,7 @@ from .any_graph import AnyGraph
 
 if TYPE_CHECKING:
     from .object import Object
+    from . import int
     from . import stream
 
 _ListItemT = TypeVar("_ListItemT", bound="Object")
@@ -77,6 +78,19 @@ class List(AnyGraph, Generic[_ListItemT]):
             self,
             "Object",
         )
+
+    def length(self) -> int.Int:
+        """List Length
+
+        Returns the number of elements in a list.
+
+        Returns:
+            Graph: A graph node producing a Int.
+        """
+        list_parsed = input_parsers.parse_graph(self)
+        result = _internal.list_length_internal(list_parsed)
+        from .int import Int
+        return Int(result)
 
     def to_stream(self) -> stream.Stream:
         """List to Stream

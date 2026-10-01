@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 9683b5e920c2c36326077a6ff7034842c3a85b76f724213222b010a7c91e41b2
+# hash: 8ec5d96ea23900fe6f3494e02d28694ef22c2536cf1393fcd37ea597d535aad4
 # generated from templates/py_brushcue_init.jinja
 
 from __future__ import annotations
@@ -57,6 +57,8 @@ def string_list_empty() -> StringList:
 from .bool import Bool
 
 from .bounds2f import Bounds2f
+
+from .bounds2f_list import Bounds2fList
 
 from .bounds2i import Bounds2i
 
@@ -175,6 +177,8 @@ __all__ = [
     "Bool",
 
     "Bounds2f",
+
+    "Bounds2fList",
 
     "Bounds2i",
 

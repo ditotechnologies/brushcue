@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 1fe2a9cf2b003de7354865a821a4125867fed71df529d61158aac34d6d014060
+# hash: 2caac7ddada97503c773660eb174b76134598b1cd27fbb66ff233f3ee0cdbd7a
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -11,6 +11,7 @@ from .object import Object
 
 if TYPE_CHECKING:
     from . import bounds2f
+    from . import bounds2f_list
     from . import bounds2i_list
     from . import color_representation
     from . import image
@@ -414,6 +415,26 @@ class Composition(Object):
         result = _internal.composition_duotone_internal(composition_parsed, threshold_parsed, color_1_parsed, color_2_parsed)
         return Composition(result)
 
+    def emboss(self, angle, distance, amount) -> Composition:
+        """Composition Emboss
+
+        Applies an emboss effect, turning edges into a raised relief lit from the given angle. Flat areas become mid-gray; a negative amount debosses.
+
+        Args:
+            angle: Graph of Float
+            distance: Graph of Float
+            amount: Graph of Float
+
+        Returns:
+            Graph: A graph node producing a Composition.
+        """
+        composition_parsed = input_parsers.parse_graph(self)
+        angle_parsed = input_parsers.parse_float_graph(angle)
+        distance_parsed = input_parsers.parse_float_graph(distance)
+        amount_parsed = input_parsers.parse_float_graph(amount)
+        result = _internal.composition_emboss_internal(composition_parsed, angle_parsed, distance_parsed, amount_parsed)
+        return Composition(result)
+
     def exposure_adjust(self, steps) -> Composition:
         """Composition Exposure Adjust
 
@@ -456,6 +477,26 @@ class Composition(Object):
         high_grain_frequency_parsed = input_parsers.parse_float_graph(high_grain_frequency)
         high_weight_parsed = input_parsers.parse_float_graph(high_weight)
         result = _internal.composition_film_grain_internal(composition_parsed, grain_strength_parsed, fine_grain_frequency_parsed, fine_weight_parsed, medium_grain_frequency_parsed, medium_weight_parsed, high_grain_frequency_parsed, high_weight_parsed)
+        return Composition(result)
+
+    def fisheye(self, center, radius, strength) -> Composition:
+        """Composition Fisheye
+
+        Applies a fisheye lens distortion to this composition, magnifying the center and compressing the edges
+
+        Args:
+            center: Graph of Vector2f
+            radius: Graph of Float
+            strength: Graph of Float
+
+        Returns:
+            Graph: A graph node producing a Composition.
+        """
+        composition_parsed = input_parsers.parse_graph(self)
+        center_parsed = input_parsers.parse_graph(center)
+        radius_parsed = input_parsers.parse_float_graph(radius)
+        strength_parsed = input_parsers.parse_float_graph(strength)
+        result = _internal.composition_fisheye_internal(composition_parsed, center_parsed, radius_parsed, strength_parsed)
         return Composition(result)
 
     def flip_horizontal(self) -> Composition:
@@ -703,6 +744,27 @@ class Composition(Object):
         frequency_parsed = input_parsers.parse_float_graph(frequency)
         result = _internal.composition_liquify_internal(composition_parsed, amplitude_parsed, frequency_parsed)
         return Composition(result)
+
+    def locate(self, prompt, positive_points, negative_points) -> bounds2f_list.Bounds2fList:
+        """Composition Locate
+
+        Finds the location of a prompt within the image.
+
+        Args:
+            prompt: Graph of String
+            positive_points: Graph of Point2iList
+            negative_points: Graph of Point2iList
+
+        Returns:
+            Graph: A graph node producing a Bounds2fList.
+        """
+        composition_parsed = input_parsers.parse_graph(self)
+        prompt_parsed = input_parsers.parse_string_graph(prompt)
+        positive_points_parsed = input_parsers.parse_graph(positive_points)
+        negative_points_parsed = input_parsers.parse_graph(negative_points)
+        result = _internal.composition_locate_internal(composition_parsed, prompt_parsed, positive_points_parsed, negative_points_parsed)
+        from .bounds2f_list import Bounds2fList
+        return Bounds2fList(result)
 
     def max_color(self) -> profiled_color.ProfiledColor:
         """Composition Max Color

@@ -68,6 +68,7 @@ All the [BrushCue tools](https://www.brushcue.com/tools) are available as exampl
 - [Darken](https://www.brushcue.com/docs/py/examples/darken)
 - [Dilate](https://www.brushcue.com/docs/py/examples/dilate)
 - [Duotone Effect](https://www.brushcue.com/docs/py/examples/duotone-effect)
+- [Emboss](https://www.brushcue.com/docs/py/examples/emboss)
 - [Erode](https://www.brushcue.com/docs/py/examples/erode)
 - [Exposure Adjust](https://www.brushcue.com/docs/py/examples/exposure-adjust)
 - [Film Grain](https://www.brushcue.com/docs/py/examples/film-grain)
