@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 12656df494c5bea04003857bc990b6b20988d42119575c16c1624d15bee9c8b9
+# hash: 82ba4d517abc4830e2007cf4a5f238c59c8b4b7390342ff85851c10f2dd31467
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -140,4 +140,22 @@ class Path(Object):
             Graph: A graph node producing a Path.
         """
         result = _internal.path_new_internal()
+        return Path(result)
+
+    def quadratic_bezier_to_point(self, control_point, point) -> Path:
+        """Path Quadratic Bézier to Point
+
+        Moves the path from it's current point to another with a quadratic Bézier curve bent toward a control point.
+
+        Args:
+            control_point: Graph of Point2f
+            point: Graph of Point2f
+
+        Returns:
+            Graph: A graph node producing a Path.
+        """
+        path_parsed = input_parsers.parse_graph(self)
+        control_point_parsed = input_parsers.parse_graph(control_point)
+        point_parsed = input_parsers.parse_graph(point)
+        result = _internal.path_quadratic_bezier_to_point_internal(path_parsed, control_point_parsed, point_parsed)
         return Path(result)
