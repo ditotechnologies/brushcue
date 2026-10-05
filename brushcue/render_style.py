@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: cdf9102b2cc259b9e8c86309dd6fbf1cc6c3220351076e2dfdd03d68c01ae4df
+# hash: 85feaabdce66225905f082793c404ec6b9a0013b6c762583d1a6e4ee72957d1e
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -62,4 +62,16 @@ class RenderStyle(Object):
         """
         fill_parsed = input_parsers.parse_graph(fill)
         result = _internal.render_style_fill_only_internal(fill_parsed)
+        return RenderStyle(result)
+
+    def set_eraser(self) -> RenderStyle:
+        """Render Style Set Eraser
+
+        Sets the render style to an eraser.
+
+        Returns:
+            Graph: A graph node producing a RenderStyle.
+        """
+        render_style_parsed = input_parsers.parse_graph(self)
+        result = _internal.render_style_set_eraser_internal(render_style_parsed)
         return RenderStyle(result)

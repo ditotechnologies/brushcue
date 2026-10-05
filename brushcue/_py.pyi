@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 7e300471be4bc387272551fe4d2fff7d1f67a5f21edeb19afe6c379d7c92d296
+# hash: 98022dc1b3ab9c5de4d5ca7b16f1fa4ab609c80fbe0ee584789ae52b8296c5fc
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -539,6 +539,8 @@ def render_style_brush_and_fill_internal(brush: Graph, fill: Graph) -> Graph: ..
 def render_style_brush_only_internal(brush: Graph) -> Graph: ...
 
 def render_style_fill_only_internal(fill: Graph) -> Graph: ...
+
+def render_style_set_eraser_internal(render_style: Graph) -> Graph: ...
 
 def sequence_adjust_speed_internal(sequence: Graph, factor: Graph) -> Graph: ...
 
