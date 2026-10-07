@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 98022dc1b3ab9c5de4d5ca7b16f1fa4ab609c80fbe0ee584789ae52b8296c5fc
+# hash: 54a87566b40e7304b03aaba296fac528ed96322cadeb5a7c5f3010de1206d6b9
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -199,6 +199,10 @@ def composition_fisheye_internal(composition: Graph, center: Graph, radius: Grap
 def composition_flip_horizontal_internal(composition: Graph) -> Graph: ...
 
 def composition_flip_vertical_internal(composition: Graph) -> Graph: ...
+
+def composition_foreground_cutout_internal(composition: Graph) -> Graph: ...
+
+def composition_foreground_mask_internal(composition: Graph) -> Graph: ...
 
 def composition_freeform_shader_internal(function_body: Graph, helpers: Graph, bounds: Graph, working_color_representation: Graph, inputs: Graph) -> Graph: ...
 

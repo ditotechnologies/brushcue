@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 2caac7ddada97503c773660eb174b76134598b1cd27fbb66ff233f3ee0cdbd7a
+# hash: 2aae57f194a0411b8ef6aa52b9c4651a8bb593f06c195aef54e7003e7fcc2f81
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -521,6 +521,30 @@ class Composition(Object):
         """
         composition_parsed = input_parsers.parse_graph(self)
         result = _internal.composition_flip_vertical_internal(composition_parsed)
+        return Composition(result)
+
+    def foreground_cutout(self) -> Composition:
+        """Composition Foreground Cutout
+
+        Removes the background of a composition without a prompt, keeping the main subject on transparency. Edge colors are re-estimated so hair and fur don't carry the old background's color.
+
+        Returns:
+            Graph: A graph node producing a Composition.
+        """
+        composition_parsed = input_parsers.parse_graph(self)
+        result = _internal.composition_foreground_cutout_internal(composition_parsed)
+        return Composition(result)
+
+    def foreground_mask(self) -> Composition:
+        """Composition Foreground Mask
+
+        Finds the main subject of a composition without a prompt and returns its mask. The result is white with the subject's soft matte in alpha (1 = subject), the same convention as Composition Segment.
+
+        Returns:
+            Graph: A graph node producing a Composition.
+        """
+        composition_parsed = input_parsers.parse_graph(self)
+        result = _internal.composition_foreground_mask_internal(composition_parsed)
         return Composition(result)
 
     @staticmethod
