@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 19fd50f817c86c066e8a180d146cb87edc97eb285c0acd40c7944582105b96d7
+# hash: af0294fe2c07f9ae256f950ded728f1983a5fec9ef80d188b466c04d9fb84d04
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -80,6 +80,22 @@ class Painter(Object):
         render_style_parsed = input_parsers.parse_graph(render_style)
         instances_parsed = input_parsers.parse_graph(instances)
         result = _internal.painter_add_rectangle_with_render_style_internal(painter_parsed, center_parsed, dimensions_parsed, rotation_parsed, render_style_parsed, instances_parsed)
+        return Painter(result)
+
+    def add_styled_text(self, styled_string) -> Painter:
+        """Painter Add Styled Text
+
+        Adds a styled string to the painter, drawn on top of what the painter already contains.
+
+        Args:
+            styled_string: Graph of StyledString
+
+        Returns:
+            Graph: A graph node producing a Painter.
+        """
+        painter_parsed = input_parsers.parse_graph(self)
+        styled_string_parsed = input_parsers.parse_graph(styled_string)
+        result = _internal.painter_add_styled_text_internal(painter_parsed, styled_string_parsed)
         return Painter(result)
 
     @staticmethod
