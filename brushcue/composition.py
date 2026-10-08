@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 2aae57f194a0411b8ef6aa52b9c4651a8bb593f06c195aef54e7003e7fcc2f81
+# hash: 17b5de5df6ab405bd2067fa3317518d586de72ef39c299ed594d5190170ad4fc
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -934,6 +934,23 @@ class Composition(Object):
         scale_parsed = input_parsers.parse_float_graph(scale)
         result = _internal.composition_opacity_scale_internal(composition_parsed, scale_parsed)
         return Composition(result)
+
+    def opaque_bounds(self, alpha_threshold) -> bounds2f.Bounds2f:
+        """Composition Opaque Bounds
+
+        Computes the bounding box of the pixels in a composition whose alpha is greater than the threshold. Unlike Composition Bounds, transparent regions are excluded.
+
+        Args:
+            alpha_threshold: Graph of Float
+
+        Returns:
+            Graph: A graph node producing a Bounds2f.
+        """
+        composition_parsed = input_parsers.parse_graph(self)
+        alpha_threshold_parsed = input_parsers.parse_float_graph(alpha_threshold)
+        result = _internal.composition_opaque_bounds_internal(composition_parsed, alpha_threshold_parsed)
+        from .bounds2f import Bounds2f
+        return Bounds2f(result)
 
     @staticmethod
     def painter(painter) -> Composition:
