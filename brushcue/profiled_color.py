@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 0fe849d641c78af77a209c04bd3e36ed4fd960da5d6642062c645a5a9ffbc1bf
+# hash: 56be523b47d3fd65a87083f182a0bd4ac35f7149d4ec50731ae988f4cb1f7e01
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -12,6 +12,7 @@ from .object import Object
 if TYPE_CHECKING:
     from . import l_m_s_a
     from . import ok_lab_a
+    from . import ok_lch_a
     from . import r_g_b_a_color
     from . import x_y_z_a
 
@@ -116,6 +117,22 @@ class ProfiledColor(Object):
         """
         ok_lab_a_parsed = input_parsers.parse_graph(ok_lab_a)
         result = _internal.profiled_color_from_ok_lab_a_internal(ok_lab_a_parsed)
+        return ProfiledColor(result)
+
+    @staticmethod
+    def from_ok_lch_a(ok_lch_a) -> ProfiledColor:
+        """Profiled Color from OkLch with Alpha
+
+        Creates a profiled color from OkLch channels and alpha. Hue is in radians.
+
+        Args:
+            ok_lch_a: Graph of OkLchA
+
+        Returns:
+            Graph: A graph node producing a ProfiledColor.
+        """
+        ok_lch_a_parsed = input_parsers.parse_graph(ok_lch_a)
+        result = _internal.profiled_color_from_ok_lch_a_internal(ok_lch_a_parsed)
         return ProfiledColor(result)
 
     @staticmethod
@@ -315,6 +332,19 @@ class ProfiledColor(Object):
         result = _internal.profiled_color_to_ok_lab_a_internal(profiled_color_parsed)
         from .ok_lab_a import OkLabA
         return OkLabA(result)
+
+    def to_oklcha(self) -> ok_lch_a.OkLchA:
+        """Profiled Color to OkLch with Alpha
+
+        Converts a profiled color to OkLch channels with alpha.
+
+        Returns:
+            Graph: A graph node producing a OkLchA.
+        """
+        profiled_color_parsed = input_parsers.parse_graph(self)
+        result = _internal.profiled_color_to_ok_lch_a_internal(profiled_color_parsed)
+        from .ok_lch_a import OkLchA
+        return OkLchA(result)
 
     def to_rgb_encoded_with_color_profile(self, color_profile) -> r_g_b_a_color.RGBAColor:
         """Profiled Color to Encoded RGB with Color Profile

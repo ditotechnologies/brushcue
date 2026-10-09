@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 1c954398590454a5b58580b5cdfef08802e6064c1563242b706cd4ff1f075de1
+# hash: bf04200afe5cb64054f39cd5487602abf460cd8a64f8ab585b14aed6dfb69034
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -11,6 +11,7 @@ from .object import Object
 
 if TYPE_CHECKING:
     from . import float
+    from . import ok_lch_a
 
 
 class OkLabA(Object):
@@ -92,3 +93,16 @@ class OkLabA(Object):
         result = _internal.ok_lab_a_l_internal(ok_lab_a_parsed)
         from .float import Float
         return Float(result)
+
+    def to_oklcha(self) -> ok_lch_a.OkLchA:
+        """OkLab with Alpha to OkLch with Alpha
+
+        Converts OkLab to OkLch, preserving lightness and alpha. Hue is in radians.
+
+        Returns:
+            Graph: A graph node producing a OkLchA.
+        """
+        ok_lab_a_parsed = input_parsers.parse_graph(self)
+        result = _internal.ok_lab_a_to_ok_lch_a_internal(ok_lab_a_parsed)
+        from .ok_lch_a import OkLchA
+        return OkLchA(result)
