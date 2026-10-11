@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 82ba4d517abc4830e2007cf4a5f238c59c8b4b7390342ff85851c10f2dd31467
+# hash: cb00c6950f852fa09defb938608bd9d0e5aab76d79a4ebe862f864bdd866b50c
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -17,7 +17,7 @@ class Path(Object):
     def cardinal_cubic_to_point(self, point, tension) -> Path:
         """Path Cardinal Cubic to Point
 
-        Moves the path from it's current point to another with a Cardinal Cubic spline.
+        Moves the path from its current point to another with a Cardinal Cubic spline.
 
         Args:
             point: Graph of Point2f
@@ -35,7 +35,7 @@ class Path(Object):
     def catmull_rom_to_point(self, point) -> Path:
         """Path Catmull-Rom to Point
 
-        Moves the path from it's current point to another with a Catmull-Rom spline.
+        Moves the path from its current point to another with a Catmull-Rom spline.
 
         Args:
             point: Graph of Point2f
@@ -46,6 +46,26 @@ class Path(Object):
         path_parsed = input_parsers.parse_graph(self)
         point_parsed = input_parsers.parse_graph(point)
         result = _internal.path_catmull_rom_to_point_internal(path_parsed, point_parsed)
+        return Path(result)
+
+    def cubic_bezier_to_point(self, control_point_1, control_point_2, point) -> Path:
+        """Path Cubic Bézier to Point
+
+        Moves the path from its current point to another with a cubic Bézier curve shaped by two control points.
+
+        Args:
+            control_point_1: Graph of Point2f
+            control_point_2: Graph of Point2f
+            point: Graph of Point2f
+
+        Returns:
+            Graph: A graph node producing a Path.
+        """
+        path_parsed = input_parsers.parse_graph(self)
+        control_point_1_parsed = input_parsers.parse_graph(control_point_1)
+        control_point_2_parsed = input_parsers.parse_graph(control_point_2)
+        point_parsed = input_parsers.parse_graph(point)
+        result = _internal.path_cubic_bezier_to_point_internal(path_parsed, control_point_1_parsed, control_point_2_parsed, point_parsed)
         return Path(result)
 
     def drawing_move(self, point, time, pressure, azimuth_angle, altitude_angle, tension) -> Path:
@@ -101,7 +121,7 @@ class Path(Object):
     def line_to_point(self, point) -> Path:
         """Path Line to Point
 
-        Moves the path from it's current point to another at another point with a line.
+        Moves the path from its current point to another at another point with a line.
 
         Args:
             point: Graph of Point2f
@@ -145,7 +165,7 @@ class Path(Object):
     def quadratic_bezier_to_point(self, control_point, point) -> Path:
         """Path Quadratic Bézier to Point
 
-        Moves the path from it's current point to another with a quadratic Bézier curve bent toward a control point.
+        Moves the path from its current point to another with a quadratic Bézier curve bent toward a control point.
 
         Args:
             control_point: Graph of Point2f
