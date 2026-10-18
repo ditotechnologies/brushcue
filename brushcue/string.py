@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: d55fb8df2ecc9f502cb97ec4289d42dd88053b61e987bd995fd8bf40cf6ca55a
+# hash: 27e389156a319668abd23427d276c79a3b41bb53d198522681fcb5d6a9fd8a5f
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -12,6 +12,7 @@ from .object import Object
 if TYPE_CHECKING:
     from . import character
     from . import character_list
+    from . import path
 
 
 class String(Object):
@@ -19,6 +20,23 @@ class String(Object):
 
     def execute(self, context):
         return self._inner.execute(context).as_string()
+
+    def from_stylus(self, smooth_factor) -> path.Path:
+        """Path From Stylus
+
+        Creates a path from a stylus capture.
+
+        Args:
+            smooth_factor: Graph of Float
+
+        Returns:
+            Graph: A graph node producing a Path.
+        """
+        path_parsed = input_parsers.parse_string_graph(self)
+        smooth_factor_parsed = input_parsers.parse_float_graph(smooth_factor)
+        result = _internal.path_from_stylus_internal(path_parsed, smooth_factor_parsed)
+        from .path import Path
+        return Path(result)
 
     def to_character(self) -> character.Character:
         """String to Character

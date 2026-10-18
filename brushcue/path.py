@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: cb00c6950f852fa09defb938608bd9d0e5aab76d79a4ebe862f864bdd866b50c
+# hash: 49165f864c3d0c4659035e4ff10c44cd1fd85ec7254087ebc2202d37d9473a90
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -66,56 +66,6 @@ class Path(Object):
         control_point_2_parsed = input_parsers.parse_graph(control_point_2)
         point_parsed = input_parsers.parse_graph(point)
         result = _internal.path_cubic_bezier_to_point_internal(path_parsed, control_point_1_parsed, control_point_2_parsed, point_parsed)
-        return Path(result)
-
-    def drawing_move(self, point, time, pressure, azimuth_angle, altitude_angle, tension) -> Path:
-        """Path Drawing Move
-
-        Represents a move in a freehand drawing.
-
-        Args:
-            point: Graph of Point2f
-            time: Graph of Float
-            pressure: Graph of Float
-            azimuth_angle: Graph of Float
-            altitude_angle: Graph of Float
-            tension: Graph of Float
-
-        Returns:
-            Graph: A graph node producing a Path.
-        """
-        path_parsed = input_parsers.parse_graph(self)
-        point_parsed = input_parsers.parse_graph(point)
-        time_parsed = input_parsers.parse_float_graph(time)
-        pressure_parsed = input_parsers.parse_float_graph(pressure)
-        azimuth_angle_parsed = input_parsers.parse_float_graph(azimuth_angle)
-        altitude_angle_parsed = input_parsers.parse_float_graph(altitude_angle)
-        tension_parsed = input_parsers.parse_float_graph(tension)
-        result = _internal.path_drawing_move_internal(path_parsed, point_parsed, time_parsed, pressure_parsed, azimuth_angle_parsed, altitude_angle_parsed, tension_parsed)
-        return Path(result)
-
-    def drawing_start(self, time, point, pressure, azimuth_angle, altitude_angle) -> Path:
-        """Path Drawing Start
-
-        Represents the start of a freehand drawing.
-
-        Args:
-            time: Graph of Float
-            point: Graph of Point2f
-            pressure: Graph of Float
-            azimuth_angle: Graph of Float
-            altitude_angle: Graph of Float
-
-        Returns:
-            Graph: A graph node producing a Path.
-        """
-        path_parsed = input_parsers.parse_graph(self)
-        time_parsed = input_parsers.parse_float_graph(time)
-        point_parsed = input_parsers.parse_graph(point)
-        pressure_parsed = input_parsers.parse_float_graph(pressure)
-        azimuth_angle_parsed = input_parsers.parse_float_graph(azimuth_angle)
-        altitude_angle_parsed = input_parsers.parse_float_graph(altitude_angle)
-        result = _internal.path_drawing_start_internal(path_parsed, time_parsed, point_parsed, pressure_parsed, azimuth_angle_parsed, altitude_angle_parsed)
         return Path(result)
 
     def line_to_point(self, point) -> Path:
