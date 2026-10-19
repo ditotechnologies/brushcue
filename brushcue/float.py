@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 75cb7408c5191ab76f1757d18dfd813a6c53d621ef6f895554e1bc0e642cab0c
+# hash: 237e6fe9a214208deeb086f57ec0c50cd5599b198968bece1960639fddab4fba
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -227,6 +227,22 @@ class Float(Object):
         float1_parsed = input_parsers.parse_float_graph(self)
         float2_parsed = input_parsers.parse_float_graph(float2)
         result = _internal.float_min_internal(float1_parsed, float2_parsed)
+        return Float(result)
+
+    def modulo(self, float2) -> Float:
+        """Float Modulo
+
+        Returns the euclidean remainder of float 1 divided by float 2. The result is never negative for a positive divisor.
+
+        Args:
+            float2: Graph of Float
+
+        Returns:
+            Graph: A graph node producing a Float.
+        """
+        float1_parsed = input_parsers.parse_float_graph(self)
+        float2_parsed = input_parsers.parse_float_graph(float2)
+        result = _internal.float_modulo_internal(float1_parsed, float2_parsed)
         return Float(result)
 
     def multiply(self, float2) -> Float:
