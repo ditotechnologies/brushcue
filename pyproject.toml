@@ -31,5 +31,6 @@ examples = [
     "ipykernel",
     "matplotlib",
     "pillow",
-    "numpy"
+    "numpy",
+    "fonttools"
 ]

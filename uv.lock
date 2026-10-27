@@ -161,6 +161,7 @@ dependencies = [
 
 [package.dev-dependencies]
 examples = [
+    { name = "fonttools" },
     { name = "ipykernel" },
     { name = "jupyterlab" },
     { name = "matplotlib" },
@@ -174,6 +175,7 @@ requires-dist = [{ name = "ipykernel", specifier = ">=7.3.0" }]
 
 [package.metadata.requires-dev]
 examples = [
+    { name = "fonttools" },
     { name = "ipykernel" },
     { name = "jupyterlab" },
     { name = "matplotlib" },
