@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 1d104e64601cb9f0e5073fa8a54a3497e48fd24c5a5335412bed58bbfbd19789
+# hash: 150fdaf8e30bcb9fb8f24d926b7a2e84f2674a26ad5909a2bd6b26055d9af0a4
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -53,3 +53,29 @@ class Point2f(Object):
         y_parsed = input_parsers.parse_float_graph(y)
         result = _internal.point2f_from_components_internal(x_parsed, y_parsed)
         return Point2f(result)
+
+    def x(self) -> float.Float:
+        """Point 2 Float get X
+
+        Retrieves the X component of a Point 2 Float.
+
+        Returns:
+            Graph: A graph node producing a Float.
+        """
+        point_parsed = input_parsers.parse_graph(self)
+        result = _internal.point2f_x_internal(point_parsed)
+        from .float import Float
+        return Float(result)
+
+    def y(self) -> float.Float:
+        """Point 2 Float get Y
+
+        Retrieves the Y component of a Point 2 Float.
+
+        Returns:
+            Graph: A graph node producing a Float.
+        """
+        point_parsed = input_parsers.parse_graph(self)
+        result = _internal.point2f_y_internal(point_parsed)
+        from .float import Float
+        return Float(result)

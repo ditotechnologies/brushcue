@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 407e76485ae47b7bdec082d2000f26e87b79c28b515b17a615dd9e02037fdc77
+# hash: 9d8cf28b4a0cb5fecdbfcf8ebeee57ef01b66c9eccdee04fa5298747c7f6573d
 # generated from templates/py_brushcue_init.jinja
 
 from __future__ import annotations
@@ -111,6 +111,10 @@ from .ok_lch_a import OkLchA
 from .painter import Painter
 
 from .path import Path
+
+from .path_command import PathCommand
+
+from .path_command_list import PathCommandList
 
 from .pixel_encoding import PixelEncoding
 
@@ -245,6 +249,10 @@ __all__ = [
     "Painter",
 
     "Path",
+
+    "PathCommand",
+
+    "PathCommandList",
 
     "PixelEncoding",
 
