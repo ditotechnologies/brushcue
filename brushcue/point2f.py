@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 150fdaf8e30bcb9fb8f24d926b7a2e84f2674a26ad5909a2bd6b26055d9af0a4
+# hash: 75c34e7f1027318f5113a055e84a1f61d547997069f87f614956444e951c8568
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -18,6 +18,22 @@ class Point2f(Object):
 
     def execute(self, context):
         return self._inner.execute(context)
+
+    def add_vector(self, vector) -> Point2f:
+        """Point 2 Float Add Vector 2 Float
+
+        Offsets a Point 2 Float by a Vector 2 Float
+
+        Args:
+            vector: Graph of Vector2f
+
+        Returns:
+            Graph: A graph node producing a Point2f.
+        """
+        point_parsed = input_parsers.parse_graph(self)
+        vector_parsed = input_parsers.parse_graph(vector)
+        result = _internal.point2f_add_vector2f_internal(point_parsed, vector_parsed)
+        return Point2f(result)
 
     def distance(self, rhs) -> float.Float:
         """Point 2 Float Distance
