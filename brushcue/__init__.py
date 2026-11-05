@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 9d8cf28b4a0cb5fecdbfcf8ebeee57ef01b66c9eccdee04fa5298747c7f6573d
+# hash: d1c7034ea3e178a7e1fd31df81c33195dff35817de0c0df6cfcb1735d60d78d1
 # generated from templates/py_brushcue_init.jinja
 
 from __future__ import annotations
@@ -107,6 +107,10 @@ from .ok_lab_color import OkLabColor
 from .ok_lab_hist import OkLabHist
 
 from .ok_lch_a import OkLchA
+
+from .painted_illustration import PaintedIllustration
+
+from .painted_illustration_list import PaintedIllustrationList
 
 from .painter import Painter
 
@@ -245,6 +249,10 @@ __all__ = [
     "OkLabHist",
 
     "OkLchA",
+
+    "PaintedIllustration",
+
+    "PaintedIllustrationList",
 
     "Painter",
 

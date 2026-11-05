@@ -1,11 +1,16 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: af0294fe2c07f9ae256f950ded728f1983a5fec9ef80d188b466c04d9fb84d04
+# hash: 3f36df52b5e9aec108c2830afa9a4ec7589d3a4419284fdf2fa5b48bd84982ce
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from . import _py as _internal, input_parsers
 from .object import Object
+
+if TYPE_CHECKING:
+    from . import painted_illustration_list
 
 
 class Painter(Object):
@@ -99,6 +104,22 @@ class Painter(Object):
         return Painter(result)
 
     @staticmethod
+    def from_painted_illustrations(illustrations) -> Painter:
+        """Painter From Painted Illustrations
+
+        Creates a painter that draws the painted illustrations in order, from back to front.
+
+        Args:
+            illustrations: Graph of PaintedIllustrationList
+
+        Returns:
+            Graph: A graph node producing a Painter.
+        """
+        illustrations_parsed = input_parsers.parse_graph(illustrations)
+        result = _internal.painter_from_painted_illustrations_internal(illustrations_parsed)
+        return Painter(result)
+
+    @staticmethod
     def new() -> Painter:
         """Painter New
 
@@ -109,3 +130,16 @@ class Painter(Object):
         """
         result = _internal.painter_new_internal()
         return Painter(result)
+
+    def to_painted_illustrations(self) -> painted_illustration_list.PaintedIllustrationList:
+        """Painter To Painted Illustrations
+
+        Gets the list of painted illustrations in this painter, in paint order from back to front.
+
+        Returns:
+            Graph: A graph node producing a PaintedIllustrationList.
+        """
+        painter_parsed = input_parsers.parse_graph(self)
+        result = _internal.painter_to_painted_illustrations_internal(painter_parsed)
+        from .painted_illustration_list import PaintedIllustrationList
+        return PaintedIllustrationList(result)
