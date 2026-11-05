@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 3f36df52b5e9aec108c2830afa9a4ec7589d3a4419284fdf2fa5b48bd84982ce
+# hash: 7bfdb9a01724210524dfadb71a1e2dfc205d2cdc29630ba6dc2ea593c5e8fa3a
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -10,6 +10,7 @@ from . import _py as _internal, input_parsers
 from .object import Object
 
 if TYPE_CHECKING:
+    from . import bounds2f
     from . import painted_illustration_list
 
 
@@ -102,6 +103,19 @@ class Painter(Object):
         styled_string_parsed = input_parsers.parse_graph(styled_string)
         result = _internal.painter_add_styled_text_internal(painter_parsed, styled_string_parsed)
         return Painter(result)
+
+    def bounds(self) -> bounds2f.Bounds2f:
+        """Painter Bounds
+
+        Gets the bounding box of everything the painter draws, including brush radius.
+
+        Returns:
+            Graph: A graph node producing a Bounds2f.
+        """
+        painter_parsed = input_parsers.parse_graph(self)
+        result = _internal.painter_bounds_internal(painter_parsed)
+        from .bounds2f import Bounds2f
+        return Bounds2f(result)
 
     @staticmethod
     def from_painted_illustrations(illustrations) -> Painter:

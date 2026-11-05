@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: cfd5991db4adbd7e1d8200e4bcaa1ed1cd12858504b34500eddc97e89a9b49d3
+# hash: 9ab21b36e563bd506decbe5007b71e2a2c4b2e04e6e9dcbf52fe07d31ae27147
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -492,6 +492,8 @@ def painter_add_path_with_render_style_internal(painter: Graph, path: Graph, ren
 def painter_add_rectangle_with_render_style_internal(painter: Graph, center: Graph, dimensions: Graph, rotation: Graph, render_style: Graph, instances: Graph) -> Graph: ...
 
 def painter_add_styled_text_internal(painter: Graph, styled_string: Graph) -> Graph: ...
+
+def painter_bounds_internal(painter: Graph) -> Graph: ...
 
 def painter_from_painted_illustrations_internal(illustrations: Graph) -> Graph: ...
 
