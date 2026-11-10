@@ -130,7 +130,7 @@ def test_brushcue_fn_builds_and_executes_a_sequence_graph():
     assert len(result) > 0
 
 
-def test_brushcue_fn_builds_a_stream_map_graph():
+def test_brushcue_fn_builds_a_list_map_graph():
     @brushcue_fn
     def identity(item):
         assert isinstance(item, brushcue.Int)
@@ -138,6 +138,6 @@ def test_brushcue_fn_builds_a_stream_map_graph():
 
     int_list = brushcue.Object.input(brushcue.TypeDefinition.from_name("IntList"))
 
-    mapped = int_list.to_stream().map(identity)
+    mapped = int_list.map(identity)
 
-    assert isinstance(mapped, brushcue.Stream)
+    assert isinstance(mapped, brushcue.List)

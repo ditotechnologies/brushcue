@@ -9,7 +9,6 @@ from . import _py as _internal
 if TYPE_CHECKING:
     from .list import List
     from .object import Object
-    from .stream import Stream
 
 
 def unwrap_graph(value: _GraphWrapper | _internal.Graph) -> _internal.Graph:
@@ -53,14 +52,6 @@ def resolve_output_graph(
 @overload
 def resolve_output_graph(
     inner: _internal.Graph,
-    source: Stream[_ObjectT],
-    output_type: Literal["Object"],
-) -> _ObjectT: ...
-
-
-@overload
-def resolve_output_graph(
-    inner: _internal.Graph,
     source: List[_ObjectT],
     output_type: Literal["Object"],
 ) -> _ObjectT: ...
@@ -77,23 +68,7 @@ def resolve_output_graph(
 @overload
 def resolve_output_graph(
     inner: _internal.Graph,
-    source: Stream[_ObjectT] | List[_ObjectT],
-    output_type: Literal["Stream"],
-) -> Stream[_ObjectT]: ...
-
-
-@overload
-def resolve_output_graph(
-    inner: _internal.Graph,
-    source: _ObjectT,
-    output_type: Literal["Stream"],
-) -> Stream[_ObjectT]: ...
-
-
-@overload
-def resolve_output_graph(
-    inner: _internal.Graph,
-    source: Stream[_ObjectT] | List[_ObjectT],
+    source: List[_ObjectT],
     output_type: Literal["List"],
 ) -> List[_ObjectT]: ...
 
@@ -121,10 +96,6 @@ def resolve_output_graph(
         return type(source)(inner, resolved_type)
     if output_type == "Object":
         return resolved_type(inner)
-    if output_type == "Stream":
-        from .stream import Stream
-
-        return Stream(inner, resolved_type)
     if output_type == "List":
         from .list import List
 

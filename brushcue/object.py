@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: f5e89f0e2e932da0e04fcf9e0a4f7a9afdc03204c850770a19ce43347573520c
+# hash: ed3d9aa73b15d90109008d5c3b43ba42bb14a0145e39798086bdb60ea321a3b9
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -11,7 +11,6 @@ from .any_graph import AnyGraph
 
 if TYPE_CHECKING:
     from . import list
-    from . import stream
 
 
 class Object(AnyGraph):
@@ -40,20 +39,4 @@ class Object(AnyGraph):
             result,
             self,
             "List",
-        )
-
-    def to_stream(self) -> stream.Stream:
-        """Object to Stream
-
-        Converts an object to a stream
-
-        Returns:
-            Graph: A graph node producing a Stream.
-        """
-        object_parsed = input_parsers.parse_graph(self)
-        result = _internal.object_to_stream_internal(object_parsed)
-        return input_parsers.resolve_output_graph(
-            result,
-            self,
-            "Stream",
         )

@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 6bc1fbc43bad1d571d9cf3f6bfbcfc2d2c127926ce5223847990454575b75aee
+# hash: 17e2553162c2ca6be552a79d5552bd4eea30a686c345696f8bff8c39203a4a66
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -12,9 +12,10 @@ from .any_graph import AnyGraph
 if TYPE_CHECKING:
     from .object import Object
     from . import int
-    from . import stream
 
 _ListItemT = TypeVar("_ListItemT", bound="Object")
+_ListFoldOutputT = TypeVar("_ListFoldOutputT", bound="Object")
+_ListMapOutputT = TypeVar("_ListMapOutputT", bound="Object")
 
 
 class List(AnyGraph, Generic[_ListItemT]):
@@ -43,6 +44,32 @@ class List(AnyGraph, Generic[_ListItemT]):
             "List",
         )
 
+    def filter(self, fn) -> List[_ListItemT]:
+        """List Filter
+
+        Keeps the elements of a list for which a function returns true
+
+        Args:
+            fn: The function associated with this node.
+
+        Returns:
+            Graph: A graph node producing a List.
+        """
+        list_parsed = input_parsers.parse_graph(self)
+        if not hasattr(fn, "__brushcue_make_graph__"):
+            raise TypeError("fn must be annotated with @brushcue_fn")
+        dispatched_graphs = fn.__brushcue_make_graph__([
+            _internal.TypeDefinition.from_name(self._resolved_type.__name__)
+            ])
+        result = _internal.list_filter_internal(list_parsed, *dispatched_graphs
+            )
+
+        return input_parsers.resolve_output_graph(
+            result,
+            self,
+            "List",
+        )
+
     def first(self) -> _ListItemT:
         """List First
 
@@ -56,6 +83,35 @@ class List(AnyGraph, Generic[_ListItemT]):
         return input_parsers.resolve_output_graph(
             result,
             self,
+            "Object",
+        )
+
+    def fold(self, initial_accumulator: _ListFoldOutputT, fn) -> _ListFoldOutputT:
+        """List Fold
+
+        Folds the elements of a list into an accumulator
+
+        Args:
+            initial_accumulator: Graph of Object
+            fn: The function associated with this node.
+
+        Returns:
+            Graph: A graph node producing a Object.
+        """
+        list_parsed = input_parsers.parse_graph(self)
+        initial_accumulator_parsed = input_parsers.parse_graph(initial_accumulator)
+        if not hasattr(fn, "__brushcue_make_graph__"):
+            raise TypeError("fn must be annotated with @brushcue_fn")
+        dispatched_graphs = fn.__brushcue_make_graph__([
+            _internal.TypeDefinition.from_name("Object"),
+            _internal.TypeDefinition.from_name(self._resolved_type.__name__)
+            ])
+        result = _internal.list_fold_internal(list_parsed, initial_accumulator_parsed, *dispatched_graphs
+            )
+
+        return input_parsers.resolve_output_graph(
+            result,
+            initial_accumulator,
             "Object",
         )
 
@@ -92,18 +148,28 @@ class List(AnyGraph, Generic[_ListItemT]):
         from .int import Int
         return Int(result)
 
-    def to_stream(self) -> stream.Stream:
-        """List to Stream
+    def map(self, fn) -> List[_ListMapOutputT]:
+        """List Map
 
-        Converts a list to a stream
+        Applies a function to every element of a list
+
+        Args:
+            fn: The function associated with this node.
 
         Returns:
-            Graph: A graph node producing a Stream.
+            Graph: A graph node producing a List.
         """
         list_parsed = input_parsers.parse_graph(self)
-        result = _internal.list_to_stream_internal(list_parsed)
+        if not hasattr(fn, "__brushcue_make_graph__"):
+            raise TypeError("fn must be annotated with @brushcue_fn")
+        dispatched_graphs = fn.__brushcue_make_graph__([
+            _internal.TypeDefinition.from_name(self._resolved_type.__name__)
+            ])
+        result = _internal.list_map_internal(list_parsed, *dispatched_graphs
+            )
+
         return input_parsers.resolve_output_graph(
             result,
-            self,
-            "Stream",
+            fn.__brushcue_output_graph__,
+            "List",
         )
