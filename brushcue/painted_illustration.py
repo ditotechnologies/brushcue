@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 604ca028dca2a6659ec236e480e6802909a38d849995744567d6fc3ed22512c3
+# hash: 2688da81732fde9edd8b906d15dcb8a5b0c2bebc818ce0128264aacb1b8bacbe
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -141,3 +141,67 @@ class PaintedIllustration(Object):
         result = _internal.painted_illustration_rotation_internal(illustration_parsed)
         from .float import Float
         return Float(result)
+
+    def with_instances(self, instances) -> PaintedIllustration:
+        """Painted Illustration with Instances
+
+        Returns a copy of this painted illustration drawn with different transforms. It is drawn once for each transform. The shape and render style stay the same.
+
+        Args:
+            instances: Graph of Transform2List
+
+        Returns:
+            Graph: A graph node producing a PaintedIllustration.
+        """
+        illustration_parsed = input_parsers.parse_graph(self)
+        instances_parsed = input_parsers.parse_graph(instances)
+        result = _internal.painted_illustration_with_instances_internal(illustration_parsed, instances_parsed)
+        return PaintedIllustration(result)
+
+    def with_path(self, path) -> PaintedIllustration:
+        """Painted Illustration with Path
+
+        Returns a copy of this painted illustration with its shape replaced by a path. Works on paths, rectangles and ellipses. The render style and instances stay the same.
+
+        Args:
+            path: Graph of Path
+
+        Returns:
+            Graph: A graph node producing a PaintedIllustration.
+        """
+        illustration_parsed = input_parsers.parse_graph(self)
+        path_parsed = input_parsers.parse_graph(path)
+        result = _internal.painted_illustration_with_path_internal(illustration_parsed, path_parsed)
+        return PaintedIllustration(result)
+
+    def with_render_style(self, render_style) -> PaintedIllustration:
+        """Painted Illustration with Render Style
+
+        Returns a copy of this painted illustration drawn with a different render style. The shape and instances stay the same.
+
+        Args:
+            render_style: Graph of RenderStyle
+
+        Returns:
+            Graph: A graph node producing a PaintedIllustration.
+        """
+        illustration_parsed = input_parsers.parse_graph(self)
+        render_style_parsed = input_parsers.parse_graph(render_style)
+        result = _internal.painted_illustration_with_render_style_internal(illustration_parsed, render_style_parsed)
+        return PaintedIllustration(result)
+
+    def with_transform(self, transform) -> PaintedIllustration:
+        """Painted Illustration with Transform
+
+        Returns a copy of this painted illustration with a transform applied after each of its instance transforms.
+
+        Args:
+            transform: Graph of Transform2
+
+        Returns:
+            Graph: A graph node producing a PaintedIllustration.
+        """
+        illustration_parsed = input_parsers.parse_graph(self)
+        transform_parsed = input_parsers.parse_graph(transform)
+        result = _internal.painted_illustration_with_transform_internal(illustration_parsed, transform_parsed)
+        return PaintedIllustration(result)
