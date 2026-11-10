@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 9ab21b36e563bd506decbe5007b71e2a2c4b2e04e6e9dcbf52fe07d31ae27147
+# hash: 2469464682f7c1f19b9dc09dce144ad215fd7cb19df223345c5c3f7c3d69bed6
 # generated from templates/py_brushcue_stubs.jinja
 
 from __future__ import annotations
@@ -500,6 +500,8 @@ def painter_from_painted_illustrations_internal(illustrations: Graph) -> Graph: 
 def painter_new_internal() -> Graph: ...
 
 def painter_to_painted_illustrations_internal(painter: Graph) -> Graph: ...
+
+def painter_to_svg_internal(painter: Graph) -> Graph: ...
 
 def path_cardinal_cubic_to_point_internal(path: Graph, point: Graph, tension: Graph) -> Graph: ...
 

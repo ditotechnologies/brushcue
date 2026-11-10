@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 7bfdb9a01724210524dfadb71a1e2dfc205d2cdc29630ba6dc2ea593c5e8fa3a
+# hash: 6aa6ff86257e9300ac121bf3c3ca5e486a03bc2a0bae856d887d993118e2cafc
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -12,6 +12,7 @@ from .object import Object
 if TYPE_CHECKING:
     from . import bounds2f
     from . import painted_illustration_list
+    from . import string
 
 
 class Painter(Object):
@@ -157,3 +158,16 @@ class Painter(Object):
         result = _internal.painter_to_painted_illustrations_internal(painter_parsed)
         from .painted_illustration_list import PaintedIllustrationList
         return PaintedIllustrationList(result)
+
+    def to_svg(self) -> string.String:
+        """Painter to SVG
+
+        Exports everything the painter draws as an SVG document. Supports solid brushes and fills only; custom or dashed brushes, custom fills, and erasing return an error.
+
+        Returns:
+            Graph: A graph node producing a String.
+        """
+        painter_parsed = input_parsers.parse_graph(self)
+        result = _internal.painter_to_svg_internal(painter_parsed)
+        from .string import String
+        return String(result)
