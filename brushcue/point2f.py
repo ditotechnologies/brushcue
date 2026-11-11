@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 75c34e7f1027318f5113a055e84a1f61d547997069f87f614956444e951c8568
+# hash: 519f683412aad2a9ed81131e7b3874b6da311c6a765a7e8c78e9b01c451578d6
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -11,6 +11,7 @@ from .object import Object
 
 if TYPE_CHECKING:
     from . import float
+    from . import vector2f
 
 
 class Point2f(Object):
@@ -69,6 +70,23 @@ class Point2f(Object):
         y_parsed = input_parsers.parse_float_graph(y)
         result = _internal.point2f_from_components_internal(x_parsed, y_parsed)
         return Point2f(result)
+
+    def subtract(self, rhs) -> vector2f.Vector2f:
+        """Point 2 Float Subtract
+
+        Subtracts two Point 2 Floats to produce the vector from rhs to lhs.
+
+        Args:
+            rhs: Graph of Point2f
+
+        Returns:
+            Graph: A graph node producing a Vector2f.
+        """
+        lhs_parsed = input_parsers.parse_graph(self)
+        rhs_parsed = input_parsers.parse_graph(rhs)
+        result = _internal.point2f_subtract_internal(lhs_parsed, rhs_parsed)
+        from .vector2f import Vector2f
+        return Vector2f(result)
 
     def x(self) -> float.Float:
         """Point 2 Float get X
