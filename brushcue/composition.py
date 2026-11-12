@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 27da4ad2c9943292719a2f04d3c4c9311989def1e904abceb82a6460a6ae15e2
+# hash: 17b5de5df6ab405bd2067fa3317518d586de72ef39c299ed594d5190170ad4fc
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -16,7 +16,6 @@ if TYPE_CHECKING:
     from . import color_representation
     from . import image
     from . import ok_lab_hist
-    from . import painter
     from . import profiled_color
     from . import profiled_color_list
 
@@ -1001,27 +1000,6 @@ class Composition(Object):
         palette_parsed = input_parsers.parse_graph(palette)
         result = _internal.composition_palette_reduction_internal(composition_parsed, palette_parsed)
         return Composition(result)
-
-    def path_mosaic(self, paths, path_scale_transform, brush) -> painter.Painter:
-        """Composition Path Mosaic
-
-        Recreates the composition's light and dark areas by stamping the given paths over and over with the brush. Darker areas get more stamps. Returns a painter with every stamp placed.
-
-        Args:
-            paths: Graph of PathList
-            path_scale_transform: Graph of Transform2
-            brush: Graph of Brush
-
-        Returns:
-            Graph: A graph node producing a Painter.
-        """
-        composition_parsed = input_parsers.parse_graph(self)
-        paths_parsed = input_parsers.parse_graph(paths)
-        path_scale_transform_parsed = input_parsers.parse_graph(path_scale_transform)
-        brush_parsed = input_parsers.parse_graph(brush)
-        result = _internal.composition_path_mosaic_internal(composition_parsed, paths_parsed, path_scale_transform_parsed, brush_parsed)
-        from .painter import Painter
-        return Painter(result)
 
     def pixelate(self, pixel_size) -> Composition:
         """Composition Pixelate
