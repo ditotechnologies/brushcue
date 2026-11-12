@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: fb78d43bc47b89903912b54c623fc3d137405da3267d956405d22383288f239f
+# hash: 7c2392b95cb684ff4d6eabc32b216297895508e0327a90c2441f2cbb719485ef
 # generated from templates/py_brushcue_init.jinja
 
 from __future__ import annotations
@@ -119,6 +119,8 @@ from .path import Path
 from .path_command import PathCommand
 
 from .path_command_list import PathCommandList
+
+from .path_list import PathList
 
 from .pixel_encoding import PixelEncoding
 
@@ -259,6 +261,8 @@ __all__ = [
     "PathCommand",
 
     "PathCommandList",
+
+    "PathList",
 
     "PixelEncoding",
 
