@@ -1,5 +1,5 @@
 # (c) Dito Technologies LLC. Auto-generated. Do not modify directly.
-# hash: 17b5de5df6ab405bd2067fa3317518d586de72ef39c299ed594d5190170ad4fc
+# hash: e53c51383b00f34951b0238fe2ae953b7d45531f285b314a291ae88891f3689e
 # generated from templates/py_type.jinja
 
 from __future__ import annotations
@@ -42,130 +42,116 @@ class Composition(Object):
         result = _internal.composition_absolute_value_internal(image_parsed)
         return Composition(result)
 
-    def blend_add(self, background, foreground_transform) -> Composition:
+    def blend_add(self, background) -> Composition:
         """Composition Blend Add
 
         Adds the foreground and background images together using additive blending.
 
         Args:
             background: Graph of Composition
-            foreground_transform: Graph of Transform2
 
         Returns:
             Graph: A graph node producing a Composition.
         """
         foreground_parsed = input_parsers.parse_graph(self)
         background_parsed = input_parsers.parse_graph(background)
-        foreground_transform_parsed = input_parsers.parse_graph(foreground_transform)
-        result = _internal.composition_blend_add_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+        result = _internal.composition_blend_add_internal(foreground_parsed, background_parsed)
         return Composition(result)
 
-    def blend_alpha(self, background, foreground_transform) -> Composition:
+    def blend_alpha(self, background) -> Composition:
         """Composition Blend Alpha
 
         Blends between the foreground and background using the alpha component of the foreground. 1 is foreground. 0 is background.
 
         Args:
             background: Graph of Composition
-            foreground_transform: Graph of Transform2
 
         Returns:
             Graph: A graph node producing a Composition.
         """
         foreground_parsed = input_parsers.parse_graph(self)
         background_parsed = input_parsers.parse_graph(background)
-        foreground_transform_parsed = input_parsers.parse_graph(foreground_transform)
-        result = _internal.composition_blend_alpha_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+        result = _internal.composition_blend_alpha_internal(foreground_parsed, background_parsed)
         return Composition(result)
 
-    def blend_max(self, background, foreground_transform) -> Composition:
+    def blend_max(self, background) -> Composition:
         """Composition Blend Max
 
         Blends the foreground and background images using maximum value blending.
 
         Args:
             background: Graph of Composition
-            foreground_transform: Graph of Transform2
 
         Returns:
             Graph: A graph node producing a Composition.
         """
         foreground_parsed = input_parsers.parse_graph(self)
         background_parsed = input_parsers.parse_graph(background)
-        foreground_transform_parsed = input_parsers.parse_graph(foreground_transform)
-        result = _internal.composition_blend_max_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+        result = _internal.composition_blend_max_internal(foreground_parsed, background_parsed)
         return Composition(result)
 
-    def blend_min(self, background, foreground_transform) -> Composition:
+    def blend_min(self, background) -> Composition:
         """Composition Blend Min
 
         Blends the foreground and background images using minimum blending, taking the minimum value for each pixel.
 
         Args:
             background: Graph of Composition
-            foreground_transform: Graph of Transform2
 
         Returns:
             Graph: A graph node producing a Composition.
         """
         foreground_parsed = input_parsers.parse_graph(self)
         background_parsed = input_parsers.parse_graph(background)
-        foreground_transform_parsed = input_parsers.parse_graph(foreground_transform)
-        result = _internal.composition_blend_min_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+        result = _internal.composition_blend_min_internal(foreground_parsed, background_parsed)
         return Composition(result)
 
-    def blend_multiply(self, background, foreground_transform) -> Composition:
+    def blend_multiply(self, background) -> Composition:
         """Composition Blend Multiply
 
         Multiplies the foreground and background images together using multiply blending.
 
         Args:
             background: Graph of Composition
-            foreground_transform: Graph of Transform2
 
         Returns:
             Graph: A graph node producing a Composition.
         """
         foreground_parsed = input_parsers.parse_graph(self)
         background_parsed = input_parsers.parse_graph(background)
-        foreground_transform_parsed = input_parsers.parse_graph(foreground_transform)
-        result = _internal.composition_blend_multiply_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+        result = _internal.composition_blend_multiply_internal(foreground_parsed, background_parsed)
         return Composition(result)
 
-    def blend_stencil(self, background, foreground_transform) -> Composition:
+    def blend_stencil(self, background) -> Composition:
         """Composition Blend Stencil
 
         Blends the foreground and background images using stencil blending. When the foreground is over the background, the foreground's alpha and the background's r, g and b are used.
 
         Args:
             background: Graph of Composition
-            foreground_transform: Graph of Transform2
 
         Returns:
             Graph: A graph node producing a Composition.
         """
         foreground_parsed = input_parsers.parse_graph(self)
         background_parsed = input_parsers.parse_graph(background)
-        foreground_transform_parsed = input_parsers.parse_graph(foreground_transform)
-        result = _internal.composition_blend_stencil_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+        result = _internal.composition_blend_stencil_internal(foreground_parsed, background_parsed)
         return Composition(result)
 
-    def blend_subtract(self, background, foreground_transform) -> Composition:
+    def blend_subtract(self, background) -> Composition:
         """Composition Blend Subtract
 
         Subtracts the foreground image from the background image using subtractive blending.
 
         Args:
             background: Graph of Composition
-            foreground_transform: Graph of Transform2
 
         Returns:
             Graph: A graph node producing a Composition.
         """
         foreground_parsed = input_parsers.parse_graph(self)
         background_parsed = input_parsers.parse_graph(background)
-        foreground_transform_parsed = input_parsers.parse_graph(foreground_transform)
-        result = _internal.composition_blend_subtract_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+        result = _internal.composition_blend_subtract_internal(foreground_parsed, background_parsed)
         return Composition(result)
 
     def bloom(self, threshold, sigma, intensity) -> Composition:
@@ -901,22 +887,20 @@ class Composition(Object):
         result = _internal.composition_negative_internal(composition_parsed)
         return Composition(result)
 
-    def nonlinear_rgb_blend_alpha(self, background, foreground_transform) -> Composition:
+    def nonlinear_rgb_blend_alpha(self, background) -> Composition:
         """Composition Nonlinear RGB Blend Alpha
 
         A specialized version of CompositionBlendAlpha. Blends in a non-linear RGB.
 
         Args:
             background: Graph of Composition
-            foreground_transform: Graph of Transform2
 
         Returns:
             Graph: A graph node producing a Composition.
         """
         foreground_parsed = input_parsers.parse_graph(self)
         background_parsed = input_parsers.parse_graph(background)
-        foreground_transform_parsed = input_parsers.parse_graph(foreground_transform)
-        result = _internal.composition_nonlinear_r_g_b_blend_alpha_internal(foreground_parsed, background_parsed, foreground_transform_parsed)
+        result = _internal.composition_nonlinear_r_g_b_blend_alpha_internal(foreground_parsed, background_parsed)
         return Composition(result)
 
     def opacity_scales(self, scale) -> Composition:

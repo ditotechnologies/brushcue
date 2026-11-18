@@ -65,34 +65,40 @@ The following [BrushCue tools](https://www.brushcue.com/tools) have Python examp
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/adjust-channels"><img src="https://www.brushcue.com/tools/adjust-channels/poster.jpeg" width="180" alt="Adjust Channels"><br>Adjust Channels</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/after-the-rain"><img src="https://www.brushcue.com/tools/after-the-rain/poster.jpeg" width="180" alt="After the Rain"><br>After the Rain</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/afternoon-filter"><img src="https://www.brushcue.com/tools/afternoon-filter/poster.jpeg" width="180" alt="Afternoon Filter"><br>Afternoon Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/amber-plains"><img src="https://www.brushcue.com/tools/amber-plains/poster.jpeg" width="180" alt="Amber Plains"><br>Amber Plains</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/auto-contrast"><img src="https://www.brushcue.com/tools/auto-contrast/poster.jpeg" width="180" alt="Auto Contrast"><br>Auto Contrast</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/autumn-filter"><img src="https://www.brushcue.com/tools/autumn-filter/poster.jpeg" width="180" alt="Autumn Filter"><br>Autumn Filter</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/autumn-filter"><img src="https://www.brushcue.com/tools/autumn-filter/poster.jpeg" width="180" alt="Autumn Filter"><br>Autumn Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/black-and-white-negative-filter"><img src="https://www.brushcue.com/tools/black-and-white-negative-filter/poster.jpeg" width="180" alt="Black and White Negative Filter"><br>Black and White Negative Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/bloom"><img src="https://www.brushcue.com/tools/bloom/poster.jpeg" width="180" alt="Bloom"><br>Bloom</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/blue-channel"><img src="https://www.brushcue.com/tools/blue-channel/poster.jpeg" width="180" alt="Blue Channel"><br>Blue Channel</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/blue-hour-filter"><img src="https://www.brushcue.com/tools/blue-hour-filter/poster.jpeg" width="180" alt="Blue Hour Filter"><br>Blue Hour Filter</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/blue-current"><img src="https://www.brushcue.com/tools/blue-current/poster.jpeg" width="180" alt="Blue Current"><br>Blue Current</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/blue-hour-filter"><img src="https://www.brushcue.com/tools/blue-hour-filter/poster.jpeg" width="180" alt="Blue Hour Filter"><br>Blue Hour Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/blur-reveal-animation"><img src="https://www.brushcue.com/tools/blur-reveal-animation/poster.jpeg" width="180" alt="Blur Reveal Animation"><br>Blur Reveal Animation</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/box-blur"><img src="https://www.brushcue.com/tools/box-blur/poster.jpeg" width="180" alt="Box Blur"><br>Box Blur</a></td>
+</tr>
+<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/brightness-adjust"><img src="https://www.brushcue.com/tools/brightness-adjust/poster.jpeg" width="180" alt="Brightness Adjust"><br>Brightness Adjust</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/brightness-contrast-adjust"><img src="https://www.brushcue.com/tools/brightness-contrast-adjust/poster.jpeg" width="180" alt="Brightness Contrast Adjust"><br>Brightness Contrast Adjust</a></td>
-</tr>
-<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/camera-moving-distortion"><img src="https://www.brushcue.com/tools/camera-moving-distortion/poster.jpeg" width="180" alt="Camera Moving Distortion"><br>Camera Moving Distortion</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/canopy-light"><img src="https://www.brushcue.com/tools/canopy-light/poster.jpeg" width="180" alt="Canopy Light"><br>Canopy Light</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/cartoon-filter"><img src="https://www.brushcue.com/tools/cartoon-filter/poster.jpeg" width="180" alt="Cartoon Filter"><br>Cartoon Filter</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/channel-mixer"><img src="https://www.brushcue.com/tools/channel-mixer/poster.jpeg" width="180" alt="Channel Mixer"><br>Channel Mixer</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/cartoon-filter"><img src="https://www.brushcue.com/tools/cartoon-filter/poster.jpeg" width="180" alt="Cartoon Filter"><br>Cartoon Filter</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/channel-mixer"><img src="https://www.brushcue.com/tools/channel-mixer/poster.jpeg" width="180" alt="Channel Mixer"><br>Channel Mixer</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/charcoal-sketch"><img src="https://www.brushcue.com/tools/charcoal-sketch/poster.jpeg" width="180" alt="Charcoal Sketch"><br>Charcoal Sketch</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/chroma-offset"><img src="https://www.brushcue.com/tools/chroma-offset/poster.jpeg" width="180" alt="Chroma Offset"><br>Chroma Offset</a></td>
+</tr>
+<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/circle-crop"><img src="https://www.brushcue.com/tools/circle-crop/poster.jpeg" width="180" alt="Circle Crop"><br>Circle Crop</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/coachella-aesthetic"><img src="https://www.brushcue.com/tools/coachella-aesthetic/poster.jpeg" width="180" alt="Coachella Aesthetic"><br>Coachella Aesthetic</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/color-gradient"><img src="https://www.brushcue.com/tools/color-gradient/poster.jpeg" width="180" alt="Color Gradient"><br>Color Gradient</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/color-halftone"><img src="https://www.brushcue.com/tools/color-halftone/poster.jpeg" width="180" alt="Color Halftone"><br>Color Halftone</a></td>
 </tr>
 <tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/color-invert"><img src="https://www.brushcue.com/tools/color-invert/poster.jpeg" width="180" alt="Color Invert"><br>Color Invert</a></td>
@@ -103,26 +109,32 @@ The following [BrushCue tools](https://www.brushcue.com/tools) have Python examp
 <tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/conic-gradient"><img src="https://www.brushcue.com/tools/conic-gradient/poster.jpeg" width="180" alt="Conic Gradient"><br>Conic Gradient</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/contrast-adjust"><img src="https://www.brushcue.com/tools/contrast-adjust/poster.jpeg" width="180" alt="Contrast Adjust"><br>Contrast Adjust</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/copper-orchard"><img src="https://www.brushcue.com/tools/copper-orchard/poster.jpeg" width="180" alt="Copper Orchard"><br>Copper Orchard</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/coquette-filter"><img src="https://www.brushcue.com/tools/coquette-filter/poster.jpeg" width="180" alt="Coquette Filter"><br>Coquette Filter</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/cottagecore-filter"><img src="https://www.brushcue.com/tools/cottagecore-filter/poster.jpeg" width="180" alt="Cottagecore Filter"><br>Cottagecore Filter</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/cottagecore-filter"><img src="https://www.brushcue.com/tools/cottagecore-filter/poster.jpeg" width="180" alt="Cottagecore Filter"><br>Cottagecore Filter</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/crop-image"><img src="https://www.brushcue.com/tools/crop-image/poster.jpeg" width="180" alt="Crop Image"><br>Crop Image</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/cross-hatch"><img src="https://www.brushcue.com/tools/cross-hatch/poster.jpeg" width="180" alt="Cross Hatch"><br>Cross Hatch</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/cross-process-filter"><img src="https://www.brushcue.com/tools/cross-process-filter/poster.jpeg" width="180" alt="Cross Process Filter"><br>Cross Process Filter</a></td>
+</tr>
+<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/crt-monitor-filter"><img src="https://www.brushcue.com/tools/crt-monitor-filter/poster.jpeg" width="180" alt="CRT Monitor Filter"><br>CRT Monitor Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/custom-color-shader"><img src="https://www.brushcue.com/tools/custom-color-shader/poster.jpeg" width="180" alt="Custom Color Shader"><br>Custom Color Shader</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/custom-spacial-shader"><img src="https://www.brushcue.com/tools/custom-spacial-shader/poster.jpeg" width="180" alt="Custom Spacial Shader"><br>Custom Spacial Shader</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/cyan-nocturne"><img src="https://www.brushcue.com/tools/cyan-nocturne/poster.jpeg" width="180" alt="Cyan Nocturne"><br>Cyan Nocturne</a></td>
 </tr>
 <tr>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/cyan-nocturne"><img src="https://www.brushcue.com/tools/cyan-nocturne/poster.jpeg" width="180" alt="Cyan Nocturne"><br>Cyan Nocturne</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/cyberpunk-filter"><img src="https://www.brushcue.com/tools/cyberpunk-filter/poster.jpeg" width="180" alt="Cyberpunk Filter"><br>Cyberpunk Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/dark-academia-filter"><img src="https://www.brushcue.com/tools/dark-academia-filter/poster.jpeg" width="180" alt="Dark Academia Filter"><br>Dark Academia Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/darken"><img src="https://www.brushcue.com/tools/darken/poster.jpeg" width="180" alt="Darken"><br>Darken</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/dawn-filter"><img src="https://www.brushcue.com/tools/dawn-filter/poster.jpeg" width="180" alt="Dawn Filter"><br>Dawn Filter</a></td>
 </tr>
 <tr>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/dawn-filter"><img src="https://www.brushcue.com/tools/dawn-filter/poster.jpeg" width="180" alt="Dawn Filter"><br>Dawn Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/desert-frame"><img src="https://www.brushcue.com/tools/desert-frame/poster.jpeg" width="180" alt="Desert Frame"><br>Desert Frame</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/desert-mirage-filter"><img src="https://www.brushcue.com/tools/desert-mirage-filter/poster.jpeg" width="180" alt="Desert Mirage Filter Animation"><br>Desert Mirage Filter Animation</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/dilate"><img src="https://www.brushcue.com/tools/dilate/poster.jpeg" width="180" alt="Dilate"><br>Dilate</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/dissolving-sun"><img src="https://www.brushcue.com/tools/dissolving-sun/poster.jpeg" width="180" alt="Dissolving Sun"><br>Dissolving Sun</a></td>
 </tr>
 <tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/dithering-effect"><img src="https://www.brushcue.com/tools/dithering-effect/poster.jpeg" width="180" alt="Dithering Effect"><br>Dithering Effect</a></td>
@@ -131,45 +143,51 @@ The following [BrushCue tools](https://www.brushcue.com/tools) have Python examp
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/ember-rock"><img src="https://www.brushcue.com/tools/ember-rock/poster.jpeg" width="180" alt="Ember Rock"><br>Ember Rock</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/emberlight"><img src="https://www.brushcue.com/tools/emberlight/poster.jpeg" width="180" alt="Emberlight"><br>Emberlight</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/emboss"><img src="https://www.brushcue.com/tools/emboss/poster.jpeg" width="180" alt="Emboss"><br>Emboss</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/erode"><img src="https://www.brushcue.com/tools/erode/poster.jpeg" width="180" alt="Erode"><br>Erode</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/exposure-adjust"><img src="https://www.brushcue.com/tools/exposure-adjust/poster.jpeg" width="180" alt="Exposure Adjust"><br>Exposure Adjust</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/fade-filter"><img src="https://www.brushcue.com/tools/fade-filter/poster.jpeg" width="180" alt="Fade Filter"><br>Fade Filter</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/fade-filter"><img src="https://www.brushcue.com/tools/fade-filter/poster.jpeg" width="180" alt="Fade Filter"><br>Fade Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/faded-postcard"><img src="https://www.brushcue.com/tools/faded-postcard/poster.jpeg" width="180" alt="Faded Postcard"><br>Faded Postcard</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/film-grain"><img src="https://www.brushcue.com/tools/film-grain/poster.jpeg" width="180" alt="Film Grain"><br>Film Grain</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/film-noir"><img src="https://www.brushcue.com/tools/film-noir/poster.jpeg" width="180" alt="Film Noir"><br>Film Noir</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/fisheye"><img src="https://www.brushcue.com/tools/fisheye/poster.jpeg" width="180" alt="Fisheye"><br>Fisheye</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/fisheye"><img src="https://www.brushcue.com/tools/fisheye/poster.jpeg" width="180" alt="Fisheye"><br>Fisheye</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/frost-line"><img src="https://www.brushcue.com/tools/frost-line/poster.jpeg" width="180" alt="Frost Line"><br>Frost Line</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/gamma-adjust"><img src="https://www.brushcue.com/tools/gamma-adjust/poster.jpeg" width="180" alt="Gamma Adjust"><br>Gamma Adjust</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/gaussian-blur"><img src="https://www.brushcue.com/tools/gaussian-blur/poster.jpeg" width="180" alt="Gaussian Blur"><br>Gaussian Blur</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/glitch-filter-animation"><img src="https://www.brushcue.com/tools/glitch-filter-animation/poster.jpeg" width="180" alt="Glitch Filter Animation"><br>Glitch Filter Animation</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/glitch-filter-animation"><img src="https://www.brushcue.com/tools/glitch-filter-animation/poster.jpeg" width="180" alt="Glitch Filter Animation"><br>Glitch Filter Animation</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/golden-hour-filter"><img src="https://www.brushcue.com/tools/golden-hour-filter/poster.jpeg" width="180" alt="Golden Hour Filter"><br>Golden Hour Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/grayscale"><img src="https://www.brushcue.com/tools/grayscale/poster.jpeg" width="180" alt="Grayscale"><br>Grayscale</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/grayscale-gradient"><img src="https://www.brushcue.com/tools/grayscale-gradient/poster.jpeg" width="180" alt="Grayscale Gradient"><br>Grayscale Gradient</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/green-channel"><img src="https://www.brushcue.com/tools/green-channel/poster.jpeg" width="180" alt="Green Channel"><br>Green Channel</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/green-channel"><img src="https://www.brushcue.com/tools/green-channel/poster.jpeg" width="180" alt="Green Channel"><br>Green Channel</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/grunge-filter"><img src="https://www.brushcue.com/tools/grunge-filter/poster.jpeg" width="180" alt="Grunge Filter"><br>Grunge Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/halftone"><img src="https://www.brushcue.com/tools/halftone/poster.jpeg" width="180" alt="Halftone"><br>Halftone</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/hexagonal-pixelate"><img src="https://www.brushcue.com/tools/hexagonal-pixelate/poster.jpeg" width="180" alt="Hexagonal Pixelate"><br>Hexagonal Pixelate</a></td>
+</tr>
+<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/high-contrast-grayscale"><img src="https://www.brushcue.com/tools/high-contrast-grayscale/poster.jpeg" width="180" alt="High Contrast Grayscale"><br>High Contrast Grayscale</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/honey-hour"><img src="https://www.brushcue.com/tools/honey-hour/poster.jpeg" width="180" alt="Honey Hour"><br>Honey Hour</a></td>
-</tr>
-<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/horizontal-mirror"><img src="https://www.brushcue.com/tools/horizontal-mirror/poster.jpeg" width="180" alt="Horizontal Mirror"><br>Horizontal Mirror</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/hue-adjust"><img src="https://www.brushcue.com/tools/hue-adjust/poster.jpeg" width="180" alt="Hue Adjust"><br>Hue Adjust</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/image-resizer"><img src="https://www.brushcue.com/tools/image-resizer/poster.jpeg" width="180" alt="Image Resizer"><br>Image Resizer</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/indie-sleaze-filter"><img src="https://www.brushcue.com/tools/indie-sleaze-filter/poster.jpeg" width="180" alt="Indie Sleaze Filter"><br>Indie Sleaze Filter</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/image-resizer"><img src="https://www.brushcue.com/tools/image-resizer/poster.jpeg" width="180" alt="Image Resizer"><br>Image Resizer</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/indie-sleaze-filter"><img src="https://www.brushcue.com/tools/indie-sleaze-filter/poster.jpeg" width="180" alt="Indie Sleaze Filter"><br>Indie Sleaze Filter</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/inked-filter"><img src="https://www.brushcue.com/tools/inked-filter/poster.jpeg" width="180" alt="Inked Filter"><br>Inked Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/kaleidoscope"><img src="https://www.brushcue.com/tools/kaleidoscope/poster.jpeg" width="180" alt="Kaleidoscope"><br>Kaleidoscope</a></td>
+</tr>
+<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/kaleidoscope-animation"><img src="https://www.brushcue.com/tools/kaleidoscope-animation/poster.jpeg" width="180" alt="Kaleidoscope Animation"><br>Kaleidoscope Animation</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/kelvin-tuner"><img src="https://www.brushcue.com/tools/kelvin-tuner/poster.jpeg" width="180" alt="Kelvin Tuner"><br>Kelvin Tuner</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/lens-blur"><img src="https://www.brushcue.com/tools/lens-blur/poster.jpeg" width="180" alt="Lens Blur"><br>Lens Blur</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/light-leak"><img src="https://www.brushcue.com/tools/light-leak/poster.jpeg" width="180" alt="Light Leak"><br>Light Leak</a></td>
 </tr>
 <tr>
@@ -187,92 +205,116 @@ The following [BrushCue tools](https://www.brushcue.com/tools) have Python examp
 <tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/morning-filter"><img src="https://www.brushcue.com/tools/morning-filter/poster.jpeg" width="180" alt="Morning Filter"><br>Morning Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/negative-filter"><img src="https://www.brushcue.com/tools/negative-filter/poster.jpeg" width="180" alt="Negative Filter"><br>Negative Filter</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/night-signal"><img src="https://www.brushcue.com/tools/night-signal/poster.jpeg" width="180" alt="Night Signal"><br>Night Signal</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/noon-filter"><img src="https://www.brushcue.com/tools/noon-filter/poster.jpeg" width="180" alt="Noon Filter"><br>Noon Filter</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/old-money-filter"><img src="https://www.brushcue.com/tools/old-money-filter/poster.jpeg" width="180" alt="Old Money Filter"><br>Old Money Filter</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/oil-painting-effect"><img src="https://www.brushcue.com/tools/oil-painting-effect/poster.jpeg" width="180" alt="Oil Painting Effect"><br>Oil Painting Effect</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/old-money-filter"><img src="https://www.brushcue.com/tools/old-money-filter/poster.jpeg" width="180" alt="Old Money Filter"><br>Old Money Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/opacity-scale"><img src="https://www.brushcue.com/tools/opacity-scale/poster.jpeg" width="180" alt="Opacity Scale"><br>Opacity Scale</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/peachfeed"><img src="https://www.brushcue.com/tools/peachfeed/poster.jpeg" width="180" alt="Peachfeed"><br>Peachfeed</a></td>
+</tr>
+<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/pencil-sketch"><img src="https://www.brushcue.com/tools/pencil-sketch/poster.jpeg" width="180" alt="Pencil Sketch"><br>Pencil Sketch</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/petal-haze"><img src="https://www.brushcue.com/tools/petal-haze/poster.jpeg" width="180" alt="Petal Haze"><br>Petal Haze</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/petal-smoke"><img src="https://www.brushcue.com/tools/petal-smoke/poster.jpeg" width="180" alt="Petal Smoke"><br>Petal Smoke</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/photo-to-coloring-page"><img src="https://www.brushcue.com/tools/photo-to-coloring-page/poster.jpeg" width="180" alt="Photo to Coloring Page"><br>Photo to Coloring Page</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/pinch-image"><img src="https://www.brushcue.com/tools/pinch-image/poster.jpeg" width="180" alt="Pinch Image"><br>Pinch Image</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/pixelate"><img src="https://www.brushcue.com/tools/pixelate/poster.jpeg" width="180" alt="Pixelate"><br>Pixelate</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/pixelate-reveal-animation"><img src="https://www.brushcue.com/tools/pixelate-reveal-animation/poster.jpeg" width="180" alt="Pixelate Reveal Animation"><br>Pixelate Reveal Animation</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/powder-blue"><img src="https://www.brushcue.com/tools/powder-blue/poster.jpeg" width="180" alt="Powder Blue"><br>Powder Blue</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/radial-gradient"><img src="https://www.brushcue.com/tools/radial-gradient/poster.jpeg" width="180" alt="Radial Gradient"><br>Radial Gradient</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/pop-art"><img src="https://www.brushcue.com/tools/pop-art/poster.jpeg" width="180" alt="Pop Art"><br>Pop Art</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/powder-blue"><img src="https://www.brushcue.com/tools/powder-blue/poster.jpeg" width="180" alt="Powder Blue"><br>Powder Blue</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/quiet-window"><img src="https://www.brushcue.com/tools/quiet-window/poster.jpeg" width="180" alt="Quiet Window"><br>Quiet Window</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/radial-gradient"><img src="https://www.brushcue.com/tools/radial-gradient/poster.jpeg" width="180" alt="Radial Gradient"><br>Radial Gradient</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/red-channel"><img src="https://www.brushcue.com/tools/red-channel/poster.jpeg" width="180" alt="Red Channel"><br>Red Channel</a></td>
+</tr>
+<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/reef-current"><img src="https://www.brushcue.com/tools/reef-current/poster.jpeg" width="180" alt="Reef Current"><br>Reef Current</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/rgb-color-mix-aesthetic"><img src="https://www.brushcue.com/tools/rgb-color-mix-aesthetic/poster.jpeg" width="180" alt="RGB Color Mix Aesthetic"><br>RGB Color Mix Aesthetic</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/rgb-color-shift"><img src="https://www.brushcue.com/tools/rgb-color-shift/poster.jpeg" width="180" alt="RGB Color Shift"><br>RGB Color Shift</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/riviera-pop"><img src="https://www.brushcue.com/tools/riviera-pop/poster.jpeg" width="180" alt="Riviera Pop"><br>Riviera Pop</a></td>
 </tr>
 <tr>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/riviera-pop"><img src="https://www.brushcue.com/tools/riviera-pop/poster.jpeg" width="180" alt="Riviera Pop"><br>Riviera Pop</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/rose-replay"><img src="https://www.brushcue.com/tools/rose-replay/poster.jpeg" width="180" alt="Rose Replay"><br>Rose Replay</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/rose-tint"><img src="https://www.brushcue.com/tools/rose-tint/poster.jpeg" width="180" alt="Rose Tint"><br>Rose Tint</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/rotate-straighten"><img src="https://www.brushcue.com/tools/rotate-straighten/poster.jpeg" width="180" alt="Rotate &amp; Straighten"><br>Rotate &amp; Straighten</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/rotate-180"><img src="https://www.brushcue.com/tools/rotate-180/poster.jpeg" width="180" alt="Rotate 180°"><br>Rotate 180°</a></td>
 </tr>
 <tr>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/rotate-180"><img src="https://www.brushcue.com/tools/rotate-180/poster.jpeg" width="180" alt="Rotate 180°"><br>Rotate 180°</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/rotate-90-clockwise"><img src="https://www.brushcue.com/tools/rotate-90-clockwise/poster.jpeg" width="180" alt="Rotate 90° Clockwise"><br>Rotate 90° Clockwise</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/rotate-90-counter-clockwise"><img src="https://www.brushcue.com/tools/rotate-90-counter-clockwise/poster.jpeg" width="180" alt="Rotate 90° Counter-Clockwise"><br>Rotate 90° Counter-Clockwise</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/salt-flat"><img src="https://www.brushcue.com/tools/salt-flat/poster.jpeg" width="180" alt="Salt Flat"><br>Salt Flat</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/saturation-adjust"><img src="https://www.brushcue.com/tools/saturation-adjust/poster.jpeg" width="180" alt="Saturation Adjust"><br>Saturation Adjust</a></td>
 </tr>
 <tr>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/saturation-adjust"><img src="https://www.brushcue.com/tools/saturation-adjust/poster.jpeg" width="180" alt="Saturation Adjust"><br>Saturation Adjust</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/scale-by-factor"><img src="https://www.brushcue.com/tools/scale-by-factor/poster.jpeg" width="180" alt="Scale by Factor"><br>Scale by Factor</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/scan-lines"><img src="https://www.brushcue.com/tools/scan-lines/poster.jpeg" width="180" alt="Scan Lines"><br>Scan Lines</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/sepia"><img src="https://www.brushcue.com/tools/sepia/poster.jpeg" width="180" alt="Sepia"><br>Sepia</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/shadow-tint"><img src="https://www.brushcue.com/tools/shadow-tint/poster.jpeg" width="180" alt="Shadow Tint"><br>Shadow Tint</a></td>
 </tr>
 <tr>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/shadow-tint"><img src="https://www.brushcue.com/tools/shadow-tint/poster.jpeg" width="180" alt="Shadow Tint"><br>Shadow Tint</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/shadows-highlights"><img src="https://www.brushcue.com/tools/shadows-highlights/poster.jpeg" width="180" alt="Shadows &amp; Highlights"><br>Shadows &amp; Highlights</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/sharpen"><img src="https://www.brushcue.com/tools/sharpen/poster.jpeg" width="180" alt="Sharpen"><br>Sharpen</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/silverpine-800"><img src="https://www.brushcue.com/tools/silverpine-800/poster.jpeg" width="180" alt="Silverpine 800"><br>Silverpine 800</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/sobel-edge-detection"><img src="https://www.brushcue.com/tools/sobel-edge-detection/poster.jpeg" width="180" alt="Sobel Edge Detection"><br>Sobel Edge Detection</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/soft-pastel"><img src="https://www.brushcue.com/tools/soft-pastel/poster.jpeg" width="180" alt="Soft Pastel"><br>Soft Pastel</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/solarize"><img src="https://www.brushcue.com/tools/solarize/poster.jpeg" width="180" alt="Solarize"><br>Solarize</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/solpeach-400"><img src="https://www.brushcue.com/tools/solpeach-400/poster.jpeg" width="180" alt="Solpeach 400"><br>Solpeach 400</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/sootline-mono"><img src="https://www.brushcue.com/tools/sootline-mono/poster.jpeg" width="180" alt="Sootline Mono"><br>Sootline Mono</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/spinning-reveal-animation"><img src="https://www.brushcue.com/tools/spinning-reveal-animation/poster.jpeg" width="180" alt="Spinning Reveal Animation"><br>Spinning Reveal Animation</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/spherize-image"><img src="https://www.brushcue.com/tools/spherize-image/poster.jpeg" width="180" alt="Spherize Image"><br>Spherize Image</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/spinning-reveal-animation"><img src="https://www.brushcue.com/tools/spinning-reveal-animation/poster.jpeg" width="180" alt="Spinning Reveal Animation"><br>Spinning Reveal Animation</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/spring-filter"><img src="https://www.brushcue.com/tools/spring-filter/poster.jpeg" width="180" alt="Spring Filter"><br>Spring Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/square-crop"><img src="https://www.brushcue.com/tools/square-crop/poster.jpeg" width="180" alt="Square Crop"><br>Square Crop</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/star-cut-out"><img src="https://www.brushcue.com/tools/star-cut-out/poster.jpeg" width="180" alt="Star Cut Out"><br>Star Cut Out</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/static-noise"><img src="https://www.brushcue.com/tools/static-noise/poster.jpeg" width="180" alt="Static Noise"><br>Static Noise</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/star-cut-out"><img src="https://www.brushcue.com/tools/star-cut-out/poster.jpeg" width="180" alt="Star Cut Out"><br>Star Cut Out</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/static-noise"><img src="https://www.brushcue.com/tools/static-noise/poster.jpeg" width="180" alt="Static Noise"><br>Static Noise</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/stormglass"><img src="https://www.brushcue.com/tools/stormglass/poster.jpeg" width="180" alt="Stormglass"><br>Stormglass</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/summer-filter"><img src="https://www.brushcue.com/tools/summer-filter/poster.jpeg" width="180" alt="Summer Filter"><br>Summer Filter</a></td>
+</tr>
+<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/summit-air"><img src="https://www.brushcue.com/tools/summit-air/poster.jpeg" width="180" alt="Summit Air"><br>Summit Air</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/sunday-76"><img src="https://www.brushcue.com/tools/sunday-76/poster.jpeg" width="180" alt="Sunday 76"><br>Sunday 76</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/sunset-filter"><img src="https://www.brushcue.com/tools/sunset-filter/poster.jpeg" width="180" alt="Sunset Filter"><br>Sunset Filter</a></td>
-</tr>
-<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/swirl"><img src="https://www.brushcue.com/tools/swirl/poster.jpeg" width="180" alt="Swirl"><br>Swirl</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/terracotta-sun"><img src="https://www.brushcue.com/tools/terracotta-sun/poster.jpeg" width="180" alt="Terracotta Sun"><br>Terracotta Sun</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/tint-toward-color"><img src="https://www.brushcue.com/tools/tint-toward-color/poster.jpeg" width="180" alt="Tint Toward Color"><br>Tint Toward Color</a></td>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/tropic-chrome"><img src="https://www.brushcue.com/tools/tropic-chrome/poster.jpeg" width="180" alt="Tropic Chrome"><br>Tropic Chrome</a></td>
 </tr>
 <tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/terracotta-sun"><img src="https://www.brushcue.com/tools/terracotta-sun/poster.jpeg" width="180" alt="Terracotta Sun"><br>Terracotta Sun</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/tilt-shift"><img src="https://www.brushcue.com/tools/tilt-shift/poster.jpeg" width="180" alt="Tilt Shift"><br>Tilt Shift</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/tint-toward-color"><img src="https://www.brushcue.com/tools/tint-toward-color/poster.jpeg" width="180" alt="Tint Toward Color"><br>Tint Toward Color</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/triangle-blur"><img src="https://www.brushcue.com/tools/triangle-blur/poster.jpeg" width="180" alt="Triangle Blur"><br>Triangle Blur</a></td>
+</tr>
+<tr>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/tropic-chrome"><img src="https://www.brushcue.com/tools/tropic-chrome/poster.jpeg" width="180" alt="Tropic Chrome"><br>Tropic Chrome</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/unsharp-mask"><img src="https://www.brushcue.com/tools/unsharp-mask/poster.jpeg" width="180" alt="Unsharp Mask"><br>Unsharp Mask</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/vaporwave-filter"><img src="https://www.brushcue.com/tools/vaporwave-filter/poster.jpeg" width="180" alt="Vaporwave Filter"><br>Vaporwave Filter</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/velvet-stage"><img src="https://www.brushcue.com/tools/velvet-stage/poster.jpeg" width="180" alt="Velvet Stage"><br>Velvet Stage</a></td>
+</tr>
+<tr>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/verdant-mist"><img src="https://www.brushcue.com/tools/verdant-mist/poster.jpeg" width="180" alt="Verdant Mist"><br>Verdant Mist</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/vertical-mirror"><img src="https://www.brushcue.com/tools/vertical-mirror/poster.jpeg" width="180" alt="Vertical Mirror"><br>Vertical Mirror</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/vibrancy"><img src="https://www.brushcue.com/tools/vibrancy/poster.jpeg" width="180" alt="Vibrancy"><br>Vibrancy</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/vignette"><img src="https://www.brushcue.com/tools/vignette/poster.jpeg" width="180" alt="Vignette"><br>Vignette</a></td>
 </tr>
 <tr>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/vignette"><img src="https://www.brushcue.com/tools/vignette/poster.jpeg" width="180" alt="Vignette"><br>Vignette</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/vintage-filter"><img src="https://www.brushcue.com/tools/vintage-filter/poster.jpeg" width="180" alt="Vintage Filter"><br>Vintage Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/warmth-adjust"><img src="https://www.brushcue.com/tools/warmth-adjust/poster.jpeg" width="180" alt="Warmth Adjust"><br>Warmth Adjust</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/watercolor-effect"><img src="https://www.brushcue.com/tools/watercolor-effect/poster.jpeg" width="180" alt="Watercolor Effect"><br>Watercolor Effect</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/whiten-image"><img src="https://www.brushcue.com/tools/whiten-image/poster.jpeg" width="180" alt="Whiten Image"><br>Whiten Image</a></td>
 </tr>
 <tr>
-<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/whiten-image"><img src="https://www.brushcue.com/tools/whiten-image/poster.jpeg" width="180" alt="Whiten Image"><br>Whiten Image</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/winter-filter"><img src="https://www.brushcue.com/tools/winter-filter/poster.jpeg" width="180" alt="Winter Filter"><br>Winter Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/y2k-filter"><img src="https://www.brushcue.com/tools/y2k-filter/poster.jpeg" width="180" alt="Y2K Filter"><br>Y2K Filter</a></td>
 <td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/zoom-blur"><img src="https://www.brushcue.com/tools/zoom-blur/poster.jpeg" width="180" alt="Zoom Blur"><br>Zoom Blur</a></td>
+<td align="center" width="25%"><a href="https://www.brushcue.com/docs/py/examples/zoom-out-reveal-animation"><img src="https://www.brushcue.com/tools/zoom-out-reveal-animation/poster.jpeg" width="180" alt="Zoom Out Reveal Animation"><br>Zoom Out Reveal Animation</a></td>
 </tr>
 </table>
 
